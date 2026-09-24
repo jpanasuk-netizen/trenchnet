@@ -1,0 +1,48 @@
+# Pass 8 Hot Takes — looser than Top Pick BUY (paper tracking only)
+# Safety failures do NOT block a Hot Take; they become visible flags.
+
+rule:
+  min_wallet_score: 0.55
+  # Path A: N top-scored wallets co-buying within a short window
+  min_top_wallets: 2
+  max_cobuy_span_seconds: 900
+  # Path B: 1 top wallet + follow-on buys (any wallet) in a fast window
+  min_follow_buys: 2
+  follow_window_seconds: 180
+  # Optional soft Jev preference (flagged, not required)
+  jev_ok_routes: [send_for_analysis, keep_observing]
+
+dedup_hours: 6
+
+horizons_seconds: [900, 3600, 14400, 86400]  # 15m, 1h, 4h, 24h
+max_staleness_seconds: 300
+close_after_seconds: 86400
+
+position_size_sol: 0.25
+# Costs reuse config/backtest.yaml costs via apply_costs
+
+tracker:
+  poll_interval_seconds: 90
+  price_sample_interval_seconds: 60
+  enabled: true
+  max_flag_age_seconds: 21600  # live Hot Takes must be flagged within this lookback
+
+helius:
+  max_wallets_per_poll: 5
+  max_pages_per_wallet: 1
+  sleep_ms: 350
+  # Documented estimate (enhanced SWAP page ≈ 100 credits on free tier; confirm in Helius console)
+  estimated_credits_per_page: 100
+  rotate: true
+
+safety_flags:
+  # Thresholds used only for flags (Hot Take still fires if they fail)
+  min_token_age_seconds: 60
+  max_token_age_seconds: 604800
+  min_liquidity_proxy_sol: 0.05
+  min_liquidity_usd: 1000
+
+backfill:
+  enabled: true
+  max_flag_age_seconds: 21600  # live Hot Takes must be flagged within this lookback
+  label: backtested Hot Takes

@@ -1,0 +1,123 @@
+{
+  "generated_at_utc": "2026-09-24T15:06:30Z",
+  "live_scoreboard": {
+    "total": 1,
+    "open": 1,
+    "closed": 0,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "backtested_scoreboard": {
+    "total": 1,
+    "open": 0,
+    "closed": 1,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "backtested_n": 1,
+  "n_live": 1,
+  "thresholds": {
+    "min_wallet_score": 0.55,
+    "min_top_wallets": 2,
+    "max_cobuy_span_seconds": 900,
+    "min_follow_buys": 2,
+    "follow_window_seconds": 180,
+    "jev_ok_routes": [
+      "send_for_analysis",
+      "keep_observing"
+    ]
+  },
+  "caption": "Paper tracking only. Not financial advice."
+}

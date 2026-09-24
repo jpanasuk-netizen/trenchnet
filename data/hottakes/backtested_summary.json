@@ -1,0 +1,143 @@
+{
+  "generated_at_utc": "2026-09-24T14:48:25Z",
+  "kind": "backtested_hottakes",
+  "n": 1,
+  "scoreboard": {
+    "total": 1,
+    "open": 0,
+    "closed": 1,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "takes": [
+    {
+      "kind": "backtested",
+      "token_mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "path": "A_cobuy_top_wallets",
+      "reason": "2+ top-scored wallets co-bought within 0s (max 900s); scores>=0.55",
+      "flagged_at": 1790245512,
+      "flagged_at_iso": "2026-09-24T10:25:12Z",
+      "entry_price": 9.1154e-08,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "trigger_wallets": [
+        "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+        "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW"
+      ],
+      "flags": {
+        "age": {
+          "ok": false,
+          "detail": "too_new_1s"
+        },
+        "liquidity": {
+          "ok": false,
+          "detail": "proxy_sol=0.02845"
+        },
+        "holder_concentration": {
+          "ok": null,
+          "detail": "not_available_free"
+        },
+        "jev": {
+          "ok": false,
+          "detail": "missing_or_weak"
+        }
+      },
+      "n_top_in_cluster": 2,
+      "status": "closed",
+      "paper_only": true,
+      "chain": "Solana",
+      "venue": "pump.fun",
+      "label": "backtested Hot Takes",
+      "logged_at_iso": "2026-09-24T14:48:25Z",
+      "price_samples": [],
+      "outcomes": {
+        "900": {
+          "horizon_s": 900,
+          "result": "LOSS",
+          "gross_return": -0.120905,
+          "net_return": -0.21526,
+          "costs_sol": 0.02358868,
+          "px": 8.0133e-08,
+          "source": "helius_pool",
+          "due_at": 1790246412,
+          "marked_at_iso": "2026-09-24T14:48:25Z"
+        },
+        "3600": {
+          "horizon_s": 3600,
+          "result": "WIN",
+          "gross_return": 0.423086,
+          "net_return": 0.301532,
+          "costs_sol": 0.03038858,
+          "px": 1.2972e-07,
+          "source": "helius_pool",
+          "due_at": 1790249112,
+          "marked_at_iso": "2026-09-24T14:48:25Z"
+        },
+        "14400": {
+          "horizon_s": 14400,
+          "result": "UNPRICED",
+          "reason": "no_trade_within_staleness",
+          "due_at": 1790259912,
+          "net_return": null,
+          "gross_return": null
+        },
+        "86400": {
+          "horizon_s": 86400,
+          "result": "UNPRICED",
+          "reason": "no_trade_within_staleness",
+          "due_at": 1790331912,
+          "net_return": null,
+          "gross_return": null
+        }
+      },
+      "closed_at_iso": "2026-09-24T14:48:25Z"
+    }
+  ],
+  "disclaimer": "Backtested Hot Takes \u2014 point-in-time wallet arrivals; paper only."
+}

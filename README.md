@@ -109,3 +109,8 @@ Tests (PnL, graph/co-entry, routing):
 - **Coin Desk tab** is observe-only: reads http://127.0.0.1:3010/api/state or %LOCALAPPDATA%\\token-desk\\data\\decisions.jsonl. Start Coin Desk.exe yourself if you want a live Base/hood.fun board; TRENCHNET will not start or stop it.
 - **Top Pick** is a paper verdict card with documented thresholds in config/picks.yaml. BUY candidate requires multiple confirmations + safety. Track record under data/picks/. Not financial advice; walk-forward may be insufficient_oos.
 
+### Pass 8 — Hot Takes
+- Collapsible **Hot Takes** side panel tracks looser wallet co-buy / fast-follow signals than Top Pick BUY.
+- Safety failures become flags (Hot Take still fires). Outcomes at +15m/+1h/+4h/+24h after backtest fees/slippage: WIN / LOSS / UNPRICED.
+- Tracker runs as a daemon thread inside the 8791 UI process (paper only). Not financial advice.
+

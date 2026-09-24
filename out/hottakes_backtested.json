@@ -1,0 +1,57 @@
+{
+  "n": 1,
+  "scoreboard": {
+    "total": 1,
+    "open": 0,
+    "closed": 1,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "generated_at_utc": "2026-09-24T14:48:25Z"
+}

@@ -10,6 +10,8 @@ GET  /api/backtest/summary -> paper backtest summary
 GET  /api/scores       -> wallet composite scores
 GET  /api/coindesk/state -> read-only Coin Desk (Base/hood.fun) live or JSONL fallback
 GET  /api/picks        -> Top Pick card payload (paper; rebuild with ?rebuild=1)
+GET  /api/hottakes    -> Hot Takes feed + scoreboard (paper)
+GET  /api/hottakes/tracker -> tracker status
   GET  /health          -> kill switch + counters
   GET  /api/events      -> SSE ping stream (live status feed)
   POST /api/paper/buy|sell|close  {wallet, token_mint?, amount_token?}
@@ -323,6 +325,20 @@ def build_handler(root: Path):
                         self._json({"error": type(exc).__name__, "note": "picks_build_failed", "paper_only": True}, 500)
                 else:
                     self._json(_json.loads(pth.read_text(encoding="utf-8")))
+            elif p == "/api/hottakes":
+                try:
+                    from trenchnet.hottakes import build_hottakes_payload, ensure_tracker
+                    ensure_tracker(root)  # no-op if already running
+                    self._json(build_hottakes_payload(root))
+                except Exception as exc:
+                    self._json({"error": type(exc).__name__, "paper_only": True, "takes": []}, 500)
+            elif p == "/api/hottakes/tracker":
+                try:
+                    from trenchnet.hottakes import ensure_tracker, get_tracker
+                    tr = ensure_tracker(root)
+                    self._json({"ok": True, "tracker": (tr.state if tr else {}), "paper_only": True})
+                except Exception as exc:
+                    self._json({"ok": False, "error": type(exc).__name__}, 500)
             elif p == "/health":
                 settings = load_settings()
                 cfg = paper_settings_from(settings)
@@ -390,6 +406,13 @@ def build_handler(root: Path):
 
 def serve(root: Path = ROOT, host: str = "127.0.0.1", port: int = 8791, open_browser: bool = True) -> None:
     dashboard.regenerate(root)
+    # Pass 8: start Hot Take tracker daemon (non-blocking)
+    try:
+        from trenchnet.hottakes import ensure_tracker
+        tr = ensure_tracker(root)
+        print(f"Hot Take tracker started (poll={tr.state.get('poll_interval_seconds')}s) — paper only.")
+    except Exception as exc:
+        print(f"Hot Take tracker not started: {type(exc).__name__}")
     httpd = ThreadingHTTPServer((host, port), build_handler(root))
     url = f"http://{host}:{port}/"
     print(f"TRENCHNET desk (WATCH-ONLY / PAPER) at {url}  — LIVE off, no implementation.")

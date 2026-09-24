@@ -83,3 +83,10 @@ data/picks/live_ledger.jsonl
 data/picks/latest.json
 out/pass7_*.log
 out/ui_pass7.*
+
+# Pass 8 Hot Takes ledger / fresh caches (commit summary only)
+data/hottakes/hottakes.jsonl
+data/hottakes/fresh_events.jsonl
+data/hottakes/tracker_state.json
+data/hottakes/*.tmp
+out/pass8_*.log

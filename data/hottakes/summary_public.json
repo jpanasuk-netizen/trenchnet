@@ -1,0 +1,166 @@
+{
+  "generated_at_utc": "2026-09-24T15:06:30Z",
+  "thresholds": {
+    "min_wallet_score": 0.55,
+    "min_top_wallets": 2,
+    "max_cobuy_span_seconds": 900,
+    "min_follow_buys": 2,
+    "follow_window_seconds": 180,
+    "jev_ok_routes": [
+      "send_for_analysis",
+      "keep_observing"
+    ]
+  },
+  "dedup_hours": 6,
+  "tracker": {
+    "running": true,
+    "poll_interval_seconds": 90,
+    "credits_estimate_this_hour": 1000,
+    "helius_pages_this_hour": 10,
+    "n_logged_session": 0,
+    "last_poll_iso": "2026-09-24T15:05:35Z"
+  },
+  "live_scoreboard": {
+    "total": 1,
+    "open": 1,
+    "closed": 0,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "backtested_n": 1,
+  "backtested_scoreboard": {
+    "total": 1,
+    "open": 0,
+    "closed": 1,
+    "by_horizon": {
+      "900": {
+        "wins": 0,
+        "losses": 1,
+        "unpriced": 0,
+        "win_rate": 0.0,
+        "mean_net": -0.21526,
+        "median_net": -0.21526,
+        "best": -0.21526,
+        "worst": -0.21526,
+        "n_priced": 1
+      },
+      "3600": {
+        "wins": 1,
+        "losses": 0,
+        "unpriced": 0,
+        "win_rate": 1.0,
+        "mean_net": 0.301532,
+        "median_net": 0.301532,
+        "best": 0.301532,
+        "worst": 0.301532,
+        "n_priced": 1
+      },
+      "14400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      },
+      "86400": {
+        "wins": 0,
+        "losses": 0,
+        "unpriced": 1,
+        "win_rate": null,
+        "mean_net": null,
+        "median_net": null,
+        "best": null,
+        "worst": null,
+        "n_priced": 0
+      }
+    },
+    "paper_only": true,
+    "not_financial_advice": true
+  },
+  "live_takes_sample": [
+    {
+      "token_mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "path": "A_cobuy_top_wallets",
+      "flagged_at_iso": "2026-09-24T10:25:12Z",
+      "entry_price": 9.1154e-08,
+      "entry_price_source": "helius_pool",
+      "status": "open",
+      "reason": "2+ top-scored wallets co-bought within 0s (max 900s); scores>=0.55",
+      "flags": {
+        "age": {
+          "ok": false,
+          "detail": "too_new_1s"
+        },
+        "liquidity": {
+          "ok": false,
+          "detail": "proxy_sol=0.02845"
+        },
+        "holder_concentration": {
+          "ok": null,
+          "detail": "not_available_free"
+        },
+        "jev": {
+          "ok": false,
+          "detail": "missing_or_weak"
+        }
+      },
+      "trigger_wallets": [
+        "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+        "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW"
+      ]
+    }
+  ],
+  "helius_estimate_note": "credits \u2248 pages_per_hour * estimated_credits_per_page (100). Config: 5 wallets * 1 page / 90s \u2248 200 pages/hour \u2248 20000 credits/hour upper bound.",
+  "paper_only": true,
+  "not_financial_advice": true
+}

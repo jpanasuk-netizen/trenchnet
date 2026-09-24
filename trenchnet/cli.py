@@ -60,6 +60,8 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("backtest", help="Pass 5 copy-trade backtest + walk-forward (paper only)")
     sub.add_parser("scores", help="Pass 5 wallet composite scores (paper only)")
     sub.add_parser("picks", help="Pass 7 Top Pick card + track record (paper only)")
+    sub.add_parser("hottakes", help="Pass 8 Hot Takes backfill + scoreboard (paper only)")
+    sub.add_parser("hottakes-poll", help="Pass 8 single Hot Take tracker poll (paper only)")
 
     args = parser.parse_args(argv)
 
@@ -208,6 +210,25 @@ def main(argv: list[str] | None = None) -> int:
         summary["per_trade_count"] = len(result.get("per_trade") or [])
         summary["outputs"] = {**paths, **sp, **(reg if isinstance(reg, dict) else {})}
         print(json.dumps(summary, indent=2, default=str))
+        return 0
+    if args.cmd == "hottakes":
+        from trenchnet.hottakes import backfill_hottakes, build_hottakes_payload
+        bf = backfill_hottakes(ROOT)
+        payload = build_hottakes_payload(ROOT)
+        print(json.dumps({
+            "backtested_n": bf.get("n"),
+            "backtested_scoreboard": bf.get("scoreboard"),
+            "live_scoreboard": payload.get("live_scoreboard"),
+            "n_live": len(payload.get("takes") or []),
+            "thresholds": payload.get("thresholds"),
+            "paper_only": True,
+        }, indent=2, default=str))
+        return 0
+    if args.cmd == "hottakes-poll":
+        from trenchnet.hottakes import HotTakeTracker
+        tr = HotTakeTracker(ROOT)
+        rep = tr.poll_once()
+        print(json.dumps({**rep, "tracker": tr.state, "paper_only": True}, indent=2, default=str))
         return 0
     if args.cmd == "picks":
         from trenchnet.picks import build_picks_payload

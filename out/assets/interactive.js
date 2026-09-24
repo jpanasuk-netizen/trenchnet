@@ -725,6 +725,219 @@
     }
   }
 
+
+  function ensureHotTakesPanel() {
+    if ($("hotTakesPanel")) return;
+    const panel = document.createElement("aside");
+    panel.id = "hotTakesPanel";
+    panel.className = "htPanel";
+    panel.innerHTML = `
+      <div class="htHead">
+        <button type="button" id="htToggle" title="Collapse">⟨</button>
+        <div>
+          <div class="htTitle">Hot Takes <span class="badge">PAPER</span></div>
+          <div class="muted" style="font-size:11px">Opportunity side window · not advice</div>
+        </div>
+      </div>
+      <div class="htBody">
+        <p class="htCaption">Paper tracking only. Not financial advice.</p>
+        <div id="htScoreboard" class="htBoard"></div>
+        <div class="htFilters">
+          <button type="button" class="htFilt active" data-f="all">All</button>
+          <button type="button" class="htFilt" data-f="open">Open</button>
+          <button type="button" class="htFilt" data-f="closed">Closed</button>
+          <button type="button" class="htFilt" data-f="wins">Wins</button>
+          <button type="button" class="htFilt" data-f="losses">Losses</button>
+        </div>
+        <div id="htFeed" class="htFeed"></div>
+        <div class="muted" id="htTracker" style="font-size:11px;margin-top:8px"></div>
+      </div>`;
+    document.body.appendChild(panel);
+    if (!$("pass8css")) {
+      const st = document.createElement("style");
+      st.id = "pass8css";
+      st.textContent = `
+        .htPanel{position:fixed;top:48px;right:0;width:min(420px,36vw);max-height:calc(100vh - 56px);
+          background:linear-gradient(180deg,rgba(10,18,38,.97),rgba(6,8,20,.98));border:1px solid rgba(0,180,255,.35);
+          border-right:0;border-radius:14px 0 0 14px;z-index:45;display:flex;flex-direction:column;
+          box-shadow:0 0 40px rgba(176,38,255,.18);backdrop-filter:blur(10px);transition:transform .2s ease}
+        .htPanel.collapsed{transform:translateX(calc(100% - 42px))}
+        .htPanel.collapsed .htBody{opacity:0;pointer-events:none}
+        .htHead{display:flex;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid rgba(0,180,255,.2)}
+        .htTitle{font-weight:800;color:#00B4FF;letter-spacing:.5px}
+        #htToggle{background:rgba(0,180,255,.15);border:1px solid rgba(0,180,255,.4);color:#dfe9ff;border-radius:8px;width:32px;height:32px;cursor:pointer;font-weight:700}
+        .htBody{padding:10px 12px 14px;overflow:auto;flex:1}
+        .htCaption{color:#ffd166;font-size:11px;margin:0 0 8px}
+        .htBoard{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px}
+        .htStat{background:rgba(0,180,255,.06);border:1px solid rgba(0,180,255,.2);border-radius:10px;padding:6px 8px}
+        .htStat .k{font-size:9px;text-transform:uppercase;color:#8aa0c0;letter-spacing:1px}
+        .htStat .v{font-size:14px;font-weight:700;color:#00B4FF}
+        .htFilters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+        .htFilt{background:rgba(0,180,255,.08);border:1px solid rgba(0,180,255,.3);color:#dfe9ff;border-radius:999px;padding:3px 9px;font-size:11px;cursor:pointer}
+        .htFilt.active{background:linear-gradient(90deg,#00B4FF,#B026FF);border:0;color:#041018;font-weight:700}
+        .htFeed{display:flex;flex-direction:column;gap:8px;max-height:55vh;overflow:auto}
+        .htCard{border:1px solid rgba(0,180,255,.22);border-radius:12px;padding:8px 10px;background:rgba(8,14,28,.75)}
+        .htCard .mint{font-family:Consolas,monospace;font-size:11px;color:#B026FF}
+        .htChips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+        .htChip{font-size:10px;padding:2px 6px;border-radius:999px;border:1px solid rgba(0,180,255,.3);color:#8aa0c0}
+        .htChip.WIN{border-color:#39ffb0;color:#39ffb0;background:rgba(57,255,176,.08)}
+        .htChip.LOSS{border-color:#ff5d8f;color:#ff5d8f;background:rgba(255,93,143,.08)}
+        .htChip.UNPRICED{border-color:#8aa0c0;color:#8aa0c0}
+        .htChip.pending{border-color:#ffd166;color:#ffd166}
+        .htFlag{font-size:10px;padding:1px 6px;border-radius:6px;margin-right:4px}
+        .htFlag.bad{background:rgba(255,93,143,.15);color:#ff5d8f;border:1px solid rgba(255,93,143,.4)}
+        .htFlag.warn{background:rgba(255,209,102,.12);color:#ffd166;border:1px solid rgba(255,209,102,.35)}
+        .htFlag.ok{background:rgba(57,255,176,.1);color:#39ffb0;border:1px solid rgba(57,255,176,.35)}
+        .htWallets{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+        .htWallets button{font-size:10px;padding:2px 6px;border-radius:6px;border:1px solid rgba(0,180,255,.35);background:rgba(0,180,255,.08);color:#00B4FF;cursor:pointer}
+        @media (max-width:1920px){
+          .htPanel{width:min(380px,42vw)}
+        }
+        @media (max-width:1400px){
+          .htPanel{top:auto;bottom:0;right:0;left:0;width:100%;max-height:48vh;border-radius:14px 14px 0 0;border-right:1px solid rgba(0,180,255,.35)}
+          .htPanel.collapsed{transform:translateY(calc(100% - 44px))}
+          .htFeed{max-height:28vh}
+        }
+      `;
+      document.head.appendChild(st);
+    }
+    state.htFilter = "all";
+    state.htCollapsed = false;
+  }
+
+  function htHorizonLabel(h) {
+    const m = { "900": "+15m", "3600": "+1h", "14400": "+4h", "86400": "+24h" };
+    return m[String(h)] || ("+" + h + "s");
+  }
+
+  function renderHotTakes(payload) {
+    ensureHotTakesPanel();
+    const P = payload || window.__TN_HOTTAKES || {};
+    const live = P.live_scoreboard || {};
+    const bt = P.backtested_scoreboard || {};
+    const byH = live.by_horizon || {};
+    const board = $("htScoreboard");
+    if (board) {
+      const h1 = byH["3600"] || {};
+      board.innerHTML = `
+        <div class="htStat"><div class="k">Total live</div><div class="v">${live.total || 0}</div></div>
+        <div class="htStat"><div class="k">Open</div><div class="v">${live.open || 0}</div></div>
+        <div class="htStat"><div class="k">Closed</div><div class="v">${live.closed || 0}</div></div>
+        <div class="htStat"><div class="k">Win rate 1h</div><div class="v">${h1.win_rate == null ? "—" : (h1.win_rate*100).toFixed(0)+"%"}</div></div>
+        <div class="htStat"><div class="k">Med net 1h</div><div class="v">${h1.median_net == null ? "—" : (h1.median_net*100).toFixed(1)+"%"}</div></div>
+        <div class="htStat"><div class="k">Mean net 1h</div><div class="v">${h1.mean_net == null ? "—" : (h1.mean_net*100).toFixed(1)+"%"}</div></div>
+        <div class="htStat"><div class="k">Best 1h</div><div class="v">${h1.best == null ? "—" : (h1.best*100).toFixed(1)+"%"}</div></div>
+        <div class="htStat"><div class="k">Worst 1h</div><div class="v">${h1.worst == null ? "—" : (h1.worst*100).toFixed(1)+"%"}</div></div>
+        <div class="htStat" style="grid-column:1/-1"><div class="k">Backtested Hot Takes (ref)</div><div class="v" style="font-size:12px">n=${P.backtested_n || bt.total || 0} · 1h WR ${(bt.by_horizon&&bt.by_horizon["3600"]&&bt.by_horizon["3600"].win_rate)!=null ? ((bt.by_horizon["3600"].win_rate)*100).toFixed(0)+"%" : "—"}</div></div>`;
+    }
+    const filt = state.htFilter || "all";
+    const takes = (P.takes || []).filter(t => {
+      if (filt === "open") return t.status === "open";
+      if (filt === "closed") return t.status === "closed";
+      if (filt === "wins") {
+        const o = t.outcomes || {};
+        return Object.values(o).some(c => c && c.result === "WIN");
+      }
+      if (filt === "losses") {
+        const o = t.outcomes || {};
+        return Object.values(o).some(c => c && c.result === "LOSS");
+      }
+      return true;
+    });
+    const feed = $("htFeed");
+    if (feed) {
+      if (!takes.length) {
+        feed.innerHTML = `<div class="empty">No Hot Takes yet — tracker is watching. Zero is honest.</div>`;
+      } else {
+        const hOrder = ["900","3600","14400","86400"];
+        feed.innerHTML = takes.map(t => {
+          const flags = t.flags || {};
+          let flagHtml = "";
+          Object.keys(flags).forEach(k => {
+            const f = flags[k] || {};
+            const cls = f.ok === true ? "ok" : (f.ok === false ? "bad" : "warn");
+            flagHtml += `<span class="htFlag ${cls}">${k}:${f.ok===true?"pass":(f.ok===false?"fail":"?")}</span>`;
+          });
+          const outcomes = t.outcomes || {};
+          const chips = hOrder.map(h => {
+            const c = outcomes[h];
+            if (!c) return `<span class="htChip pending">${htHorizonLabel(h)} …</span>`;
+            return `<span class="htChip ${c.result}">${htHorizonLabel(h)} ${c.result}</span>`;
+          }).join("");
+          const wallets = (t.trigger_wallets || []).map(w =>
+            `<button type="button" data-w="${w}">${short(w)}</button>`).join("");
+          const livePnL = t.live_gross != null ? ((t.live_gross*100).toFixed(1)+"%") : "—";
+          const age = t.flagged_at ? Math.max(0, Math.floor((Date.now()/1000 - t.flagged_at)/60)) + "m" : "—";
+          return `<div class="htCard" data-mint="${t.token_mint || ""}">
+            <div style="display:flex;justify-content:space-between;gap:8px">
+              <div class="mint">${short(t.token_mint)} · ${t.status || "?"}</div>
+              <div class="muted" style="font-size:11px">age ${age}</div>
+            </div>
+            <div class="muted" style="font-size:11px;margin-top:4px">${t.reason || ""}</div>
+            <div style="font-size:12px;margin-top:4px">entry ${t.entry_price != null ? Number(t.entry_price).toExponential(3) : "—"} · live P/L ${livePnL}</div>
+            <div class="htChips">${chips}</div>
+            <div style="margin-top:6px">${flagHtml}</div>
+            <div class="htWallets">${wallets}</div>
+          </div>`;
+        }).join("");
+        feed.querySelectorAll(".htWallets button[data-w]").forEach(b => {
+          b.addEventListener("click", (ev) => {
+            ev.stopPropagation();
+            openDrawer("wallet", b.getAttribute("data-w"));
+          });
+        });
+        feed.querySelectorAll(".htCard[data-mint]").forEach(card => {
+          card.addEventListener("click", () => {
+            const m = card.getAttribute("data-mint");
+            if (m) openDrawer("token", m);
+          });
+        });
+      }
+    }
+    const tr = P.tracker || {};
+    const trEl = $("htTracker");
+    if (trEl) {
+      trEl.textContent = `Tracker ${tr.running ? "ON" : "off"} · poll ${tr.poll_interval_seconds || "?"}s · last ${tr.last_poll_iso || "—"} · ~${tr.credits_estimate_this_hour || 0} Helius credits est. this hour · session logged ${tr.n_logged_session || 0}`;
+    }
+  }
+
+  async function loadHotTakes() {
+    try {
+      const r = await fetch("/api/hottakes");
+      if (!r.ok) throw new Error("ht " + r.status);
+      const j = await r.json();
+      window.__TN_HOTTAKES = j;
+      renderHotTakes(j);
+    } catch (e) {
+      ensureHotTakesPanel();
+      const feed = $("htFeed");
+      if (feed) feed.innerHTML = `<div class="empty">Hot Takes API: ${e}</div>`;
+    }
+  }
+
+  function bindHotTakes() {
+    ensureHotTakesPanel();
+    $("htToggle")?.addEventListener("click", () => {
+      state.htCollapsed = !state.htCollapsed;
+      $("hotTakesPanel")?.classList.toggle("collapsed", !!state.htCollapsed);
+      const btn = $("htToggle");
+      if (btn) btn.textContent = state.htCollapsed ? "⟩" : "⟨";
+    });
+    document.querySelectorAll(".htFilt").forEach(b => {
+      b.addEventListener("click", () => {
+        state.htFilter = b.getAttribute("data-f") || "all";
+        document.querySelectorAll(".htFilt").forEach(x => x.classList.toggle("active", x === b));
+        renderHotTakes(window.__TN_HOTTAKES);
+      });
+    });
+    // dock vs drawer: auto-collapse on narrow
+    if (window.innerWidth < 1400) {
+      state.htCollapsed = false;
+    }
+    loadHotTakes();
+    setInterval(loadHotTakes, 30000);
+  }
+
   function bindPass7() {
     document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
       b.addEventListener("click", () => setTab(b.getAttribute("data-tab")));
@@ -738,6 +951,7 @@
     loadTopPick();
     loadCoinDesk();
     setInterval(loadCoinDesk, 10000);
+    bindHotTakes();
   }
 
   function boot() {
