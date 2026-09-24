@@ -646,13 +646,15 @@ class HotTakeTracker:
             "started_at_iso": None,
             "last_poll_iso": None,
             "last_error": None,
-            "poll_interval_seconds": int((self.cfg.get("tracker") or {}).get("poll_interval_seconds") or 90),
+            "poll_interval_seconds": int((self.cfg.get("tracker") or {}).get("poll_interval_seconds") or 300),
             "helius_pages_this_hour": 0,
             "helius_hour_bucket": None,
             "credits_estimate_this_hour": 0,
             "credits_exhausted": False,
             "n_logged_session": 0,
             "wallet_cursor": 0,
+            "next_poll_at": None,
+            "next_poll_iso": None,
         }
 
     def start(self) -> None:
@@ -827,6 +829,10 @@ class HotTakeTracker:
             rewrite_ledger(self.root, existing)
 
         self.state["last_poll_iso"] = _now_iso()
+        interval = int((cfg.get("tracker") or {}).get("poll_interval_seconds") or 300)
+        self.state["poll_interval_seconds"] = interval
+        self.state["next_poll_at"] = _now_ts() + interval
+        self.state["next_poll_iso"] = _iso(self.state["next_poll_at"])
         self.state["last_fresh_events"] = len(fresh)
         self.state["last_new_takes"] = logged
         self._persist_state()
@@ -848,7 +854,7 @@ class HotTakeTracker:
                 self.state["last_error"] = f"poll:{type(exc).__name__}:{exc}"
                 self.state["last_traceback"] = traceback.format_exc()[-500:]
                 self._persist_state()
-            interval = int((self.cfg.get("tracker") or {}).get("poll_interval_seconds") or 90)
+            interval = int((self.cfg.get("tracker") or {}).get("poll_interval_seconds") or 300)
             self.state["poll_interval_seconds"] = interval
             # sleep in chunks so stop is responsive
             for _ in range(max(1, interval)):

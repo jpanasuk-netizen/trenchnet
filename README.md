@@ -7,6 +7,8 @@ This repo is **observe / analysis / paper**. It does not ship wallet private key
 ```powershell
 copy .env.example .env
 # then edit .env with your Helius / Birdeye (etc.) keys
+
+- **Hot Takes** side window: checks for new opportunities every **5 minutes** (alerts can lag up to 5 min; shown up front). Paper tracking only.
 ```
 
 Generated dashboards and Pass 4 screenshots live under `out/`. Roster addresses and derived stats are public on-chain data.
@@ -111,6 +113,7 @@ Tests (PnL, graph/co-entry, routing):
 
 ### Pass 8 — Hot Takes
 - Collapsible **Hot Takes** side panel tracks looser wallet co-buy / fast-follow signals than Top Pick BUY.
+- **Checks for new Hot Takes every 5 minutes**, so alerts can lag up to 5 min (shown up front in the panel with a next-check countdown).
 - Safety failures become flags (Hot Take still fires). Outcomes at +15m/+1h/+4h/+24h after backtest fees/slippage: WIN / LOSS / UNPRICED.
-- Tracker runs as a daemon thread inside the 8791 UI process (paper only). Not financial advice.
+- Tracker runs as a daemon thread inside the 8791 UI process (paper only). Not financial advice. Steady-state Helius estimate ≈ **6,000 credits/hour** (5 wallets × 1 page / 5 min × ~100 credits/page).
 

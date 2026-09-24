@@ -740,6 +740,8 @@
         </div>
       </div>
       <div class="htBody">
+        <p class="htUpfront" id="htUpfront">Checks for new Hot Takes every 5 minutes, so alerts can lag up to 5 min. Paper tracking only.</p>
+        <div class="htTiming" id="htTiming"><span id="htNext">Next check: —</span> · <span id="htLast">Last checked: —</span></div>
         <p class="htCaption">Paper tracking only. Not financial advice.</p>
         <div id="htScoreboard" class="htBoard"></div>
         <div class="htFilters">
@@ -768,6 +770,8 @@
         #htToggle{background:rgba(0,180,255,.15);border:1px solid rgba(0,180,255,.4);color:#dfe9ff;border-radius:8px;width:32px;height:32px;cursor:pointer;font-weight:700}
         .htBody{padding:10px 12px 14px;overflow:auto;flex:1}
         .htCaption{color:#ffd166;font-size:11px;margin:0 0 8px}
+        .htUpfront{color:#00B4FF;font-size:12px;font-weight:700;margin:0 0 6px;line-height:1.35;padding:8px 10px;border:1px solid rgba(0,180,255,.4);border-radius:10px;background:rgba(0,180,255,.08)}
+        .htTiming{color:#8aa0c0;font-size:11px;margin:0 0 8px;font-variant-numeric:tabular-nums}
         .htBoard{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-bottom:10px}
         .htStat{background:rgba(0,180,255,.06);border:1px solid rgba(0,180,255,.2);border-radius:10px;padding:6px 8px}
         .htStat .k{font-size:9px;text-transform:uppercase;color:#8aa0c0;letter-spacing:1px}
@@ -896,8 +900,20 @@
     }
     const tr = P.tracker || {};
     const trEl = $("htTracker");
+    const interval = Number(tr.poll_interval_seconds || 300);
+    window.__TN_HT_TRACKER = tr;
+    window.__TN_HT_INTERVAL = interval;
+    if ($("htUpfront")) {
+      const mins = Math.round(interval / 60);
+      $("htUpfront").textContent = "Checks for new Hot Takes every " + mins + " minute" + (mins === 1 ? "" : "s") + ", so alerts can lag up to " + mins + " min. Paper tracking only.";
+    }
+    if ($("htLast")) {
+      $("htLast").textContent = "Last checked: " + (tr.last_poll_iso || "—");
+    }
     if (trEl) {
-      trEl.textContent = `Tracker ${tr.running ? "ON" : "off"} · poll ${tr.poll_interval_seconds || "?"}s · last ${tr.last_poll_iso || "—"} · ~${tr.credits_estimate_this_hour || 0} Helius credits est. this hour · session logged ${tr.n_logged_session || 0}`;
+      const pagesPerHour = (5 * 1 * (3600 / interval));
+      const credPerHour = Math.round(pagesPerHour * 100);
+      trEl.textContent = "Tracker " + (tr.running ? "ON" : "off") + " · every " + interval + "s · last " + (tr.last_poll_iso || "—") + " · ~" + (tr.credits_estimate_this_hour || 0) + " credits this hour (≈" + credPerHour + "/h at full pace) · session logged " + (tr.n_logged_session || 0);
     }
   }
 
@@ -936,6 +952,34 @@
     }
     loadHotTakes();
     setInterval(loadHotTakes, 30000);
+    function tickHtCountdown() {
+      const tr = window.__TN_HT_TRACKER || {};
+      const nextAt = tr.next_poll_at;
+      const el = $("htNext");
+      if (!el) return;
+      if (!nextAt) {
+        const interval = Number(window.__TN_HT_INTERVAL || 300);
+        // estimate from last_poll_iso if next missing
+        if (tr.last_poll_iso) {
+          const last = Date.parse(tr.last_poll_iso);
+          if (!isNaN(last)) {
+            const rem = Math.max(0, Math.floor((last/1000 + interval) - Date.now()/1000));
+            const mm = String(Math.floor(rem/60)).padStart(1,"0");
+            const ss = String(rem%60).padStart(2,"0");
+            el.textContent = "Next check in " + mm + ":" + ss;
+            return;
+          }
+        }
+        el.textContent = "Next check: —";
+        return;
+      }
+      const rem = Math.max(0, Math.floor(Number(nextAt) - Date.now()/1000));
+      const mm = String(Math.floor(rem/60));
+      const ss = String(rem%60).padStart(2,"0");
+      el.textContent = "Next check in " + mm + ":" + ss;
+    }
+    tickHtCountdown();
+    setInterval(tickHtCountdown, 1000);
   }
 
   function bindPass7() {

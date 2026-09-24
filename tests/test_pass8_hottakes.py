@@ -41,7 +41,7 @@ max_staleness_seconds: 300
 close_after_seconds: 86400
 position_size_sol: 0.25
 tracker:
-  poll_interval_seconds: 90
+  poll_interval_seconds: 300
   enabled: false
 helius:
   max_wallets_per_poll: 2
@@ -291,3 +291,13 @@ def test_api_hottakes(tmp_path: Path):
         assert "caption" in body
     finally:
         httpd.shutdown()
+
+def test_poll_interval_is_five_minutes(tmp_path):
+    from trenchnet.hottakes import load_hottakes_config, HotTakeTracker
+    (tmp_path / "config").mkdir()
+    (tmp_path / "config" / "hottakes.yaml").write_text(HT_YAML, encoding="utf-8")
+    cfg = load_hottakes_config(tmp_path)
+    assert int((cfg.get("tracker") or {}).get("poll_interval_seconds")) == 300
+    (tmp_path / "config" / "hottakes.yaml").write_text("tracker:\n  enabled: false\n", encoding="utf-8")
+    tr = HotTakeTracker(tmp_path)
+    assert int(tr.state.get("poll_interval_seconds") or 0) == 300
