@@ -1,0 +1,100 @@
+{
+  "seed": 8,
+  "expanded": 32,
+  "total": 40,
+  "cobuy_candidates": 80,
+  "used": [
+    {
+      "mint": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "found": 17,
+      "rpc": "https://solana-rpc.publicnode.com",
+      "event_wallets": 16
+    },
+    {
+      "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "found": 19,
+      "rpc": "https://solana-rpc.publicnode.com",
+      "event_wallets": 18
+    },
+    {
+      "mint": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "found": 7,
+      "rpc": "https://solana-rpc.publicnode.com",
+      "event_wallets": 0
+    },
+    {
+      "mint": "BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+      "found": 15,
+      "rpc": "https://solana-rpc.publicnode.com",
+      "event_wallets": 15
+    },
+    {
+      "mint": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "found": 24,
+      "rpc": "https://solana-rpc.publicnode.com",
+      "event_wallets": 22
+    }
+  ],
+  "history_seeded": [
+    {
+      "address": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "added_events": 25,
+      "harvest_events": 50
+    },
+    {
+      "address": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "added_events": 22,
+      "harvest_events": 22
+    },
+    {
+      "address": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+      "added_events": 17,
+      "harvest_events": 17
+    },
+    {
+      "address": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+      "added_events": 16,
+      "harvest_events": 16
+    },
+    {
+      "address": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "added_events": 3,
+      "harvest_events": 3
+    },
+    {
+      "address": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "added_events": 3,
+      "harvest_events": 3
+    },
+    {
+      "address": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "added_events": 2,
+      "harvest_events": 4
+    },
+    {
+      "address": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "added_events": 2,
+      "harvest_events": 2
+    },
+    {
+      "address": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "added_events": 2,
+      "harvest_events": 2
+    },
+    {
+      "address": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "added_events": 2,
+      "harvest_events": 2
+    },
+    {
+      "address": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "added_events": 2,
+      "harvest_events": 2
+    },
+    {
+      "address": "5GUdxYchpgTc73TWCy1MPPRnuoXmKXJaq11D7SxY4SH8",
+      "added_events": 1,
+      "harvest_events": 1
+    }
+  ]
+}

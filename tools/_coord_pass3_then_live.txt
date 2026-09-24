@@ -1,0 +1,1 @@
+﻿COORDINATION (executor): Pass 3 modules rpc_pool/sources_expand/token_context/parallel_fetch already exist — fill gaps, wire CLI/dashboard, pytest, RECEIPT PASS 3. Do NOT start LIVE trading code. LIVE is QUEUED for AFTER pass 3 closes (Jeremy asked for armable LIVE+GUI). Do not edit trenchnet/live/ if it appears. UI on :8791 is Jeremy's — do not stop it. Port default stays 8791.

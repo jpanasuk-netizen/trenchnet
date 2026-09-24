@@ -1,0 +1,59 @@
+{
+  "mint": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+  "fetched_at": "2026-09-24T10:31:11.579521Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "fetched_at": "2026-09-24T10:31:08.941274Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/3odkxofb7kvujarfolbcqbbzv93r9njjr9kqth5ckdkt",
+      "pairAddress": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+      "dexId": "pumpswap",
+      "priceUsd": "0.0005280",
+      "priceNative": "0.000004673",
+      "liquidity_usd": 68827.28,
+      "volume_h24": 2327617.99,
+      "fdv": 515506,
+      "marketCap": 515506,
+      "priceChange_h24": 1019,
+      "base_symbol": "SI",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "fetched_at": "2026-09-24T10:31:09.971611Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:10.951898Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/i/communities/1870791813688365251",
+      "source_url": "https://dexscreener.com/solana/3odkxofb7kvujarfolbcqbbzv93r9njjr9kqth5ckdkt"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+    "dexscreener": "https://dexscreener.com/solana/3odkxofb7kvujarfolbcqbbzv93r9njjr9kqth5ckdkt",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump"
+  },
+  "thin_data": false,
+  "note": null
+}

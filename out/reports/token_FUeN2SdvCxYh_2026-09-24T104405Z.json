@@ -1,0 +1,90 @@
+{
+  "event_id": "token_FUeN2SdvCxYh",
+  "generated_at_utc": "2026-09-24T10:44:05Z",
+  "facts": {
+    "focus_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+    "event_count": 150,
+    "wallet_count": 40,
+    "sample_signatures": [
+      "3FiJHipH7sCf8AWrCtZRqMpDERhYVUk9JuYFgt8bTgitnu6GAQYnb77XMnrnPArzLk64R72wu1N9YNPVLrdD6Sfa",
+      "26J4wigwt4EfjLVq62m6kbJq4xz1XFGx82hXpaKThjJupLohxqqZB6AdHik6MZKhRGEyvnUxyuAvV8w1zphEK8rE",
+      "3JcS3dq6HJSYoCSkreysMB65khMoAYsu6U7qMPUtSNBLdHXpcXmvtXYE4oeKN4dcViB2YMdCa8fEXNVQjtWA9aMf",
+      "3dRQNPtfy6RnLkr5bA76YxT8cJ6AUHzuVaZVW6xRcoj1jYJCVm6sdPwqdcEpnTRHQpLhRDbhn4E6jbh1tYH5ctyy",
+      "3RdjLd1D3P3Xuz6Q5DjWUk5Z4hDp5WFWx1RnM3FHA3PgbGH8TvENfkR12zoVPnkWPnnhMHut69cXAXD1KJnt67XF",
+      "2UTGPLtx5ri3rGyk2onf7FHNGM4W5MB5z8TsBubBRiAnoza5QyhFsHLgPGsWHLLwpFRXtYWtmzjJ4mpKmUvU7fUK",
+      "5n3wkrsN2pZu5fwSBm8a4HDjCm5t3PjSJvmZA4WUKfvX3dLEeYJwdgk9FjzsWoGJrUyL4FE3RWgQvXNRdCHcL8KP",
+      "uuMBVPQY7uo3z82U5Unyd4mwtV6WrzcgwHGWU7c8ZsaTBjUzaVUg4zo2SqjsSKdeyBVzd4cvCvDDSNQcPGELSQY",
+      "4uUNkAdErxjwkoLpE11Yhx6U42XdHoRtxrFJbAp1FAhznp7NeeuPRAmB5TTtSydyWF1dcopydbcNcxUTTGfKH6dG",
+      "2GPa8ngRKqqEbotQRUt5NeBVtWEE6Pin1DNSWABcu1C3QFrWbGuQVNh1YjyhbFpmY1sftixgTtgu12vhxoMjQkUc"
+    ],
+    "graph_edge_count": 150,
+    "token_summary": {
+      "token_mint": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "participants": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+        "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+        "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+        "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC"
+      ],
+      "order": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+        "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+        "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+        "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC"
+      ],
+      "cluster_type": "recurring_cluster",
+      "notes": "Multiple roster wallets; at least one pair has prior co-entry in sample. Not evidence of common ownership."
+    },
+    "routes_preview": [
+      {
+        "wallet": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      }
+    ],
+    "fcc_available": false,
+    "fcc_model": "anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code",
+    "fcc_last_error": null
+  },
+  "report_text": "template_fallback: observe-only profile (FCC skipped)",
+  "writer_mode": "fcc",
+  "observe_only": true,
+  "versioning_note": "New events create new versions; old reports stay attached to old evidence."
+}

@@ -1,0 +1,52 @@
+{
+  "mint": "BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+  "fetched_at": "2026-09-24T10:31:14.548029Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+      "fetched_at": "2026-09-24T10:31:11.982424Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/gm9fbtfc9v85rvptogeqktqrjevkd1dwz7x5jxms57su",
+      "pairAddress": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+      "dexId": "pumpswap",
+      "priceUsd": "0.000003962",
+      "priceNative": "0.00000003507",
+      "liquidity_usd": 3692.85,
+      "volume_h24": 206472.68,
+      "fdv": 3852,
+      "marketCap": 3852,
+      "priceChange_h24": -91.47,
+      "base_symbol": "GROKPOD",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+      "fetched_at": "2026-09-24T10:31:12.884942Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:13.813986Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [],
+  "links": {
+    "solscan": "https://solscan.io/token/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+    "dexscreener": "https://dexscreener.com/solana/gm9fbtfc9v85rvptogeqktqrjevkd1dwz7x5jxms57su",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z"
+  },
+  "thin_data": false,
+  "note": null
+}

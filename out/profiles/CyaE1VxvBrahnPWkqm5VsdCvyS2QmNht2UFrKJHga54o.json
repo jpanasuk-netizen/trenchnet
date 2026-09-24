@@ -1,0 +1,25 @@
+{
+  "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+  "label": "Cented",
+  "metrics": {
+    "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+    "label": "Cented",
+    "trade_count": 1,
+    "buy_count": 1,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 1,
+    "typical_buy_size_sol": 0.0,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [
+      "KnJgcTs7acgYqAPbnB2X5NrLSaiVYVJSTU3zpFmbUBRQEYShzCZrbW62HSmpYdAUrmZAhu4wVyqBXxQnE3cxEG1"
+    ],
+    "history_flag": "sparse",
+    "source_url": "https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json",
+    "source_name": "Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

@@ -1,0 +1,23 @@
+{
+  "wallet": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
+  "label": "theo",
+  "metrics": {
+    "wallet": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
+    "label": "theo",
+    "trade_count": 0,
+    "buy_count": 0,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 0,
+    "typical_buy_size_sol": null,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [],
+    "history_flag": "missing_history",
+    "source_url": "https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json",
+    "source_name": "Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

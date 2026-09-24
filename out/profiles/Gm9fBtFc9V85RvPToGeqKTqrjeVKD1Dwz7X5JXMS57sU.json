@@ -1,0 +1,41 @@
+{
+  "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+  "label": "cobuy_Gm9fBt",
+  "metrics": {
+    "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+    "label": "cobuy_Gm9fBt",
+    "trade_count": 17,
+    "buy_count": 17,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 1,
+    "typical_buy_size_sol": 0.0,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [
+      "rJoBxc19orSeTxkfRqXanbbfNuZ5jydPFyJv5xyqpFd1nASGPT9iEStVsFyePSRKGMYr7Zm3ctAkYN3iLxjXhZr",
+      "5wANUdhM71nXUCwChgXAeFFzM5cvSKuoeXw2EDNAabiYYwEQ8syBFjAy3L9P6UX6imMiLnZqrkFPQyDT9rFaDB8U",
+      "3yHruujLLzxJ2LS3ejEYEPoa8xDP4zkupxmehvEf7o9NLM9tn7ZcUyspYRtZAT6yoExTo8tiTrroC4DRyaQtmCDN",
+      "2EZK91FRK2PEeA68GoAW4QW6EuueHjL5ZtH818Q8EvoWcyJBiaiyLHtT8VgGTZFiDGTZmHeLkCE5h6ztWLr2BN1",
+      "FCswA5bdpGQNNaJreMEv6y17fv7KGSRuMFm4RAzpXimofKi1aWwnQ6yfNa5cup5WiQePPZTWua6BAng8avySdRy",
+      "4xVcpDMhHfW1EJhoBHjSjuTxpBJnhacZtDSpbD9oqaJzygnXihtBr7wxV44YbXjZRpzvd9ahmYDwaqKTudPkYygC",
+      "33ihGYfZQQrRCXW3vTnLJodC51MKwyLKPK5jVXsMR4DD2JqPdfi51fRRBB8ktbs5S3HXYsjvNAH93Khbd66sQ19b",
+      "uTavatVDMtj9ypaSZKLUJTnYjhtKLz6fZuTZFQaCmrcjdGF4osom2dn7yaEoeHYeHSGaoXp7tFDVwyreQ6R91XX",
+      "8usaCjJeXF6GaE4LEWisJc3diosvf9fJTepFHZbJZmkDyjQNYPCwqq2JvUwz91pa7hg2zrpE9uHXM3ceTpdaeY1",
+      "2eo1GpJvbB8QvkRAFdqt7UmFFYLQ3WbdTUwdTcJ1n1MGz6kYByZHEA3vgUthLLeCNmtht6cuVPZYJYkZbLzzEQHo",
+      "4w2WSQRdc8a7vAkCsDkgzWqjfKi7ap4xbZW1CKmMvG7yXtq6bBfMZhML7CzBQKaAxTs8WAdMvCcEfEARGWwp1hgZ",
+      "ZGgd8evdd7ubhQEBMwab27qfqArTcfaFGFgbk8icKcJXUKiNuWcPvWhpwkNB3MVm3VWWuXARwpZ5f1eeVAZijGw",
+      "2XaMghJ3fhQgBHkbtAiC2rAR4f7xqudKrqsiNoovHLT1zupw9hKFjDRKR9ospAfoxkuPvaB87iixH4efEqZGvzZA",
+      "53EV4mGh5PfLcEWJkhU4ZkVaYKjo3kwyAb3AJHHGYWzhV1fuxRycmXRunBjx6KghvWL8WKXXfQyMgYY2yEhAnbwt",
+      "2JSkMbvhQzAWAToA5763nR4VFRWoJi4XhzWngroYFvXHscef69nLarPDkpCdVwwB1uoptbhqsvG5NtSvC7vT9ASQ",
+      "65J1BsUKGL5ew8htVAVAoLN5yFvpwegMDzL1jgowCBooPSW2VZ249dLP86KY3ZjQhEfAavpBWzLS5andARjoyqr",
+      "3485iQ5EroaS5iMJrwwZ3T1wRSuuuFxDqAfZ6oCKgDnnqnrUWYbZsafV4PPDpQLeTMq5mQnBfgUTYduzS77zZHGC"
+    ],
+    "history_flag": "ok",
+    "source_url": "https://solscan.io/token/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+    "source_name": "on-chain co-traders of Doji mints"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

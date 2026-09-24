@@ -1,0 +1,138 @@
+{
+  "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+  "fetched_at": "2026-09-24T11:39:24.347842Z",
+  "source": "birdeye",
+  "price": {
+    "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+    "price_usd": 1.5901232967162792e-05,
+    "price_change_24h": 28.961533026906217,
+    "liquidity": null,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/price",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:20.293516Z",
+      "params_keys": [
+        "address"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "ohlcv": {
+    "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+    "type": "1H",
+    "candles": [
+      {
+        "unixTime": 1790229600,
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "o": 3.6344562913282545e-06,
+        "h": 0.00015342206861161607,
+        "l": 3.6344562913282545e-06,
+        "v": 8068223016.472196,
+        "c": 0.0001228717571272286,
+        "type": "1H",
+        "vUsd": 356830.87114799477,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790233200,
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "o": 0.0001228717571272286,
+        "h": 0.00019852601125263012,
+        "l": 2.9060496677869846e-05,
+        "v": 4378371432.229625,
+        "c": 3.329215735991002e-05,
+        "type": "1H",
+        "vUsd": 457700.04140300816,
+        "currency": "usd"
+      },
+      {
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "unixTime": 1790236800,
+        "o": 3.329215735991002e-05,
+        "h": 4.137691306613904e-05,
+        "l": 1.4259810269697561e-05,
+        "v": 2251737932.9373155,
+        "c": 2.996676912566796e-05,
+        "type": "1H",
+        "vUsd": 56866.916987871955,
+        "currency": "usd"
+      },
+      {
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "unixTime": 1790240400,
+        "o": 2.996676912566796e-05,
+        "h": 2.996676912566796e-05,
+        "l": 8.26302588584028e-06,
+        "v": 617986733.9167048,
+        "c": 8.397675667713868e-06,
+        "type": "1H",
+        "vUsd": 9129.45256970504,
+        "currency": "usd"
+      },
+      {
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "unixTime": 1790244000,
+        "o": 8.397675667713868e-06,
+        "h": 1.4439610293542379e-05,
+        "l": 6.835448013291699e-06,
+        "v": 886301650.6330694,
+        "c": 1.0081642412754613e-05,
+        "type": "1H",
+        "vUsd": 8613.658905243989,
+        "currency": "usd"
+      },
+      {
+        "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "unixTime": 1790247600,
+        "o": 1.0081642412754613e-05,
+        "h": 1.6668378661428954e-05,
+        "l": 1.0081642412754613e-05,
+        "v": 256325801.83610004,
+        "c": 1.5959265508881666e-05,
+        "type": "1H",
+        "vUsd": 3516.1731370502366,
+        "currency": "usd"
+      }
+    ],
+    "n": 6,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/ohlcv",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:22.454077Z",
+      "params_keys": [
+        "address",
+        "time_from",
+        "time_to",
+        "type"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "price_meta": {
+    "endpoint": "/defi/price",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:20.293516Z",
+    "params_keys": [
+      "address"
+    ],
+    "status": 200,
+    "ok": true
+  },
+  "ohlcv_meta": {
+    "endpoint": "/defi/ohlcv",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:22.454077Z",
+    "params_keys": [
+      "address",
+      "time_from",
+      "time_to",
+      "type"
+    ],
+    "status": 200,
+    "ok": true
+  }
+}

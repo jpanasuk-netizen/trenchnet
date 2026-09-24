@@ -1,0 +1,83 @@
+{
+  "mint": "4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+  "fetched_at": "2026-09-24T10:31:05.650025Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+      "fetched_at": "2026-09-24T10:31:02.740142Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx",
+      "pairAddress": "31ZmTzEufRDBGKsJ7NicCkEKxtPQgAEMQvdbCuUfE6GX",
+      "dexId": "pumpswap",
+      "priceUsd": "0.005647",
+      "priceNative": "0.00004998",
+      "liquidity_usd": 338619.74,
+      "volume_h24": 539272.55,
+      "fdv": 5647627,
+      "marketCap": 5647645,
+      "priceChange_h24": -8.36,
+      "base_symbol": "BOBO",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+      "fetched_at": "2026-09-24T10:31:03.708990Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:04.815498Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/bobocouncil",
+      "source_url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx"
+    },
+    {
+      "kind": "dexscreener_social",
+      "type": "telegram",
+      "url": "https://t.me/bobocouncil",
+      "source_url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx"
+    },
+    {
+      "kind": "dexscreener_social",
+      "type": "reddit",
+      "url": "https://www.reddit.com/r/BoboCouncil/",
+      "source_url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx"
+    },
+    {
+      "kind": "dexscreener_website",
+      "label": "Website",
+      "url": "https://bobothebear.io",
+      "source_url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx"
+    },
+    {
+      "kind": "dexscreener_website",
+      "label": "Memes",
+      "url": "https://bobomemes.com",
+      "source_url": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+    "dexscreener": "https://dexscreener.com/solana/31zmtzeufrdbgksj7nicckekxtpqgaemqvdbcuufe6gx",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump"
+  },
+  "thin_data": false,
+  "note": null
+}

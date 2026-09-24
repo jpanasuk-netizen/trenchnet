@@ -1,0 +1,33 @@
+{
+  "route": "insufficient_evidence",
+  "reasons": [
+    "history_insufficient_or_low_confidence"
+  ],
+  "answers": {
+    "behavior_fit": "unclear",
+    "position_intent": "unclear",
+    "history_sufficient": "no",
+    "attention": "still_valid",
+    "confidence": 0.4,
+    "dry_run": true,
+    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+  },
+  "confidence": 0.4,
+  "observe_only": true,
+  "jev_mode": "dry_run_mock",
+  "wallet": "GLiCiNEnku3pQsmkVkRvnDLbfUN9BWbsrPDWLdPaADng",
+  "label": "cobuy_GLiCiN",
+  "snapshot": {
+    "wallet": "GLiCiNEnku3pQsmkVkRvnDLbfUN9BWbsrPDWLdPaADng",
+    "label": "cobuy_GLiCiN",
+    "trade_count": 0,
+    "history_flag": "missing_history",
+    "typical_buy_size_sol": null,
+    "median_hold_seconds": null,
+    "current_buy_sol": null,
+    "current_buy_signature": null,
+    "current_token": null,
+    "attention_hint": "still_valid",
+    "note": "Code computed all counts; Jev must not do arithmetic."
+  }
+}

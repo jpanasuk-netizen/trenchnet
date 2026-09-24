@@ -1,0 +1,72 @@
+{
+  "event_id": "token_HF8PqwSatezm",
+  "generated_at_utc": "2026-09-24T12:29:03Z",
+  "facts": {
+    "focus_token": "HF8PqwSatezmXev2mNESQrK71rC3codPZtwbF1Njpump",
+    "event_count": 2322,
+    "wallet_count": 40,
+    "sample_signatures": [
+      "3FiJHipH7sCf8AWrCtZRqMpDERhYVUk9JuYFgt8bTgitnu6GAQYnb77XMnrnPArzLk64R72wu1N9YNPVLrdD6Sfa",
+      "26J4wigwt4EfjLVq62m6kbJq4xz1XFGx82hXpaKThjJupLohxqqZB6AdHik6MZKhRGEyvnUxyuAvV8w1zphEK8rE",
+      "3JcS3dq6HJSYoCSkreysMB65khMoAYsu6U7qMPUtSNBLdHXpcXmvtXYE4oeKN4dcViB2YMdCa8fEXNVQjtWA9aMf",
+      "3dRQNPtfy6RnLkr5bA76YxT8cJ6AUHzuVaZVW6xRcoj1jYJCVm6sdPwqdcEpnTRHQpLhRDbhn4E6jbh1tYH5ctyy",
+      "3RdjLd1D3P3Xuz6Q5DjWUk5Z4hDp5WFWx1RnM3FHA3PgbGH8TvENfkR12zoVPnkWPnnhMHut69cXAXD1KJnt67XF",
+      "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE",
+      "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE",
+      "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE",
+      "5Ny9jC7PUmnTYwRzwTmrW9tELQQzbebDu12xpJC6vz7YWUyg4AWyremU5izNtGiddsS7m7NLtD2DiHzSB9SN7Cxc",
+      "5Ny9jC7PUmnTYwRzwTmrW9tELQQzbebDu12xpJC6vz7YWUyg4AWyremU5izNtGiddsS7m7NLtD2DiHzSB9SN7Cxc"
+    ],
+    "graph_edge_count": 2322,
+    "token_summary": null,
+    "routes_preview": [
+      {
+        "wallet": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "G9ELzG3Gg6HsGmEK7xd3CWrany9haheuAiRt6jWL9D2M",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      },
+      {
+        "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "route": "insufficient_evidence",
+        "jev_mode": "dry_run_mock"
+      }
+    ],
+    "fcc_available": false,
+    "fcc_model": "anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code",
+    "fcc_last_error": null
+  },
+  "report_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true,
+  "versioning_note": "New events create new versions; old reports stay attached to old evidence."
+}

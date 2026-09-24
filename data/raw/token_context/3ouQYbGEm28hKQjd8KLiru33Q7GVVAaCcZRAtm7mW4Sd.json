@@ -1,0 +1,90 @@
+{
+  "mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+  "fetched_at": "2026-09-24T10:31:02.338927Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+      "fetched_at": "2026-09-24T10:30:59.795873Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/7eubgwijmrfecidjfwnvjhus5thd1ic9mzma7g5woqfr",
+      "pairAddress": "7euBgWiJmRfECidjFwnVJhus5thD1iC9MZma7G5WoQfr",
+      "dexId": "pumpfun",
+      "priceUsd": null,
+      "priceNative": "0.0006622",
+      "liquidity_usd": null,
+      "volume_h24": 0,
+      "fdv": null,
+      "marketCap": null,
+      "priceChange_h24": null,
+      "base_symbol": "Bitcoin",
+      "quote_symbol": "BOBO"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+      "fetched_at": "2026-09-24T10:31:00.749869Z",
+      "status": 200,
+      "ok": true
+    },
+    "token": {
+      "data": {
+        "id": "solana_3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "type": "token",
+        "attributes": {
+          "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+          "name": "BarryBotterBobamaBonicBenInu",
+          "symbol": "Bitcoin",
+          "decimals": 6,
+          "image_url": "https://assets.geckoterminal.com/jkvbq4puiffmgw3txwt67uotj15y",
+          "coingecko_coin_id": null,
+          "total_supply": "1000000000000000.0",
+          "normalized_total_supply": "1000000000.0",
+          "price_usd": null,
+          "fdv_usd": null,
+          "total_reserve_in_usd": "0.0",
+          "volume_usd": {
+            "h24": "0.0"
+          },
+          "market_cap_usd": null,
+          "launchpad_details": {
+            "graduation_percentage": 0.0,
+            "completed": false,
+            "completed_at": null,
+            "migrated_destination_pool_address": null
+          }
+        },
+        "relationships": {
+          "top_pools": {
+            "data": [
+              {
+                "id": "solana_7euBgWiJmRfECidjFwnVJhus5thD1iC9MZma7G5WoQfr",
+                "type": "pool"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:01.745271Z",
+      "status": 401,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [],
+  "links": {
+    "solscan": "https://solscan.io/token/3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+    "dexscreener": "https://dexscreener.com/solana/7eubgwijmrfecidjfwnvjhus5thd1ic9mzma7g5woqfr",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd"
+  },
+  "thin_data": false,
+  "note": null
+}

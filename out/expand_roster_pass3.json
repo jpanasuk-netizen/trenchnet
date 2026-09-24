@@ -1,0 +1,27 @@
+{
+  "seed": 8,
+  "expanded": 32,
+  "total": 40,
+  "cobuy_candidates": 0,
+  "blocked": [
+    {
+      "source": "pump.fun frontend-api-v3",
+      "why": "Not readable without login/JWT (404/auth). Needs free signup for Jeremy \u2014 NOT signed up.",
+      "detail": {
+        "_blocked": true,
+        "status": 404,
+        "url": "https://frontend-api-v3.pump.fun/coins/latest"
+      }
+    }
+  ],
+  "used": [
+    {
+      "source": "kolscan_github",
+      "source_url": "https://raw.githubusercontent.com/yksanjo/kol-tracker/main/snapshots/2026-05-21_0320Z.json",
+      "fetched_at": "2026-09-24T09:52:14.630802Z",
+      "ok": true,
+      "board": "monthly",
+      "count": 50
+    }
+  ]
+}

@@ -1,0 +1,612 @@
+seed_source:
+  description: Kolscan pump.fun KOL leaderboard snapshot mirrored on GitHub
+  url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  upstream: https://kolscan.io/leaderboard
+  fetched_at_in_snapshot: '2026-05-21T03:20:46.616Z'
+ordering_criteria:
+- 'After metrics: sort by realized_pnl_sol desc, then trade_count desc, then address
+  asc.'
+- Initial config order follows Kolscan monthly rank (public leaderboard).
+wallets:
+- address: CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o
+  label: Cented
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 1
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt
+  label: theo
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 2
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: 525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT
+  label: Joji
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 3
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: 5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE
+  label: tech
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 4
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: 4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk
+  label: Jijo
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 5
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC
+  label: clukz
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 6
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: 5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg
+  label: Doji
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 7
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: 4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9
+  label: decu
+  source_name: Kolscan leaderboard monthly (via yksanjo/kol-tracker snapshot)
+  source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+  kolscan_rank_monthly: 8
+  notes: Public KOL leaderboard entry; observe-only candidate.
+  role: seed
+  provenance:
+    source_url: https://github.com/yksanjo/kol-tracker/blob/main/snapshots/2026-05-21_0320Z.json
+    fetched_at: '2026-05-21T03:20:46.616Z'
+    role: seed
+- address: FNZYsYURykTTzFEg59vwkdUrfZgGUQ7FURUTfnNoQNFY
+  label: cobuy_FNZYsY
+  role: expanded
+  overlap_hits: 25
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630744Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 25
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT
+  label: cobuy_3odkxo
+  role: expanded
+  overlap_hits: 25
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630795Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 25
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS
+  label: cobuy_6EMsVK
+  role: expanded
+  overlap_hits: 25
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630800Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 25
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr
+  label: cobuy_BBrYAF
+  role: expanded
+  overlap_hits: 25
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+  provenance:
+    source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    fetched_at: '2026-09-24T10:30:27.630803Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    hits: 25
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs
+  label: cobuy_C3UvH3
+  role: expanded
+  overlap_hits: 22
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+  provenance:
+    source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    fetched_at: '2026-09-24T10:30:27.630806Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    hits: 22
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q
+  label: cobuy_DuVUs5
+  role: expanded
+  overlap_hits: 17
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630810Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 17
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU
+  label: cobuy_Gm9fBt
+  role: expanded
+  overlap_hits: 16
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z
+  provenance:
+    source_url: https://solscan.io/token/BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z
+    fetched_at: '2026-09-24T10:30:27.630812Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z
+    hits: 16
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: CzYQ2kFnBxsNEt9Zy34vQ3n5fSDhvA4o4XaTnq1rLvyr
+  label: cobuy_CzYQ2k
+  role: expanded
+  overlap_hits: 11
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630815Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 11
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9
+  label: cobuy_DsCJ5s
+  role: expanded
+  overlap_hits: 9
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630818Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 9
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC
+  label: cobuy_HLnpSz
+  role: expanded
+  overlap_hits: 8
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630821Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    - FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    hits: 8
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: AjkDC1KdkgPaFRtrCbeSh6B6dhVX2JM4o2XhPSs2qu4b
+  label: cobuy_AjkDC1
+  role: expanded
+  overlap_hits: 5
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+  provenance:
+    source_url: https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    fetched_at: '2026-09-24T10:30:27.630823Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    hits: 5
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM
+  label: cobuy_5zaobP
+  role: expanded
+  overlap_hits: 3
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630826Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    - 2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    hits: 3
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp
+  label: cobuy_9Xkc6U
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630829Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW
+  label: cobuy_Aehytc
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+  provenance:
+    source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    fetched_at: '2026-09-24T10:30:27.630832Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY
+  label: cobuy_2tgUbS
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+  provenance:
+    source_url: https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    fetched_at: '2026-09-24T10:30:27.630835Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: GLiCiNEnku3pQsmkVkRvnDLbfUN9BWbsrPDWLdPaADng
+  label: cobuy_GLiCiN
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+  provenance:
+    source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    fetched_at: '2026-09-24T10:30:27.630838Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9
+  label: cobuy_Hhum7y
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+  provenance:
+    source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    fetched_at: '2026-09-24T10:30:27.630841Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg
+  label: cobuy_7N84m7
+  role: expanded
+  overlap_hits: 2
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+  provenance:
+    source_url: https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    fetched_at: '2026-09-24T10:30:27.630844Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    hits: 2
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 5GUdxYchpgTc73TWCy1MPPRnuoXmKXJaq11D7SxY4SH8
+  label: cobuy_5GUdxY
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630846Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 9GVrxCVgdKVW7Uaje6MtKx3STA49uehu3sRtjAQ8CwB4
+  label: cobuy_9GVrxC
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630849Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 8qFj6BHWZpXeQf2uFa266Ki3gehiuw8zJt4DNWRfjT3z
+  label: cobuy_8qFj6B
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630852Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 91ifULtW8xzWcPe6UVk6n6ujTETg9yttogACDz2Nisa4
+  label: cobuy_91ifUL
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630855Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 5gLSNQyQdcUgjhutZrjLwFb7dxxcPNuzYRK51gGYV5t2
+  label: cobuy_5gLSNQ
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630857Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 5xVAqU9V2irjxkBNHGBnSNjCfhu43nJMqsAkqb6mxzZS
+  label: cobuy_5xVAqU
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630860Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP
+  label: cobuy_mP4tnN
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630863Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 35dszeQQQzkMvjcmyrPWPnN5ZyK9ZjYkNp9kKXZWMvji
+  label: cobuy_35dsze
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630866Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr
+  label: cobuy_AWY6ig
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630869Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF
+  label: cobuy_2m1xfs
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630872Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE
+  label: cobuy_4tH7jj
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630875Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: FRnJe2MbKVwNGhoQQnoQppFz3mdrHL67iZsP99Eterrc
+  label: cobuy_FRnJe2
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630878Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: 3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS
+  label: cobuy_3iwsr9
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630881Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+- address: G9ELzG3Gg6HsGmEK7xd3CWrany9haheuAiRt6jWL9D2M
+  label: cobuy_G9ELzG
+  role: expanded
+  overlap_hits: 1
+  source_name: on-chain co-traders of Doji mints
+  source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+  provenance:
+    source_url: https://solscan.io/token/4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    fetched_at: '2026-09-24T10:30:27.630884Z'
+    role: expanded
+    method: rpc_mint_cobuyers
+    mints:
+    - 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    hits: 1
+  notes: Co-buyer of Doji-traded token(s) via free public Solana RPC
+placeholder_unverified: []
+roster_meta:
+  seed_count: 8
+  expanded_count: 32
+  total: 40
+  updated_at: '2026-09-24T10:30:27.631179Z'
+  cobuy_used:
+  - mint: 4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN
+    found: 17
+    rpc: https://solana-rpc.publicnode.com
+    event_wallets: 16
+  - mint: 2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump
+    found: 19
+    rpc: https://solana-rpc.publicnode.com
+    event_wallets: 18
+  - mint: 82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump
+    found: 7
+    rpc: https://solana-rpc.publicnode.com
+    event_wallets: 0
+  - mint: BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z
+    found: 15
+    rpc: https://solana-rpc.publicnode.com
+    event_wallets: 15
+  - mint: FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ
+    found: 24
+    rpc: https://solana-rpc.publicnode.com
+    event_wallets: 22
+  sources_blocked:
+  - source: pump.fun frontend API
+    why: JWT/auth — needs Jeremy free signup; NOT signed up
+  - source: X/Twitter API
+    why: balance ~ / policy — NOT used

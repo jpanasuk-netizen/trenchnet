@@ -1,0 +1,54 @@
+{
+  "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+  "fetched_at": "2026-09-24T11:40:05.565185Z",
+  "source": "birdeye",
+  "pnl": {
+    "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+    "pnl": {
+      "summary": {
+        "unique_tokens": 9482,
+        "counts": {
+          "total_buy": 21045,
+          "total_sell": 23431,
+          "total_trade": 44476,
+          "total_win": 4689,
+          "total_loss": 3436,
+          "win_rate": 0.5719687728714321
+        },
+        "cashflow_usd": {
+          "total_invested": 10854594.55734925,
+          "total_sold": 13239065.902786478,
+          "current_value": 78357.03380203263
+        },
+        "pnl": {
+          "realized_profit_usd": 2435873.9361250857,
+          "realized_profit_percent": 22.90154802275498,
+          "unrealized_usd": -185935.46960999907,
+          "total_usd": 2249938.4665150866,
+          "avg_profit_per_trade_usd": 50.58769823084555
+        }
+      }
+    },
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/wallet/v2/pnl/summary",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:40:03.829332Z",
+      "params_keys": [
+        "wallet"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "meta": {
+    "endpoint": "/wallet/v2/pnl/summary",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:40:03.829332Z",
+    "params_keys": [
+      "wallet"
+    ],
+    "status": 200,
+    "ok": true
+  }
+}

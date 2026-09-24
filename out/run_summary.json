@@ -1,0 +1,15 @@
+{
+  "events": 2322,
+  "profiles": 40,
+  "routes": 40,
+  "timelines": 20,
+  "fcc_mode": "fcc",
+  "fcc_available": false,
+  "fcc_model": "anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code",
+  "focus_token": "HF8PqwSatezmXev2mNESQrK71rC3codPZtwbF1Njpump",
+  "report_event_id": "token_HF8PqwSatezm",
+  "jev_modes": [
+    "dry_run_mock"
+  ],
+  "observe_only": true
+}

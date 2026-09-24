@@ -1,0 +1,33 @@
+{
+  "route": "insufficient_evidence",
+  "reasons": [
+    "ambiguous_answers_default_uncertain"
+  ],
+  "answers": {
+    "behavior_fit": "unclear",
+    "position_intent": "unclear",
+    "history_sufficient": "yes",
+    "attention": "new_situation",
+    "confidence": 0.4,
+    "dry_run": true,
+    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+  },
+  "confidence": 0.4,
+  "observe_only": true,
+  "jev_mode": "dry_run_mock",
+  "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+  "label": "clukz",
+  "snapshot": {
+    "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+    "label": "clukz",
+    "trade_count": 465,
+    "history_flag": "ok",
+    "typical_buy_size_sol": 0.0,
+    "median_hold_seconds": 5,
+    "current_buy_sol": 7.03651884,
+    "current_buy_signature": "3a9sEvTqgJ2eNPcoZYv12ds5hRTWV211dx3iE3iR4wAMKVxSn6JiP1zMgLrLNbrYiA9Mszv6ajvC85iYYbcUduoa",
+    "current_token": "5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+    "attention_hint": "new_situation",
+    "note": "Code computed all counts; Jev must not do arithmetic."
+  }
+}

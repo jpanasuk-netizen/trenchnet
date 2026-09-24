@@ -1,0 +1,27 @@
+{
+  "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+  "label": "cobuy_HLnpSz",
+  "metrics": {
+    "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+    "label": "cobuy_HLnpSz",
+    "trade_count": 3,
+    "buy_count": 3,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 1,
+    "typical_buy_size_sol": 0.0,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [
+      "2CKtxWbkp44V2qQTkKxd3p3bWAdXhDbDRDgkgecUeE2UAhjw9DZH4kQGWkxkNYJNwim2SijTnFJB4pqqfbaw8UWL",
+      "8eRkQg9r4anUCPcdyLxXcptNvuL2HyroyWs2N1ae2wsmwWZHXyGUiqsxSsgLgzaTGTRC7XWrM2FGtoVexBXStoe",
+      "3YxvzFwG9ABDVH8FuphxENgfSiWhwg9xSa8K1LRmfjTM1Rs8D3UNdT5cz9c8C2DGCcXWZCoHvWYAhEhawGJDmmbd"
+    ],
+    "history_flag": "ok",
+    "source_url": "https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+    "source_name": "on-chain co-traders of Doji mints"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

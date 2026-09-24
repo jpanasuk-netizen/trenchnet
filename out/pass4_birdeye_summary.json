@@ -1,0 +1,104 @@
+{
+  "mints": {
+    "ok": true,
+    "n": 12,
+    "results": [
+      {
+        "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "HByG6m5BKZiyoktaRUyu2JaYzGcqK1K9VpL2eAVhpump",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+        "price_ok": true,
+        "ohlcv_ok": true
+      },
+      {
+        "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "price_ok": true,
+        "ohlcv_ok": true
+      }
+    ],
+    "blocked": []
+  },
+  "pnl": {
+    "ok": true,
+    "n": 5,
+    "results": [
+      {
+        "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "ok": true,
+        "blocked": false
+      },
+      {
+        "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+        "ok": true,
+        "blocked": false
+      },
+      {
+        "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+        "ok": true,
+        "blocked": false
+      },
+      {
+        "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+        "ok": true,
+        "blocked": false
+      },
+      {
+        "wallet": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk",
+        "ok": true,
+        "blocked": false
+      }
+    ],
+    "blocked": []
+  },
+  "top_traders_meta": {
+    "ok": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "wallet": "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
+  "label": "cobuy_DsCJ5s",
+  "metrics": {
+    "wallet": "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
+    "label": "cobuy_DsCJ5s",
+    "trade_count": 0,
+    "buy_count": 0,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 0,
+    "typical_buy_size_sol": null,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [],
+    "history_flag": "missing_history",
+    "source_url": "https://solscan.io/token/82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+    "source_name": "on-chain co-traders of Doji mints"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

@@ -1,0 +1,366 @@
+{
+  "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+  "fetched_at": "2026-09-24T11:40:00.005700Z",
+  "source": "birdeye",
+  "price": {
+    "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+    "price_usd": 2.6499640836871312e-06,
+    "price_change_24h": -77.72580890140982,
+    "liquidity": null,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/price",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:56.644176Z",
+      "params_keys": [
+        "address"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "ohlcv": {
+    "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+    "type": "1H",
+    "candles": [
+      {
+        "unixTime": 1790161200,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.592806817439934e-06,
+        "h": 6.751201882016873e-05,
+        "l": 3.592806817439934e-06,
+        "v": 8959895805.208555,
+        "c": 1.4265301371958234e-05,
+        "type": "1H",
+        "vUsd": 276994.92834901554,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790164800,
+        "o": 1.4265301371958234e-05,
+        "h": 5.8838243826630986e-05,
+        "l": 6.512951752318312e-06,
+        "v": 4763465990.683055,
+        "c": 7.875762078225252e-06,
+        "type": "1H",
+        "vUsd": 100772.40743612338,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790168400,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 7.875762078225252e-06,
+        "h": 8.040338644539256e-06,
+        "l": 4.220579819606199e-06,
+        "v": 815772004.7878202,
+        "c": 4.27605738031688e-06,
+        "type": "1H",
+        "vUsd": 4758.672956801357,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790172000,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 4.27605738031688e-06,
+        "h": 4.27605738031688e-06,
+        "l": 3.4491953891233153e-06,
+        "v": 125225081.73007503,
+        "c": 3.5087068116734007e-06,
+        "type": "1H",
+        "vUsd": 468.59654796704405,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790175600,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.5087068116734007e-06,
+        "h": 7.899582322383603e-06,
+        "l": 3.4967924052479642e-06,
+        "v": 1599459733.190321,
+        "c": 3.901158400963419e-06,
+        "type": "1H",
+        "vUsd": 8681.047887942774,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790179200,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.901158400963419e-06,
+        "h": 5.211450590519055e-06,
+        "l": 3.834079598520835e-06,
+        "v": 300416403.32305896,
+        "c": 4.7585057766671105e-06,
+        "type": "1H",
+        "vUsd": 1341.5394981727027,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790182800,
+        "o": 4.7585057766671105e-06,
+        "h": 4.809435075508854e-06,
+        "l": 4.6803992939365965e-06,
+        "v": 11575575.108332,
+        "c": 4.6803992939365965e-06,
+        "type": "1H",
+        "vUsd": 54.642011908484264,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790186400,
+        "o": 4.6803992939365965e-06,
+        "h": 4.6803992939365965e-06,
+        "l": 3.783581648588845e-06,
+        "v": 70405475.511411,
+        "c": 3.783581648588845e-06,
+        "type": "1H",
+        "vUsd": 294.352160849408,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790190000,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.783581648588845e-06,
+        "h": 3.791185291437746e-06,
+        "l": 3.4628353809610005e-06,
+        "v": 38361539.367564,
+        "c": 3.4628353809610005e-06,
+        "type": "1H",
+        "vUsd": 137.73826101303737,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790193600,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.4628353809610005e-06,
+        "h": 3.4628353809610005e-06,
+        "l": 3.2721266738472647e-06,
+        "v": 16034188.393602999,
+        "c": 3.2834712606405715e-06,
+        "type": "1H",
+        "vUsd": 53.52850907708726,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790197200,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.2834712606405715e-06,
+        "h": 3.325355382635109e-06,
+        "l": 3.272519156187665e-06,
+        "v": 1014531.935215,
+        "c": 3.324191470909467e-06,
+        "type": "1H",
+        "vUsd": 3.3300245153265564,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790200800,
+        "o": 3.324191470909467e-06,
+        "h": 3.324191470909467e-06,
+        "l": 3.225141971661158e-06,
+        "v": 7732152.987515001,
+        "c": 3.225141971661158e-06,
+        "type": "1H",
+        "vUsd": 25.267173045135014,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790204400,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 3.225141971661158e-06,
+        "h": 4.8714034119421135e-06,
+        "l": 3.102237138426699e-06,
+        "v": 296513662.05732995,
+        "c": 3.550075503639837e-06,
+        "type": "1H",
+        "vUsd": 1180.3850970970232,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790208000,
+        "o": 3.550075503639837e-06,
+        "h": 3.550075503639837e-06,
+        "l": 3.1187004066479254e-06,
+        "v": 54396599.391559,
+        "c": 3.1187004066479254e-06,
+        "type": "1H",
+        "vUsd": 178.87616740245898,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790211600,
+        "o": 3.1187004066479254e-06,
+        "h": 3.5208077469891784e-06,
+        "l": 3.0336910769865127e-06,
+        "v": 63168518.082243994,
+        "c": 3.5208077469891784e-06,
+        "type": "1H",
+        "vUsd": 209.08249156377548,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790215200,
+        "o": 3.5208077469891784e-06,
+        "h": 3.5498331017275255e-06,
+        "l": 2.960684189617325e-06,
+        "v": 160853425.250655,
+        "c": 2.960684189617325e-06,
+        "type": "1H",
+        "vUsd": 525.847040961143,
+        "currency": "usd"
+      },
+      {
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "unixTime": 1790218800,
+        "o": 2.960684189617325e-06,
+        "h": 2.960684189617325e-06,
+        "l": 2.818217857235147e-06,
+        "v": 17012946.715721,
+        "c": 2.818217857235147e-06,
+        "type": "1H",
+        "vUsd": 48.788008501891625,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790222400,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.818217857235147e-06,
+        "h": 2.9604973903682856e-06,
+        "l": 2.810788099742861e-06,
+        "v": 18617858.543733,
+        "c": 2.9604973903682856e-06,
+        "type": "1H",
+        "vUsd": 54.00300222824808,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790226000,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.9604973903682856e-06,
+        "h": 2.9895085341345027e-06,
+        "l": 2.8886723389132716e-06,
+        "v": 18716913.390538,
+        "c": 2.8886723389132716e-06,
+        "type": "1H",
+        "vUsd": 54.124828757912724,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790229600,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.8886723389132716e-06,
+        "h": 2.8886723389132716e-06,
+        "l": 2.8209722457993943e-06,
+        "v": 331184.924435,
+        "c": 2.822235153522657e-06,
+        "type": "1H",
+        "vUsd": 0.9345373111034494,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790233200,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.822235153522657e-06,
+        "h": 2.822235153522657e-06,
+        "l": 2.797804235080424e-06,
+        "v": 3011288.768778,
+        "c": 2.797804235080424e-06,
+        "type": "1H",
+        "vUsd": 8.424996470337204,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790236800,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.797804235080424e-06,
+        "h": 2.797804235080424e-06,
+        "l": 2.7290528422523896e-06,
+        "v": 7565518.528566999,
+        "c": 2.7290528422523896e-06,
+        "type": "1H",
+        "vUsd": 20.81578734460698,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790240400,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.7290528422523896e-06,
+        "h": 2.7744896021048945e-06,
+        "l": 2.704484594904849e-06,
+        "v": 10451194.003073998,
+        "c": 2.704484594904849e-06,
+        "type": "1H",
+        "vUsd": 28.660997613586932,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790244000,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.704484594904849e-06,
+        "h": 2.704484594904849e-06,
+        "l": 2.68215448993149e-06,
+        "v": 1939803.523473,
+        "c": 2.686669377364619e-06,
+        "type": "1H",
+        "vUsd": 5.2043267632096155,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790247600,
+        "address": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+        "o": 2.686669377364619e-06,
+        "h": 2.686669377364619e-06,
+        "l": 2.6499640836871312e-06,
+        "v": 7084334.93025,
+        "c": 2.6499640836871312e-06,
+        "type": "1H",
+        "vUsd": 18.82016707546662,
+        "currency": "usd"
+      }
+    ],
+    "n": 25,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/ohlcv",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:58.376363Z",
+      "params_keys": [
+        "address",
+        "time_from",
+        "time_to",
+        "type"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "price_meta": {
+    "endpoint": "/defi/price",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:56.644176Z",
+    "params_keys": [
+      "address"
+    ],
+    "status": 200,
+    "ok": true
+  },
+  "ohlcv_meta": {
+    "endpoint": "/defi/ohlcv",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:58.376363Z",
+    "params_keys": [
+      "address",
+      "time_from",
+      "time_to",
+      "type"
+    ],
+    "status": 200,
+    "ok": true
+  }
+}

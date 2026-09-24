@@ -1,0 +1,52 @@
+{
+  "mint": "6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+  "fetched_at": "2026-09-24T10:31:24.503177Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+      "fetched_at": "2026-09-24T10:31:21.382104Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/bzun9z1nwrr4pcda51mgka3yqzhb5tdonprxrbg7alpe",
+      "pairAddress": "Bzun9z1nwRr4pcDA51MGkA3YqzhB5TDonprxRBG7ALpe",
+      "dexId": "pumpswap",
+      "priceUsd": "0.00003834",
+      "priceNative": "0.0000003393",
+      "liquidity_usd": 16738.97,
+      "volume_h24": 1326753.89,
+      "fdv": 35597,
+      "marketCap": 35597,
+      "priceChange_h24": -19.84,
+      "base_symbol": "Rufo",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+      "fetched_at": "2026-09-24T10:31:22.426208Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:23.630196Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [],
+  "links": {
+    "solscan": "https://solscan.io/token/6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+    "dexscreener": "https://dexscreener.com/solana/bzun9z1nwrr4pcda51mgka3yqzhb5tdonprxrbg7alpe",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY"
+  },
+  "thin_data": false,
+  "note": null
+}

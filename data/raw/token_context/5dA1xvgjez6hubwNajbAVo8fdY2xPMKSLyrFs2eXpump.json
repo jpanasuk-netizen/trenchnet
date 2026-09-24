@@ -1,0 +1,65 @@
+{
+  "mint": "5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+  "fetched_at": "2026-09-24T10:31:35.575517Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+      "fetched_at": "2026-09-24T10:31:31.904688Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/9dplusfom58xjnbvmsighknorq8irffwdpo8hqijseoa",
+      "pairAddress": "9DPLUSFom58XjNbVMsighkNoRQ8iRfFWdPo8hqijsEoa",
+      "dexId": "pumpswap",
+      "priceUsd": "0.000007387",
+      "priceNative": "0.00000006524",
+      "liquidity_usd": 5922.39,
+      "volume_h24": 707776.96,
+      "fdv": 7134,
+      "marketCap": 7134,
+      "priceChange_h24": -84.04,
+      "base_symbol": "CSTR",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+      "fetched_at": "2026-09-24T10:31:33.261598Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:34.415779Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/CS2ChickenSTR",
+      "source_url": "https://dexscreener.com/solana/9dplusfom58xjnbvmsighknorq8irffwdpo8hqijseoa"
+    },
+    {
+      "kind": "dexscreener_website",
+      "label": "Website",
+      "url": "https://chickenstr.fun/",
+      "source_url": "https://dexscreener.com/solana/9dplusfom58xjnbvmsighknorq8irffwdpo8hqijseoa"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+    "dexscreener": "https://dexscreener.com/solana/9dplusfom58xjnbvmsighknorq8irffwdpo8hqijseoa",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump"
+  },
+  "thin_data": false,
+  "note": null
+}

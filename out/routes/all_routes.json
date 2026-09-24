@@ -1,0 +1,1322 @@
+[
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "match",
+      "position_intent": "usual",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+    "label": "cobuy_7N84m7",
+    "snapshot": {
+      "wallet": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "label": "cobuy_7N84m7",
+      "trade_count": 2,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 0.081268,
+      "median_hold_seconds": 14,
+      "current_buy_sol": 0.081267871,
+      "current_buy_signature": "5QJD7Ar4rSBUVPeQVykWMi5eMj6ZhdaKJv8up8xofjtBUsiV4jNNsKAq8Zjg2JnybNNkjiG6E21SHS9piLyKdSix",
+      "current_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+    "label": "clukz",
+    "snapshot": {
+      "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+      "label": "clukz",
+      "trade_count": 465,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 5,
+      "current_buy_sol": 7.03651884,
+      "current_buy_signature": "3a9sEvTqgJ2eNPcoZYv12ds5hRTWV211dx3iE3iR4wAMKVxSn6JiP1zMgLrLNbrYiA9Mszv6ajvC85iYYbcUduoa",
+      "current_token": "5dA1xvgjez6hubwNajbAVo8fdY2xPMKSLyrFs2eXpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+    "label": "cobuy_9Xkc6U",
+    "snapshot": {
+      "wallet": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "label": "cobuy_9Xkc6U",
+      "trade_count": 283,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 181763.5,
+      "current_buy_sol": null,
+      "current_buy_signature": "2LK5e5oE4drbbSCaC8Q41LR4vtpWYij2EPPUoqqJX1vv51EgBjXJebFNWecAzK2a8gJvE7idLqbTx4YgRi1htK4K",
+      "current_token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+    "label": "cobuy_4tH7jj",
+    "snapshot": {
+      "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+      "label": "cobuy_4tH7jj",
+      "trade_count": 119,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 119.0,
+      "current_buy_sol": null,
+      "current_buy_signature": "3nhyA4KGhCUAbgZ8t8onh3Hj2VGioowRoNj9A8WJsbes3GYNJ1BXTF3hzP6CnaT5ZnREuK3UigsjuY9nmCLR7C2m",
+      "current_token": "ADLFoLzf8N8UucDA5i1Cbye6DjejbYxuJmkThPPcpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT",
+    "label": "Joji",
+    "snapshot": {
+      "wallet": "525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT",
+      "label": "Joji",
+      "trade_count": 96,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "3PyaUYZXSEBKmTLKJvjt9bCiT3gMG15jSVivM5af2SxfsTCRGX28ML99QR1u2r6dRHuVMCPE57cjrJQj7fc4cQkA",
+      "current_token": "G7g176ZVHFY2A3PMJnv4HsDRheuGKN1PfcTCg4nPpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+    "label": "cobuy_AWY6ig",
+    "snapshot": {
+      "wallet": "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+      "label": "cobuy_AWY6ig",
+      "trade_count": 87,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 843.0,
+      "current_buy_sol": null,
+      "current_buy_signature": "4PiwrMwNLb2JmMTN5iFg2fx82oCJ3g9QXCKQUdcDkgAFLa2BgafT4DgQnJx9xxboAuWJ5rGMZzJe4iMUWMWTExP7",
+      "current_token": "7Mz89u18SfsJWCmrbNapRripnb76Azuiv3Ue6R9mpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "G9ELzG3Gg6HsGmEK7xd3CWrany9haheuAiRt6jWL9D2M",
+    "label": "cobuy_G9ELzG",
+    "snapshot": {
+      "wallet": "G9ELzG3Gg6HsGmEK7xd3CWrany9haheuAiRt6jWL9D2M",
+      "label": "cobuy_G9ELzG",
+      "trade_count": 82,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 12586.0,
+      "current_buy_sol": null,
+      "current_buy_signature": "VKx1oRJzLTggsnxDXYatGGpEHhBUMPvGaDCAnenuE7kaXZh4qo6AGLAYzSgcs6zvvejqKefFAt8Xz4YnMfbwhaS",
+      "current_token": "A9p5HUYYfnz2hHJxxkeTndvfiyBgHLx2nC62cCnhpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+    "label": "cobuy_2m1xfs",
+    "snapshot": {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "label": "cobuy_2m1xfs",
+      "trade_count": 64,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 415,
+      "current_buy_sol": null,
+      "current_buy_signature": "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE",
+      "current_token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+    "label": "cobuy_5zaobP",
+    "snapshot": {
+      "wallet": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "label": "cobuy_5zaobP",
+      "trade_count": 45,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 14986.0,
+      "current_buy_sol": 0.014221346,
+      "current_buy_signature": "RYqqnjJCwBBpUrRXnWom11cZexAC9zQqTEd2ywga1u5oMfCMRKhYAsN1MpAhHRFs5p2nrSmGM8VaJmRmZ9PkNuq",
+      "current_token": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "91ifULtW8xzWcPe6UVk6n6ujTETg9yttogACDz2Nisa4",
+    "label": "cobuy_91ifUL",
+    "snapshot": {
+      "wallet": "91ifULtW8xzWcPe6UVk6n6ujTETg9yttogACDz2Nisa4",
+      "label": "cobuy_91ifUL",
+      "trade_count": 40,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 2396,
+      "current_buy_sol": null,
+      "current_buy_signature": "UufiUjNSjLESJWCzbEETfP2N7j1XoFQF4cjTzN5ext3CS7qWQPCFYkdYtxfqhYT5GmZjvEKT96T195Ez5Nqjbce",
+      "current_token": "HHcEmEpBhSd44nDRWMjShzNyfpSodTVb42nqiAWSpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+    "label": "cobuy_3iwsr9",
+    "snapshot": {
+      "wallet": "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+      "label": "cobuy_3iwsr9",
+      "trade_count": 25,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 11432.5,
+      "current_buy_sol": null,
+      "current_buy_signature": "3VkeemYbLJ9DCbMkZV2sRdFuLGYRkXAxf2uHHWWivWedTcJVY4mSYwuGzd3rnWcPj26HVoFYAVW9QqrSqs2REcBm",
+      "current_token": "J2cLnUVQeG7iL4F21FrtQBETAxHhPfhqSeoFp7papump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+    "label": "cobuy_BBrYAF",
+    "snapshot": {
+      "wallet": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "label": "cobuy_BBrYAF",
+      "trade_count": 25,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 3866.5,
+      "current_buy_sol": null,
+      "current_buy_signature": "4x68Ri14vkSvUDvX8BRmQ9Gz568As1ZBLaitqvdEFUQXMiyhWFkdwXS462Wk2hyk9LfQw3aUf6teHtxsZRxhyja2",
+      "current_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5xVAqU9V2irjxkBNHGBnSNjCfhu43nJMqsAkqb6mxzZS",
+    "label": "cobuy_5xVAqU",
+    "snapshot": {
+      "wallet": "5xVAqU9V2irjxkBNHGBnSNjCfhu43nJMqsAkqb6mxzZS",
+      "label": "cobuy_5xVAqU",
+      "trade_count": 23,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 5980.5,
+      "current_buy_sol": null,
+      "current_buy_signature": "4k2H1Jpqpq7CPt1BuZephJEdAdcpUG8EQAxSUMEmeiZu38Mn7n8gt9YcaxxAV7NBfcKJ7BbFx96wNnpT89RZaios",
+      "current_token": "BBGTPzuuT6RsVrpXEycBiNoXSLkUkEn299BjnHUxpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+    "label": "cobuy_C3UvH3",
+    "snapshot": {
+      "wallet": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "label": "cobuy_C3UvH3",
+      "trade_count": 22,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 30,
+      "current_buy_sol": null,
+      "current_buy_signature": "26svFXxuDSujNUamZAcJFkzeQxevP8NS5JuWbc7iXeyFsyvNyB41oaMUPNM7A9bwsgadTBi9JcBLYHNruiRnti27",
+      "current_token": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+    "label": "cobuy_DuVUs5",
+    "snapshot": {
+      "wallet": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+      "label": "cobuy_DuVUs5",
+      "trade_count": 17,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 1465,
+      "current_buy_sol": null,
+      "current_buy_signature": "24qnqC5m87reDs24nmFUkN7yPBkwawz98mo7hs3itHY6zX8K1db2MGZmj8bSQMGhWB1jQPeEEQG6fknZRy1VQ4Az",
+      "current_token": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+    "label": "cobuy_Gm9fBt",
+    "snapshot": {
+      "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+      "label": "cobuy_Gm9fBt",
+      "trade_count": 17,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "3485iQ5EroaS5iMJrwwZ3T1wRSuuuFxDqAfZ6oCKgDnnqnrUWYbZsafV4PPDpQLeTMq5mQnBfgUTYduzS77zZHGC",
+      "current_token": "BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+    "label": "cobuy_HLnpSz",
+    "snapshot": {
+      "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "label": "cobuy_HLnpSz",
+      "trade_count": 3,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "3YxvzFwG9ABDVH8FuphxENgfSiWhwg9xSa8K1LRmfjTM1Rs8D3UNdT5cz9c8C2DGCcXWZCoHvWYAhEhawGJDmmbd",
+      "current_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "match",
+      "position_intent": "usual",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+    "label": "cobuy_2tgUbS",
+    "snapshot": {
+      "wallet": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "label": "cobuy_2tgUbS",
+      "trade_count": 2,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 2e-05,
+      "median_hold_seconds": null,
+      "current_buy_sol": 2e-05,
+      "current_buy_signature": "5n3wkrsN2pZu5fwSBm8a4HDjCm5t3PjSJvmZA4WUKfvX3dLEeYJwdgk9FjzsWoGJrUyL4FE3RWgQvXNRdCHcL8KP",
+      "current_token": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "match",
+      "position_intent": "usual",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+    "label": "cobuy_Aehytc",
+    "snapshot": {
+      "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "label": "cobuy_Aehytc",
+      "trade_count": 2,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 2.5e-05,
+      "median_hold_seconds": null,
+      "current_buy_sol": 2.5e-05,
+      "current_buy_signature": "zJfUikzjzjQFpqtHni3efm1NzhXZQzL1uGTrnTeWEdZxrgBkUBYTiRpuxxWAmT8cEMvyX51t3rJhxuEm4RqawC6",
+      "current_token": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+    "label": "cobuy_3odkxo",
+    "snapshot": {
+      "wallet": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+      "label": "cobuy_3odkxo",
+      "trade_count": 1,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "4LLjPQVrBfwfoEnQ5W5SiFhLehu49L9UZtcC7QmP3Hr3d4vXKfHx6Gte9UhJZRzyEQncWr4bAv4qWhBcg8E5A5wz",
+      "current_token": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "unresolved",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5GUdxYchpgTc73TWCy1MPPRnuoXmKXJaq11D7SxY4SH8",
+    "label": "cobuy_5GUdxY",
+    "snapshot": {
+      "wallet": "5GUdxYchpgTc73TWCy1MPPRnuoXmKXJaq11D7SxY4SH8",
+      "label": "cobuy_5GUdxY",
+      "trade_count": 1,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS",
+    "label": "cobuy_6EMsVK",
+    "snapshot": {
+      "wallet": "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS",
+      "label": "cobuy_6EMsVK",
+      "trade_count": 1,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "4LLjPQVrBfwfoEnQ5W5SiFhLehu49L9UZtcC7QmP3Hr3d4vXKfHx6Gte9UhJZRzyEQncWr4bAv4qWhBcg8E5A5wz",
+      "current_token": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "unresolved",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+    "label": "Cented",
+    "snapshot": {
+      "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+      "label": "Cented",
+      "trade_count": 1,
+      "history_flag": "sparse",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": "KnJgcTs7acgYqAPbnB2X5NrLSaiVYVJSTU3zpFmbUBRQEYShzCZrbW62HSmpYdAUrmZAhu4wVyqBXxQnE3cxEG1",
+      "current_token": "Dot38917AwYxjjhTtkXYeiAvuTbGg9iYXARDT9AJpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "35dszeQQQzkMvjcmyrPWPnN5ZyK9ZjYkNp9kKXZWMvji",
+    "label": "cobuy_35dsze",
+    "snapshot": {
+      "wallet": "35dszeQQQzkMvjcmyrPWPnN5ZyK9ZjYkNp9kKXZWMvji",
+      "label": "cobuy_35dsze",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk",
+    "label": "Jijo",
+    "snapshot": {
+      "wallet": "4BdKaxN8G6ka4GYtQQWk4G4dZRUTX2vQH9GcXdBREFUk",
+      "label": "Jijo",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
+    "label": "decu",
+    "snapshot": {
+      "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
+      "label": "decu",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5gLSNQyQdcUgjhutZrjLwFb7dxxcPNuzYRK51gGYV5t2",
+    "label": "cobuy_5gLSNQ",
+    "snapshot": {
+      "wallet": "5gLSNQyQdcUgjhutZrjLwFb7dxxcPNuzYRK51gGYV5t2",
+      "label": "cobuy_5gLSNQ",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "8qFj6BHWZpXeQf2uFa266Ki3gehiuw8zJt4DNWRfjT3z",
+    "label": "cobuy_8qFj6B",
+    "snapshot": {
+      "wallet": "8qFj6BHWZpXeQf2uFa266Ki3gehiuw8zJt4DNWRfjT3z",
+      "label": "cobuy_8qFj6B",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "9GVrxCVgdKVW7Uaje6MtKx3STA49uehu3sRtjAQ8CwB4",
+    "label": "cobuy_9GVrxC",
+    "snapshot": {
+      "wallet": "9GVrxCVgdKVW7Uaje6MtKx3STA49uehu3sRtjAQ8CwB4",
+      "label": "cobuy_9GVrxC",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "AjkDC1KdkgPaFRtrCbeSh6B6dhVX2JM4o2XhPSs2qu4b",
+    "label": "cobuy_AjkDC1",
+    "snapshot": {
+      "wallet": "AjkDC1KdkgPaFRtrCbeSh6B6dhVX2JM4o2XhPSs2qu4b",
+      "label": "cobuy_AjkDC1",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
+    "label": "theo",
+    "snapshot": {
+      "wallet": "Bi4rd5FH5bYEN8scZ7wevxNZyNmKHdaBcvewdPFxYdLt",
+      "label": "theo",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "CzYQ2kFnBxsNEt9Zy34vQ3n5fSDhvA4o4XaTnq1rLvyr",
+    "label": "cobuy_CzYQ2k",
+    "snapshot": {
+      "wallet": "CzYQ2kFnBxsNEt9Zy34vQ3n5fSDhvA4o4XaTnq1rLvyr",
+      "label": "cobuy_CzYQ2k",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
+    "label": "cobuy_DsCJ5s",
+    "snapshot": {
+      "wallet": "DsCJ5siuJTPQtQa3A9N69azGZaWtUPzi9VPp2G9Jfpx9",
+      "label": "cobuy_DsCJ5s",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "FNZYsYURykTTzFEg59vwkdUrfZgGUQ7FURUTfnNoQNFY",
+    "label": "cobuy_FNZYsY",
+    "snapshot": {
+      "wallet": "FNZYsYURykTTzFEg59vwkdUrfZgGUQ7FURUTfnNoQNFY",
+      "label": "cobuy_FNZYsY",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "FRnJe2MbKVwNGhoQQnoQppFz3mdrHL67iZsP99Eterrc",
+    "label": "cobuy_FRnJe2",
+    "snapshot": {
+      "wallet": "FRnJe2MbKVwNGhoQQnoQppFz3mdrHL67iZsP99Eterrc",
+      "label": "cobuy_FRnJe2",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "GLiCiNEnku3pQsmkVkRvnDLbfUN9BWbsrPDWLdPaADng",
+    "label": "cobuy_GLiCiN",
+    "snapshot": {
+      "wallet": "GLiCiNEnku3pQsmkVkRvnDLbfUN9BWbsrPDWLdPaADng",
+      "label": "cobuy_GLiCiN",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "history_insufficient_or_low_confidence"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "no",
+      "attention": "still_valid",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+    "label": "cobuy_mP4tnN",
+    "snapshot": {
+      "wallet": "mP4tnNkwAtRLpSZG5CqcH3CVPJHgVw7XH3j6YRyayQP",
+      "label": "cobuy_mP4tnN",
+      "trade_count": 0,
+      "history_flag": "missing_history",
+      "typical_buy_size_sol": null,
+      "median_hold_seconds": null,
+      "current_buy_sol": null,
+      "current_buy_signature": null,
+      "current_token": null,
+      "attention_hint": "still_valid",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "match",
+      "position_intent": "usual",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+    "label": "cobuy_Hhum7y",
+    "snapshot": {
+      "wallet": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "label": "cobuy_Hhum7y",
+      "trade_count": 8,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.103093,
+      "median_hold_seconds": 368,
+      "current_buy_sol": 0.103092718,
+      "current_buy_signature": "4MvEUeSm6a7VNsVqe9ufSAhJsfcQrGmwDdsTqAFpmA1xx36NeGcXvmLxZ1aDYwtVc3vkeVNEhwRtAgHM82pwZSXs",
+      "current_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+    "label": "tech",
+    "snapshot": {
+      "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+      "label": "tech",
+      "trade_count": 454,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 48,
+      "current_buy_sol": 2.428600438,
+      "current_buy_signature": "4uUNkAdErxjwkoLpE11Yhx6U42XdHoRtxrFJbAp1FAhznp7NeeuPRAmB5TTtSydyWF1dcopydbcNcxUTTGfKH6dG",
+      "current_token": "HByG6m5BKZiyoktaRUyu2JaYzGcqK1K9VpL2eAVhpump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  },
+  {
+    "route": "insufficient_evidence",
+    "reasons": [
+      "ambiguous_answers_default_uncertain"
+    ],
+    "answers": {
+      "behavior_fit": "unclear",
+      "position_intent": "unclear",
+      "history_sufficient": "yes",
+      "attention": "new_situation",
+      "confidence": 0.4,
+      "dry_run": true,
+      "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    },
+    "confidence": 0.4,
+    "observe_only": true,
+    "jev_mode": "dry_run_mock",
+    "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+    "label": "Doji",
+    "snapshot": {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "label": "Doji",
+      "trade_count": 437,
+      "history_flag": "ok",
+      "typical_buy_size_sol": 0.0,
+      "median_hold_seconds": 76,
+      "current_buy_sol": null,
+      "current_buy_signature": "3RoJinNU2QBUDdVJPb9csRsMuHAQ7u9JXZ84Goov6z4UW7qeRMC9sjXSVrHPxPkN6KxAUQZ8oXphUU46uiCvnjWG",
+      "current_token": "YxQ7i3zVULUQZ3af68yhcarhcKNVgcncBVcX659pump",
+      "attention_hint": "new_situation",
+      "note": "Code computed all counts; Jev must not do arithmetic."
+    }
+  }
+]

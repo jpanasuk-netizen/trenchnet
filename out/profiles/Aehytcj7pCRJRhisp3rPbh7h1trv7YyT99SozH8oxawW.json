@@ -1,0 +1,26 @@
+{
+  "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+  "label": "cobuy_Aehytc",
+  "metrics": {
+    "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+    "label": "cobuy_Aehytc",
+    "trade_count": 2,
+    "buy_count": 2,
+    "sell_count": 0,
+    "realized_pnl_sol": 0.0,
+    "open_positions": 1,
+    "typical_buy_size_sol": 2.5e-05,
+    "median_hold_seconds": null,
+    "profit_concentration": null,
+    "cited_signatures": [
+      "5F8tLnqrZE5aydmLgWiKk6Shn1iyuGK5LK7dRopPfKHP6dUKZ2eDpA8DnFsGAVsgKYfQ7bsikRMtZZT9Y3Cior7a",
+      "zJfUikzjzjQFpqtHni3efm1NzhXZQzL1uGTrnTeWEdZxrgBkUBYTiRpuxxWAmT8cEMvyX51t3rJhxuEm4RqawC6"
+    ],
+    "history_flag": "sparse",
+    "source_url": "https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+    "source_name": "on-chain co-traders of Doji mints"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

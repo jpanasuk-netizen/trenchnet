@@ -1,0 +1,65 @@
+{
+  "mint": "A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+  "fetched_at": "2026-09-24T10:31:28.453939Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+      "fetched_at": "2026-09-24T10:31:24.908372Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/bvpf21otvkxfwuezwserwgzxcarcw8j4fvev1ln1ecpn",
+      "pairAddress": "BVpf21otVkxfwUEZwsERwGZXcaRcW8J4fVEV1Ln1ECpN",
+      "dexId": "pumpswap",
+      "priceUsd": "0.000005910",
+      "priceNative": "0.00000005231",
+      "liquidity_usd": 4897.46,
+      "volume_h24": 144365.9,
+      "fdv": 5648,
+      "marketCap": 5648,
+      "priceChange_h24": -87.48,
+      "base_symbol": "Abu",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+      "fetched_at": "2026-09-24T10:31:26.781750Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:27.814340Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/ddddddd8a/status/2102964578271297861",
+      "source_url": "https://dexscreener.com/solana/bvpf21otvkxfwuezwserwgzxcarcw8j4fvev1ln1ecpn"
+    },
+    {
+      "kind": "dexscreener_website",
+      "label": "Website",
+      "url": "https://usepaid.app/token/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+      "source_url": "https://dexscreener.com/solana/bvpf21otvkxfwuezwserwgzxcarcw8j4fvev1ln1ecpn"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW",
+    "dexscreener": "https://dexscreener.com/solana/bvpf21otvkxfwuezwserwgzxcarcw8j4fvev1ln1ecpn",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/A2rzoxEZpjRWeXsQUSsCqoQ3VhD52947HVFUdMWvUSfW"
+  },
+  "thin_data": false,
+  "note": null
+}

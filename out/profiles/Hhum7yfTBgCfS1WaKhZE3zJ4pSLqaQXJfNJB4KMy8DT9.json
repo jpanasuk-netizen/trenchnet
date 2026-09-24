@@ -1,0 +1,32 @@
+{
+  "wallet": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+  "label": "cobuy_Hhum7y",
+  "metrics": {
+    "wallet": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+    "label": "cobuy_Hhum7y",
+    "trade_count": 8,
+    "buy_count": 1,
+    "sell_count": 7,
+    "realized_pnl_sol": -0.015931,
+    "open_positions": 0,
+    "typical_buy_size_sol": 0.103093,
+    "median_hold_seconds": 368,
+    "profit_concentration": null,
+    "cited_signatures": [
+      "3NWrDuue8qgP6LLymuJf62Qbk7W9Ut1hGYa45MPjwMXFwYEgNyCeksi6zop2K5QbphtMRFpBE2zjcc69tqSXp65T",
+      "4oCGZ51onwAbBRZU7ti955jrSNWRDaXEjovUSMwYxYRgBqv9Brzhb1LcX12KDCPFSKntKPJLNQdCTfBvchzvz7Sr",
+      "8bn3xyiSoFmkcFTBnNkGgZPHQubrpgoaWfM5sDvjA6jzo2CkqAVd97qyDMsMjFjnwWerveaRmizSVbf1MurFZfq",
+      "5F5jnHNb4DUG9E4zURxPQt15awu1hNmy3bzNvES6h3uCu47GsSNoSYmv6xxuo7jrjCnZuekAss2VS6Lih2biGeZf",
+      "3EU4Q2JuJJ1Q9v3iNXhDSev7EcQj1A1mRA2FjQW4uRcS4jigMPEES2uJ3DsJccckVML49YfXueHrMyVx9Qcukswt",
+      "567DqggxiARABykNyLTreEaBFRbbARA8ejoYDgAvqNRB5XGncMvw9WQDKWsU1MhLEpKEdd5Xq5iicjUgSSQ2S7mZ",
+      "4MvEUeSm6a7VNsVqe9ufSAhJsfcQrGmwDdsTqAFpmA1xx36NeGcXvmLxZ1aDYwtVc3vkeVNEhwRtAgHM82pwZSXs",
+      "4Kbkync8L1AEAUeg5YnoKdpAMJwmUAGvEQdLovt3CygWJK3D2vacM95c5jz9g57Lo3Sx9qxHmp6NyntT19LUctu5"
+    ],
+    "history_flag": "ok",
+    "source_url": "https://solscan.io/token/FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+    "source_name": "on-chain co-traders of Doji mints"
+  },
+  "profile_text": "template_fallback: observe-only (FCC skipped pass4)",
+  "writer_mode": "fcc",
+  "observe_only": true
+}

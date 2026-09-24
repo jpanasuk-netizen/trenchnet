@@ -1,0 +1,17 @@
+﻿PASS 3 CODE NOW (watch/paper only; no keys/signing/orders; LIVE stub untouched; no spend; no X API; UI port 8791 only; never invent numbers).
+
+You have ~30m. Prioritize writing code over studying:
+
+A) trenchnet/rpc_pool.py — MultiEndpointRPC wrapping SolanaRPC across verified free no-signup URLs: https://api.mainnet-beta.solana.com , https://solana-rpc.publicnode.com , https://api.mainnet.solana.com . Per-endpoint RPS cap (~3-5), 429 backoff, round-robin on success.
+
+B) tools/parallel_fetch_history.py — Parallel fetch-history for all roster wallets (ThreadPool, 1 wallet per worker, assign RPC endpoint round-robin). Respect resume/before_cursor in history.py. Log out/fetch_history_pass3.log. Cap max_pages high enough to finish or until empty page.
+
+C) trenchnet/sources_expand.py + CLI expand-roster — Expand wallets from FREE public sources only (GitHub kolscan snapshots, Dexscreener token pages API api.dexscreener.com, GeckoTerminal). For Doji token mints: find co-buyers via on-chain getSignaturesForAddress on mint (free RPC). Cap ~40 total; tag seed vs expanded with source_url + fetched_at. Write config/roster.yaml keeping original 8 as role:seed.
+
+D) trenchnet/token_context.py — For each graph token mint, pull Dexscreener pair snapshot + GeckoTerminal OHLCV if free; save data/raw/token_context/<mint>.json with source URLs; wire into panels.token_context and overlay price vs entry markers on flows/timelines (link every number to Dexscreener/Gecko/Solscan).
+
+E) Web mentions: only free web search / Dexscreener pages — NO X API. Store thin mentions with URLs or honest empty.
+
+F) Replay + pytest green + RECEIPT PASS 3 Freebuff section noting what you did vs blocked (pump.fun JWT etc).
+
+If pump.fun frontend needs signup/JWT, DO NOT signup — list for Jeremy in RECEIPT.

@@ -1,0 +1,36 @@
+observe_only: true
+solana:
+  rpc_url: https://api.mainnet-beta.solana.com
+  pumpfun_program: 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P
+  signatures_per_wallet: 15
+  max_tx_fetch: 10
+  request_sleep_ms: 500
+graph:
+  co_entry_window_minutes: 30
+fcc:
+  base_url: http://127.0.0.1:8082/v1
+  model: anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code
+  timeout_seconds: 90
+  template_fallback: true
+jev:
+  model: jev-latest
+  dry_run_if_no_key: true
+paper:
+  enabled: true
+  starting_balance_sol: 10.0
+  act_threshold: 0.65
+  chop_threshold: 0.75
+  oversized_ratio: 4.0
+  skip_streak_halt: 20
+  loss_streak_halt: 5
+  daily_loss_cap_sol: 3.0
+  max_fill_fraction: 0.10
+  max_fill_sol: 1.0
+  live_toggle: DISABLED
+  live_toggle_note: "LIVE is off until Jeremy names a ticket. No implementation exists."
+paths:
+  raw_dir: data/raw
+  out_dir: out
+roster_sort:
+  primary: realized_pnl_sol
+  secondary: trade_count

@@ -1,0 +1,71 @@
+{
+  "mint": "BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+  "fetched_at": "2026-09-24T10:31:20.980553Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+      "fetched_at": "2026-09-24T10:31:18.022531Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/akqyqgeifbbhqmanukzrrurgokskkbv8nvdccc87frr8",
+      "pairAddress": "AKQyQgEifBBhQmANuKzrRuRGoKSkKBv8NVdccc87FrR8",
+      "dexId": "pumpswap",
+      "priceUsd": "0.002016",
+      "priceNative": "0.002016",
+      "liquidity_usd": 240725.11,
+      "volume_h24": 555101.56,
+      "fdv": 2016507,
+      "marketCap": 2016580,
+      "priceChange_h24": 39.05,
+      "base_symbol": "Jotchua",
+      "quote_symbol": "USDC"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+      "fetched_at": "2026-09-24T10:31:19.120436Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:20.086433Z",
+      "status": 401,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/JotchuaTheMeme",
+      "source_url": "https://dexscreener.com/solana/akqyqgeifbbhqmanukzrrurgokskkbv8nvdccc87frr8"
+    },
+    {
+      "kind": "dexscreener_social",
+      "type": "telegram",
+      "url": "https://t.me/jotchuathedog",
+      "source_url": "https://dexscreener.com/solana/akqyqgeifbbhqmanukzrrurgokskkbv8nvdccc87frr8"
+    },
+    {
+      "kind": "dexscreener_website",
+      "label": "Website",
+      "url": "https://jotchua.net/",
+      "source_url": "https://dexscreener.com/solana/akqyqgeifbbhqmanukzrrurgokskkbv8nvdccc87frr8"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump",
+    "dexscreener": "https://dexscreener.com/solana/akqyqgeifbbhqmanukzrrurgokskkbv8nvdccc87frr8",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/BcHEaaTCvycPwwsJ9yQTXdHP9X2gCLkznDbZ8VySpump"
+  },
+  "thin_data": false,
+  "note": null
+}

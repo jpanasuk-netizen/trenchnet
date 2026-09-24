@@ -1,0 +1,1217 @@
+{
+  "edge_count": 2322,
+  "edges_sample": [
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "token": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "side": "buy",
+      "size_sol": 0.690999114,
+      "size_token": 1799795.33578,
+      "time": 1790233330,
+      "signature": "3FiJHipH7sCf8AWrCtZRqMpDERhYVUk9JuYFgt8bTgitnu6GAQYnb77XMnrnPArzLk64R72wu1N9YNPVLrdD6Sfa"
+    },
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "token": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "side": "buy",
+      "size_sol": 0.72131961,
+      "size_token": 1913942.592424,
+      "time": 1790233329,
+      "signature": "26J4wigwt4EfjLVq62m6kbJq4xz1XFGx82hXpaKThjJupLohxqqZB6AdHik6MZKhRGEyvnUxyuAvV8w1zphEK8rE"
+    },
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "token": "As2YQNcGb4faenRY6jaTq14Jy1eQhkHoineeaZxdfCa2",
+      "side": "sell",
+      "size_sol": 0.485527447,
+      "size_token": 10469260.727626,
+      "time": 1790233301,
+      "signature": "3JcS3dq6HJSYoCSkreysMB65khMoAYsu6U7qMPUtSNBLdHXpcXmvtXYE4oeKN4dcViB2YMdCa8fEXNVQjtWA9aMf"
+    },
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "token": "As2YQNcGb4faenRY6jaTq14Jy1eQhkHoineeaZxdfCa2",
+      "side": "buy",
+      "size_sol": 0.490345449,
+      "size_token": 3310241.244825,
+      "time": 1790233080,
+      "signature": "3dRQNPtfy6RnLkr5bA76YxT8cJ6AUHzuVaZVW6xRcoj1jYJCVm6sdPwqdcEpnTRHQpLhRDbhn4E6jbh1tYH5ctyy"
+    },
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "token": "As2YQNcGb4faenRY6jaTq14Jy1eQhkHoineeaZxdfCa2",
+      "side": "buy",
+      "size_sol": 0.450681633,
+      "size_token": 2022666.7948710006,
+      "time": 1790232788,
+      "signature": "3RdjLd1D3P3Xuz6Q5DjWUk5Z4hDp5WFWx1RnM3FHA3PgbGH8TvENfkR12zoVPnkWPnnhMHut69cXAXD1KJnt67XF"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788308644,
+      "signature": "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 7.838527,
+      "time": 1788308644,
+      "signature": "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "6bhWmtHjMUyQ6NuYPnUb8CJiPTHQ36J4bomTnTxepump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 927989.943125,
+      "time": 1788308644,
+      "signature": "5FMwF7vZgr7hVaN7Xm3RHTGj685nijiD1UMNrCbxv5GMAhxdDbdETibJ6nEpZ1oQPKZ46qNMM8J6caTP7gKRxfWE"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.119978,
+      "time": 1788308229,
+      "signature": "5Ny9jC7PUmnTYwRzwTmrW9tELQQzbebDu12xpJC6vz7YWUyg4AWyremU5izNtGiddsS7m7NLtD2DiHzSB9SN7Cxc"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "6bhWmtHjMUyQ6NuYPnUb8CJiPTHQ36J4bomTnTxepump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 927989.943125,
+      "time": 1788308229,
+      "signature": "5Ny9jC7PUmnTYwRzwTmrW9tELQQzbebDu12xpJC6vz7YWUyg4AWyremU5izNtGiddsS7m7NLtD2DiHzSB9SN7Cxc"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.119984,
+      "time": 1788308009,
+      "signature": "5GJKFKDdi7bK2pnD2sSEEZqPqJNjgavRk8fZEoGgwzqqhVrXgBsgV67AnyFkMYyJQCQYxzZsxNYCVTM3AUnuDRAW"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "632aHZ63ovM2eqzihzx2uKD7oYWyZ4psyDQ7EFJnmeGW",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 250671.763757,
+      "time": 1788308009,
+      "signature": "5GJKFKDdi7bK2pnD2sSEEZqPqJNjgavRk8fZEoGgwzqqhVrXgBsgV67AnyFkMYyJQCQYxzZsxNYCVTM3AUnuDRAW"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788307922,
+      "signature": "27P4c57ctHPGn3ESct4VC5hYC27zPEd72y8nGRkpib5md5T2RAQ3daXrZa3XzMyDoXWFcpPfKLXoL6EkvZCn1MPE"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "6dgTZUtT9pHcbMGMsRPmYoH5MUeC2DPPgdLgQukJpump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 825486.936435,
+      "time": 1788307922,
+      "signature": "27P4c57ctHPGn3ESct4VC5hYC27zPEd72y8nGRkpib5md5T2RAQ3daXrZa3XzMyDoXWFcpPfKLXoL6EkvZCn1MPE"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 0.049973,
+      "time": 1788307698,
+      "signature": "5x8uPvMhs3BraJsYTvehzXCU6ykrZvMNZQ3ztnu7GXTY5PdqCKcRDe9V8sTERNXC8SxWEzH1gAdEF468Ut4pFCdN"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.11998,
+      "time": 1788307485,
+      "signature": "4QUr9ZiTZwwVJawnjup1EKXFTT2VC5L7V9EkdioYtf6AwT1taaqqw1Gxx4y7HZF3TQTXP1qxGaPzw2oVTuz1e1Cf"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "6dgTZUtT9pHcbMGMsRPmYoH5MUeC2DPPgdLgQukJpump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 825486.936435,
+      "time": 1788307485,
+      "signature": "4QUr9ZiTZwwVJawnjup1EKXFTT2VC5L7V9EkdioYtf6AwT1taaqqw1Gxx4y7HZF3TQTXP1qxGaPzw2oVTuz1e1Cf"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.119981,
+      "time": 1788306989,
+      "signature": "3jvKjYZDqvZ1BRUuVmMyLVBRhto6yxpDCUSUxqyuG8691bwf27yFwbQKJBz8LsagGJhw9RsmX9vJdWzyQyACLX1E"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "ES7xGmrYUWdij795x4bTtcQHECUYg1T1q6ibA9y7pump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 280465.315906,
+      "time": 1788306989,
+      "signature": "3jvKjYZDqvZ1BRUuVmMyLVBRhto6yxpDCUSUxqyuG8691bwf27yFwbQKJBz8LsagGJhw9RsmX9vJdWzyQyACLX1E"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.187862,
+      "time": 1788306543,
+      "signature": "24K88QVi82SXNp91Q43FgehSJvK8q3darU3u2iTif7jbyQkPm2mYHHVsnjKKJuhVSgGSMsf34pdgHhvetzP8SUdz"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "ES7xGmrYUWdij795x4bTtcQHECUYg1T1q6ibA9y7pump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 642525.289653,
+      "time": 1788306543,
+      "signature": "24K88QVi82SXNp91Q43FgehSJvK8q3darU3u2iTif7jbyQkPm2mYHHVsnjKKJuhVSgGSMsf34pdgHhvetzP8SUdz"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.119978,
+      "time": 1788306366,
+      "signature": "4UeyRQYzgYAZHEchV9JnsMMsAnT3McCJ2UDiSD3Ls7aoJY8D6TBYTYcKXfWC3tfXQ2DEgo4HpaeMXiYNTPUaLDE2"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 9.803701,
+      "time": 1788306366,
+      "signature": "4UeyRQYzgYAZHEchV9JnsMMsAnT3McCJ2UDiSD3Ls7aoJY8D6TBYTYcKXfWC3tfXQ2DEgo4HpaeMXiYNTPUaLDE2"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "ES7xGmrYUWdij795x4bTtcQHECUYg1T1q6ibA9y7pump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 642525.289653,
+      "time": 1788306366,
+      "signature": "4UeyRQYzgYAZHEchV9JnsMMsAnT3McCJ2UDiSD3Ls7aoJY8D6TBYTYcKXfWC3tfXQ2DEgo4HpaeMXiYNTPUaLDE2"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.119978,
+      "time": 1788306045,
+      "signature": "25rUwz1h7wGBkRTLQ54W5RkcMLvqBJB9SFxogybH5P3u9K8Ftf1srah9LJpuj8WCwi68GaQsLyHkY4kGnubVfohK"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 9.803788,
+      "time": 1788306045,
+      "signature": "25rUwz1h7wGBkRTLQ54W5RkcMLvqBJB9SFxogybH5P3u9K8Ftf1srah9LJpuj8WCwi68GaQsLyHkY4kGnubVfohK"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "65KvpqKhmrKZWSchJm3iWVcMuyKqfk5auMS96LgXRT5s",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 439339.097368,
+      "time": 1788306045,
+      "signature": "25rUwz1h7wGBkRTLQ54W5RkcMLvqBJB9SFxogybH5P3u9K8Ftf1srah9LJpuj8WCwi68GaQsLyHkY4kGnubVfohK"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788305673,
+      "signature": "41vGtw59HXehpVJHXHp7Zwq1W3nwKvY7fYUuzghVHAJUDUmgKrQGWaZHzfGWR1ZthDzkgVqCmRNjExkHvhsUtudj"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 2.975489,
+      "time": 1788305673,
+      "signature": "41vGtw59HXehpVJHXHp7Zwq1W3nwKvY7fYUuzghVHAJUDUmgKrQGWaZHzfGWR1ZthDzkgVqCmRNjExkHvhsUtudj"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "2UZXdSit9KLjiTAuwqjSt8wrV6xhvRsb3KG9yxKqUk7M",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 285698.350968,
+      "time": 1788305673,
+      "signature": "41vGtw59HXehpVJHXHp7Zwq1W3nwKvY7fYUuzghVHAJUDUmgKrQGWaZHzfGWR1ZthDzkgVqCmRNjExkHvhsUtudj"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.133083,
+      "time": 1788305655,
+      "signature": "3sN61SqtWnpf9Tcz8FKmUUJJUNrVtXQeZNrJnRyRiua3zzK66BahUKgzPXx3ys2mL7phChfZK5xMbBuNX1iBRyPd"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "E1Zjtz6HyfQ2XDictPfFYFPEzde64rfAj6pTmFfSpump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 823420.220072,
+      "time": 1788305655,
+      "signature": "3sN61SqtWnpf9Tcz8FKmUUJJUNrVtXQeZNrJnRyRiua3zzK66BahUKgzPXx3ys2mL7phChfZK5xMbBuNX1iBRyPd"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788305511,
+      "signature": "2i8EbBboQEVzKRy657erd4bLrLo1PjjLkVp5QsizSwJFuT3CLK44JanKWUPEKgTG6sja1crfcH6z8pScUEkztVky"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "8L5f9SZUBwswNYeAYjfCcC2ZyLQb3G3bmoPVE2msJCEG",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 361388.713566,
+      "time": 1788305511,
+      "signature": "2i8EbBboQEVzKRy657erd4bLrLo1PjjLkVp5QsizSwJFuT3CLK44JanKWUPEKgTG6sja1crfcH6z8pScUEkztVky"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.199962,
+      "time": 1788305120,
+      "signature": "4GS8pn2exstktXBz3ZULpsTCi4Q4j3UcP12HFa5XxoK2z2G1diRER15yk5UfQmFCUmkwBnyFCqz8nVQxJWj8hHAD"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 0.070064131,
+      "time": 1788305120,
+      "signature": "4GS8pn2exstktXBz3ZULpsTCi4Q4j3UcP12HFa5XxoK2z2G1diRER15yk5UfQmFCUmkwBnyFCqz8nVQxJWj8hHAD"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "E1Zjtz6HyfQ2XDictPfFYFPEzde64rfAj6pTmFfSpump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 823420.220072,
+      "time": 1788305120,
+      "signature": "4GS8pn2exstktXBz3ZULpsTCi4Q4j3UcP12HFa5XxoK2z2G1diRER15yk5UfQmFCUmkwBnyFCqz8nVQxJWj8hHAD"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 0.279948,
+      "time": 1788305047,
+      "signature": "2fRjw8YrRVRwktrTDpXHGxF4BM9Ferr8HL711Kzza612ZsNw4wu62NebRwxHT8jkcWnAJzsAvXY7MQHHR3EfCLjV"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788304644,
+      "signature": "35MiWjV5kNS4QKjriz8PzkaP38wWDhDQmdRK1N9JhvptGPmbFaR5qRGoUpVND4s6FRyK2myQkwnK6U226Y49xy9g"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 4.9018,
+      "time": 1788304644,
+      "signature": "35MiWjV5kNS4QKjriz8PzkaP38wWDhDQmdRK1N9JhvptGPmbFaR5qRGoUpVND4s6FRyK2myQkwnK6U226Y49xy9g"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "2UZXdSit9KLjiTAuwqjSt8wrV6xhvRsb3KG9yxKqUk7M",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 285698.350968,
+      "time": 1788304644,
+      "signature": "35MiWjV5kNS4QKjriz8PzkaP38wWDhDQmdRK1N9JhvptGPmbFaR5qRGoUpVND4s6FRyK2myQkwnK6U226Y49xy9g"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788304571,
+      "signature": "4SehRz1qYSGQDPUqzaHhYUcj5x4wd3dkMjapG4Wip6DqUsmF2Cq8RZmUHC7ZTuWNi3XvgATwqasR39v5utYo4wm8"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "JE5N3XXVQdMtV9vXDKkCDybQjdEaJPYm3dLPe3fEpump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 320686.182195,
+      "time": 1788304571,
+      "signature": "4SehRz1qYSGQDPUqzaHhYUcj5x4wd3dkMjapG4Wip6DqUsmF2Cq8RZmUHC7ZTuWNi3XvgATwqasR39v5utYo4wm8"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788304233,
+      "signature": "xA8Lf3Nk7jYpP79E4kUpyjRzGQcMwzFqBqt7zmA5AkJimJcCXcoeSLSp7BCTrEpiFJePqC7DviXzSKL2ibFA5Pv"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "JE5N3XXVQdMtV9vXDKkCDybQjdEaJPYm3dLPe3fEpump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 320686.182195,
+      "time": 1788304233,
+      "signature": "xA8Lf3Nk7jYpP79E4kUpyjRzGQcMwzFqBqt7zmA5AkJimJcCXcoeSLSp7BCTrEpiFJePqC7DviXzSKL2ibFA5Pv"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788303595,
+      "signature": "2bsPbqVMB47rpyDD2S4BaL7vvMZqsuMW8nADwJHG7WxrCm9Q87wDF27Sb1q8JWy1tJV3ZQNkPaK9au1RtTmPFSLn"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "4mzj1d2dN4T6G12SmnPmurzZXecvh9tUxmjfZVyYpump",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 220429.850783,
+      "time": 1788303595,
+      "signature": "2bsPbqVMB47rpyDD2S4BaL7vvMZqsuMW8nADwJHG7WxrCm9Q87wDF27Sb1q8JWy1tJV3ZQNkPaK9au1RtTmPFSLn"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "side": "sell",
+      "size_sol": null,
+      "size_token": 0.1,
+      "time": 1788303330,
+      "signature": "262gP1vv2dV2E2CAJBaj74xXkK4vUrvjzUjjV3uhLEYUYV9fdJHGEFwf8u5vpSYaFYsfQLCRRUJ2m3SZMzMwTbEY"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 4.9017,
+      "time": 1788303330,
+      "signature": "262gP1vv2dV2E2CAJBaj74xXkK4vUrvjzUjjV3uhLEYUYV9fdJHGEFwf8u5vpSYaFYsfQLCRRUJ2m3SZMzMwTbEY"
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "token": "4mzj1d2dN4T6G12SmnPmurzZXecvh9tUxmjfZVyYpump",
+      "side": "buy",
+      "size_sol": null,
+      "size_token": 220429.850783,
+      "time": 1788303330,
+      "signature": "262gP1vv2dV2E2CAJBaj74xXkK4vUrvjzUjjV3uhLEYUYV9fdJHGEFwf8u5vpSYaFYsfQLCRRUJ2m3SZMzMwTbEY"
+    }
+  ],
+  "co_entries": [
+    {
+      "wallet_a": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "wallet_b": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 0,
+      "b_first": 0,
+      "lead": null
+    },
+    {
+      "wallet_a": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "wallet_b": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY"
+    },
+    {
+      "wallet_a": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+      "wallet_b": "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 0,
+      "b_first": 0,
+      "lead": null
+    },
+    {
+      "wallet_a": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "wallet_b": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg"
+    },
+    {
+      "wallet_a": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "wallet_b": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg"
+    },
+    {
+      "wallet_a": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "wallet_b": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9"
+    },
+    {
+      "wallet_a": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "wallet_b": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW"
+    },
+    {
+      "wallet_a": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "wallet_b": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr"
+    },
+    {
+      "wallet_a": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "wallet_b": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9"
+    },
+    {
+      "wallet_a": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "wallet_b": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "shared_tokens": 1,
+      "jaccard": 1.0,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9"
+    },
+    {
+      "wallet_a": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "wallet_b": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "shared_tokens": 1,
+      "jaccard": 0.0909,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY"
+    },
+    {
+      "wallet_a": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "wallet_b": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "shared_tokens": 1,
+      "jaccard": 0.0909,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW"
+    },
+    {
+      "wallet_a": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "wallet_b": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "shared_tokens": 1,
+      "jaccard": 0.0909,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM"
+    },
+    {
+      "wallet_a": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "wallet_b": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+      "shared_tokens": 1,
+      "jaccard": 0.0185,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q"
+    },
+    {
+      "wallet_a": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "wallet_b": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+      "shared_tokens": 2,
+      "jaccard": 0.0183,
+      "a_first": 0,
+      "b_first": 2,
+      "lead": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC"
+    },
+    {
+      "wallet_a": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "wallet_b": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+      "shared_tokens": 1,
+      "jaccard": 0.0114,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg"
+    },
+    {
+      "wallet_a": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+      "wallet_b": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "shared_tokens": 1,
+      "jaccard": 0.0095,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+    },
+    {
+      "wallet_a": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+      "wallet_b": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+      "shared_tokens": 1,
+      "jaccard": 0.0084,
+      "a_first": 0,
+      "b_first": 1,
+      "lead": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE"
+    },
+    {
+      "wallet_a": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "wallet_b": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "shared_tokens": 1,
+      "jaccard": 0.0071,
+      "a_first": 1,
+      "b_first": 0,
+      "lead": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg"
+    }
+  ],
+  "token_summaries": [
+    {
+      "token_mint": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "participants": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "recurring_cluster",
+      "notes": "Multiple roster wallets; at least one pair has prior co-entry in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "As2YQNcGb4faenRY6jaTq14Jy1eQhkHoineeaZxdfCa2",
+      "participants": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg"
+      ],
+      "order": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB",
+      "participants": [
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "newcomer_low_overlap",
+      "notes": "Multiple roster wallets enter; no prior co-entry pair in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "6bhWmtHjMUyQ6NuYPnUb8CJiPTHQ36J4bomTnTxepump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "632aHZ63ovM2eqzihzx2uKD7oYWyZ4psyDQ7EFJnmeGW",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+      "participants": [
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "newcomer_low_overlap",
+      "notes": "Multiple roster wallets enter; no prior co-entry pair in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "6dgTZUtT9pHcbMGMsRPmYoH5MUeC2DPPgdLgQukJpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "ES7xGmrYUWdij795x4bTtcQHECUYg1T1q6ibA9y7pump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "65KvpqKhmrKZWSchJm3iWVcMuyKqfk5auMS96LgXRT5s",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+        "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "newcomer_low_overlap",
+      "notes": "Multiple roster wallets enter; no prior co-entry pair in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "8L5f9SZUBwswNYeAYjfCcC2ZyLQb3G3bmoPVE2msJCEG",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "E1Zjtz6HyfQ2XDictPfFYFPEzde64rfAj6pTmFfSpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "2UZXdSit9KLjiTAuwqjSt8wrV6xhvRsb3KG9yxKqUk7M",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "JE5N3XXVQdMtV9vXDKkCDybQjdEaJPYm3dLPe3fEpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "4mzj1d2dN4T6G12SmnPmurzZXecvh9tUxmjfZVyYpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "9EaamTvgfv9mHgmYqeJDnLZkM5ijxQUViWd3V5bgpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "B8B1RZh2REjRiTXSDjP722eD8PU4KGmz8F8rN8fvpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "3CVcbNgLH8ZEcFxRA7Ve1hPNXhE23iDsFLAGyBJmpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "gcN7pZgamw1NMrFkPFY2zvN8R5PKyzsAbYfvxrypump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "8MmBiFLnZc75yd66qzJw2hoaFcGfgWB4EugfqmFpump",
+      "participants": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "order": [
+        "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "participants": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+        "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+        "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+        "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs"
+      ],
+      "order": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+        "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+        "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+        "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs"
+      ],
+      "cluster_type": "recurring_cluster",
+      "notes": "Multiple roster wallets; at least one pair has prior co-entry in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "J2cLnUVQeG7iL4F21FrtQBETAxHhPfhqSeoFp7papump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "3rh8moGenGq7J1FxWb3mmDvzgkwiWDjAdkJRSLifpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "28pzwpApveM9MQBEZNkrgNrJeSKSyHmocTV92dF8pump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "9WVi6DX7A63Q6TnVrZvjUyypuEPziGcxWKk6yiuPpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "F3b63vkDvgJFvJWs95gUdRspHFoq2pEoYXfivWnkpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "3ywYjXDbEBFEkCAdqotsvGHiueAwhane9qSkd9pqpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "CASHx9KJUStyftLFWGvEVf59SGeG9sh5FfcnZMVPCASH",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "newcomer_low_overlap",
+      "notes": "Multiple roster wallets enter; no prior co-entry pair in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "57Lr7PxJeUvrBPi51QqXmqqW4Qp4XekGRB9GKJJfpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "F8vZ5hFBvMt6TXtXVbukLBsSNW1zzkD4Ex8nWZ9epump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "5LpMs3YMut65io3r23jrQFfFwD9qfdneqAfL1oELpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "38SP7s7FaZNzP8xVUw2LGXrpPuTXH65TTmv7hw5Bpump",
+      "participants": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "order": [
+        "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "participants": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+        "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS"
+      ],
+      "order": [
+        "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+        "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+        "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS"
+      ],
+      "cluster_type": "recurring_cluster",
+      "notes": "Multiple roster wallets; at least one pair has prior co-entry in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "ADLFoLzf8N8UucDA5i1Cbye6DjejbYxuJmkThPPcpump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "6ysp4WebEYzPW5zVjkdwtoapa1Ub7buGdVduEmzccxsw",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "Gib31KvQczEfEsAa1tD6UEVEWu5e8j3NHzuCWNtpkMh3",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "2x12AgTZTWugePYBFG1LpXQK6dvuztdqavuz4z9gpump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "AgGUn2YS6Da94gvKYp9kqCcpu1Pr6i4pm4DwmjcY9vSs",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "CwGLcEiTZJ2inndc8NBzKvsBBDGS1g613hWBFMxu3eiB",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "GW48jyzaFUY2BfrPSsE3dnqsX311vw9PJXGUr3KoHJoJ",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "FH7PovzbqEMBM7RH546oMYZJY9e5GebC6hvqvBDYpump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "5ASqBTsYCW8zTgsM2981ErqtKnNUoYn1AJLeiV95pump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "3aM1HdwnsfQzmfkiDGboCUiS4HHUCH42zxvrEnap26jD",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "HCay926KRr7cuSrpwM5CJ87LmKw8h8hbrp42G8mMpump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+        "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp"
+      ],
+      "cluster_type": "recurring_cluster",
+      "notes": "Multiple roster wallets; at least one pair has prior co-entry in sample. Not evidence of common ownership."
+    },
+    {
+      "token_mint": "CMyTc87vDt5zvdVn1scjHmFhiFWjsQZYYXVFp3s3S5Ch",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "4x5DRRmznURrQFibdTgfXoqQwpchGpNDua4Nny62pump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "BvQrEJ4hvbnuNyjs6GhY1ugpRi7ih689MNWAqU3wyiMF",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "4JcozmUkkGK9AtxVvDJhUkJ3BQzMt35vnmQGWUoKpump",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    },
+    {
+      "token_mint": "FuP6MCwcN4DiyGRtQHFmkHTcyj1FMnV6a9vY7e15nArF",
+      "participants": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "order": [
+        "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE"
+      ],
+      "cluster_type": "single",
+      "notes": "Only one roster wallet observed buying this token in the sample."
+    }
+  ],
+  "disclaimer": "Co-entry and lead/follow are observational timing patterns only. Never claim common ownership."
+}

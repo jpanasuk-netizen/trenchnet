@@ -1,0 +1,62 @@
+﻿# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python / venv
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Logs & local scratch
+*.log
+logs/
+out/*.log
+out/repo_wait.log
+out/_wait_repo.ps1
+out/repo_wait.pid
+out/pass4seq.pid
+grok_build.log
+_fb_*.sh
+_fb_*.txt
+_probe_*.py
+_run_*.ps1
+
+# LIVE / wallet secrets (DPAPI, keypairs) — never commit
+data/live/
+data/paper/
+*.bin
+*.dpapi
+*.key
+*keypair*
+*wallet*secret*
+live_wallet*
+**/live_wallet*
+
+# Large / regenerable raw caches
+data/raw/history/
+data/raw/**/*.errspam.bak
+out/.cache/
+
+# Keep small curated raw context (birdeye, token_context) — history excluded above
+
+# Local prompt / scratch (not product)
+FREEBUFF_*.txt
+typescript
+data/raw/history/
+

@@ -1,0 +1,111 @@
+{
+  "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+  "fetched_at": "2026-09-24T10:30:56.149040Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "fetched_at": "2026-09-24T10:30:52.458496Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/c3uvh3qx9x54ctgb95ynbt2gksx3t8jbf69mgd4txgss",
+      "pairAddress": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "dexId": "pumpswap",
+      "priceUsd": "0.000009942",
+      "priceNative": "0.00000008800",
+      "liquidity_usd": 7351.58,
+      "volume_h24": 793729.13,
+      "fdv": 9611,
+      "marketCap": 9611,
+      "priceChange_h24": -79.15,
+      "base_symbol": "OTC",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "fetched_at": "2026-09-24T10:30:54.129114Z",
+      "status": 200,
+      "ok": true
+    },
+    "token": {
+      "data": {
+        "id": "solana_2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+        "type": "token",
+        "attributes": {
+          "address": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+          "name": "on the computer",
+          "symbol": "OTC",
+          "decimals": 6,
+          "image_url": "https://assets.geckoterminal.com/we3ui456wy0ivjb7xjm9dc2bzrdr",
+          "coingecko_coin_id": null,
+          "total_supply": "996930480041747.0",
+          "normalized_total_supply": "996930480.041747",
+          "price_usd": "0.000009880575791",
+          "fdv_usd": "9850.2471663268",
+          "total_reserve_in_usd": "5000.18272162691094903663477095",
+          "volume_usd": {
+            "h24": "884198.184386251"
+          },
+          "market_cap_usd": null,
+          "launchpad_details": {
+            "graduation_percentage": 100.0,
+            "completed": true,
+            "completed_at": "2026-09-24T06:44:07.000Z",
+            "migrated_destination_pool_address": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs"
+          }
+        },
+        "relationships": {
+          "top_pools": {
+            "data": [
+              {
+                "id": "solana_C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+                "type": "pool"
+              },
+              {
+                "id": "solana_9J7z7NQYAtucvwU9qPpm6sxUbkPtJbiukyK7Wpr4psaA",
+                "type": "pool"
+              },
+              {
+                "id": "solana_A4Qz3aQB6bcZomGPqDu2TxW9R4Z36ipKfGX7n2jRwmu8",
+                "type": "pool"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:30:55.217557Z",
+      "status": 401,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/river100x/status/2103011382425960552",
+      "source_url": "https://dexscreener.com/solana/c3uvh3qx9x54ctgb95ynbt2gksx3t8jbf69mgd4txgss"
+    },
+    {
+      "kind": "dexscreener_social",
+      "type": "instagram",
+      "url": "https://www.instagram.com/reels/DdnPFbEhrdt/",
+      "source_url": "https://dexscreener.com/solana/c3uvh3qx9x54ctgb95ynbt2gksx3t8jbf69mgd4txgss"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+    "dexscreener": "https://dexscreener.com/solana/c3uvh3qx9x54ctgb95ynbt2gksx3t8jbf69mgd4txgss",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump"
+  },
+  "thin_data": false,
+  "note": null
+}

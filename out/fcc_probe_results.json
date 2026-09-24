@@ -1,0 +1,67 @@
+[
+  {
+    "probe": "GET /v1/models",
+    "status": 200,
+    "body": "{\"object\": \"list\", \"data\": [{\"object\": \"model\", \"created\": 0, \"owned_by\": \"free-claude-code\", \"created_at\": \"2026-06-09T00:00:00Z\", \"display_name\": \"Claude Fable 5\", \"id\": \"claude-fable-5\", \"type\": \"model\"}, {\"object\": \"model\", \"created\": 0, \"owned_by\": \"free-claude-code\", \"created_at\": \"2025-05-14T00:00:00Z\", \"display_name\": \"Claude Opus 4\", \"id\": \"claude-opus-4-20250514\", \"type\": \"model\"}, {\"obj"
+  },
+  {
+    "probe": "GET /v1/models/anthropic",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "GET /api/v0/models",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "chat anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "chat anthropic/cloudflare/@cf/aisingapore/gemma-sea-lion-v4-27b-it",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "chat anthropic/cloudflare/@cf/deepseek-ai/deepseek-r1-distill-qwen-32b",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "chat claude-fable-5",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "chat claude-opus-4-20250514",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "messages (bearer)",
+    "status": 200,
+    "body": "{\"id\": \"msg_02640c2c-285b-4d1b-a5f2-9742f4aca977\", \"type\": \"message\", \"role\": \"assistant\", \"content\": [{\"type\": \"thinking\", \"thinking\": \"We need respond exactly 'OK'. No extra content.\", \"signature\": \"\"}, {\"type\": \"text\", \"text\": \"OK\"}], \"model\": \"anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code\", \"stop_reason\": \"end_turn\", \"stop_sequence\": null, \"usage\": {\"input_tokens\": 13, \"output_tokens\": 14"
+  },
+  {
+    "probe": "messages (x-api-key)",
+    "status": 200,
+    "body": "{\"id\": \"msg_7c5139d9-abe2-47ab-92af-bd190153649d\", \"type\": \"message\", \"role\": \"assistant\", \"content\": [{\"type\": \"thinking\", \"thinking\": \"We need respond with exactly 'OK'. Ensure no extra punctuation, no whitespace beyond maybe single newline? User says Reply with exactly: OK. So output exactly OK\", \"signature\": \"\"}, {\"type\": \"text\", \"text\": \" \"}], \"model\": \"anthropic/cloudflare/@cf/moonshotai/kim"
+  },
+  {
+    "probe": "messages claude-3-5-sonnet",
+    "status": 404,
+    "body": "{\"type\": \"error\", \"error\": {\"type\": \"api_error\", \"message\": \"Upstream provider NIM returned HTTP 404.\\nCategory: upstream\\nMapped message: Provider API request failed.\\n\\nUpstream error:\\n{\\\"status\\\":404,\\\"title\\\":\\\"Not Found\\\",\\\"detail\\\":\\\"Function '2b2dcd47-c858-425a-9c04-4cacf2eac993': Not found for account 'ftUmuVzyjJZXyG_D35DDFWxEU2MYa9RbjgpiDWz9_V0'\\\"}\\n\\nRequest ID: req_dbe0eb7075ec48b2a1bb"
+  },
+  {
+    "probe": "ollama api/chat",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  },
+  {
+    "probe": "v1/completions",
+    "status": 404,
+    "body": "{\"detail\": \"Not Found\"}"
+  }
+]

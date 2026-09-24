@@ -1,0 +1,33 @@
+{
+  "route": "insufficient_evidence",
+  "reasons": [
+    "history_insufficient_or_low_confidence"
+  ],
+  "answers": {
+    "behavior_fit": "unclear",
+    "position_intent": "unclear",
+    "history_sufficient": "unresolved",
+    "attention": "new_situation",
+    "confidence": 0.4,
+    "dry_run": true,
+    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+  },
+  "confidence": 0.4,
+  "observe_only": true,
+  "jev_mode": "dry_run_mock",
+  "wallet": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+  "label": "cobuy_3odkxo",
+  "snapshot": {
+    "wallet": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+    "label": "cobuy_3odkxo",
+    "trade_count": 1,
+    "history_flag": "sparse",
+    "typical_buy_size_sol": 0.0,
+    "median_hold_seconds": null,
+    "current_buy_sol": null,
+    "current_buy_signature": "4LLjPQVrBfwfoEnQ5W5SiFhLehu49L9UZtcC7QmP3Hr3d4vXKfHx6Gte9UhJZRzyEQncWr4bAv4qWhBcg8E5A5wz",
+    "current_token": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+    "attention_hint": "new_situation",
+    "note": "Code computed all counts; Jev must not do arithmetic."
+  }
+}

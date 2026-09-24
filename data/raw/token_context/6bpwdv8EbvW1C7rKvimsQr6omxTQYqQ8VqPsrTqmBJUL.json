@@ -1,0 +1,59 @@
+{
+  "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+  "fetched_at": "2026-09-24T10:31:31.503638Z",
+  "dexscreener": {
+    "meta": {
+      "source_url": "https://api.dexscreener.com/latest/dex/tokens/6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+      "fetched_at": "2026-09-24T10:31:28.860619Z",
+      "status": 200,
+      "ok": true
+    },
+    "pair": {
+      "url": "https://dexscreener.com/solana/bpbsybang2ze6or29xplv9hpnbpurcuwca4qwzfjxfnu",
+      "pairAddress": "BPbsybaNG2zE6or29xPLv9hpNbpUrcuwCa4qwzFjXfnU",
+      "dexId": "pumpswap",
+      "priceUsd": "0.000002679",
+      "priceNative": "0.00000002373",
+      "liquidity_usd": 2674.26,
+      "volume_h24": 340989.43,
+      "fdv": 2558,
+      "marketCap": 2558,
+      "priceChange_h24": -94.31,
+      "base_symbol": "SI",
+      "quote_symbol": "SOL"
+    }
+  },
+  "geckoterminal": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+      "fetched_at": "2026-09-24T10:31:29.886048Z",
+      "status": 429,
+      "ok": false
+    },
+    "token": null
+  },
+  "ohlcv_hour": {
+    "meta": {
+      "source_url": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL/ohlcv/hour?limit=48",
+      "fetched_at": "2026-09-24T10:31:30.849533Z",
+      "status": 429,
+      "ok": false
+    },
+    "data": null
+  },
+  "mentions": [
+    {
+      "kind": "dexscreener_social",
+      "type": "twitter",
+      "url": "https://x.com/KamikazeTrump/status/2102734476472365261",
+      "source_url": "https://dexscreener.com/solana/bpbsybang2ze6or29xplv9hpnbpurcuwca4qwzfjxfnu"
+    }
+  ],
+  "links": {
+    "solscan": "https://solscan.io/token/6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+    "dexscreener": "https://dexscreener.com/solana/bpbsybang2ze6or29xplv9hpnbpurcuwca4qwzfjxfnu",
+    "geckoterminal": "https://www.geckoterminal.com/solana/tokens/6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL"
+  },
+  "thin_data": false,
+  "note": null
+}

@@ -1,0 +1,66 @@
+# Token timeline: `21dfe9UctGMk6zpUsQ1B7YxwckSUxvRX6Vz5e7oppump`
+
+Observe-only. Timing patterns are not ownership claims.
+
+| time_unix | wallet | label | side | size_sol | size_token | signature |
+|---|---|---|---|---|---|---|
+| 1783609326 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.614816 | `5KFXSb9rT3eKDVaWxnMH2exSj6pYTmvNwgLzorYZ6xJbDsGetUegeLC4jEndYFRs8TprHwCEmducQNyzMAVsUUAN` |
+| 1783609936 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714668 | `4r9boHjsCAKuBxuUTXsmW5NMfSiUfP4T3kastrXVERjpv3Jj7MQNG1e4MVkpAJSxSGZKhc5Qg5H5zjRjpHQT9x3P` |
+| 1783610594 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714564 | `2utdgcemXrKFx9mnciNUCv3rznsFeVFQHsC92fqEJcFipVMtmpAwiqetLC1rXL9WZAz4fsPwuiWUZHWuDXSAGDi4` |
+| 1783611033 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.747769 | `2zk9ihTyY6FgYrhAoVBP7fc1rco96P15aDZ59X4C4PAN9Cu5LjcoEiWMweZmWzho7tDDE5ti9VTGTVXmbCpW7qwf` |
+| 1783611629 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.724342 | `zEdAKUrwR1q6XAvS7Dnvsx6xiKwYyUvpJFDcDgGjyhyWfcYgoiAuQDqMQXxFEmHtCBYrzLxWDnpmVf1Q2n83bGx` |
+| 1783612421 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.724195 | `4hpt8MCV6wZhVi8FdHsqd5JFpKVUMGVB2WrHTzuUa1PynnJhzdXprTfFbLeRyU1kjJhPUo8DEhECRaYi5bWKYdVB` |
+| 1783612868 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.724166 | `4ViaKAz7vd63jTQtMN6E23thuvrB7JUj9ViiT4jp7vrTMAsdETKVe4PWxmymCT3RTYMCU33rTRd5AE4Ubk4qdPHC` |
+| 1783613645 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714663 | `5zRNxs8BTVspDFd2uaXyZZkzgss8ZiFuYRiKWFGJtZpsmym4SFTdM4iFWfWQxTmt3M8pRtmKcLGXMvv8D47oYXWC` |
+| 1783614216 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714607 | `4WgjsXnmCUmhvdVLHQC4AbpcCwNkWUfMD4kyG3v6G7DPJ151i5uAdXYE7qDhNLjdqkHbTsYG9sR3DjZeKEQgfkTQ` |
+| 1783615614 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714449 | `5mCpcNrGwfstq5bnNDciRY1HUoQzAm6VEvwkJEPMiXgPnWdYJv613e9T4A9g931RCsdm8tnaPNZaUKrBGuZGYqmC` |
+| 1783616874 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.71425 | `4q9z1w2xpWp6i4sCXVJQTH91kYKLsjNqNfGkJUKbFPnhqu9WNAcCw7ZZYJU81PNFQZcyrLf1Tjt228ekCCWbBpQZ` |
+| 1783617391 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.71421 | `5PESBD5Mcs9qMgX5EhssDVyVDkMcxhRhRRf2EbxFPJGmkv6aAPH1NTF9zg4JmtJ3KAyvDJY4RXmZ41rnNoJEGFda` |
+| 1783618002 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714135 | `3FCKD78Dy57mFfxPh5wgwVCbjkErXq2MnbQt7CEUcZWf6f1MtD5fRCgSN3L6Q3iZVw2LV1gfBTEn3RAisJAXifj3` |
+| 1783618558 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.714078 | `4tm3j3r8cqYqptAEsxZMXqZAbJJnfHYTK8UFNcs7D7hpNfUNNejwDwYS27q3uhbqRMF2QztUwZpsHsjb1BPp8Tcd` |
+| 1783619261 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.713972 | `5mafMZz6tvveXmQqiu9ENFcNLhfT5Arx6WTfzmoStKDmPw8xQnKxry7uYrF6an7k9Fh2xvvJBZyR8DDbCokb6sdM` |
+| 1783619791 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.713936 | `2qLpdGZyw3XugTttxAAYgQdBBWQ3eTqvGz4e2tqv3BD8bxd6LWYvuNJuxpnq65N1qT8YfmP5BpdBHXxMevMwAHWi` |
+| 1783620358 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.71388 | `2FXrNCAwFdVhtXdkpjoCuuif2RyaBG3ioGadhywnKWS7u5qWAUaWpr7ycZbK25dTahzvak53WjCkYXdv3YTiLFa8` |
+| 1783620989 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.713811 | `3WJr1U9NNBXDEne8M6QYP5yoqeLeqs4ay7YHPiTtyX5ecFK2CFtfr3SjRUYq2EdXUK9aiWdvoJjJgG2tWVFQxe7p` |
+| 1783622878 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.706594 | `432UuE2nt8n85LXHYbieEUBgwzgvJiyQvPtrFbsQaoTCtUC7o5oXzuMHEDxf2rKUA9YWZYeJdNEB9VLDfBj8sxZA` |
+| 1783623515 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.706523 | `5jFe9wzRcYWhKtRC2nPQeXQx8oLeAU17BifMX8MoawNPjm7RSJHA5z9wzCSMoaNaXq9YLYwykT9in3T1us7nRgyG` |
+| 1783624597 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.703344 | `5UBnDytBZ94qTMh4FvHH9j5SvwFL5py1JMmaBa7nz9LXQWs8UHAiZ5E7Nm5NuFAapQSoYDm5oFB1jyLK1sQQUzxA` |
+| 1783625196 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.703284 | `3dWTBNjEAqRR6cnp6pM1WyCEkT1iDzRHEiRG4tDNhyoCctBupCbviorVaEtWTzLkqn8CA1PYJNKx5E7FHJ5jf1HS` |
+| 1783625819 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.703223 | `23cUxkE1uHsq2g6qexcB4EJtpviGdXzhCYqsdgZ2qmihtXhZwzxdvNUSCnK8qa57tMzo6ch5k96iwM8jjGGCzoyb` |
+| 1783626447 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.70316 | `2ozcjug1cYMSpCicVwNuWtghbJAjkwhhvkzrCMNMRuGU5HN8rKKXegQpmfSmZtK7ZpxmUc1XxNHzfEwEXS8gjZTA` |
+| 1783627016 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.703108 | `2gBkHyzbsXYieQUhRmMAySqAs7s5AT4aJXZGRbAAsk35AWm7UUw5BFGhBHjsNvqBBTPYN1cQGSdiybikdaTgjk3F` |
+| 1783627661 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.70304 | `4M5Ldbs9yv7sKUHu69MeEL5KBBLwexeXDb5YR3BwS7ErXZcdVSKdu5QipyoSdL49W9TKZ2aAs7TBSp6gQvx4hZuv` |
+| 1783628871 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.702927 | `45PPQQKg34medcj1PGzgUtYKAy8XWZMxvBQLBPkusnfLraeADrdmfgTTwrZCUFxPWWzV4uQvm5znJb94bPGEo8F2` |
+| 1783630680 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.702759 | `4TQ9THufpooAqZosY9f89s7ao2zEfsnicH1QiyTyeuGUwraY8PM2XAg6sTkonxytiqykX4srDeG6UoDhox8a93ZC` |
+| 1783631346 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.702678 | `355DeANwbnUjcbchFykvwWns8a128MLyDpG17BS5wZ2bi1s84yzSL5tLfCfmxfKmFsFuPmdvhigDwWpusU7TYBMX` |
+| 1783631889 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.617491 | `47JrjjFZGgnQWe8rtbkceT6fCKDFvDCM4iyxdo3JRMhayzbSSYUuqTGEXF6qf2rBZZQNepLu5YDY4vXKrPBB8PEB` |
+| 1783632612 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.475412 | `5Px2dFsMHyarrQjiFsTkV7U3ji8Yy6zoYbYT8AVevuUwV7sbY7LtZeHwx1CtAbmARYvz3b41MDmRBnyAv3kdSHHX` |
+| 1783635157 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.577122 | `4QQT954bJWyzAUFwj3knXzAKWGnHJcJv3YJhxqUMSkwDrVWZ8j8wLVkkw2Zv26T4SaZzu5awsXmnXyWS223anNqM` |
+| 1783635534 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.577109 | `4EzsZ6qjYL2Vb6yK6bcCvXpiQ1GZnqWACEFY2saW5V99pYB4XWYCpxvfex9ssUxRZnf1Ey8vQCzoUthjVtCiGFGT` |
+| 1783636213 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.577023 | `59JU1hzprRWpbPdjv3oVLXV44pZVRnnFeH7MiLCtZuZg1ogarqH4pJNeW4yDTi1F3toW3nzeUyeqe1PCdorQS7pG` |
+| 1783637974 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.576873 | `GBXvsdWgdTdzfddLa1DLdy1QtAtByzKq5Xab7EVWp7Ers9AA7MiH9tkkBY3KL2Vep9c184u7ohi33i7vK8mGG37` |
+| 1783639245 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.581655 | `3Tm4fe64nYqmRC3mU6BZWqFY5Ctd8c5Q91Ca1WgGyBtzPM3wRG6kf5qpDCAV2BR218yUrXZWesyaNvt33NeTUHj5` |
+| 1783639822 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.581605 | `ZYEZTfLm1YU2iCRo7AVSMnr4NkkXzFLEtawyejAXvqT1aVkC4hp2cjHHtTqT4eKTYujBU4RCYjQunq891z3RyfE` |
+| 1783640491 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.482619 | `4ujy96KUzYM1oEYMYoYHeXdcdtWiWWgKJWnoK9rtAzfdZMxRsEEUWuu6Jk7eFqqT6JXTWB5Cdt8utCjkNg2fWg4V` |
+| 1783641026 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.482582 | `5JHbJ27JHwhsCxMNe9M93PuuwWDDpJ9eKFwFf5Sx7vbKpwUFUvBVH3MLhJSnQW3KKu4xvsSgCcaLu1ATX6R4sZdU` |
+| 1783641619 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.482531 | `2NbDE2WMVwHGMcohA47PrS8kfT21hVUDLDkYhvpCwNYF1yqVZcBXkHzdA7wXEWpUt5ktrdVvbjzpdTq8dL8TUR47` |
+| 1783642326 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.482447 | `2V8wfRyw1rk99oWf9e3K2fNCkKRADmiTsWhsF7AdaUZ4SHNhxA93Prk3wdDZz1PyemyBieNiQ2JorXE9MeYd77Y` |
+| 1783643558 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.482331 | `2D7bkgjwjCutKLJMERukSYoC3fk7fVRZxzrtiuTRe6Mk4uiKSsYV5uX7EptC39Td5Jw6eT7zjYXVGR3JXM1FnegM` |
+| 1783644776 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.577088 | `3RXeCfDri1eqGTdqQmTqPa7qDJVV1zTVgF5EyWUChtgF6BdciTkyvmpDGAA7UchMVVGoLCPBEgWQhxkhquzWtJZ3` |
+| 1783645340 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.594464 | `5DC2DxuRuoYtf53KYMabS2HueoHTnFVbZr3Qb6bLktVVnmacHbTDWjEibBf1AWYRGrL3fcoLqTxJiuirWpzuZwBB` |
+| 1783645925 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.529895 | `4GukBTBFGEFjp7PidXAARejvcnU1xPYRHrxGWSuFiSmvmhBb5PSwFXEdGxE8qNPcjSrucY9rmKGwMMCapfsSokEH` |
+| 1783646478 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.529853 | `2tGzZXeAHcD672PpCxNG2f2uSyDNPRcebkmmdMhQvPnZcg7F5LGGBuPyLRkdJxBfuwa95WbzaYExrd5VXkoamocu` |
+| 1783647796 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.47559 | `4DcUgiDRrpBtkNavGRVjqZjbabq1azKjsrrXw2bPwG3UNkSktVDHs68MfLiiwFLz73x4zd6pgiMnc285pmiv2p4Y` |
+| 1783649068 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.353485 | `5jMvL6w2c16pPdL74Z5txhhfPKu1qc7qQedidHbEk39FuZ9vwoZcCaAEg6Ukq2JdG8NbPrTrejzt4dGNtzRbA88j` |
+| 1783649701 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.35342 | `4qA74vQmraiXeLYaxHerJjAdEKbivjodEzWR5D1i21rQuu8FfZdbyGxSmFjRQCwxnxcLtjd4ia8QNWmiTqLUJBVP` |
+| 1783650894 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.353315 | `2ZHLrXMbhdXGkdnfmaL5K6aWsnpRp6y6ck98aQPuv9Wj8gNUtfEvt2cx7A4EKgFY1Du6ecq1uS1bcwjmEGyvtAYz` |
+| 1783651520 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.35325 | `2bLw22uyNu9RDvxs4drXPrLy4sXjtKv5Mhvsnsq9mKpobZLsYdfhLe2XuCG7jV6DgDYi9uqGgPzwDVDMKkifsBPJ` |
+| 1783651992 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 12.353233 | `5ZSWHQL1bXfc6juxjGWhmXBVxw4msADG7q7y8w6uSGUvDE1QMFZQHTgk5ARRaWMHgbHtQhd2Kjsj4vifUbgH5czo` |
+| 1783653402 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.891959 | `49QKV3cXfFG6fTB7E9H8MQ5Xky1bvLNzHojWfiQ1a3s2XbZvY7W76EGYNbXp4HNCbuTFqmjLNJYBig8uLR6JFy6f` |
+| 1783654248 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.891854 | `5DcfGaKLTwRw2SddfvmVwFtTxzutfMDKnHM7ikgZDXt9FMhwMyyRUeom1Rex1EWscafEPKdVTfhd8SRghRMgbodf` |
+| 1783654430 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.891832 | `2tnzuvUFE4K5TeBoYD5gEkk6YmuBUD54afpHjCLmiTLWSStgh4E8HfFtMXhxzqaoChHCQuVfuqzbVKysJSR853z1` |
+| 1783655404 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.82391 | `4g6xjTpNM4d67sfwru7rwbabNxJckMWKqXrvpDtWE2mbPkwiss5mhuyPqGfuzJ1q45wkXiHqfvauDpcVYQKHFwpL` |
+| 1783655651 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.823889 | `5FWtbFqJz9GuBDNPyJnwX2Y5EpWmeuqrQ6Y9yD5dYfG69on8H6K67VJq11gkEGoyGdBo8qhPEcJzj9mwzShiQNUG` |
+| 1783656410 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.77913 | `4Fb95RBM1qZEYWK3cKxd6jpxoN2MQqTr4oWZTfHApJvGKB7mMAniHJFyD8KnFggiF6bS4revBYEwVEBFfoyX9jC4` |
+| 1783657001 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | buy | None | 11.723383 | `N6rGRneUVUVLg6M8naUWAigmXRrzmqY4qvDWBQEuCabMWUYm3n3zT8pN9yHLDm3tL2NZibJYMU7ekmoUgB9w6bx` |
+| 1788146032 | `5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE` | tech | sell | None | 939.11556 | `2tRqSchsftZ18zWCz8jCReNffsJM6Ymmvk4yt7F9UfsjDbaWucLY8xKABtsNwZUwM1iJfkD9pJVi761MhmNUn6RG` |

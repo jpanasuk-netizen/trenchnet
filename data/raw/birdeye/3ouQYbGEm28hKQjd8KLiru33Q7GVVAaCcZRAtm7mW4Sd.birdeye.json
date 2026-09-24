@@ -1,0 +1,294 @@
+{
+  "mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+  "fetched_at": "2026-09-24T11:39:30.892517Z",
+  "source": "birdeye",
+  "price": {
+    "mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+    "price_usd": 3.927304107805154e-06,
+    "price_change_24h": -27.787376352778065,
+    "liquidity": null,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/price",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:27.759926Z",
+      "params_keys": [
+        "address"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "ohlcv": {
+    "mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+    "type": "1H",
+    "candles": [
+      {
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "unixTime": 1790182800,
+        "o": 5.073945793820256e-06,
+        "h": 1.0665290090938242e-05,
+        "l": 5.056097510905668e-06,
+        "v": 1538284056.9379992,
+        "c": 5.056097510905668e-06,
+        "type": "1H",
+        "vUsd": 10317.215495204055,
+        "currency": "usd"
+      },
+      {
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "unixTime": 1790186400,
+        "o": 5.056097510905668e-06,
+        "h": 5.412745632533387e-06,
+        "l": 4.6916043786837094e-06,
+        "v": 130975992.082648,
+        "c": 5.412745632533387e-06,
+        "type": "1H",
+        "vUsd": 636.3473034881433,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790190000,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 5.412745632533387e-06,
+        "h": 5.412745632533387e-06,
+        "l": 3.927304107805154e-06,
+        "v": 186312204.29770502,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 829.6335229144502,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790193600,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790197200,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790200800,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790204400,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790208000,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790211600,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790215200,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790218800,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790222400,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790226000,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790229600,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790233200,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790236800,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790240400,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790244000,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      },
+      {
+        "unixTime": 1790247600,
+        "address": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+        "o": 3.927304107805154e-06,
+        "h": 3.927304107805154e-06,
+        "l": 3.927304107805154e-06,
+        "v": 0,
+        "c": 3.927304107805154e-06,
+        "type": "1H",
+        "vUsd": 0,
+        "currency": "usd"
+      }
+    ],
+    "n": 19,
+    "source": "birdeye",
+    "meta": {
+      "endpoint": "/defi/ohlcv",
+      "source": "birdeye",
+      "fetched_at": "2026-09-24T11:39:29.320308Z",
+      "params_keys": [
+        "address",
+        "time_from",
+        "time_to",
+        "type"
+      ],
+      "status": 200,
+      "ok": true
+    }
+  },
+  "price_meta": {
+    "endpoint": "/defi/price",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:27.759926Z",
+    "params_keys": [
+      "address"
+    ],
+    "status": 200,
+    "ok": true
+  },
+  "ohlcv_meta": {
+    "endpoint": "/defi/ohlcv",
+    "source": "birdeye",
+    "fetched_at": "2026-09-24T11:39:29.320308Z",
+    "params_keys": [
+      "address",
+      "time_from",
+      "time_to",
+      "type"
+    ],
+    "status": 200,
+    "ok": true
+  }
+}
