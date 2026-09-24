@@ -367,3 +367,12 @@ TRENCHNET desk UI default moved **8788 → 8791**. Reason: 8788 reserved for Mus
 - `tests/test_helius_birdeye.py`
 - TradeEvent optional `source` field
 
+
+
+## Pass 5 — copy-trade backtest, walk-forward, scores, interactive desk
+
+- Paper/analysis only. LIVE untouched / disarmed.
+- Modules: 	renchnet/backtest.py, 	renchnet/scores.py, config/backtest.yaml.
+- CLI: acktest, scores.
+- Interactive dashboard: global filters, graph hover/drawer, sortable tables, backtest sliders (browser recompute from baked per_trade paths), local charts.js/interactive.js (no CDN), /api/data-version poll when served on 8791.
+- Honesty: unpriceable when no price; no unit mixing (birdeye USD vs derived SOL); OOS reports insufficient when priced wallet overlap across folds is too thin.

@@ -60,3 +60,10 @@ FREEBUFF_*.txt
 typescript
 data/raw/history/
 
+
+out/_box_stage_pass5/
+out/ui_pass5.*
+out/pass5_*.log
+out/_staged.txt
+out/_git_add_n.txt
+

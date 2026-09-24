@@ -123,6 +123,13 @@ def run_replay(settings: dict[str, Any] | None = None, roster: dict[str, Any] | 
             "attention_hint": "new_situation" if current else "still_valid",
             "note": "Code computed all counts; Jev must not do arithmetic.",
         }
+        # Pass 5: attach composite score features for Jev citations (dry-run safe)
+        try:
+            from trenchnet.scores import score_features_for_wallet
+            snapshot["wallet_score"] = score_features_for_wallet(out_dir.parent, waddr)
+            snapshot["numeric_features"] = snapshot["wallet_score"]
+        except Exception as _sc_exc:
+            snapshot["wallet_score"] = {"available": False, "error": type(_sc_exc).__name__}
         routed = judge_snapshot(snapshot, model=jev_model)
         routed["wallet"] = waddr
         routed["label"] = p["label"]

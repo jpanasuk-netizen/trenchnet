@@ -5,6 +5,9 @@ Serves out/dashboard.html + assets (file:// compatible) and a small JSON API:
   GET  /assets/*        -> vendored assets (data.js etc.)
   GET  /paper           -> paper portfolio page
   GET  /api/overview    -> real out/ data summary (json)
+GET  /api/data-version -> freshness token for UI poll (no secrets)
+GET  /api/backtest/summary -> paper backtest summary
+GET  /api/scores       -> wallet composite scores
   GET  /health          -> kill switch + counters
   GET  /api/events      -> SSE ping stream (live status feed)
   POST /api/paper/buy|sell|close  {wallet, token_mint?, amount_token?}
@@ -243,6 +246,50 @@ def build_handler(root: Path):
                 self._json(_handle_live_api(root, "GET", p, {}))
             elif p == "/api/overview":
                 self._json(dashboard.collect_data(root))
+            elif p == "/api/data-version":
+                # Read-only freshness signal for the interactive dashboard poller.
+                bsum = root / "out" / "backtest_summary.json"
+                scores = root / "out" / "scores.json"
+                data_js = root / "out" / "assets" / "data.js"
+                def _mtime(path):
+                    try:
+                        return path.stat().st_mtime
+                    except OSError:
+                        return None
+                ver = {
+                    "ok": True,
+                    "paper_only": True,
+                    "generated_at_utc": None,
+                    "mtime": {
+                        "backtest_summary": _mtime(bsum),
+                        "scores": _mtime(scores),
+                        "data_js": _mtime(data_js),
+                    },
+                }
+                try:
+                    import json as _json
+                    if bsum.exists():
+                        ver["generated_at_utc"] = (_json.loads(bsum.read_text(encoding="utf-8")).get("generated_at_utc"))
+                except Exception:
+                    pass
+                # version token = max mtime (no secrets)
+                mt = [v for v in ver["mtime"].values() if v is not None]
+                ver["version"] = str(max(mt) if mt else 0)
+                self._json(ver)
+            elif p == "/api/backtest/summary":
+                import json as _json
+                pth = root / "out" / "backtest_summary.json"
+                if not pth.exists():
+                    self._json({"error": "missing", "note": "run: python -m trenchnet.cli backtest"}, 404)
+                else:
+                    self._json(_json.loads(pth.read_text(encoding="utf-8")))
+            elif p == "/api/scores":
+                import json as _json
+                pth = root / "out" / "scores.json"
+                if not pth.exists():
+                    self._json({"error": "missing"}, 404)
+                else:
+                    self._json(_json.loads(pth.read_text(encoding="utf-8")))
             elif p == "/health":
                 settings = load_settings()
                 cfg = paper_settings_from(settings)

@@ -131,6 +131,7 @@ def mock_jev_answers(snapshot: dict[str, Any]) -> dict[str, Any]:
         else:
             fit, intent = "mismatch", "exploratory"
     attn = snapshot.get("attention_hint") or "needs_update"
+    score_bits = snapshot.get("wallet_score") or snapshot.get("numeric_features") or {}
     return {
         "behavior_fit": fit,
         "position_intent": intent,
@@ -138,6 +139,7 @@ def mock_jev_answers(snapshot: dict[str, Any]) -> dict[str, Any]:
         "attention": attn,
         "confidence": 0.4,
         "dry_run": True,
+        "numeric_features": score_bits,
         "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set",
     }
 

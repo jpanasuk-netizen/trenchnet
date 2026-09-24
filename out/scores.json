@@ -1,0 +1,902 @@
+{
+  "generated_at_utc": "2026-09-24T12:45:49Z",
+  "paper_only": true,
+  "weights": {
+    "entry_earliness": 0.15,
+    "win_rate": 0.15,
+    "median_hold": 0.1,
+    "lead_follow": 0.15,
+    "trade_frequency": 0.1,
+    "copyability_60s": 0.2,
+    "oos_stability": 0.15
+  },
+  "walk_forward_status": "insufficient_data",
+  "n_wallets": 26,
+  "wallets": [
+    {
+      "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+      "label": "tech",
+      "score": 0.7243,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.8667,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.0111,
+        "copyability_60s": 0.9326,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 1.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 52.0,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 5.9597,
+        "copy_pnl_60s_sol": -0.146611,
+        "copy_coverage_60s_pct": 1.41
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 1
+    },
+    {
+      "wallet": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+      "label": "cobuy_DuVUs5",
+      "score": 0.723,
+      "features": {
+        "entry_earliness": 0.8798,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.4711,
+        "copyability_60s": 0.7195,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 7279.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 1465.0,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 248.7805,
+        "copy_pnl_60s_sol": -0.609818,
+        "copy_coverage_60s_pct": 50.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 2
+    },
+    {
+      "wallet": "91ifULtW8xzWcPe6UVk6n6ujTETg9yttogACDz2Nisa4",
+      "label": "cobuy_91ifUL",
+      "score": 0.6768,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0182,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 2396.0,
+        "lead_follow_ratio": null,
+        "trades_per_day": 9.6958,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 3
+    },
+    {
+      "wallet": "2m1xfswxtbe6VAcr6FWhzK9y2RS4yxp5uCEVJXFXB7yF",
+      "label": "cobuy_2m1xfs",
+      "score": 0.6764,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0137,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 301.5,
+        "lead_follow_ratio": null,
+        "trades_per_day": 7.3513,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 4
+    },
+    {
+      "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+      "label": "cobuy_4tH7jj",
+      "score": 0.6759,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.009,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 100.5,
+        "lead_follow_ratio": 0.5,
+        "trades_per_day": 4.8641,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 5
+    },
+    {
+      "wallet": "3iwsr9782Gp9xtRyK2ZkHC85uG7YnQWHYtWKptA4HqXS",
+      "label": "cobuy_3iwsr9",
+      "score": 0.6752,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0019,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 106.5,
+        "lead_follow_ratio": null,
+        "trades_per_day": 1.1266,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 6
+    },
+    {
+      "wallet": "AWY6igHQE6LfnGCgVYf47EvZRYWRme5zGf4KFefRW4Yr",
+      "label": "cobuy_AWY6ig",
+      "score": 0.675,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0003,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 638.0,
+        "lead_follow_ratio": null,
+        "trades_per_day": 0.25,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 7
+    },
+    {
+      "wallet": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+      "label": "cobuy_2tgUbS",
+      "score": 0.67,
+      "features": {
+        "entry_earliness": 0.781,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.0907,
+        "copyability_60s": 0.9687,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 13263.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 48.0,
+        "copy_pnl_60s_sol": -0.068056,
+        "copy_coverage_60s_pct": 50.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 8
+    },
+    {
+      "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+      "label": "cobuy_Aehytc",
+      "score": 0.67,
+      "features": {
+        "entry_earliness": 0.781,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.0907,
+        "copyability_60s": 0.9687,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 13263.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 48.0,
+        "copy_pnl_60s_sol": -0.068056,
+        "copy_coverage_60s_pct": 50.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 9
+    },
+    {
+      "wallet": "BBrYAFjFrX4M71ZEjLgu426zyiQmRAqYzBKKfE2dWBQr",
+      "label": "cobuy_BBrYAF",
+      "score": 0.657,
+      "features": {
+        "entry_earliness": 0.6653,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.3333,
+        "trade_frequency": 0.7665,
+        "copyability_60s": 0.903,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 20276.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 2485.5,
+        "lead_follow_ratio": 0.3333,
+        "trades_per_day": 404.7218,
+        "copy_pnl_60s_sol": -0.210919,
+        "copy_coverage_60s_pct": 20.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 10
+    },
+    {
+      "wallet": "7N84m7UGFD5ZEXQegikkKweCxqj4GikxWTzY9BhR9Ebg",
+      "label": "cobuy_7N84m7",
+      "score": 0.6564,
+      "features": {
+        "entry_earliness": 0.7031,
+        "win_rate": 1.0,
+        "median_hold": 0.2333,
+        "lead_follow": 0.6667,
+        "trade_frequency": 0.0907,
+        "copyability_60s": 0.9677,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 17985.0,
+        "win_rate": 1.0,
+        "median_hold_sec": 14.0,
+        "lead_follow_ratio": 0.6667,
+        "trades_per_day": 48.0,
+        "copy_pnl_60s_sol": -0.070306,
+        "copy_coverage_60s_pct": 100.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 11
+    },
+    {
+      "wallet": "5xVAqU9V2irjxkBNHGBnSNjCfhu43nJMqsAkqb6mxzZS",
+      "label": "cobuy_5xVAqU",
+      "score": 0.6352,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.602,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 5980.5,
+        "lead_follow_ratio": null,
+        "trades_per_day": 0.1005,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 12
+    },
+    {
+      "wallet": "525LueqAyZJueCoiisfWy6nyh4MTvmF4X9jSqi6efXJT",
+      "label": "Joji",
+      "score": 0.6281,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0305,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": null,
+        "trades_per_day": 16.2074,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 13
+    },
+    {
+      "wallet": "CyaE1VxvBrahnPWkqm5VsdCvyS2QmNht2UFrKJHga54o",
+      "label": "Cented",
+      "score": 0.6252,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0017,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": null,
+        "trades_per_day": 1.0,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 14
+    },
+    {
+      "wallet": "Hhum7yfTBgCfS1WaKhZE3zJ4pSLqaQXJfNJB4KMy8DT9",
+      "label": "cobuy_Hhum7y",
+      "score": 0.6196,
+      "features": {
+        "entry_earliness": 0.7061,
+        "win_rate": 0.0,
+        "median_hold": 1.0,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.0001,
+        "copyability_60s": 0.9432,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 17804.0,
+        "win_rate": 0.0,
+        "median_hold_sec": 368.0,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 0.1538,
+        "copy_pnl_60s_sol": -0.123603,
+        "copy_coverage_60s_pct": 100.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 15
+    },
+    {
+      "wallet": "G9ELzG3Gg6HsGmEK7xd3CWrany9haheuAiRt6jWL9D2M",
+      "label": "cobuy_G9ELzG",
+      "score": 0.6038,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.286,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0015,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 12586.0,
+        "lead_follow_ratio": null,
+        "trades_per_day": 0.9152,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 16
+    },
+    {
+      "wallet": "9Xkc6UGhXZStswNMzZWboERw4FBeToMqxRDKQfkS1sp",
+      "label": "cobuy_9Xkc6U",
+      "score": 0.6005,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 1.0,
+        "lead_follow": 0.0,
+        "trade_frequency": 0.0658,
+        "copyability_60s": 0.9698,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 277.5,
+        "lead_follow_ratio": 0.0,
+        "trades_per_day": 34.8225,
+        "copy_pnl_60s_sol": -0.065611,
+        "copy_coverage_60s_pct": 1.23
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 17
+    },
+    {
+      "wallet": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+      "label": "cobuy_C3UvH3",
+      "score": 0.5951,
+      "features": {
+        "entry_earliness": 0.7803,
+        "win_rate": 0.5,
+        "median_hold": 0.4833,
+        "lead_follow": 0.0,
+        "trade_frequency": 1.0,
+        "copyability_60s": 0.8987,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 13305.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 29.0,
+        "lead_follow_ratio": 0.0,
+        "trades_per_day": 528.0,
+        "copy_pnl_60s_sol": -0.220341,
+        "copy_coverage_60s_pct": 31.82
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 18
+    },
+    {
+      "wallet": "5zaobPsbTKwgV9qFjkW7ds8sHFoe8q64tePqrR7zSYMM",
+      "label": "cobuy_5zaobP",
+      "score": 0.5716,
+      "features": {
+        "entry_earliness": 1.0,
+        "win_rate": 0.5,
+        "median_hold": 0.2473,
+        "lead_follow": 0.3333,
+        "trade_frequency": 0.0004,
+        "copyability_60s": 0.9844,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 0.0,
+        "win_rate": 0.5,
+        "median_hold_sec": 14559.0,
+        "lead_follow_ratio": 0.3333,
+        "trades_per_day": 0.3193,
+        "copy_pnl_60s_sol": -0.034028,
+        "copy_coverage_60s_pct": 3.12
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 19
+    },
+    {
+      "wallet": "3odkxoFB7KvujaRFoLbCQbbZv93R9njJr9KQTH5cKDKT",
+      "label": "cobuy_3odkxo",
+      "score": 0.557,
+      "features": {
+        "entry_earliness": 0.5456,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0017,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 27524.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 0.5,
+        "trades_per_day": 1.0,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 20
+    },
+    {
+      "wallet": "6EMsVK7dnX9oBDpHAeKJ1ccdJVEgZkNR1QcF5phzCwjS",
+      "label": "cobuy_6EMsVK",
+      "score": 0.557,
+      "features": {
+        "entry_earliness": 0.5456,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0017,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 27524.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 0.5,
+        "trades_per_day": 1.0,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 21
+    },
+    {
+      "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
+      "label": "Doji",
+      "score": 0.5239,
+      "features": {
+        "entry_earliness": 0.986,
+        "win_rate": 0.6364,
+        "median_hold": 0.9833,
+        "lead_follow": 0.6667,
+        "trade_frequency": 0.0721,
+        "copyability_60s": 0.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 848.0,
+        "win_rate": 0.6364,
+        "median_hold_sec": 59.0,
+        "lead_follow_ratio": 0.6667,
+        "trades_per_day": 38.1602,
+        "copy_pnl_60s_sol": -2.174345,
+        "copy_coverage_60s_pct": 6.04
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 22
+    },
+    {
+      "wallet": "Gm9fBtFc9V85RvPToGeqKTqrjeVKD1Dwz7X5JXMS57sU",
+      "label": "cobuy_Gm9fBt",
+      "score": 0.5184,
+      "features": {
+        "entry_earliness": 0.7048,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.0,
+        "trade_frequency": 0.127,
+        "copyability_60s": 1.0,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 17882.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 0.0,
+        "trades_per_day": 67.1237,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 23
+    },
+    {
+      "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
+      "label": "cobuy_HLnpSz",
+      "score": 0.5145,
+      "features": {
+        "entry_earliness": 0.7,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.0,
+        "trade_frequency": 0.1362,
+        "copyability_60s": 0.9792,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 18172.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 0.0,
+        "trades_per_day": 72.0,
+        "copy_pnl_60s_sol": -0.045206,
+        "copy_coverage_60s_pct": 16.67
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 24
+    },
+    {
+      "wallet": "5GUdxYchpgTc73TWCy1MPPRnuoXmKXJaq11D7SxY4SH8",
+      "label": "cobuy_5GUdxY",
+      "score": 0.4502,
+      "features": {
+        "entry_earliness": 0.5,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.5,
+        "trade_frequency": 0.0017,
+        "copyability_60s": 0.5,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": null,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": null,
+        "trades_per_day": 1.0,
+        "copy_pnl_60s_sol": null,
+        "copy_coverage_60s_pct": null
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 25
+    },
+    {
+      "wallet": "G6fUXjMKPJzCY1rveAE6Qm7wy5U3vZgKDJmN1VPAdiZC",
+      "label": "clukz",
+      "score": 0.4413,
+      "features": {
+        "entry_earliness": 0.0,
+        "win_rate": 0.0,
+        "median_hold": 0.0917,
+        "lead_follow": 1.0,
+        "trade_frequency": 0.0735,
+        "copyability_60s": 0.9991,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 60573.0,
+        "win_rate": 0.0,
+        "median_hold_sec": 5.5,
+        "lead_follow_ratio": 1.0,
+        "trades_per_day": 38.9192,
+        "copy_pnl_60s_sol": -0.001978,
+        "copy_coverage_60s_pct": 0.23
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      },
+      "rank": 26
+    }
+  ],
+  "disclaimer": "Composite score is an observational ranking for paper analysis \u2014 not financial advice."
+}

@@ -45,10 +45,21 @@ def combine_jev_answers(answers: dict[str, Any], confidence: float | None = None
         route = "insufficient_evidence"
         reasons.append("ambiguous_answers_default_uncertain")
 
+    # Pass 5: cite numeric wallet-score features when present (never invent).
+    feats = answers.get("numeric_features") or answers.get("wallet_score") or {}
+    if isinstance(feats, dict) and feats.get("available"):
+        reasons.append(
+            "score_rank_%s_composite_%s_oos_%s"
+            % (feats.get("rank"), feats.get("score"), feats.get("oos_flag"))
+        )
+        for k, v in (feats.get("features") or {}).items():
+            reasons.append("feat_%s_%.3f" % (k, float(v)))
+
     return {
         "route": route,
         "reasons": reasons,
         "answers": answers,
         "confidence": conf,
         "observe_only": True,
+        "numeric_features": feats if isinstance(feats, dict) else {},
     }

@@ -1,0 +1,31 @@
+# Pass 5 copy-trade backtest + score weights (paper-only)
+delays_seconds: [0, 30, 60, 120]
+position:
+  size_sol: 0.25
+costs:
+  pumpfun_fee_bps: 100
+  priority_fee_sol: 0.00005
+  slippage_base_bps: 50
+  slippage_max_bps: 800
+  slippage_liquidity_ref_sol: 1.0
+exits:
+  mirror_sell: true
+  take_profit_pct: 0.50
+  stop_loss_pct: 0.25
+  time_stop_seconds: 3600
+walk_forward:
+  min_train_trades: 30
+  min_test_trades: 15
+  min_span_days: 7
+  n_folds: 3
+scores:
+  weights:
+    entry_earliness: 0.15
+    win_rate: 0.15
+    median_hold: 0.10
+    lead_follow: 0.15
+    trade_frequency: 0.10
+    copyability_60s: 0.20
+    oos_stability: 0.15
+  hold_sweet_min: 60
+  hold_sweet_max: 3600

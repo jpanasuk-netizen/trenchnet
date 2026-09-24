@@ -56,6 +56,9 @@ def main(argv: list[str] | None = None) -> int:
     if p_fh is not None and not any(a.dest=="rpc" for a in getattr(p_fh, "_actions", [])):
         p_fh.add_argument("--rpc", default=None, help="Override free RPC URL for this run")
 
+        sub.add_parser("backtest", help="Pass 5 copy-trade backtest + walk-forward (paper only)")
+    sub.add_parser("scores", help="Pass 5 wallet composite scores (paper only)")
+
     args = parser.parse_args(argv)
 
     print("=" * 60)
@@ -169,6 +172,33 @@ def main(argv: list[str] | None = None) -> int:
         res = fetch_for_mints(mints, raw_dir)
         print(json.dumps({"ok": True, "n": len(res), "mints": list(res)}, indent=2))
         return 0
+
+    if args.cmd == "backtest":
+        from trenchnet.backtest import run_backtest, write_backtest_outputs
+        from trenchnet.scores import write_scores
+        from trenchnet.dashboard import regenerate
+        result = run_backtest(ROOT)
+        paths = write_backtest_outputs(ROOT, result)
+        sp = write_scores(ROOT, backtest=result)
+        try:
+            reg = regenerate(ROOT)
+        except Exception as exc:
+            reg = {"error": str(exc)}
+        summary = {k: result[k] for k in result if k != "per_trade"}
+        summary["per_trade_count"] = len(result.get("per_trade") or [])
+        summary["outputs"] = {**paths, **sp, **(reg if isinstance(reg, dict) else {})}
+        print(json.dumps(summary, indent=2, default=str))
+        return 0
+    if args.cmd == "scores":
+        from trenchnet.scores import write_scores, compute_scores
+        from trenchnet.backtest import run_backtest, write_backtest_outputs
+        bt = run_backtest(ROOT)
+        write_backtest_outputs(ROOT, bt)
+        doc = compute_scores(ROOT, backtest=bt)
+        write_scores(ROOT, backtest=bt)
+        print(json.dumps({k: doc[k] for k in doc if k != "wallets"} | {"top5": doc.get("wallets", [])[:5]}, indent=2))
+        return 0
+
 
     # ---- paper commands ----
     from trenchnet.paper import (

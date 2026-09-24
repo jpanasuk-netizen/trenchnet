@@ -104,6 +104,7 @@ table.ledger a{color:var(--blue)}
 </div>
 <header class="hero" id="hero"></header>
 <div class="honesty" id="honesty"></div>
+<p class="muted" style="margin:8px 18px">Pass 5 interactive desk: filters, drawer, sortable tables, backtest sliders (browser recompute from baked paths). PAPER only — LIVE stays disarmed.</p>
 <div class="grid">
   <aside class="panel">
     <h2>Roster</h2>
@@ -164,7 +165,32 @@ table.ledger a{color:var(--blue)}
   <div class="panel" style="grid-column:1/-1"><h2>Token context — Dexscreener + GeckoTerminal (free, no signup)</h2><div id="tctx"></div>
     <p class="note">Price/liq/volume from public pair snapshots at fetch time. Every number links to its source. No X API. Empty = not fetched or no pair.</p></div>
 </div>
-<script src="assets/data.js"></script>
+<script src="assets/data.js">
+window.addEventListener('trenchnet:layout', (ev)=>{
+  try{
+    if(ev.detail==='force'){ /* nudge nodes for force-ish jitter */
+      nodes.forEach(n=>{ n.fx = n.fx*0.7 + Math.random()*0.3; n.fy = n.fy*0.7 + Math.random()*0.3; });
+    }
+    layout(); draw();
+  }catch(e){}
+});
+// Zoom/pan on graph canvas
+(function(){
+  const wrap=document.getElementById('graphWrap');
+  const cv=document.getElementById('graph');
+  if(!wrap||!cv) return;
+  let scale=1, panX=0, panY=0, dragging=false, lx=0, ly=0;
+  wrap.style.overflow='hidden';
+  function apply(){ cv.style.transform=`translate(${panX}px,${panY}px) scale(${scale})`; cv.style.transformOrigin='0 0'; }
+  wrap.addEventListener('wheel', (e)=>{ e.preventDefault(); scale=Math.max(0.4, Math.min(3, scale*(e.deltaY<0?1.1:0.9))); apply(); }, {passive:false});
+  wrap.addEventListener('mousedown', (e)=>{ if(e.button!==1 && !e.altKey) return; dragging=true; lx=e.clientX; ly=e.clientY; });
+  window.addEventListener('mouseup', ()=> dragging=false);
+  window.addEventListener('mousemove', (e)=>{ if(!dragging) return; panX+=e.clientX-lx; panY+=e.clientY-ly; lx=e.clientX; ly=e.clientY; apply(); });
+})();
+
+</script>
+<script src="assets/charts.js"></script>
+<script src="assets/interactive.js"></script>
 <script>
 "use strict";
 const D = window.TRENCHNET_DATA || {};
@@ -426,6 +452,7 @@ let selected = null;
   }
 
   function setHover(n, cx, cy){
+    window.__TN_HOVER_NODE = n || null;
     hiWallets.clear(); hiTokens.clear(); hoverId=n?n.id:null;
     if(n && n.kind==="token"){
       (entryOrder.get(n.id)||[]).forEach(w=>hiWallets.add(w));

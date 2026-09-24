@@ -19,3 +19,12 @@ Every pattern below is adapted to a PAPER-ONLY, WATCH-ONLY Solana pump.fun obser
 | 12 | Desktop packaging: PyInstaller one-file desks (MEI magic confirmed) launched from shortcuts with custom icons. | `memecoin-desk` README/docstring — "Coin Desk.exe is PyInstaller (MEI magic confirmed)"; desktop `Kalshi 15m Desk.exe` same pattern | `build_desk.ps1` (PyInstaller) builds `dist\TRENCHNET Desk.exe`; both TRENCHNET.lnk shortcuts point at it (run_ui.bat fallback) with `trenchnet_radar.ico,0`. |
 
 Honesty labels preserved in all outputs: `template report`, `Jev dry-run mock`, `PAPER`, `LIVE off (no implementation)`.
+
+
+## Pass 5 backtest pitfalls (and guards)
+
+- **Lookahead**: Walk-forward cuts are strictly time-ordered — train uses buys with lock_time < cut, test uses >= cut. Ranking never peeks at test trades. If priced overlap across cuts is too thin, we report insufficient_data instead of a fake correlation.
+- **Survivorship**: Roster includes expanded co-buyers and thin wallets, not only historical winners. Scores still depend on who we tracked; the dashboard labels this observational.
+- **Slippage / fees**: Copy sims apply pump.fun fee bps, priority fee, and slippage that scales up when the liquidity proxy (median nearby trade SOL) is thin. Browser sliders only rescale those baked costs — they do not invent fills.
+- **Overfitting**: Composite weights live in config/backtest.yaml and are documented. Out-of-sample stability is a first-class feature; when OOS cannot be measured honestly, wallets are flagged insufficient_oos rather than marked stable.
+- **Missing prices**: No fabricated candles. Unpriceable copies are counted and excluded from PnL. Birdeye USD and derived SOL/token series are never mixed on the same mint.
