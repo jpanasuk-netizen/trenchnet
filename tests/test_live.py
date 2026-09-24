@@ -23,7 +23,16 @@ def tmp_wallet(tmp_path, monkeypatch):
 def tmp_state(tmp_path, monkeypatch):
     sp = tmp_path / "state.json"
     monkeypatch.setattr(state, "STATE_PATH", sp)
+    monkeypatch.setattr(state, "KILL_FILE", tmp_path / "TRENCHNET_KILL")
+    monkeypatch.setattr(state, "HEARTBEAT_FILE", tmp_path / "hb.json")
     st = state.load_state()
+    st["kill_switch"] = False
+    st["armed"] = False
+    state.save_state(st)
+    try:
+        state.clear_kill_file()
+    except Exception:
+        pass
     return sp, st
 
 
@@ -106,17 +115,22 @@ def test_hygiene_veto_blocks(tmp_wallet, tmp_state):
     assert g["reason"] == "hygiene_veto"
 
 
-def test_arm_requires_exact_phrase_and_caps(tmp_wallet, tmp_state):
-    bad = state.try_arm("arm live")
+def test_arm_requires_exact_phrase_and_caps(tmp_wallet, tmp_state, monkeypatch):
+    bad = state.try_arm("arm trenchnet live", wallet_sol=1.0)
     assert bad["ok"] is False
     state.set_limits({
         "max_sol_per_trade": 0.1, "daily_loss_cap_sol": 1, "max_trades_per_day": 5,
         "max_open_positions": 2, "max_slippage_pct": 3, "max_priority_fee_lamports": 5000,
+        "total_loss_kill_sol": 4.0,
     })
-    ok = state.try_arm("ARM LIVE")
+    monkeypatch.setattr("trenchnet.live.wallet.env_key_configured", lambda: True)
+    monkeypatch.setattr("trenchnet.live.wallet.public_address_from_env_or_store", lambda: "FakeWallet1111111111111111111111111111111111")
+    monkeypatch.setattr("trenchnet.live.wallet.public_address_masked", lambda: "Fake…1111")
+    ok = state.try_arm("ARM TRENCHNET LIVE", wallet_sol=1.0)
     assert ok["ok"] is True
     assert ok["armed"] is True
     assert "secret" not in json.dumps(ok)
+
 
 
 def test_send_without_confirm_phrase_blocked(tmp_wallet, tmp_state, monkeypatch):

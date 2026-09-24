@@ -90,3 +90,13 @@ data/hottakes/fresh_events.jsonl
 data/hottakes/tracker_state.json
 data/hottakes/*.tmp
 out/pass8_*.log
+
+# LIVE runtime (never commit)
+TRENCHNET_KILL
+data/live/
+out/live_dryrun*.json
+tools/_mw_b64.txt
+
+# Burner wallet backups (secrets)
+trenchnet/wallet-backup/
+**/wallet-backup/

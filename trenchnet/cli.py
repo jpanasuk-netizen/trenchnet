@@ -63,6 +63,13 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("hottakes", help="Pass 8 Hot Takes backfill + scoreboard (paper only)")
     sub.add_parser("hottakes-poll", help="Pass 8 single Hot Take tracker poll (paper only)")
     sub.add_parser("copydesk", help="Pass 9 Copy Wallets command center JSON (paper only)")
+    p_sa = sub.add_parser("sell-all", help="LIVE panic sell-all (default: simulate; --send only when you mean it)")
+    p_sa.add_argument("--send", action="store_true", help="Actually send (DANGEROUS). Default is simulate.")
+    p_pm = sub.add_parser("position-manager", help="Run LIVE position manager loop (exits only)")
+    p_pm.add_argument("--once", action="store_true")
+    p_pm.add_argument("--interval", type=float, default=15.0)
+    sub.add_parser("live-dry-run", help="LIVE dry-run quotes+simulate for top candidates (no sign/send)")
+    sub.add_parser("new-wallet", help="Generate fresh burner keypair into .env as TRENCHNET_WALLET_KEY (refuse overwrite)")
 
     args = parser.parse_args(argv)
 
@@ -108,6 +115,44 @@ def main(argv: list[str] | None = None) -> int:
         regenerate(ROOT)
         print(f"Copy desk written: {path}")
         return
+
+    if args.cmd == "new-wallet":
+        from trenchnet.live.burner import create_burner_wallet
+        res = create_burner_wallet()
+        # Print PUBLIC only
+        if not res.get("ok"):
+            print("FAILED:", res.get("error"))
+            return 2
+        print("Burner created.")
+        print("Public address (fund this):", res.get("pubkey"))
+        print("Masked:", res.get("pubkey_masked"))
+        print("Backup (gitignored):", res.get("backup_path"))
+        print("Secret written to .env as TRENCHNET_WALLET_KEY (not printed).")
+        print(res.get("warning") or "")
+        return 0
+
+    if args.cmd == "sell-all":
+        from trenchnet.live.sellall import sell_all
+        mode = "send" if getattr(args, "send", False) else "simulate"
+        res = sell_all(mode=mode)
+        print(res)
+        return
+
+    if args.cmd == "position-manager":
+        from trenchnet.live.position_manager import main as pm_main
+        argv = []
+        if getattr(args, "once", False):
+            argv.append("--once")
+        if getattr(args, "interval", None):
+            argv.extend(["--interval", str(args.interval)])
+        raise SystemExit(pm_main(argv))
+
+    if args.cmd == "live-dry-run":
+        from trenchnet.live.dryrun import dry_run_top_candidates
+        import json as _json
+        print(_json.dumps(dry_run_top_candidates(limit=3), indent=2, default=str))
+        return
+
     if args.cmd == "ui":
         from trenchnet.webui import serve
         serve(ROOT, port=args.port, open_browser=not args.no_browser)

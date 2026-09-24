@@ -13,6 +13,7 @@ GET  /api/picks        -> Top Pick card payload (paper; rebuild with ?rebuild=1)
 GET  /api/hottakes    -> Hot Takes feed + scoreboard (paper)
 GET  /api/hottakes/tracker -> tracker status
 GET  /api/copydesk   -> Copy Wallets command center (paper)
+GET  /api/mywallet  -> read-only MY_WALLET_ADDRESS balance/txs (masked)
   GET  /health          -> kill switch + counters
   GET  /api/events      -> SSE ping stream (live status feed)
   POST /api/paper/buy|sell|close  {wallet, token_mint?, amount_token?}
@@ -136,54 +137,72 @@ def _handle_live_api(root: Path, method: str, path: str, body: dict) -> dict:
     from trenchnet.live import state as live_state
     from trenchnet.live import wallet as live_wallet
     from trenchnet.live import orders as live_orders
+    from trenchnet.live.redaction import redact_exc, scrub_dict
+    body = body or {}
     if path == "/api/live/state" and method == "GET":
         return live_state.public_state()
     if path == "/api/live/ledger" and method == "GET":
+        from trenchnet.live.ledger import iter_trades, load_open_positions, open_from_ledger
+        rows = iter_trades()[-100:]
+        # also include legacy ledger.jsonl if present
         lp = root / "data" / "live" / "ledger.jsonl"
-        rows = []
         if lp.is_file():
-            for line in lp.read_text(encoding="utf-8").splitlines()[-100:]:
+            for line in lp.read_text(encoding="utf-8").splitlines()[-50:]:
                 try:
                     rows.append(json.loads(line))
                 except Exception:
                     pass
-        return {"rows": _live_json_scrub(rows)}
+        return scrub_dict({"rows": rows, "open_positions": load_open_positions() or open_from_ledger()})
     if path == "/api/live/balances" and method == "GET":
+        # Prefer env/store pubkey; also try MY_WALLET_ADDRESS for dry-run desk
         pub = live_wallet.public_address()
         if not pub:
-            return {"sol": None, "error": "no_wallet"}
+            try:
+                from trenchnet.mywallet import configured_address
+                pub = configured_address()
+            except Exception:
+                pub = None
+        if not pub:
+            return {"sol": None, "sol_balance": None, "error": "no_wallet", "pubkey_masked": None}
         st = live_state.load_state()
         rpc = st.get("rpc_url") or "https://api.mainnet-beta.solana.com"
+        try:
+            from trenchnet.helius_client import rpc_url_for_solana
+            rpc = rpc_url_for_solana() or rpc
+        except Exception:
+            pass
         try:
             import httpx
             r = httpx.post(rpc, json={"jsonrpc": "2.0", "id": 1, "method": "getBalance", "params": [pub]}, timeout=30.0)
             lam = (((r.json() or {}).get("result") or {}).get("value"))
-            return {"sol": (lam / 1_000_000_000) if lam is not None else None, "pubkey": pub}
+            sol = (lam / 1_000_000_000) if lam is not None else None
+            return {
+                "sol": sol,
+                "sol_balance": sol,
+                "pubkey_masked": live_wallet.mask_address(pub),
+            }
         except Exception as exc:
-            return {"sol": None, "error": type(exc).__name__, "pubkey": pub}
+            return {"sol": None, "sol_balance": None, "error": redact_exc(exc), "pubkey_masked": live_wallet.mask_address(pub)}
+    if path == "/api/live/wallet/create-burner" and method == "POST":
+        from trenchnet.live.burner import api_create_burner
+        return scrub_dict(api_create_burner())
     if path == "/api/live/wallet/generate" and method == "POST":
-        return _live_json_scrub(live_wallet.generate_keypair())
+        # legacy DPAPI path — prefer create-burner → .env
+        return scrub_dict(live_wallet.generate_keypair())
     if path == "/api/live/wallet/import" and method == "POST":
-        sec = body.get("secret") or ""
-        raw = None
-        try:
-            if isinstance(sec, str) and sec.strip().startswith("["):
-                raw = bytes(json.loads(sec))
-            else:
-                from solders.keypair import Keypair
-                try:
-                    kp = Keypair.from_base58_string(sec.strip())
-                    raw = bytes(kp)
-                except Exception:
-                    return {"ok": False, "error": "unsupported_secret_format"}
-        except Exception:
-            return {"ok": False, "error": "bad_secret"}
-        return _live_json_scrub(live_wallet.import_secret_bytes(raw))
+        # Prefer .env key; import endpoint kept but never echoes secret
+        return {"ok": False, "error": "Use TRENCHNET_WALLET_KEY in .env (base58 or JSON byte array). Import body disabled to avoid leaking secrets in logs."}
     if path == "/api/live/limits" and method == "POST":
-        lim = {k: body.get(k) for k in (
-            "max_sol_per_trade", "daily_loss_cap_sol", "max_trades_per_day",
-            "max_open_positions", "max_slippage_pct", "max_priority_fee_lamports"
-        ) if k in body}
+        if body.get("apply_spec"):
+            live_state.apply_spec_caps()
+            return live_state.public_state()
+        allowed = (
+            "max_sol_per_trade", "daily_loss_cap_sol", "total_loss_kill_sol", "max_trades_per_day",
+            "max_open_positions", "max_slippage_pct", "max_priority_fee_lamports",
+            "fee_reserve_sol", "max_buys_per_token", "min_liquidity_sol", "min_token_age_seconds",
+            "take_profit_pct", "stop_loss_pct", "time_stop_seconds",
+        )
+        lim = {k: body.get(k) for k in allowed if k in body}
         live_state.set_limits(lim)
         st = live_state.load_state()
         if "rpc_url" in body:
@@ -193,13 +212,21 @@ def _handle_live_api(root: Path, method: str, path: str, body: dict) -> dict:
         live_state.save_state(st)
         return live_state.public_state()
     if path == "/api/live/arm" and method == "POST":
-        return live_state.try_arm(body.get("phrase") or "", auto=bool(body.get("auto")))
+        return live_state.try_arm(
+            body.get("phrase") or "",
+            auto=bool(body.get("auto")),
+            wallet_sol=body.get("wallet_sol"),
+        )
     if path == "/api/live/disarm" and method == "POST":
         return live_state.disarm("manual_api")
     if path == "/api/live/kill" and method == "POST":
         return live_state.set_kill(bool(body.get("on", True)))
+    if path == "/api/live/sell-all" and method == "POST":
+        from trenchnet.live.sellall import sell_all
+        mode = body.get("mode") or "simulate"
+        return scrub_dict(sell_all(mode=mode))
     if path == "/api/live/order" and method == "POST":
-        return _live_json_scrub(live_orders.execute(
+        return scrub_dict(live_orders.execute(
             side=body.get("side") or "buy",
             token_mint=body.get("token_mint") or "",
             sol_amount=float(body.get("sol_amount") or 0),
@@ -207,6 +234,7 @@ def _handle_live_api(root: Path, method: str, path: str, body: dict) -> dict:
             priority_fee_lamports=int(body.get("priority_fee_lamports") or 0),
             confirm_phrase=body.get("confirm_phrase") or "",
             mode=body.get("mode") or "simulate",
+            wallet_sol=body.get("wallet_sol"),
         ))
     return {"error": "unknown_live_api", "path": path}
 
@@ -247,6 +275,18 @@ def build_handler(root: Path):
                 self._file(root / "out" / "live.html")
             elif p == "/paper":
                 self._file(root / "out" / "dashboard.html")  # portfolio lives in dashboard
+            elif p == "/api/live/dry-run":
+                try:
+                    from urllib.parse import urlparse, parse_qs
+                    from trenchnet.live.dryrun import dry_run_candidate, dry_run_top_candidates
+                    qs = parse_qs(urlparse(self.path).query)
+                    mint = (qs.get("mint") or [None])[0]
+                    if mint:
+                        self._json(dry_run_candidate(token_mint=mint))
+                    else:
+                        self._json(dry_run_top_candidates(limit=3))
+                except Exception as exc:
+                    self._json({"ok": False, "error": type(exc).__name__, "sent": False, "signed": False}, 500)
             elif p.startswith("/api/live/"):
                 self._json(_handle_live_api(root, "GET", p, {}))
             elif p == "/api/overview":
@@ -351,6 +391,21 @@ def build_handler(root: Path):
                     self._json(doc)
                 except Exception as exc:
                     self._json({"error": type(exc).__name__, "paper_only": True, "leaderboard": []}, 500)
+            elif p == "/api/mywallet":
+                try:
+                    from trenchnet.mywallet import fetch_my_wallet
+                    self._json(fetch_my_wallet())
+                except Exception as exc:
+                    self._json({
+                        "ok": False,
+                        "read_only": True,
+                        "paper_only": True,
+                        "error": type(exc).__name__,
+                        "masked_address": None,
+                        "sol_balance": None,
+                        "tokens": [],
+                        "transactions": [],
+                    }, 500)
             elif p == "/health":
                 settings = load_settings()
                 cfg = paper_settings_from(settings)

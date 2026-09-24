@@ -1,19 +1,13 @@
-﻿"""TRENCHNET LIVE trading package.
+"""TRENCHNET LIVE trading package.
 
-DISARMED BY DEFAULT. No key is ever logged, returned by API, or written to data.js.
-Agent/automation must never call send_transaction; only simulateTransaction is used
-unless Jeremy himself arms LIVE in the GUI and confirms each (or ARM AUTO) order.
+DISARMED BY DEFAULT. Private key only from .env TRENCHNET_WALLET_KEY (Jeremy pastes).
+Agents must never arm, never send, never read the key value.
 """
 from __future__ import annotations
 
-__all__ = [
-    "is_armed",
-    "disarm",
-    "wallet_pubkey_only",
-    "LIVE_DISABLED_REASON",
-]
+__all__ = ["is_armed", "disarm", "LIVE_DISABLED_REASON"]
 
-LIVE_DISABLED_REASON = "LIVE disarmed by default — Jeremy must arm in GUI"
+LIVE_DISABLED_REASON = "LIVE disarmed by default — Jeremy must arm in GUI with ARM TRENCHNET LIVE"
 
 def is_armed() -> bool:
     from trenchnet.live.state import load_state
@@ -22,7 +16,3 @@ def is_armed() -> bool:
 def disarm(reason: str = "manual") -> dict:
     from trenchnet.live.state import disarm as _disarm
     return _disarm(reason)
-
-def wallet_pubkey_only() -> str | None:
-    from trenchnet.live.wallet import public_address
-    return public_address()

@@ -1,4 +1,10 @@
-﻿"""Encrypted local LIVE wallet. NEVER log/print/return the secret key."""
+"""LIVE wallet helpers.
+
+Private key loads at runtime ONLY from .env TRENCHNET_WALLET_KEY (Jeremy pastes it).
+Accepts Phantom/MetaMask base58 OR Solana CLI JSON byte array.
+NEVER log/print/return the secret. Failures use redacted errors.
+Agents must not call load_keypair_from_env() during automation.
+"""
 from __future__ import annotations
 
 import json
@@ -7,14 +13,110 @@ import sys
 from pathlib import Path
 from typing import Any
 
-# Path outside repo
+from trenchnet.live.redaction import redact_exc, redact_text
+
+
 def wallet_path() -> Path:
     local = os.environ.get("LOCALAPPDATA") or os.environ.get("HOME") or str(Path.home())
     return Path(local) / "trenchnet" / "live_wallet.bin"
 
 
+def mask_address(addr: str | None) -> str | None:
+    if not addr or len(addr) < 8:
+        return None
+    return f"{addr[:4]}…{addr[-4:]}"
+
+
+def env_key_configured() -> bool:
+    """True if TRENCHNET_WALLET_KEY is present and non-empty. Does not validate format."""
+    from trenchnet.secrets import get_secret
+    raw = get_secret("TRENCHNET_WALLET_KEY")
+    return bool(raw and raw.strip())
+
+
+def _parse_secret_material(raw: str):
+    """Parse base58 string or JSON byte array into bytes. Raises ValueError without echoing value."""
+    s = (raw or "").strip()
+    if not s:
+        raise ValueError("TRENCHNET_WALLET_KEY is empty")
+    # JSON byte array (Solana CLI)
+    if s.startswith("["):
+        try:
+            arr = json.loads(s)
+        except Exception:
+            raise ValueError("TRENCHNET_WALLET_KEY JSON byte array is malformed") from None
+        if not isinstance(arr, list) or not arr:
+            raise ValueError("TRENCHNET_WALLET_KEY JSON byte array is malformed")
+        try:
+            data = bytes(int(x) for x in arr)
+        except Exception:
+            raise ValueError("TRENCHNET_WALLET_KEY JSON byte array has non-integer entries") from None
+        if len(data) not in (32, 64):
+            raise ValueError("TRENCHNET_WALLET_KEY JSON byte array must be 32 or 64 bytes")
+        return data
+    # base58 secret (Phantom / MetaMask export)
+    try:
+        from solders.keypair import Keypair
+        # solders accepts base58 via from_base58_string on older; use base58 lib if needed
+        try:
+            kp = Keypair.from_base58_string(s)
+            return bytes(kp)
+        except Exception:
+            import base58
+            data = base58.b58decode(s)
+            if len(data) not in (32, 64):
+                raise ValueError("decoded length not 32 or 64")
+            return data
+    except ValueError:
+        raise
+    except Exception:
+        raise ValueError(
+            "TRENCHNET_WALLET_KEY must be base58 (Phantom/MetaMask) or a JSON byte array (Solana CLI); value not shown"
+        ) from None
+
+
+def load_keypair_from_env():
+    """Internal — load Keypair from TRENCHNET_WALLET_KEY. NEVER log the key.
+
+    Automation/agents: do not call this. Dry-run uses public MY_WALLET_ADDRESS only.
+    """
+    from solders.keypair import Keypair
+    from trenchnet.secrets import get_secret
+
+    raw = get_secret("TRENCHNET_WALLET_KEY")
+    if not raw:
+        raise FileNotFoundError("TRENCHNET_WALLET_KEY not set in .env")
+    try:
+        data = _parse_secret_material(raw)
+        if len(data) == 64:
+            return Keypair.from_bytes(data)
+        return Keypair.from_seed(data)
+    except ValueError:
+        raise
+    except Exception as exc:
+        raise ValueError(f"TRENCHNET_WALLET_KEY could not be loaded: {redact_exc(exc)}") from None
+
+
+def public_address_from_env() -> str | None:
+    """Derive public address from env key without exposing secret. Returns None if unset/malformed."""
+    if not env_key_configured():
+        return None
+    try:
+        kp = load_keypair_from_env()
+        pub = str(kp.pubkey())
+        del kp
+        return pub
+    except Exception:
+        return None
+
+
+def public_address_masked() -> str | None:
+    return mask_address(public_address_from_env_or_store())
+
+
+# ---- optional DPAPI store (legacy generate/import) ----
+
 def _dpapi_protect(data: bytes) -> bytes:
-    """Windows DPAPI user-bound encrypt. Falls back to NaCl secretbox with machine path salt only for tests."""
     if sys.platform == "win32":
         import ctypes
         import ctypes.wintypes as wt
@@ -39,12 +141,9 @@ def _dpapi_protect(data: bytes) -> bytes:
             return ctypes.string_at(outfile.pbData, outfile.cbData)
         finally:
             kernel32.LocalFree(outfile.pbData)
-    # non-windows test fallback: not for production funds
-    from nacl import secret, utils
-    from nacl.encoding import RawEncoder
+    from nacl import secret
     key = (os.environ.get("TRENCHNET_TEST_WALLET_KEY") or "test-only-not-for-mainnet!!!!").encode()[:32].ljust(32, b"\0")
-    box = secret.SecretBox(key)
-    return box.encrypt(data)
+    return secret.SecretBox(key).encrypt(data)
 
 
 def _dpapi_unprotect(data: bytes) -> bytes:
@@ -74,63 +173,38 @@ def _dpapi_unprotect(data: bytes) -> bytes:
             kernel32.LocalFree(outfile.pbData)
     from nacl import secret
     key = (os.environ.get("TRENCHNET_TEST_WALLET_KEY") or "test-only-not-for-mainnet!!!!").encode()[:32].ljust(32, b"\0")
-    box = secret.SecretBox(key)
-    return box.decrypt(data)
+    return secret.SecretBox(key).decrypt(data)
 
 
 def generate_keypair(path: Path | None = None) -> dict[str, Any]:
-    """Create a fresh keypair, store encrypted, return PUBLIC fields only."""
     from solders.keypair import Keypair
-
     kp = Keypair()
-    secret = bytes(kp)  # 64-byte secret key
+    secret = bytes(kp)
     pubkey = str(kp.pubkey())
-    payload = {
-        "version": 1,
-        "pubkey": pubkey,
-        "secret": list(secret),  # only inside encrypted blob
-        "created_at": __import__("datetime").datetime.utcnow().isoformat() + "Z",
-        "warn": "Dedicated trading wallet only — never use main MetaMask/Coinbase seed",
-    }
-    raw = json.dumps(payload).encode("utf-8")
-    enc = _dpapi_protect(raw)
-    dest = path or wallet_path()
-    dest.parent.mkdir(parents=True, exist_ok=True)
-    dest.write_bytes(enc)
-    # wipe locals
-    del secret, raw, payload
-    return {
-        "ok": True,
-        "pubkey": pubkey,
-        "path": str(dest),
-        "warning": "Fund ONLY what you can lose. Never use your main wallet.",
-        # NEVER include secret
-    }
-
-
-def import_secret_bytes(secret64: bytes, path: Path | None = None) -> dict[str, Any]:
-    """Import from 64-byte secret. secret64 must not be logged by caller."""
-    from solders.keypair import Keypair
-
-    if len(secret64) not in (64, 32):
-        return {"ok": False, "error": "secret must be 32 or 64 bytes"}
-    kp = Keypair.from_bytes(secret64) if len(secret64) == 64 else Keypair.from_seed(secret64)
-    pubkey = str(kp.pubkey())
-    payload = {
-        "version": 1,
-        "pubkey": pubkey,
-        "secret": list(bytes(kp)),
-        "created_at": __import__("datetime").datetime.utcnow().isoformat() + "Z",
-        "imported": True,
-    }
+    payload = {"version": 1, "pubkey": pubkey, "secret": list(secret), "created_at": __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat().replace("+00:00","Z")}
     enc = _dpapi_protect(json.dumps(payload).encode("utf-8"))
     dest = path or wallet_path()
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(enc)
-    return {"ok": True, "pubkey": pubkey, "path": str(dest), "warning": "Imported. Fund ONLY what you can lose."}
+    del secret, payload
+    return {"ok": True, "pubkey": pubkey, "pubkey_masked": mask_address(pubkey), "path": str(dest), "warning": "Prefer TRENCHNET_WALLET_KEY in .env for a burner wallet. Fund ONLY what you can lose."}
 
 
-def _load_payload(path: Path | None = None) -> dict[str, Any] | None:
+def import_secret_bytes(secret64: bytes, path: Path | None = None) -> dict[str, Any]:
+    from solders.keypair import Keypair
+    if len(secret64) not in (64, 32):
+        return {"ok": False, "error": "secret must be 32 or 64 bytes"}
+    kp = Keypair.from_bytes(secret64) if len(secret64) == 64 else Keypair.from_seed(secret64)
+    pubkey = str(kp.pubkey())
+    payload = {"version": 1, "pubkey": pubkey, "secret": list(bytes(kp)), "imported": True}
+    enc = _dpapi_protect(json.dumps(payload).encode("utf-8"))
+    dest = path or wallet_path()
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(enc)
+    return {"ok": True, "pubkey": pubkey, "pubkey_masked": mask_address(pubkey), "path": str(dest)}
+
+
+def _load_store_payload(path: Path | None = None) -> dict[str, Any] | None:
     dest = path or wallet_path()
     if not dest.is_file():
         return None
@@ -139,33 +213,42 @@ def _load_payload(path: Path | None = None) -> dict[str, Any] | None:
 
 
 def public_address(path: Path | None = None) -> str | None:
-    pl = _load_payload(path)
+    """Prefer env-derived pubkey; fall back to DPAPI store pubkey."""
+    return public_address_from_env_or_store(path)
+
+
+def public_address_from_env_or_store(path: Path | None = None) -> str | None:
+    env_pub = public_address_from_env()
+    if env_pub:
+        return env_pub
+    pl = _load_store_payload(path)
     return (pl or {}).get("pubkey")
 
 
 def wallet_exists(path: Path | None = None) -> bool:
-    return (path or wallet_path()).is_file()
+    return env_key_configured() or (path or wallet_path()).is_file()
 
 
 def load_keypair_for_signing(path: Path | None = None):
-    """Internal only — callers must never print/log the key. Returns solders Keypair."""
+    """Prefer env key; else DPAPI store. NEVER print. Agents must not call for dry-run."""
+    if env_key_configured():
+        return load_keypair_from_env()
     from solders.keypair import Keypair
-
-    pl = _load_payload(path)
+    pl = _load_store_payload(path)
     if not pl or "secret" not in pl:
-        raise FileNotFoundError("LIVE wallet missing")
-    secret = bytes(pl["secret"])
-    return Keypair.from_bytes(secret)
+        raise FileNotFoundError("LIVE wallet missing (set TRENCHNET_WALLET_KEY in .env)")
+    return Keypair.from_bytes(bytes(pl["secret"]))
 
 
 def public_info(path: Path | None = None) -> dict[str, Any]:
-    """Safe for API/GUI — pubkey only, never secret."""
-    dest = path or wallet_path()
-    pub = public_address(dest)
+    pub = public_address_from_env_or_store(path)
     return {
         "exists": bool(pub),
         "pubkey": pub,
-        "path_hint": "%LOCALAPPDATA%\\trenchnet\\live_wallet.bin",
+        "pubkey_masked": mask_address(pub),
+        "source": "env:TRENCHNET_WALLET_KEY" if env_key_configured() else ("dpapi_store" if (path or wallet_path()).is_file() else None),
+        "path_hint": "%LOCALAPPDATA%\\trenchnet\\live_wallet.bin (legacy) or .env TRENCHNET_WALLET_KEY",
         "qr_fund_uri": f"solana:{pub}" if pub else None,
-        "warning": "Never use main MetaMask/Coinbase wallet. Fund only what you can lose.",
+        "warning": "Use a fresh burner wallet. Never paste a main-wallet seed. Key never shown in UI.",
+        "recommend_burner": True,
     }

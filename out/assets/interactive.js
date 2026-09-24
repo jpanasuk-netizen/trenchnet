@@ -234,6 +234,42 @@
       else document.body.insertBefore(tabs, document.body.firstChild);
     }
 
+
+    // Pass 9 follow-up: My Wallet (read-only) card near top strip
+    if (!$("myWalletCard")) {
+      const card = document.createElement("div");
+      card.id = "myWalletCard";
+      card.className = "panel myWalletCard";
+      card.style.cssText = "margin:10px 18px 0;border:1px solid rgba(0,180,255,.35);background:linear-gradient(90deg,rgba(0,180,255,.06),rgba(8,14,28,.85))";
+      card.innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between">
+          <h2 style="margin:0">My Wallet <span class="badge">READ-ONLY</span> <span class="badge">no signing</span></h2>
+          <span class="muted" id="mwMeta">Loading…</span>
+        </div>
+        <p class="caption">What am I looking at? Public on-chain balance for the strategy wallet (address from local .env only). Masked in the UI. No private key, no send button, LIVE stays disarmed.</p>
+        <div id="mwBody" class="mwGrid"><span class="muted">Fetching via Helius RPC…</span></div>`;
+      const ns = $("nowStrip");
+      if (ns && ns.parentNode) ns.parentNode.insertBefore(card, ns.nextSibling);
+      else {
+        const tp = $("topPickCard");
+        if (tp && tp.parentNode) tp.parentNode.insertBefore(card, tp);
+        else document.body.insertBefore(card, document.body.firstChild);
+      }
+    }
+    if (!$("pass9walletCss")) {
+      const st = document.createElement("style");
+      st.id = "pass9walletCss";
+      st.textContent = `
+        .mwGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:10px}
+        .mwStat{background:rgba(0,180,255,.06);border:1px solid rgba(0,180,255,.2);border-radius:10px;padding:8px 10px}
+        .mwStat .k{font-size:10px;text-transform:uppercase;color:#8aa0c0;letter-spacing:1px}
+        .mwStat .v{font-size:18px;font-weight:800;color:#00B4FF;margin-top:2px}
+        .mwTx{font-size:12px;padding:4px 0;border-bottom:1px solid rgba(0,180,255,.1)}
+        .myWalletCard.blurForShot{filter:blur(8px);opacity:.55}
+      `;
+      document.head.appendChild(st);
+    }
+
     // Pass 9: Reset to default view
     if ($("deskTabs") && !$("btnResetView")) {
       const btn = document.createElement("button");
@@ -746,7 +782,7 @@
     document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
       b.classList.toggle("active", b.getAttribute("data-tab") === state.tab);
     });
-    const overview = [$("filterBar"), $("hero"), document.querySelector(".grid"), $("lower"), $("copydeskPanel"), $("nowStrip")];
+    const overview = [$("filterBar"), $("hero"), document.querySelector(".grid"), $("lower"), $("copydeskPanel"), $("nowStrip"), $("myWalletCard")];
     overview.forEach(el => { if (el) el.style.display = (state.tab === "overview") ? "" : "none"; });
     const honesty = $("honesty");
     if (honesty) honesty.style.display = (state.tab === "overview") ? "" : "none";
@@ -1270,6 +1306,43 @@
     renderCopyDesk((D().copydesk) || window.__TN_COPYDESK || null);
   }
 
+
+  function renderMyWallet(doc) {
+    const body = $("mwBody");
+    const meta = $("mwMeta");
+    if (!body) return;
+    if (!doc || !doc.configured) {
+      if (meta) meta.textContent = "not configured";
+      body.innerHTML = `<p class="muted">${(doc && doc.note) || "Set MY_WALLET_ADDRESS in local .env to enable this read-only card."}</p>`;
+      return;
+    }
+    if (meta) meta.textContent = (doc.refreshed_at_ct || "—") + " · refresh every 5 min";
+    const toks = doc.tokens || [];
+    const txs = doc.transactions || [];
+    let tokHtml = toks.length
+      ? toks.map(t => `<div class="mwTx">${t.amount} · mint …${t.mint_suffix || ""}</div>`).join("")
+      : `<span class="muted">No token holdings</span>`;
+    let txHtml = txs.length
+      ? txs.map(t => `<div class="mwTx">${t.status === "failed" ? "✗" : "✓"} …${t.signature_suffix || ""} · ${t.time_ct || "—"}</div>`).join("")
+      : `<span class="muted">No recent transactions</span>`;
+    body.innerHTML = `
+      <div class="mwStat"><div class="k">Address (masked)</div><div class="v" style="font-size:16px">${doc.masked_address || "—"}</div></div>
+      <div class="mwStat"><div class="k">SOL balance</div><div class="v">${doc.sol_balance == null ? "—" : Number(doc.sol_balance).toFixed(5)}</div></div>
+      <div class="mwStat"><div class="k">Token holdings</div><div class="v" style="font-size:13px;font-weight:600">${tokHtml}</div></div>
+      <div class="mwStat" style="grid-column:1/-1"><div class="k">Last ${txs.length || 5} transactions (CT)</div><div class="v" style="font-size:13px;font-weight:600">${txHtml}</div></div>`;
+  }
+
+  async function loadMyWallet() {
+    try {
+      const r = await fetch("/api/mywallet", { cache: "no-store" });
+      const doc = await r.json();
+      window.__TN_MYWALLET = doc;
+      renderMyWallet(doc);
+    } catch (e) {
+      renderMyWallet({ configured: false, note: "mywallet_fetch_failed" });
+    }
+  }
+
   function bindPass7() {
     document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
       b.addEventListener("click", () => setTab(b.getAttribute("data-tab")));
@@ -1308,8 +1381,10 @@
     bindPass7();
     loadCopyDesk();
     setInterval(loadCopyDesk, 60000);
+    loadMyWallet();
+    setInterval(loadMyWallet, 300000);
     // expose for template graph code
-    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass, loadTopPick, loadCoinDesk, setTab, resetToDefaultView, DEFAULT_VIEW, loadCopyDesk };
+    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass, loadTopPick, loadCoinDesk, setTab, resetToDefaultView, DEFAULT_VIEW, loadCopyDesk, loadMyWallet };
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

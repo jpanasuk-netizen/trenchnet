@@ -34,3 +34,21 @@ paths:
 roster_sort:
   primary: realized_pnl_sol
   secondary: trade_count
+
+# LIVE mode (disarmed by default — caps enforced in trenchnet.live.gates)
+live:
+  disarmed_by_default: true
+  max_sol_per_trade: 0.25
+  max_open_positions: 4
+  daily_loss_stop_sol: 2.0
+  total_loss_kill_sol: 4.0
+  fee_reserve_sol: 0.05
+  max_buys_per_token: 1
+  min_liquidity_sol: 5.0
+  min_token_age_seconds: 300
+  take_profit_pct: 0.5
+  stop_loss_pct: 0.25
+  time_stop_seconds: 3600
+  priority_fee_lamports: 50000
+  slippage_pct: 5.0
+  arm_phrase: "ARM TRENCHNET LIVE"

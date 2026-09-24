@@ -1,6 +1,6 @@
 {
-  "generated_at_utc": "2026-09-24T16:31:01Z",
-  "generated_at_ct": "2026-09-24 11:31:01 CT",
+  "generated_at_utc": "2026-09-24T16:48:34Z",
+  "generated_at_ct": "2026-09-24 11:48:34 CT",
   "paper_only": true,
   "not_financial_advice": true,
   "copy_assumptions": {
@@ -441,7 +441,7 @@
       "amount_sol": null,
       "block_time": 1790250431,
       "time_ct": "2026-09-24 06:47:11 CT",
-      "time_ago": "4h ago",
+      "time_ago": "5h ago",
       "top_wallets_in_token": 0,
       "signature": "KnJgcTs7acgYqAPbnB2X5NrLSaiVYVJSTU3zpFmbUBRQEYShzCZrbW62HSmpYdAUrmZAhu4wVyqBXxQnE3cxEG1"
     },
@@ -1143,13 +1143,13 @@
     ],
     "ALL_TOP5": [
       {
-        "t": 1790181061,
-        "t_ct": "2026-09-23 11:31:01 CT",
+        "t": 1790182114,
+        "t_ct": "2026-09-23 11:48:34 CT",
         "equity_sol": 0.0
       },
       {
-        "t": 1790267461,
-        "t_ct": "2026-09-24 11:31:01 CT",
+        "t": 1790268514,
+        "t_ct": "2026-09-24 11:48:34 CT",
         "equity_sol": 2.910914
       }
     ]
