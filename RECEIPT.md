@@ -376,3 +376,11 @@ TRENCHNET desk UI default moved **8788 → 8791**. Reason: 8788 reserved for Mus
 - CLI: acktest, scores.
 - Interactive dashboard: global filters, graph hover/drawer, sortable tables, backtest sliders (browser recompute from baked per_trade paths), local charts.js/interactive.js (no CDN), /api/data-version poll when served on 8791.
 - Honesty: unpriceable when no price; no unit mixing (birdeye USD vs derived SOL); OOS reports insufficient when priced wallet overlap across folds is too thin.
+
+
+## Pass 6 — pool-trade price reconstruction
+
+- Built 	renchnet/pool_prices.py: Helius enhanced SWAP pages per mint (all traders), SOL/token ticks tagged helius_pool, resampled 1s/5s/1m, cached under data/prices/helius_pool/.
+- Lookup order: helius_pool → derived → birdeye; at-or-after only (no lookahead); max staleness 60s; USD never mixed with SOL; dust ticks filtered; |return|>10x marked unpriceable.
+- CLI: pool-prices, then acktest / scores.
+- Jev: live TypeSafe when TYPESAFE_API_KEY present (decision-only; LIVE disarmed).

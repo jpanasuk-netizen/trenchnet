@@ -297,10 +297,19 @@
     const sc = D().scores || {};
     const cov = bt.overall || {};
     if ($("btCoverage")) {
-      $("btCoverage").textContent =
-        `Server coverage ${fmt(cov.coverage_pct, 2)}% of copy sims priceable ` +
+      const cb = (bt.coverage_by || {});
+      const tok = (cb.tokens || []).slice(0, 5).map(x =>
+        (x.token_mint || "").slice(0, 6) + "… " + fmt(x.coverage_pct, 1) + "%" + (x.has_pool_series ? " pool" : "")
+      ).join("; ");
+      const pool = D().pool_coverage || {};
+      const poolNote = pool.ok ? (`pool mints ok=${(pool.ok||[]).length||pool.ok} failed=${(pool.failed||[]).length||0}`) :
+        (typeof pool.ok === "number" ? `pool ok=${pool.ok} failed=${pool.failed||0}` :
+        `pool ok=${(pool.ok||[]).length} failed=${(pool.failed||[]).length}`);
+      $("btCoverage").innerHTML =
+        `Server coverage <b>${fmt(cov.coverage_pct, 2)}%</b> priceable ` +
         `(${cov.n_priced || 0}/${cov.n_copies || 0}). Sources: ${JSON.stringify(cov.price_sources || {})}. ` +
-        `Unpriceable trades are excluded — never filled with invented prices.`;
+        `${poolNote}. Unpriceable excluded — never invented. ` +
+        (tok ? `<div class="muted">Top token coverage @60s: ${tok}</div>` : "");
     }
     const live = recomputeFromTrades();
     const rows = [0, 30, 60, 120].map(d => {

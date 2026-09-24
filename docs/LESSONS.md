@@ -28,3 +28,10 @@ Honesty labels preserved in all outputs: `template report`, `Jev dry-run mock`, 
 - **Slippage / fees**: Copy sims apply pump.fun fee bps, priority fee, and slippage that scales up when the liquidity proxy (median nearby trade SOL) is thin. Browser sliders only rescale those baked costs — they do not invent fills.
 - **Overfitting**: Composite weights live in config/backtest.yaml and are documented. Out-of-sample stability is a first-class feature; when OOS cannot be measured honestly, wallets are flagged insufficient_oos rather than marked stable.
 - **Missing prices**: No fabricated candles. Unpriceable copies are counted and excluded from PnL. Birdeye USD and derived SOL/token series are never mixed on the same mint.
+
+
+## Pass 6 price coverage
+
+- Pool-wide Helius swaps beat wallet-only marks for copy-trade timing, but dust/fee lamports can invent fake prices — require ≥0.001 SOL notional and median-band cleaning.
+- At-or-after lookup avoids lookahead; tight staleness (60s) keeps honesty at the cost of coverage.
+- Never mix Birdeye USD closes with SOL/token ticks on the same fill pair.

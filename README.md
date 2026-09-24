@@ -11,6 +11,8 @@ copy .env.example .env
 
 Generated dashboards and Pass 4 screenshots live under `out/`. Roster addresses and derived stats are public on-chain data.
 
+**Pass 6 (paper):** pool-trade Helius price reconstruction for denser backtest marks, then Pass 5 backtest/scores/interactive desk.
+
 **Pass 5 (paper):** copy-trade backtest, walk-forward, wallet scores, interactive desk (filters, drawer, sortable tables, backtest sliders). `python -m trenchnet.cli backtest`. LIVE remains disarmed.
 
 ---

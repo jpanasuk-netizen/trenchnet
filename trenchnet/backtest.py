@@ -181,24 +181,44 @@ def price_at(
     series: list[PricePoint],
     t: int,
     *,
-    max_gap_s: int = 3600,
+    max_gap_s: int = 60,
+    allow_before: bool = False,
 ) -> tuple[float | None, str]:
+    """Price lookup.
+
+    Default (Pass 6): nearest trade at or AFTER t within max_gap_s (no lookahead).
+    allow_before=True restores legacy nearest-before behavior for tests that need it.
+    """
     if not series:
         return None, ""
+    if allow_before:
+        lo, hi = 0, len(series) - 1
+        best_le: PricePoint | None = None
+        while lo <= hi:
+            mid = (lo + hi) // 2
+            if series[mid].t <= t:
+                best_le = series[mid]
+                lo = mid + 1
+            else:
+                hi = mid - 1
+        if best_le is not None and (t - best_le.t) <= max_gap_s:
+            return best_le.px, best_le.source
+        idx = lo
+        if idx < len(series) and (series[idx].t - t) <= max_gap_s:
+            return series[idx].px, series[idx].source
+        return None, ""
+    # at-or-after only
     lo, hi = 0, len(series) - 1
-    best_le: PricePoint | None = None
+    best_ge: PricePoint | None = None
     while lo <= hi:
         mid = (lo + hi) // 2
-        if series[mid].t <= t:
-            best_le = series[mid]
-            lo = mid + 1
-        else:
+        if series[mid].t >= t:
+            best_ge = series[mid]
             hi = mid - 1
-    if best_le is not None and (t - best_le.t) <= max_gap_s:
-        return best_le.px, best_le.source
-    idx = lo
-    if idx < len(series) and (series[idx].t - t) <= max_gap_s:
-        return series[idx].px, series[idx].source
+        else:
+            lo = mid + 1
+    if best_ge is not None and (best_ge.t - t) <= max_gap_s:
+        return best_ge.px, best_ge.source
     return None, ""
 
 
@@ -289,6 +309,7 @@ def simulate_copy_trade(
     take_profit_pct: float | None = None,
     stop_loss_pct: float | None = None,
     time_stop_seconds: int | None = None,
+    families: dict[str, dict[str, list[PricePoint]]] | None = None,
 ) -> CopyTradeResult:
     buy = pair["buy"]
     sell = pair.get("sell")
@@ -302,64 +323,81 @@ def simulate_copy_trade(
     tstop = int(time_stop_seconds if time_stop_seconds is not None else exits.get("time_stop_seconds", 3600))
 
     entry_t = buy_t + int(delay_s)
-    series = prices.get(mint) or []
-    entry_px, entry_src = price_at(series, entry_t)
-    if entry_px is None:
-        return CopyTradeResult(
-            wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
-            buy_time=buy_t, delay_s=delay_s, exit_mode=exit_mode,
-            entry_px=None, exit_px=None, entry_source="", exit_source="",
-            position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
-            costs_sol=None, unpriceable=True, reason="no_entry_price",
-        )
-
-    exit_px: float | None = None
-    exit_src = ""
+    pricing_cfg = cfg.get("pricing") or {}
+    max_staleness = int(pricing_cfg.get("max_staleness_seconds", 60))
     mode_out = exit_mode
 
+    fams = families
+    if fams is None:
+        fams = {"derived": prices, "helius_pool": {}, "birdeye": {}}
+
     if exit_mode == "mirror":
-        if sell and sell.get("block_time") is not None:
-            exit_t = int(sell["block_time"]) + int(delay_s)
-            if exit_t <= entry_t:
-                exit_t = entry_t + 1
-            exit_px, exit_src = price_at(series, exit_t)
-            if exit_px is None:
-                return CopyTradeResult(
-                    wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
-                    buy_time=buy_t, delay_s=delay_s, exit_mode=exit_mode,
-                    entry_px=entry_px, exit_px=None, entry_source=entry_src, exit_source="",
-                    position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
-                    costs_sol=None, unpriceable=True, reason="no_exit_price_mirror",
-                )
-        else:
+        if not (sell and sell.get("block_time") is not None):
             return CopyTradeResult(
                 wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
                 buy_time=buy_t, delay_s=delay_s, exit_mode=exit_mode,
-                entry_px=entry_px, exit_px=None, entry_source=entry_src, exit_source="",
+                entry_px=None, exit_px=None, entry_source="", exit_source="",
                 position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
                 costs_sol=None, unpriceable=True, reason="no_mirror_sell",
             )
+        exit_t = int(sell["block_time"]) + int(delay_s)
+        if exit_t <= entry_t:
+            exit_t = entry_t + 1
+        entry_px, exit_px, entry_src, exit_src = lookup_entry_exit(
+            mint, entry_t, exit_t, fams, max_staleness_s=max_staleness,
+        )
+        if entry_px is None or exit_px is None:
+            return CopyTradeResult(
+                wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
+                buy_time=buy_t, delay_s=delay_s, exit_mode=exit_mode,
+                entry_px=entry_px, exit_px=exit_px, entry_source=entry_src or "", exit_source=exit_src or "",
+                position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
+                costs_sol=None, unpriceable=True,
+                reason="no_entry_price" if entry_px is None else "no_exit_price_mirror",
+            )
     else:
+        entry_px = None
+        entry_src = ""
+        series: list[PricePoint] = []
+        for fam in ("helius_pool", "derived", "birdeye"):
+            series = (fams.get(fam) or {}).get(mint) or []
+            entry_px, entry_src = price_at(series, entry_t, max_gap_s=max_staleness)
+            if entry_px is not None:
+                break
+        if entry_px is None:
+            return CopyTradeResult(
+                wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
+                buy_time=buy_t, delay_s=delay_s, exit_mode=exit_mode,
+                entry_px=None, exit_px=None, entry_source="", exit_source="",
+                position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
+                costs_sol=None, unpriceable=True, reason="no_entry_price",
+            )
         deadline = entry_t + tstop
         hit = None
-        for p in series:
-            if p.t < entry_t:
+        for pt in series:
+            if pt.t < entry_t:
                 continue
-            if p.t > deadline:
+            if pt.t > deadline:
                 break
-            ret = (p.px / entry_px) - 1.0
+            ret = (pt.px / entry_px) - 1.0
             if ret >= tp:
-                hit = (p, "take_profit")
+                hit = (pt, "take_profit")
                 break
             if ret <= -sl:
-                hit = (p, "stop_loss")
+                hit = (pt, "stop_loss")
                 break
         if hit:
             exit_px, exit_src = hit[0].px, hit[0].source
             mode_out = f"fixed:{hit[1]}"
         else:
-            exit_px, exit_src = price_at(series, deadline)
+            exit_px, exit_src = price_at(series, deadline, max_gap_s=max_staleness)
             mode_out = "fixed:time_stop"
+            if exit_px is None and entry_src != "birdeye":
+                for fam in ("helius_pool", "derived"):
+                    alt = (fams.get(fam) or {}).get(mint) or []
+                    exit_px, exit_src = price_at(alt, deadline, max_gap_s=max_staleness)
+                    if exit_px is not None:
+                        break
             if exit_px is None:
                 return CopyTradeResult(
                     wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
@@ -370,6 +408,15 @@ def simulate_copy_trade(
                 )
 
     gross = (exit_px / entry_px) - 1.0
+    # Data-quality gate: |return| > 10x is almost always a bad mark (dust tick), not alpha.
+    if abs(gross) > 10.0:
+        return CopyTradeResult(
+            wallet=wallet, token_mint=mint, buy_sig=str(buy.get("signature") or ""),
+            buy_time=buy_t, delay_s=delay_s, exit_mode=mode_out,
+            entry_px=entry_px, exit_px=exit_px, entry_source=entry_src, exit_source=exit_src,
+            position_sol=pos, gross_return=None, net_return=None, pnl_sol=None,
+            costs_sol=None, unpriceable=True, reason="outlier_return",
+        )
     liq = liquidity_proxy(all_events, mint, entry_t)
     net_ret, costs_sol = apply_costs(pos, gross, liq=liq, cfg=cfg, slippage_mult=slippage_mult)
     pnl = pos * net_ret
@@ -456,11 +503,61 @@ def _wallet_labels(root: Path) -> dict[str, str]:
         return {}
 
 
+
+def load_helius_pool_pricepoints(root: Path) -> dict[str, list[PricePoint]]:
+    """SOL/token series from Pass 6 pool reconstruction cache."""
+    try:
+        from trenchnet.pool_prices import load_pool_price_index
+    except Exception:
+        return {}
+    raw = load_pool_price_index(root)
+    out: dict[str, list[PricePoint]] = {}
+    for mint, series in raw.items():
+        out[mint] = [PricePoint(t=int(t), px=float(px), source="helius_pool") for t, px in series]
+    return out
+
+
+def lookup_entry_exit(
+    mint: str,
+    t_entry: int,
+    t_exit: int,
+    families: dict[str, dict[str, list[PricePoint]]],
+    *,
+    max_staleness_s: int,
+) -> tuple[float | None, float | None, str, str]:
+    """Lookup entry then exit without mixing USD and SOL families.
+
+    Order: helius_pool → derived → birdeye. Cross-SOL (pool↔derived) allowed
+    only if the preferred family misses one side. Birdeye (USD) only with itself.
+    """
+    order = ["helius_pool", "derived", "birdeye"]
+    # same-family first
+    for fam in order:
+        series = (families.get(fam) or {}).get(mint) or []
+        e_px, e_src = price_at(series, t_entry, max_gap_s=max_staleness_s)
+        x_px, x_src = price_at(series, t_exit, max_gap_s=max_staleness_s)
+        if e_px is not None and x_px is not None:
+            return e_px, x_px, e_src or fam, x_src or fam
+    # cross SOL only
+    for ef in ("helius_pool", "derived"):
+        for xf in ("helius_pool", "derived"):
+            if ef == xf:
+                continue
+            es = (families.get(ef) or {}).get(mint) or []
+            xs = (families.get(xf) or {}).get(mint) or []
+            e_px, e_src = price_at(es, t_entry, max_gap_s=max_staleness_s)
+            x_px, x_src = price_at(xs, t_exit, max_gap_s=max_staleness_s)
+            if e_px is not None and x_px is not None:
+                return e_px, x_px, e_src or ef, x_src or xf
+    return None, None, "", ""
+
+
 def run_walk_forward(
     pairs: list[dict[str, Any]],
     prices: dict[str, list[PricePoint]],
     events: list[dict[str, Any]],
     cfg: dict[str, Any],
+    families: dict[str, dict[str, list[PricePoint]]] | None = None,
 ) -> dict[str, Any]:
     wf = cfg.get("walk_forward") or {}
     min_train = int(wf.get("min_train_trades", 30))
@@ -505,6 +602,7 @@ def run_walk_forward(
             for p in plist:
                 r = simulate_copy_trade(
                     p, delay_s=60, exit_mode="fixed", prices=prices, all_events=events, cfg=cfg,
+                    families=families,
                 )
                 if r.unpriceable or r.pnl_sol is None:
                     continue
@@ -570,7 +668,21 @@ def run_backtest(root: Path, cfg: dict[str, Any] | None = None) -> dict[str, Any
     events = load_all_history_events(root)
     derived = build_derived_price_index(events)
     birdeye = load_birdeye_ohlcv(root)
-    prices = merge_price_indexes(birdeye, derived)
+    pool = load_helius_pool_pricepoints(root)
+    prices: dict[str, list[PricePoint]] = {}
+    for m in set(pool) | set(derived):
+        if m in pool and len(pool[m]) >= 1:
+            prices[m] = pool[m]
+        elif m in derived:
+            prices[m] = derived[m]
+    for m, series in birdeye.items():
+        if m not in prices:
+            prices[m] = series
+    families = {
+        "helius_pool": pool,
+        "derived": derived,
+        "birdeye": birdeye,
+    }
     pairs = _pair_buys_sells(events)
     delays = list(cfg.get("delays_seconds") or [0, 30, 60, 120])
     exits_cfg = cfg.get("exits") or {}
@@ -621,7 +733,7 @@ def run_backtest(root: Path, cfg: dict[str, Any] | None = None) -> dict[str, Any
             for mode in modes:
                 r = simulate_copy_trade(
                     pair, delay_s=delay, exit_mode=mode, prices=prices,
-                    all_events=events, cfg=cfg,
+                    all_events=events, cfg=cfg, families=families,
                 )
                 all_results.append(r)
                 by_wallet_delay.setdefault(r.wallet, {}).setdefault(delay, []).append(r)
@@ -650,6 +762,40 @@ def run_backtest(root: Path, cfg: dict[str, Any] | None = None) -> dict[str, Any
         })
 
     overall = summarize_wallet_results(all_results)
+
+    # Pass 6: coverage by wallet and by token (priced / copies)
+    cov_w: dict[str, dict[str, int]] = {}
+    cov_t: dict[str, dict[str, int]] = {}
+    for r in all_results:
+        if r.delay_s != 60:
+            continue
+        for key, bucket in ((r.wallet, cov_w), (r.token_mint, cov_t)):
+            b = bucket.setdefault(key, {"n": 0, "priced": 0})
+            b["n"] += 1
+            if not r.unpriceable:
+                b["priced"] += 1
+    coverage_by = {
+        "wallets": [
+            {
+                "wallet": w,
+                "n_copies_60s": v["n"],
+                "n_priced_60s": v["priced"],
+                "coverage_pct": round(100.0 * v["priced"] / v["n"], 2) if v["n"] else 0.0,
+            }
+            for w, v in sorted(cov_w.items(), key=lambda kv: -kv[1]["n"])
+        ],
+        "tokens": [
+            {
+                "token_mint": m,
+                "n_copies_60s": v["n"],
+                "n_priced_60s": v["priced"],
+                "coverage_pct": round(100.0 * v["priced"] / v["n"], 2) if v["n"] else 0.0,
+                "has_pool_series": m in pool,
+            }
+            for m, v in sorted(cov_t.items(), key=lambda kv: -kv[1]["n"])[:80]
+        ],
+    }
+
     out = {
         "generated_at_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "paper_only": True,
@@ -664,16 +810,19 @@ def run_backtest(root: Path, cfg: dict[str, Any] | None = None) -> dict[str, Any
         "n_pairs": len(pairs),
         "n_results": len(all_results),
         "price_index": {
+            "helius_pool_mints": len(pool),
             "birdeye_mints": len(birdeye),
             "derived_mints": len(derived),
             "merged_mints": len(prices),
-            "source_tags": ["helius", "birdeye", "rpc", "derived"],
+            "source_tags": ["helius_pool", "helius", "birdeye", "rpc", "derived"],
+            "max_staleness_seconds": int((cfg.get("pricing") or {}).get("max_staleness_seconds", 60)),
         },
         "overall": overall,
         "delay_decay": delay_decay_table({d: [r for r in all_results if r.delay_s == d] for d in delays}),
         "wallets": wallet_rows,
         "per_trade": per_trade,
-        "walk_forward": run_walk_forward(pairs, prices, events, cfg),
+        "walk_forward": run_walk_forward(pairs, prices, events, cfg, families=families),
+        "coverage_by": coverage_by,
     }
     return out
 

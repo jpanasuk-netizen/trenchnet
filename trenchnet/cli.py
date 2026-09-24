@@ -56,7 +56,8 @@ def main(argv: list[str] | None = None) -> int:
     if p_fh is not None and not any(a.dest=="rpc" for a in getattr(p_fh, "_actions", [])):
         p_fh.add_argument("--rpc", default=None, help="Override free RPC URL for this run")
 
-        sub.add_parser("backtest", help="Pass 5 copy-trade backtest + walk-forward (paper only)")
+        sub.add_parser("pool-prices", help="Pass 6: fetch Helius pool-wide swaps into data/prices/")
+    sub.add_parser("backtest", help="Pass 5 copy-trade backtest + walk-forward (paper only)")
     sub.add_parser("scores", help="Pass 5 wallet composite scores (paper only)")
 
     args = parser.parse_args(argv)
@@ -171,6 +172,24 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps({"fetching": mints}, indent=2))
         res = fetch_for_mints(mints, raw_dir)
         print(json.dumps({"ok": True, "n": len(res), "mints": list(res)}, indent=2))
+        return 0
+
+    
+    if args.cmd == "pool-prices":
+        from trenchnet.pool_prices import build_pool_prices_for_roster
+        from trenchnet.backtest import load_backtest_config
+        cfg = load_backtest_config(ROOT)
+        pf = cfg.get("pool_fetch") or {}
+        rep = build_pool_prices_for_roster(
+            ROOT,
+            max_mints=int(pf.get("max_mints", 80)),
+            max_pages_per_mint=int(pf.get("max_pages_per_mint", 20)),
+            min_pairs=int(pf.get("min_pairs", 1)),
+            log=lambda m: print(m, flush=True),
+        )
+        # build_pool uses log= not log_fn — fix below if needed
+        print(json.dumps({k: (v if k not in ("ok","failed","skipped") else len(v)) for k,v in rep.items()}, indent=2, default=str))
+        print(json.dumps({"ok_mints": [x.get("mint") for x in (rep.get("ok") or [])][:20], "failed_sample": (rep.get("failed") or [])[:10]}, indent=2))
         return 0
 
     if args.cmd == "backtest":

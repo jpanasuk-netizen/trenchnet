@@ -157,10 +157,25 @@ def judge_snapshot(snapshot: dict[str, Any], model: str = "jev-latest") -> dict[
 
         questions = build_questions()
         logger.info("Calling TypeSafe system_one model=%s questions=%s", model, list(questions))
+        http_status = None
         with TypeSafeClient() as client:
             response = client.system_one(state=snapshot, model=model, questions=questions)
+            # Best-effort status from SDK response / underlying httpx
+            for attr in ("status_code", "http_status", "status"):
+                if hasattr(response, attr):
+                    try:
+                        http_status = int(getattr(response, attr))
+                        break
+                    except Exception:
+                        pass
+            if http_status is None and hasattr(response, "response"):
+                try:
+                    http_status = int(getattr(response.response, "status_code", None) or 0) or None
+                except Exception:
+                    pass
+            if http_status is None:
+                http_status = 200  # call returned without raising
         answers = _extract_answers(response)
-        # ensure required keys
         for k, default in (
             ("behavior_fit", "unclear"),
             ("position_intent", "unclear"),
@@ -168,13 +183,39 @@ def judge_snapshot(snapshot: dict[str, Any], model: str = "jev-latest") -> dict[
             ("attention", "needs_update"),
         ):
             answers.setdefault(k, default)
+        answers["numeric_features"] = snapshot.get("wallet_score") or snapshot.get("numeric_features") or {}
         routed = combine_jev_answers(answers)
         routed["jev_mode"] = "typesafe_live"
+        routed["jev_call_ok"] = True
+        routed["jev_http_status"] = http_status
         return routed
     except Exception as exc:
+        http_status = None
+        # Pull status from httpx-like exceptions without leaking bodies/keys
+        for attr in ("status_code", "code"):
+            if hasattr(exc, attr):
+                try:
+                    http_status = int(getattr(exc, attr))
+                    break
+                except Exception:
+                    pass
+        resp = getattr(exc, "response", None)
+        if resp is not None and hasattr(resp, "status_code"):
+            try:
+                http_status = int(resp.status_code)
+            except Exception:
+                pass
+        # Scrub any secret material from error text
+        err = str(exc)
+        key = get_secret(API_KEY_ENV) or ""
+        if key and key in err:
+            err = err.replace(key, "REDACTED")
         answers = mock_jev_answers(snapshot)
-        answers["fallback_error"] = str(exc)
-        answers["label"] = "DRY-RUN / MOCK JEV ? live TypeSafe call failed"
+        answers["fallback_error"] = err[:240]
+        answers["label"] = "DRY-RUN / MOCK JEV — live TypeSafe call failed"
+        answers["numeric_features"] = snapshot.get("wallet_score") or snapshot.get("numeric_features") or {}
         routed = combine_jev_answers(answers, confidence=0.3)
         routed["jev_mode"] = "dry_run_after_error"
+        routed["jev_call_ok"] = False
+        routed["jev_http_status"] = http_status
         return routed

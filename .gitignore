@@ -67,3 +67,14 @@ out/pass5_*.log
 out/_staged.txt
 out/_git_add_n.txt
 
+
+# Pass 6 price caches: keep compact mint JSON + summary; ignore bulky raw dumps
+data/prices/raw/
+data/prices/**/*.raw.json
+
+out/pass6_*.log
+out/pass6_*.err
+out/ui_pass6.*
+out/pass6_jev_run.*
+out/pass6_pool_fetch.*
+

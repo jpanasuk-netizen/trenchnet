@@ -7,27 +7,22 @@
     "behavior_fit": "unclear",
     "position_intent": "unclear",
     "history_sufficient": "no",
-    "attention": "still_valid",
-    "confidence": 0.4,
-    "dry_run": true,
-    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    "attention": "needs_update",
+    "confidence": 1.0,
+    "numeric_features": {
+      "available": false,
+      "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9"
+    }
   },
-  "confidence": 0.4,
+  "confidence": 1.0,
   "observe_only": true,
-  "jev_mode": "dry_run_mock",
+  "numeric_features": {
+    "available": false,
+    "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9"
+  },
+  "jev_mode": "typesafe_live",
+  "jev_call_ok": true,
+  "jev_http_status": 200,
   "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
-  "label": "decu",
-  "snapshot": {
-    "wallet": "4vw54BmAogeRV3vPKWyFet5yf8DTLcREzdSzx4rw9Ud9",
-    "label": "decu",
-    "trade_count": 0,
-    "history_flag": "missing_history",
-    "typical_buy_size_sol": null,
-    "median_hold_seconds": null,
-    "current_buy_sol": null,
-    "current_buy_signature": null,
-    "current_token": null,
-    "attention_hint": "still_valid",
-    "note": "Code computed all counts; Jev must not do arithmetic."
-  }
+  "label": "decu"
 }

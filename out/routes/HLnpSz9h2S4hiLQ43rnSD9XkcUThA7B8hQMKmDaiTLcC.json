@@ -1,33 +1,94 @@
 {
   "route": "insufficient_evidence",
   "reasons": [
-    "ambiguous_answers_default_uncertain"
+    "history_insufficient_or_low_confidence",
+    "score_rank_25_composite_0.3718_oos_insufficient_oos",
+    "feat_entry_earliness_0.700",
+    "feat_win_rate_0.500",
+    "feat_median_hold_0.500",
+    "feat_lead_follow_0.000",
+    "feat_trade_frequency_0.136",
+    "feat_copyability_60s_0.266",
+    "feat_oos_stability_0.500"
   ],
   "answers": {
     "behavior_fit": "unclear",
     "position_intent": "unclear",
-    "history_sufficient": "yes",
-    "attention": "new_situation",
-    "confidence": 0.4,
-    "dry_run": true,
-    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    "history_sufficient": "unresolved",
+    "attention": "needs_update",
+    "confidence": 0.98,
+    "numeric_features": {
+      "available": true,
+      "score": 0.3718,
+      "rank": 25,
+      "features": {
+        "entry_earliness": 0.7,
+        "win_rate": 0.5,
+        "median_hold": 0.5,
+        "lead_follow": 0.0,
+        "trade_frequency": 0.1362,
+        "copyability_60s": 0.2661,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 18172.0,
+        "win_rate": null,
+        "median_hold_sec": null,
+        "lead_follow_ratio": 0.0,
+        "trades_per_day": 72.0,
+        "copy_pnl_60s_sol": 0.0,
+        "copy_coverage_60s_pct": 0.0
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      }
+    }
   },
-  "confidence": 0.4,
+  "confidence": 0.98,
   "observe_only": true,
-  "jev_mode": "dry_run_mock",
+  "numeric_features": {
+    "available": true,
+    "score": 0.3718,
+    "rank": 25,
+    "features": {
+      "entry_earliness": 0.7,
+      "win_rate": 0.5,
+      "median_hold": 0.5,
+      "lead_follow": 0.0,
+      "trade_frequency": 0.1362,
+      "copyability_60s": 0.2661,
+      "oos_stability": 0.5
+    },
+    "raw": {
+      "entry_earliness_sec_median": 18172.0,
+      "win_rate": null,
+      "median_hold_sec": null,
+      "lead_follow_ratio": 0.0,
+      "trades_per_day": 72.0,
+      "copy_pnl_60s_sol": 0.0,
+      "copy_coverage_60s_pct": 0.0
+    },
+    "oos_flag": "insufficient_oos",
+    "weights": {
+      "entry_earliness": 0.15,
+      "win_rate": 0.15,
+      "median_hold": 0.1,
+      "lead_follow": 0.15,
+      "trade_frequency": 0.1,
+      "copyability_60s": 0.2,
+      "oos_stability": 0.15
+    }
+  },
+  "jev_mode": "typesafe_live",
+  "jev_call_ok": true,
+  "jev_http_status": 200,
   "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-  "label": "cobuy_HLnpSz",
-  "snapshot": {
-    "wallet": "HLnpSz9h2S4hiLQ43rnSD9XkcUThA7B8hQMKmDaiTLcC",
-    "label": "cobuy_HLnpSz",
-    "trade_count": 3,
-    "history_flag": "ok",
-    "typical_buy_size_sol": 0.0,
-    "median_hold_seconds": null,
-    "current_buy_sol": null,
-    "current_buy_signature": "3YxvzFwG9ABDVH8FuphxENgfSiWhwg9xSa8K1LRmfjTM1Rs8D3UNdT5cz9c8C2DGCcXWZCoHvWYAhEhawGJDmmbd",
-    "current_token": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
-    "attention_hint": "new_situation",
-    "note": "Code computed all counts; Jev must not do arithmetic."
-  }
+  "label": "cobuy_HLnpSz"
 }

@@ -29,3 +29,18 @@ scores:
     oos_stability: 0.15
   hold_sweet_min: 60
   hold_sweet_max: 3600
+
+
+# Pass 6 pricing
+pricing:
+  max_staleness_seconds: 60
+  # nearest trade at or AFTER target time (no lookahead)
+  lookup_order: [helius_pool, derived, birdeye]
+  # never mix USD (birdeye) with SOL (pool/derived) on the same fill pair
+
+pool_fetch:
+  max_mints: 120
+  max_pages_per_mint: 15
+  min_pairs: 1
+  pre_window_seconds: 300
+  post_window_seconds: 3720

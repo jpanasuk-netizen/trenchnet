@@ -54,18 +54,24 @@ def test_apply_costs_thin_liq_more_slippage():
 
 def test_price_at_no_fabricate():
     series = [PricePoint(1000, 1.0, "derived"), PricePoint(2000, 2.0, "birdeye")]
+    # at-or-after: next is 2000, gap 500 > 100 -> None
     px, src = price_at(series, 1500, max_gap_s=100)
-    # 1500-1000=500 > 100 gap and next is 500 away -> None
     assert px is None
     assert src == ""
     px2, src2 = price_at(series, 1500, max_gap_s=600)
-    assert px2 == 1.0 and src2 == "derived"
+    assert px2 == 2.0 and src2 == "birdeye"
+    # never use before by default
+    px3, src3 = price_at(series, 2500, max_gap_s=600)
+    assert px3 is None
 
 
 def test_delay_pricing_uses_later_point():
+    # Same-family SOL series with points at entry and delayed entry/exit (at-or-after).
     series = [
         PricePoint(1000, 1.0, "derived"),
-        PricePoint(1060, 1.2, "birdeye"),
+        PricePoint(1060, 1.2, "derived"),
+        PricePoint(2000, 1.5, "derived"),
+        PricePoint(2060, 1.6, "derived"),
     ]
     pair = {
         "wallet": "W",
@@ -83,6 +89,7 @@ def test_delay_pricing_uses_later_point():
             "slippage_liquidity_ref_sol": 1.0,
         },
         "exits": {"take_profit_pct": 9, "stop_loss_pct": 9, "time_stop_seconds": 10},
+        "pricing": {"max_staleness_seconds": 60},
     }
     r0 = simulate_copy_trade(
         pair, delay_s=0, exit_mode="mirror", prices={"M": series}, all_events=[], cfg=cfg,
@@ -93,7 +100,7 @@ def test_delay_pricing_uses_later_point():
     assert not r0.unpriceable and not r60.unpriceable
     assert r0.entry_px == 1.0
     assert r60.entry_px == 1.2
-    assert r60.entry_source == "birdeye"
+    assert r60.entry_source == "derived"
 
 
 def test_unpriceable_when_no_series():

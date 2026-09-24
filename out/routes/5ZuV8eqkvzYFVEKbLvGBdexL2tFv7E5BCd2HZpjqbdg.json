@@ -1,33 +1,94 @@
 {
-  "route": "insufficient_evidence",
+  "route": "send_for_analysis",
   "reasons": [
-    "ambiguous_answers_default_uncertain"
+    "attention_needs_update",
+    "score_rank_8_composite_0.5426_oos_insufficient_oos",
+    "feat_entry_earliness_0.986",
+    "feat_win_rate_0.636",
+    "feat_median_hold_0.983",
+    "feat_lead_follow_0.667",
+    "feat_trade_frequency_0.072",
+    "feat_copyability_60s_0.093",
+    "feat_oos_stability_0.500"
   ],
   "answers": {
-    "behavior_fit": "unclear",
+    "behavior_fit": "mismatch",
     "position_intent": "unclear",
     "history_sufficient": "yes",
-    "attention": "new_situation",
-    "confidence": 0.4,
-    "dry_run": true,
-    "label": "DRY-RUN / MOCK JEV ? TYPESAFE_API_KEY not set"
+    "attention": "needs_update",
+    "confidence": 0.81,
+    "numeric_features": {
+      "available": true,
+      "score": 0.5426,
+      "rank": 8,
+      "features": {
+        "entry_earliness": 0.986,
+        "win_rate": 0.6364,
+        "median_hold": 0.9833,
+        "lead_follow": 0.6667,
+        "trade_frequency": 0.0721,
+        "copyability_60s": 0.0934,
+        "oos_stability": 0.5
+      },
+      "raw": {
+        "entry_earliness_sec_median": 848.0,
+        "win_rate": 0.6364,
+        "median_hold_sec": 59.0,
+        "lead_follow_ratio": 0.6667,
+        "trades_per_day": 38.1602,
+        "copy_pnl_60s_sol": -0.32871,
+        "copy_coverage_60s_pct": 15.48
+      },
+      "oos_flag": "insufficient_oos",
+      "weights": {
+        "entry_earliness": 0.15,
+        "win_rate": 0.15,
+        "median_hold": 0.1,
+        "lead_follow": 0.15,
+        "trade_frequency": 0.1,
+        "copyability_60s": 0.2,
+        "oos_stability": 0.15
+      }
+    }
   },
-  "confidence": 0.4,
+  "confidence": 0.81,
   "observe_only": true,
-  "jev_mode": "dry_run_mock",
+  "numeric_features": {
+    "available": true,
+    "score": 0.5426,
+    "rank": 8,
+    "features": {
+      "entry_earliness": 0.986,
+      "win_rate": 0.6364,
+      "median_hold": 0.9833,
+      "lead_follow": 0.6667,
+      "trade_frequency": 0.0721,
+      "copyability_60s": 0.0934,
+      "oos_stability": 0.5
+    },
+    "raw": {
+      "entry_earliness_sec_median": 848.0,
+      "win_rate": 0.6364,
+      "median_hold_sec": 59.0,
+      "lead_follow_ratio": 0.6667,
+      "trades_per_day": 38.1602,
+      "copy_pnl_60s_sol": -0.32871,
+      "copy_coverage_60s_pct": 15.48
+    },
+    "oos_flag": "insufficient_oos",
+    "weights": {
+      "entry_earliness": 0.15,
+      "win_rate": 0.15,
+      "median_hold": 0.1,
+      "lead_follow": 0.15,
+      "trade_frequency": 0.1,
+      "copyability_60s": 0.2,
+      "oos_stability": 0.15
+    }
+  },
+  "jev_mode": "typesafe_live",
+  "jev_call_ok": true,
+  "jev_http_status": 200,
   "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
-  "label": "Doji",
-  "snapshot": {
-    "wallet": "5ZuV8eqkvzYFVEKbLvGBdexL2tFv7E5BCd2HZpjqbdg",
-    "label": "Doji",
-    "trade_count": 437,
-    "history_flag": "ok",
-    "typical_buy_size_sol": 0.0,
-    "median_hold_seconds": 76,
-    "current_buy_sol": null,
-    "current_buy_signature": "3RoJinNU2QBUDdVJPb9csRsMuHAQ7u9JXZ84Goov6z4UW7qeRMC9sjXSVrHPxPkN6KxAUQZ8oXphUU46uiCvnjWG",
-    "current_token": "YxQ7i3zVULUQZ3af68yhcarhcKNVgcncBVcX659pump",
-    "attention_hint": "new_situation",
-    "note": "Code computed all counts; Jev must not do arithmetic."
-  }
+  "label": "Doji"
 }

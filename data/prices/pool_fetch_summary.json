@@ -1,0 +1,893 @@
+{
+  "generated_at_utc": "2026-09-24T13:07:27Z",
+  "ok": [
+    {
+      "mint": "HF8PqwSatezmXev2mNESQrK71rC3codPZtwbF1Njpump",
+      "ticks": 1694,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "7b1piSJHTZyv6gJGySU8iCWi9MjWs5txbi2B5pfBpump",
+      "ticks": 1696,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "HnsN5WswxBc8g4a3MfSTCP1U9RfqLY8bZ7BhHRRZpump",
+      "ticks": 1650,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "21dfe9UctGMk6zpUsQ1B7YxwckSUxvRX6Vz5e7oppump",
+      "ticks": 1734,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "8pzMG9MSB5w9dVdeupR87agieZNRZNf1psZtyu7Zpump",
+      "ticks": 1730,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "8vZmUBsVxddsfi8mMp2yz6wXy4kK5RM9XX62hq8Qpump",
+      "ticks": 1716,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "BEkHheGKbajbZHNRrCCiC1KQbN5k8fK5EhiB3sNqRF5z",
+      "ticks": 948,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "ticks": 958,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "FUeN2SdvCxYhgJFQeXuKR9bXNRbXqvGGBkZ3WgekCHqQ",
+      "ticks": 1129,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "ticks": 781,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "DAqZZvkxcWaR17cWvXoA7n3wKTuDPhUZWQEi6Chhpump",
+      "ticks": 678,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "F8vZ5hFBvMt6TXtXVbukLBsSNW1zzkD4Ex8nWZ9epump",
+      "ticks": 6,
+      "pages": 1,
+      "stopped": "cached"
+    },
+    {
+      "mint": "As2YQNcGb4faenRY6jaTq14Jy1eQhkHoineeaZxdfCa2",
+      "ticks": 562,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "4x3zfjp6KY6RvpzxJ4jSAfNJjwSUd8jU5d7LbhXTpump",
+      "ticks": 479,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "C3MUK2wTADiMCgzbkwPweHRk6Tevc8PfCHbBkxLfNXG7",
+      "ticks": 770,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "4UCZ3MCGDGqZ9u5CnJoKndoynh92Y54jhFhNUGgUpump",
+      "ticks": 171,
+      "pages": 15,
+      "stopped": "cached"
+    },
+    {
+      "mint": "8FFyfMMMKRJfyE1NrwAet6sRCYwx3tJquwqm5Jodpump",
+      "ticks": 683,
+      "pages": 20,
+      "stopped": "cached"
+    },
+    {
+      "mint": "26CTQ2WDJFvwGYDJahkrY9uMcj4Nz3EoJEdhRHkRpump",
+      "ticks": 25,
+      "pages": 3,
+      "stopped": "cached"
+    },
+    {
+      "mint": "HCay926KRr7cuSrpwM5CJ87LmKw8h8hbrp42G8mMpump",
+      "ticks": 231,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "3D5XZt7g3EZYuB1Uv6RtAPhxUDetmytLoY6qVT2Zpump",
+      "ticks": 471,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "6bpwdv8EbvW1C7rKvimsQr6omxTQYqQ8VqPsrTqmBJUL",
+      "ticks": 402,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "26CxQAEGFHjwK9yv1QbHsFSK2WUVcjr7bQjKaLrNpump",
+      "ticks": 143,
+      "pages": 11,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "7UJuRoyoqskHd7auDfv9ahuZSGCkMz1KiRuEZAcgpump",
+      "ticks": 329,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "DDXhbHzASBhRV29ENP17HKqBqKzPHCGYSrAgirnrY4kA",
+      "ticks": 222,
+      "pages": 11,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "Ea1JUfnc9rLA7zopqfGs1uWHT7VHYZhDpwBXjqbqpump",
+      "ticks": 504,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "G7PMxQCHe6RYizEtZ688oEVM92huN2kWjwTh88nvpump",
+      "ticks": 124,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "EKShF2iKiGZNLh9QjXF7tu822AapGh4rNj9h6y8upump",
+      "ticks": 115,
+      "pages": 6,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "9ioMZnRLtrSotYHEiidDcW84NwRB4oE8Qwy8Ej395W2d",
+      "ticks": 428,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "82ezhRLKdKwkSC9jkM3js1yf93VbmvLXNMPkBmompump",
+      "ticks": 52,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "D4PkDC16t9JrstxFtF7G65unj8YVwsUD4HV31erpump",
+      "ticks": 84,
+      "pages": 7,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "9v8A6ctUpgY52DkfyCMVP1hYB4C4gxu6zB91VXKmpump",
+      "ticks": 231,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "69qcxMniaGRUQEkZrURafngtZmXrXxUB9rKN6QnGFm5q",
+      "ticks": 256,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "3EbDU913wtdnNjYjx9JSDDYZVu1Lr3KSj1UzVGFEUrsM",
+      "ticks": 289,
+      "pages": 11,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "BTNFLABY617CjaUCZkhK7RZzhQejdpFWZEH2E5Ljpump",
+      "ticks": 650,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "5UCPnaSyQwSQeEzduSLpktXzC58suvihA2TMnQaHpump",
+      "ticks": 407,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "6QUrPLsXmoxXJwkkRe3AvNxtzu9MJSwU6vrJXtSHpump",
+      "ticks": 200,
+      "pages": 11,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "Av4dAuiTHKsqiMrfx1KLjrMVefKCJrFPggwMjRz4pump",
+      "ticks": 467,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "7o7Dr8RTgGQYsjZ3scMVHkYgLj5PPEp7gwe54ET2pump",
+      "ticks": 192,
+      "pages": 5,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "8pMAxuAk6oxCrnHsABQxRGtPs1nmcA8sTLkpqi4gpump",
+      "ticks": 594,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "GB4bAKcZu7b8sQLFyZLVSNUsrmPZ5dF9XQWLSekQnZCP",
+      "ticks": 231,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "HQiAVBu9xLbrKWUkjTEJFE4tmtwbLtJaEA3Lgi9Cpump",
+      "ticks": 1,
+      "pages": 1,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "ES7xGmrYUWdij795x4bTtcQHECUYg1T1q6ibA9y7pump",
+      "ticks": 516,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "28pzwpApveM9MQBEZNkrgNrJeSKSyHmocTV92dF8pump",
+      "ticks": 120,
+      "pages": 9,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "5LpMs3YMut65io3r23jrQFfFwD9qfdneqAfL1oELpump",
+      "ticks": 418,
+      "pages": 12,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "6ysp4WebEYzPW5zVjkdwtoapa1Ub7buGdVduEmzccxsw",
+      "ticks": 453,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "Gib31KvQczEfEsAa1tD6UEVEWu5e8j3NHzuCWNtpkMh3",
+      "ticks": 164,
+      "pages": 8,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "3aM1HdwnsfQzmfkiDGboCUiS4HHUCH42zxvrEnap26jD",
+      "ticks": 313,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "FuP6MCwcN4DiyGRtQHFmkHTcyj1FMnV6a9vY7e15nArF",
+      "ticks": 480,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "7U3sUkodvHvBsN8TaSGWaz3vPzpPtwNC87cru4ndpump",
+      "ticks": 404,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "DTpPbWoay4R8KPFBxoRhQ4CVmUPkjC31TutfPkkkpump",
+      "ticks": 241,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "5eLDGgEfaYnSaVdzkZqGZUjtZb2F7b9QNpY276nZpump",
+      "ticks": 179,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "3mCs98j1Hjr6KoNMQTmBf6RoQcUVBCnARvHyrk2Lpump",
+      "ticks": 153,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "2f9nsRYj5kEXRGFdsyz4ZY1ri8rf4sarBYcAaCqYHn5x",
+      "ticks": 28,
+      "pages": 4,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "4R1naZevmHZZKtumshQQMVUu1ikCK8LxZ1coLnMJHdBk",
+      "ticks": 14,
+      "pages": 3,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "GzAA31purYixa2BGsLWQz83cmtQTkjCn6vLSXAyCo2bv",
+      "ticks": 489,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "BjPdYDBMDNkteBAcfoWiKKMofCLj87WK66oe7bGspump",
+      "ticks": 99,
+      "pages": 7,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "7fffJMpjrkGgDB7R88RXRRDLW4bZYEbGpGDJ6yVRpump",
+      "ticks": 36,
+      "pages": 3,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "5jBaEhTB9vtB7FkVzomrm11hiPPCRFQd2owVSERmpump",
+      "ticks": 116,
+      "pages": 3,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "4qm63zq4xVUeYTKNejkEAeum1jdctdgD5Vxn5aBceHMu",
+      "ticks": 385,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "6rLeE9rDaMnXv2522nJbZLS3wr6rDz617nisw17mpump",
+      "ticks": 23,
+      "pages": 3,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "2DGX2dfav6cwdobhqXX9JSSgWeYLhX6enhrWEjt8pump",
+      "ticks": 51,
+      "pages": 5,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "3kSfkixSo5kuGp8fE3jRWmujzv2anzd5qYPx46XiBPyK",
+      "ticks": 121,
+      "pages": 3,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "HYPz8T8aNHhUEP2H6QdfwxMRQfWzNcpcarMZioqwpump",
+      "ticks": 357,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "BaoYZjx5DZ9hWGCTSxUpSyFLPvonB9AfEsA4gzhtpump",
+      "ticks": 321,
+      "pages": 5,
+      "stopped": "short_page"
+    },
+    {
+      "mint": "3hDo68FkPieMoLaszVEArEEjLVcGLb88QA34QEyB2Kfc",
+      "ticks": 150,
+      "pages": 5,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "7dRKabZAT3njAaAC1nJm7P3zf4hn6gDekCDUzxKHpump",
+      "ticks": 129,
+      "pages": 3,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "D11cHgr8P5jGML4japjs5ZMuNuLauUfTbz2PQxGtpump",
+      "ticks": 2,
+      "pages": 1,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "AzH9vbtebzQeC6J2u8sQgNrjRrc4XV9UuwUNBhsopump",
+      "ticks": 11,
+      "pages": 1,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "Df89iin1btiajH1bSvAhvB2PUjkFT9mrZTxrE2z3pump",
+      "ticks": 190,
+      "pages": 10,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "Hcnr7afGFVjp3YD3z7C4618PuL9WuiSPW8svkgRupump",
+      "ticks": 158,
+      "pages": 14,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "25vdvxAatzG4WeeRAZjGZTDHGdMzKUnqkqQT4cXrpump",
+      "ticks": 513,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "HbuitcSeqgjZxdcYkFGTHxY7fPLAYsSCbYir8Suvpump",
+      "ticks": 599,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "8WifEM5Gnj3G2xUnU1fSpJuo8kfviUbUygCkcYvjRuB6",
+      "ticks": 172,
+      "pages": 13,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "6xGv3XEih8MomtDvpCJTVnP9Jh5Mm9yBRZMLggr9Vjc5",
+      "ticks": 204,
+      "pages": 10,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "D9aqFYQEJzBqDnDscgBi6NRGKS2mSZdDN79spaitpump",
+      "ticks": 87,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "9cNt3swtvqP1LjG8fge98bmGiD3MyTxYYs1TQeradRfn",
+      "ticks": 299,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "AwB1BP3DoDx5c2z1w6Rkpzaj7xzxt4UovRhoKeCpjkbr",
+      "ticks": 145,
+      "pages": 8,
+      "stopped": "short_page"
+    },
+    {
+      "mint": "j2cwvyL7iNzYC7Zsr7jy3LypGWXm4J69H5QUq6US4Mx",
+      "ticks": 70,
+      "pages": 4,
+      "stopped": "no_signature"
+    },
+    {
+      "mint": "5McsLsyut5q86mnaYec2YQJsxi3yE83rkcPXztDtpump",
+      "ticks": 543,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "CF6aUNiFocSDPs97XZKvD2KtnrL4mLAgtoebq2swpump",
+      "ticks": 472,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "B4dfndrih3X2oT8MK3qo7K6kb4f3AKBBzB3obNqufTmY",
+      "ticks": 222,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "2Dmta7fhheLqCBszyqcB1szf7nxx2eEsHM4dmEhFpump",
+      "ticks": 583,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "FndweKak3Nq1ucij51cd1oTKMiwSYeyDggyTYGafpump",
+      "ticks": 455,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "5gbAYk8VtvsjM5jRQTcLttWLdwbGM9a4p7E4x6g2kLaK",
+      "ticks": 62,
+      "pages": 4,
+      "stopped": "short_page"
+    },
+    {
+      "mint": "Df9f6sUjA5QhnwYdKxqJ2Eh6w6wCYwsgt1qy1mptp2xN",
+      "ticks": 587,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "2xPswEkWd7c2TavZvq81teTW895rdiBNTr4F8fEzpump",
+      "ticks": 54,
+      "pages": 4,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "B7yviuGabWuLCafcCrnRYLvn7hiyzyA8frddByxzpump",
+      "ticks": 112,
+      "pages": 6,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "BU8aCVDLMHX1JT4a1SazvKqEeZ2st8QwSnEoDYUJpump",
+      "ticks": 356,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "GPHXkY2SuuncBrE14RiTMM3em1G5b18raJTTd7DXpump",
+      "ticks": 131,
+      "pages": 4,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "GQ6tH9mS6aHn6aUHPWYX7ALEqsRyMraLSJqFykzKvjSG",
+      "ticks": 493,
+      "pages": 13,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "GRRCtFjfdgSmcA7eaqz8GUambvHJSgCuXmttEfgsZWPA",
+      "ticks": 227,
+      "pages": 7,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "ERnqeNnSf4DNQCUvyEKDaon7Y6R25KpvRiLcEkZ1EFDb",
+      "ticks": 391,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "BmeiZNrgX41SYGy62GenKmVqPe8QCVtAAk3JAqJaHsE9",
+      "ticks": 371,
+      "pages": 11,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "26Fd3pH8xMNw79HG4BDv59bTTUPZMxXY81fDRB2vpump",
+      "ticks": 50,
+      "pages": 3,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "DxUnjpYLBbr5tbjMc2Edeq6nUY6Uoxq8bBLqpc7Ypump",
+      "ticks": 16,
+      "pages": 3,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "BDu86NWdo7mxc7BtVMXx5JiY9ny3u7WcbxqWyLaBxNZe",
+      "ticks": 36,
+      "pages": 8,
+      "stopped": "empty_pages"
+    },
+    {
+      "mint": "6bhWmtHjMUyQ6NuYPnUb8CJiPTHQ36J4bomTnTxepump",
+      "ticks": 315,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "632aHZ63ovM2eqzihzx2uKD7oYWyZ4psyDQ7EFJnmeGW",
+      "ticks": 563,
+      "pages": 15,
+      "stopped": null
+    },
+    {
+      "mint": "6dgTZUtT9pHcbMGMsRPmYoH5MUeC2DPPgdLgQukJpump",
+      "ticks": 309,
+      "pages": 10,
+      "stopped": "past_window"
+    },
+    {
+      "mint": "65KvpqKhmrKZWSchJm3iWVcMuyKqfk5auMS96LgXRT5s",
+      "ticks": 386,
+      "pages": 15,
+      "stopped": null
+    }
+  ],
+  "failed": [
+    {
+      "mint": "6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "6TcFqnzyxFE6bZPqNL7MimUsvggheDQrjwKUhGUKJFXY",
+        "pages": 15,
+        "txs": 753,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790221058,
+        "t_end": 1790225543,
+        "pair_count": 10
+      }
+    },
+    {
+      "mint": "CASHx9KJUStyftLFWGvEVf59SGeG9sh5FfcnZMVPCASH",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "CASHx9KJUStyftLFWGvEVf59SGeG9sh5FfcnZMVPCASH",
+        "pages": 15,
+        "txs": 500,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789904374,
+        "t_end": 1790077174,
+        "pair_count": 6
+      }
+    },
+    {
+      "mint": "3wMj4yBCGoV4fBJKdhHHCP9ZR1npcoBb6FQpCbSLpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "3wMj4yBCGoV4fBJKdhHHCP9ZR1npcoBb6FQpCbSLpump",
+        "pages": 15,
+        "txs": 1269,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790080798,
+        "t_end": 1790085802,
+        "pair_count": 5
+      }
+    },
+    {
+      "mint": "USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "USD1ttGY1N17NEEHLmELoaybftRBUSErhqYiQzvEmuB",
+        "pages": 15,
+        "txs": 1048,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790057492,
+        "t_end": 1790230292,
+        "pair_count": 4
+      }
+    },
+    {
+      "mint": "34HkH1rtaTEocBXzKkrbkzDAjy3P5YKcuR44iaefYda2",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "34HkH1rtaTEocBXzKkrbkzDAjy3P5YKcuR44iaefYda2",
+        "pages": 15,
+        "txs": 1039,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789521781,
+        "t_end": 1789526035,
+        "pair_count": 4
+      }
+    },
+    {
+      "mint": "38SP7s7FaZNzP8xVUw2LGXrpPuTXH65TTmv7hw5Bpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "38SP7s7FaZNzP8xVUw2LGXrpPuTXH65TTmv7hw5Bpump",
+        "pages": 15,
+        "txs": 949,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1787451565,
+        "t_end": 1787478237,
+        "pair_count": 3
+      }
+    },
+    {
+      "mint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "cbbtcf3aa214zXHbiAZQwf4122FBYbraNdFqgw4iMij",
+        "pages": 15,
+        "txs": 428,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789965360,
+        "t_end": 1790138160,
+        "pair_count": 3
+      }
+    },
+    {
+      "mint": "8ZkHMzd9r91DBoGsZqn4F4rgRKGLDRpUcqHVM6RVpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "8ZkHMzd9r91DBoGsZqn4F4rgRKGLDRpUcqHVM6RVpump",
+        "pages": 15,
+        "txs": 1217,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789878531,
+        "t_end": 1789885794,
+        "pair_count": 3
+      }
+    },
+    {
+      "mint": "8kvABvjVk9Thac7vXwcnJcf7jReBdmVTooyJXCW6pump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "8kvABvjVk9Thac7vXwcnJcf7jReBdmVTooyJXCW6pump",
+        "pages": 15,
+        "txs": 1355,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789249765,
+        "t_end": 1789253911,
+        "pair_count": 3
+      }
+    },
+    {
+      "mint": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "mSoLzYCxHdYgdzU16g5QSh3i5K3z3KZK7ytfqcJm7So",
+        "pages": 15,
+        "txs": 817,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1788136040,
+        "t_end": 1788308840,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "AbPBaCEmqdneUmMUxuWRCx4dM1CnBewQmFAJbwKbFipr",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "AbPBaCEmqdneUmMUxuWRCx4dM1CnBewQmFAJbwKbFipr",
+        "pages": 15,
+        "txs": 1247,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1788222907,
+        "t_end": 1788227590,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+        "pages": 15,
+        "txs": 582,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789886822,
+        "t_end": 1790059622,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "4wYd4vPhzaUQs5vqUrEJ7CPtKg1qzXHhauERuh4MiNMB",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "4wYd4vPhzaUQs5vqUrEJ7CPtKg1qzXHhauERuh4MiNMB",
+        "pages": 15,
+        "txs": 1412,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790125220,
+        "t_end": 1790129242,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "HQhWMtL2BWx9D46dzjgR231emYZg8ahqyo5bTHqepump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "HQhWMtL2BWx9D46dzjgR231emYZg8ahqyo5bTHqepump",
+        "pages": 15,
+        "txs": 1342,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789354344,
+        "t_end": 1789358368,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "GEaPJ5FY3zY9y9SK6fEeL6X8bNGdvCTT1fnB51xQpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "GEaPJ5FY3zY9y9SK6fEeL6X8bNGdvCTT1fnB51xQpump",
+        "pages": 15,
+        "txs": 1145,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789332403,
+        "t_end": 1789336622,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "4775QEyTS7ECpvhbeEg1a5XUjpK6CtEJwRpw6vvwpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "4775QEyTS7ECpvhbeEg1a5XUjpK6CtEJwRpw6vvwpump",
+        "pages": 15,
+        "txs": 1373,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1789318242,
+        "t_end": 1789322310,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "FBZqePqMMfqs74SZaxbNu3Gsne6Ny9VSosNnWTAdpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "FBZqePqMMfqs74SZaxbNu3Gsne6Ny9VSosNnWTAdpump",
+        "pages": 15,
+        "txs": 1331,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790000983,
+        "t_end": 1790006395,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "4c1XZRqFV6y8pAckHru5oiGPYUFw1eQ3kFotPLHrpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "4c1XZRqFV6y8pAckHru5oiGPYUFw1eQ3kFotPLHrpump",
+        "pages": 15,
+        "txs": 1387,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1790132862,
+        "t_end": 1790141938,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "5QiHemQQvWavWQMuWitq5pinRVLibYVPwdD1JXafpump",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "5QiHemQQvWavWQMuWitq5pinRVLibYVPwdD1JXafpump",
+        "pages": 15,
+        "txs": 1336,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1787118632,
+        "t_end": 1787122774,
+        "pair_count": 2
+      }
+    },
+    {
+      "mint": "2UZXdSit9KLjiTAuwqjSt8wrV6xhvRsb3KG9yxKqUk7M",
+      "reason": "no_ticks",
+      "meta": {
+        "mint": "2UZXdSit9KLjiTAuwqjSt8wrV6xhvRsb3KG9yxKqUk7M",
+        "pages": 15,
+        "txs": 1223,
+        "ticks": 0,
+        "stopped": null,
+        "t_start": 1788304344,
+        "t_end": 1788309393,
+        "pair_count": 1
+      }
+    }
+  ],
+  "skipped": [],
+  "stopped_early": null,
+  "helius_configured": true,
+  "credits_note": null,
+  "mints_targeted": 120,
+  "pair_mints_total": 505
+}

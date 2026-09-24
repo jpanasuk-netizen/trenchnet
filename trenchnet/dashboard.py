@@ -146,6 +146,8 @@ def collect_data(root: Path) -> dict[str, Any]:
             "live": "LIVE is off until Jeremy names a ticket. No implementation exists.",
         },
         "backtest": _read_json(out_dir / "backtest_summary.json") or {},
+        "pool_coverage": _read_json(data_dir / "prices" / "pool_fetch_summary.json") or {},
+        "price_coverage": (_read_json(out_dir / "backtest_summary.json") or {}).get("coverage_by") or {},
         "backtest_trades": ((_read_json(out_dir / "backtest.json") or {}).get("per_trade") or [])[:2500],
         "scores": _read_json(out_dir / "scores.json") or {},
         "events": all_events[:5000],

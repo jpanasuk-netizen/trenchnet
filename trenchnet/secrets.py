@@ -16,12 +16,12 @@ def _parse_env_file(path: Path) -> dict[str, str]:
     out: dict[str, str] = {}
     if not path.is_file():
         return out
-    for line in path.read_text(encoding="utf-8", errors="ignore").splitlines():
+    for line in path.read_text(encoding="utf-8-sig", errors="ignore").splitlines():
         s = line.strip()
         if not s or s.startswith("#") or "=" not in s:
             continue
         k, _, v = s.partition("=")
-        k = k.strip()
+        k = k.strip().lstrip("\ufeff")
         v = v.strip().strip('"').strip("'")
         if k:
             out[k] = v

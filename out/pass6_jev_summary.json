@@ -1,0 +1,8 @@
+{
+  "jev_live_ok": 40,
+  "jev_live_fail": 0,
+  "http_statuses": {
+    "200": 40
+  },
+  "n": 40
+}
