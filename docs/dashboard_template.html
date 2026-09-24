@@ -94,6 +94,28 @@ table.ledger a{color:var(--blue)}
 .tag.buy{color:var(--ok);border-color:var(--ok)} .tag.sell{color:var(--bad);border-color:var(--bad)}
 .tag.refusal{color:var(--warn);border-color:var(--warn)}
 @media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+
+/* Pass 9 explainability */
+.nowStrip{margin:10px 18px 0;padding:12px 14px;border:1px solid rgba(0,180,255,.35);border-radius:14px;
+  background:linear-gradient(90deg,rgba(0,180,255,.08),rgba(176,38,255,.08));display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;align-items:start}
+.nowStrip .nsTitle{grid-column:1/-1;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#00B4FF;font-weight:800}
+.nowStrip .nsItem .k{font-size:10px;color:#8aa0c0;text-transform:uppercase;letter-spacing:.8px}
+.nowStrip .nsItem .v{font-size:14px;font-weight:700;color:#dfe9ff;margin-top:2px}
+.nowStrip .badgeRow{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+.caption{color:#9db4d8;font-size:12px;line-height:1.4;margin:8px 0 0}
+.legendBox{display:flex;flex-wrap:wrap;gap:10px 16px;margin:8px 0;padding:8px 10px;border:1px solid rgba(0,180,255,.22);
+  border-radius:10px;background:rgba(8,14,28,.55);font-size:12px;color:#c5d6f0}
+.legendBox .mk{font-weight:700}
+.infoTip{display:inline-flex;align-items:center;justify-content:center;width:14px;height:14px;margin-left:4px;
+  border-radius:50%;border:1px solid rgba(0,180,255,.55);color:#00B4FF;font-size:10px;font-weight:800;
+  cursor:help;position:relative;vertical-align:middle}
+.infoTip:hover::after,.infoTip:focus::after{content:attr(data-tip);position:absolute;left:50%;bottom:130%;transform:translateX(-50%);
+  min-width:180px;max-width:280px;padding:8px 10px;border-radius:8px;background:rgba(6,10,22,.96);
+  border:1px solid rgba(0,180,255,.45);color:#dfe9ff;font-size:11px;font-weight:500;z-index:60;white-space:normal}
+.axisNote{font-size:11px;color:#8aa0c0;margin-top:4px}
+@media (max-width:1400px){ .nowStrip{margin:8px 10px 0} }
+
 </style>
 </head>
 <body>
@@ -102,9 +124,10 @@ table.ledger a{color:var(--blue)}
   <span class="badge pp">PAPER</span>
   <span class="badge lv">LIVE OFF (no impl)</span>
 </div>
+<div class="nowStrip" id="nowStrip"><div class="nsTitle">What's happening now</div><div class="muted">Loading…</div></div>
 <header class="hero" id="hero"></header>
 <div class="honesty" id="honesty"></div>
-<p class="muted" style="margin:8px 18px">Pass 7 desk: Top Pick card + Coin Desk tab (Base/hood.fun read-only) + Pass 5/6 backtest. PAPER only — LIVE stays disarmed. Not financial advice.</p>
+<p class="muted" style="margin:8px 18px">Pass 9 desk: Copy Wallets command center under the banner · labeled charts · What's happening now · Hot Takes every 5 min · Top Pick + Coin Desk. Default view = Overview columns / 60s·0.25 SOL. PAPER only — LIVE stays disarmed. Not financial advice.</p>
 <div class="grid">
   <aside class="panel">
     <h2>Roster</h2>
@@ -129,22 +152,27 @@ table.ledger a{color:var(--blue)}
         <canvas id="graph"></canvas>
         <div class="graphTip" id="graphTip"></div>
       </div>
-      <div class="legend">
-        <span><i class="sw" style="background:#00B4FF"></i>Wallet (circle, electric blue)</span>
-        <span><i class="sw sq" style="background:#B026FF"></i>Token (rounded square, purple)</span>
-        <span style="color:#3dffb5">Green edge = buys</span>
-        <span style="color:#ff5d8f">Magenta edge = sells</span>
-        <span>Thicker edge = more SOL · arrow wallet → token</span>
+      <div class="legendBox" id="graphLegend">
+        <span><i class="sw" style="background:#00B4FF"></i><b>Circle</b> = wallet</span>
+        <span><i class="sw sq" style="background:#B026FF"></i><b>Rounded square</b> = token (size ≈ SOL volume)</span>
+        <span style="color:#3dffb5"><b>Green line</b> = net bought (buy SOL ≥ sell SOL)</span>
+        <span style="color:#ff5d8f"><b>Magenta line</b> = net sold</span>
+        <span><b>Line thickness</b> = total SOL flow · arrow wallet → token</span>
       </div>
-      <p class="note">Observational only — never ownership claims. Layout is precomputed then frozen (no wobble). Hover token → wallets in entry order; hover wallet → its tokens. Click opens side panel. Labels always on.</p>
-      <h2 style="margin-top:14px">What people are buying</h2>
+      <p class="caption">What am I looking at? Roster wallets (left) and tokens they traded (right). Lines are real buy/sell flows in SOL — observational only, not ownership.</p>
+      <p class="note">Layout is frozen (drag to pan). Hover a token for entry order; click opens the drawer. Times elsewhere use America/Chicago (CT) when labeled.</p>
+      <h2 style="margin-top:14px">What people are buying <span class="infoTip" data-tip="Aggregated from real parsed trades: SOL in = buys, SOL out = sells. First buyer is earliest wallet buy on that mint.">i</span></h2>
       <div style="overflow:auto;max-height:280px"><table id="buyTable"><thead><tr>
         <th>Token</th><th>Symbol</th><th># wallets</th><th>SOL in</th><th>SOL out</th>
         <th>First buyer</th><th>First time</th><th>Latest</th><th>Links</th>
       </tr></thead><tbody></tbody></table></div>
     </div>
     <div class="panel pu" style="margin-top:14px">
-      <h2>Token timeline swim lanes</h2>
+      <h2>Token timeline swim lanes <span class="infoTip" data-tip="Each lane is one token. Markers sit only on real transactions.">i</span></h2>
+      <div class="legendBox"><span class="mk" style="color:#39ffb0">▲ green up-triangle = BUY</span>
+        <span class="mk" style="color:#ff5d8f">▼ red down-triangle = SELL</span>
+        <span>X axis = time along the lane · Y = buy (upper) vs sell (lower)</span></div>
+      <p class="caption">What am I looking at? A per-token timeline of real trades. Triangles mark actual buys and sells — the curve is only visual smoothing between them.</p>
       <div id="lanes"></div>
     </div>
   </main>
@@ -155,13 +183,23 @@ table.ledger a{color:var(--blue)}
   </aside>
 </div>
 <div class="lower" id="lower">
-  <div class="panel"><h2>Activity heatmap (UTC)</h2><div id="heat"></div>
-    <p class="note">Cell = real trades at that UTC hour/day. Thin data is labeled, never padded.</p></div>
-  <div class="panel pu"><h2>Buy/sell flow per token</h2><div id="flows"></div>
-    <p class="note">Cumulative SOL flow — curves are visual smoothing; markers sit only on real txs. Click a marker → Solscan.</p></div>
-  <div class="panel"><h2>Wallet co-entry matrix</h2><div id="comat"></div>
-    <p class="note">Timing patterns only — never ownership claims.</p></div>
-  <div class="panel pu"><h2>Paper ledger (PAPER)</h2><div id="ptable"></div></div>
+  <div class="panel"><h2>Activity heatmap (UTC hours) <span class="infoTip" data-tip="Rows = Mon–Sun UTC; columns = hour 0–23 UTC. Brighter = more real trades.">i</span></h2>
+    <div class="legendBox"><span>X = hour of day (UTC)</span><span>Y = weekday (UTC)</span><span>Color intensity = trade count</span></div>
+    <div id="heat"></div>
+    <p class="caption">What am I looking at? When roster wallets traded (UTC). Empty cells mean no trades — we never invent activity.</p>
+    <p class="note">Thin data is labeled, never padded.</p></div>
+  <div class="panel pu"><h2>Buy/sell flow per token (SOL) <span class="infoTip" data-tip="Running sum of +SOL on buys and −SOL on sells for that mint.">i</span></h2>
+    <div class="legendBox"><span class="mk" style="color:#39ffb0">▲ BUY</span><span class="mk" style="color:#ff5d8f">▼ SELL</span>
+      <span>Y = cumulative SOL · X = time</span></div>
+    <div id="flows"></div>
+    <p class="caption">What am I looking at? Net SOL pressure into/out of a token over time. Markers are real txs (click → Solscan); the line is smoothed between them.</p></div>
+  <div class="panel"><h2>Wallet co-entry matrix <span class="infoTip" data-tip="How often two wallets appear on the same token (shared mints / Jaccard). Timing pattern only.">i</span></h2>
+    <div class="legendBox"><span>Cell brightness = shared-token strength</span><span>Axes = wallets</span></div>
+    <div id="comat"></div>
+    <p class="caption">What am I looking at? Which wallets tend to show up on the same tokens. This is co-occurrence, not proof they are the same person.</p></div>
+  <div class="panel pu"><h2>Paper ledger (PAPER) <span class="infoTip" data-tip="Simulated fills priced from the last real on-chain trade. Not live trading.">i</span></h2>
+    <p class="caption">What am I looking at? Your paper (simulated) fills and refusals. LIVE is separate and stays disarmed.</p>
+    <div id="ptable"></div></div>
   <div class="panel" style="grid-column:1/-1"><h2>Token context — Dexscreener + GeckoTerminal (free, no signup)</h2><div id="tctx"></div>
     <p class="note">Price/liq/volume from public pair snapshots at fetch time. Every number links to its source. No X API. Empty = not fetched or no pair.</p></div>
 </div>
@@ -191,6 +229,7 @@ window.addEventListener('trenchnet:layout', (ev)=>{
 </script>
 <script src="assets/charts.js"></script>
 <script src="assets/interactive.js"></script>
+<script src="assets/explain.js"></script>
 <script>
 "use strict";
 const D = window.TRENCHNET_DATA || {};
@@ -545,17 +584,21 @@ let selected = null;
         }
         ctx.stroke();
       }
-      pts.forEach(p=>{ // markers ONLY on real txs
+      pts.forEach(p=>{ // markers ONLY on real txs — ▲ BUY / ▼ SELL
         if(p.x<=pts[Math.max(0,Math.floor((pts.length-1)*prog))].x+0.5){
-          ctx.fillStyle=p.e.side==="buy"?"#00B4FF":"#ff5d8f"; ctx.shadowBlur=REDUCED?0:10;
+          const buy=p.e.side==="buy";
+          ctx.fillStyle=buy?"#39ffb0":"#ff5d8f"; ctx.shadowBlur=REDUCED?0:10;
           ctx.shadowColor=ctx.fillStyle;
-          ctx.beginPath(); ctx.arc(p.x,p.y,4,0,7); ctx.fill(); ctx.shadowBlur=0; } });
+          ctx.beginPath();
+          if(buy){ ctx.moveTo(p.x,p.y-5); ctx.lineTo(p.x-5,p.y+4); ctx.lineTo(p.x+5,p.y+4); }
+          else { ctx.moveTo(p.x,p.y+5); ctx.lineTo(p.x-5,p.y-4); ctx.lineTo(p.x+5,p.y-4); }
+          ctx.closePath(); ctx.fill(); ctx.shadowBlur=0; } });
     }
     if(REDUCED){ draw(1); } else { let t0p=null;
       function anim(ts){ if(!t0p)t0p=ts; const prog=Math.min(1,(ts-t0p)/900);
         draw(prog); if(prog<1) requestAnimationFrame(anim); }
       requestAnimationFrame(anim); }
-    cv.title="buy ● blue / sell ● red — click a marker's tx on Solscan via History";
+    cv.title="▲ green BUY / ▼ red SELL — real txs only";
   });
 })();
 
@@ -638,8 +681,12 @@ let selected = null;
         }
         ctx.shadowBlur=0;
         vis.forEach(({x,y,p})=>{ // markers ONLY on real txs
-          ctx.fillStyle=p.side==="buy"?"#00B4FF":"#ff5d8f"; ctx.shadowBlur=REDUCED?0:9; ctx.shadowColor=ctx.fillStyle;
-          ctx.beginPath(); ctx.arc(x,y,3.5,0,7); ctx.fill(); ctx.shadowBlur=0; });
+          const buy=p.side==="buy";
+          ctx.fillStyle=buy?"#39ffb0":"#ff5d8f"; ctx.shadowBlur=REDUCED?0:9; ctx.shadowColor=ctx.fillStyle;
+          ctx.beginPath();
+          if(buy){ ctx.moveTo(x,y-5); ctx.lineTo(x-4.5,y+3.5); ctx.lineTo(x+4.5,y+3.5); }
+          else { ctx.moveTo(x,y+5); ctx.lineTo(x-4.5,y-3.5); ctx.lineTo(x+4.5,y-3.5); }
+          ctx.closePath(); ctx.fill(); ctx.shadowBlur=0; });
       }
       if(REDUCED){ draw(); }
       else{ let st=null; function anim(ts){ if(!st)st=ts; prog=Math.min(1,(ts-st)/900); draw(); if(prog<1)requestAnimationFrame(anim); } requestAnimationFrame(anim); }

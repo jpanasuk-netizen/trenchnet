@@ -151,6 +151,7 @@ def collect_data(root: Path) -> dict[str, Any]:
         "backtest_trades": ((_read_json(out_dir / "backtest.json") or {}).get("per_trade") or [])[:2500],
         "scores": _read_json(out_dir / "scores.json") or {},
         "top_pick": _read_json(out_dir / "top_pick.json") or {},
+        "copydesk": _read_json(out_dir / "copydesk.json") or {},
         "events": all_events[:5000],
         "data_version": generated_at,
         "empty_states": {
@@ -162,6 +163,11 @@ def collect_data(root: Path) -> dict[str, Any]:
 
 
 def bake_data_js(root: Path) -> Path:
+    try:
+        from trenchnet.copydesk import write_copydesk
+        write_copydesk(root)
+    except Exception:
+        pass
     data = collect_data(root)
     assets = root / "out" / "assets"
     assets.mkdir(parents=True, exist_ok=True)

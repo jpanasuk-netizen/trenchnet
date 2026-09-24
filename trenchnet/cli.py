@@ -62,6 +62,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("picks", help="Pass 7 Top Pick card + track record (paper only)")
     sub.add_parser("hottakes", help="Pass 8 Hot Takes backfill + scoreboard (paper only)")
     sub.add_parser("hottakes-poll", help="Pass 8 single Hot Take tracker poll (paper only)")
+    sub.add_parser("copydesk", help="Pass 9 Copy Wallets command center JSON (paper only)")
 
     args = parser.parse_args(argv)
 
@@ -99,6 +100,14 @@ def main(argv: list[str] | None = None) -> int:
             print(f"Dashboard regen skipped: {exc}")
         print(json.dumps(summary, indent=2))
         return 0
+
+    if args.cmd == "copydesk":
+        from trenchnet.copydesk import write_copydesk
+        from trenchnet.dashboard import regenerate
+        path = write_copydesk(ROOT)
+        regenerate(ROOT)
+        print(f"Copy desk written: {path}")
+        return
     if args.cmd == "ui":
         from trenchnet.webui import serve
         serve(ROOT, port=args.port, open_browser=not args.no_browser)

@@ -1,18 +1,101 @@
-/* TRENCHNET Pass 5 interactive desk — local only, no CDN, paper/backtest labels. */
+/* TRENCHNET Pass 9 interactive desk — local only, no CDN, paper/backtest labels. */
 (function () {
   const D = () => window.TRENCHNET_DATA || {};
-  const state = {
+  const DEFAULT_VIEW = {
     filters: { qWallet: "", qToken: "", minSol: 0, source: "all", t0: null, t1: null },
+    selected: null,
+    layout: "columns",
+    backtest: { delay: 60, sizeSol: 0.25, slipMult: 1, tp: 0.5, sl: 0.25, tstop: 3600, mode: "fixed" },
+    tab: "overview"
+  };
+  const LS_KEY = "trenchnet_view_v1";
+  const state = {
+    filters: Object.assign({}, DEFAULT_VIEW.filters),
     page: { buy: 0, score: 0, events: 0 },
     pageSize: 12,
     selected: null, // {kind:'wallet'|'token', id}
-    layout: "columns", // columns | force
+    layout: DEFAULT_VIEW.layout, // columns | force
+    tab: DEFAULT_VIEW.tab,
     pollTimer: null,
     lastVersion: null,
-    backtest: {
-      delay: 60, sizeSol: 0.25, slipMult: 1, tp: 0.5, sl: 0.25, tstop: 3600, mode: "fixed"
-    }
+    backtest: Object.assign({}, DEFAULT_VIEW.backtest),
+    htCollapsed: false
   };
+
+  function cloneDefault() {
+    return {
+      filters: Object.assign({}, DEFAULT_VIEW.filters),
+      selected: null,
+      layout: DEFAULT_VIEW.layout,
+      backtest: Object.assign({}, DEFAULT_VIEW.backtest),
+      tab: DEFAULT_VIEW.tab
+    };
+  }
+  function applyView(o) {
+    if (!o) return;
+    if (o.filters) Object.assign(state.filters, o.filters);
+    state.selected = o.selected != null ? o.selected : state.selected;
+    if (o.layout) state.layout = o.layout;
+    if (o.backtest) Object.assign(state.backtest, o.backtest);
+    if (o.tab) state.tab = o.tab;
+  }
+  function loadLocal() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch (e) { return null; }
+  }
+  function saveLocal() {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify({
+        filters: state.filters,
+        selected: state.selected,
+        layout: state.layout,
+        backtest: state.backtest,
+        tab: state.tab || "overview"
+      }));
+    } catch (e) { /* private mode */ }
+  }
+  function clearLocal() {
+    try { localStorage.removeItem(LS_KEY); } catch (e) {}
+  }
+  function resetToDefaultView() {
+    clearLocal();
+    const d = cloneDefault();
+    state.filters = d.filters;
+    state.selected = null;
+    state.layout = d.layout;
+    state.backtest = d.backtest;
+    state.tab = d.tab;
+    state.page = { buy: 0, score: 0, events: 0 };
+    // clear hash so a fresh load stays on defaults
+    if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    // sync inputs
+    if ($("fWallet")) $("fWallet").value = "";
+    if ($("fToken")) $("fToken").value = "";
+    if ($("fMinSol")) $("fMinSol").value = "0";
+    if ($("fSource")) $("fSource").value = "all";
+    if ($("fT0")) $("fT0").value = "";
+    if ($("fT1")) $("fT1").value = "";
+    if ($("graphLayout")) $("graphLayout").value = state.layout;
+    syncBacktestSliders();
+    writeHash();
+    setTab("overview");
+    renderAll();
+    loadCopyDesk();
+    window.dispatchEvent(new CustomEvent("trenchnet:layout", { detail: state.layout }));
+  }
+  function syncBacktestSliders() {
+    const map = {btDelay:["delay", v=>v], btSize:["sizeSol", v=>Number(v).toFixed(2)], btSlip:["slipMult", v=>Number(v).toFixed(1)], btTp:["tp", v=>Math.round(v*100)+"%"], btSl:["sl", v=>Math.round(v*100)+"%"], btTstop:["tstop", v=>v]};
+    Object.keys(map).forEach(id => {
+      const el = $(id); if (!el) return;
+      const [key, fmt] = map[id];
+      el.value = state.backtest[key];
+      const lab = $(id+"V"); if (lab) lab.textContent = fmt(state.backtest[key]);
+    });
+    if ($("btMode")) $("btMode").value = state.backtest.mode || "fixed";
+  }
 
   function $(id) { return document.getElementById(id); }
   function fmt(n, d) {
@@ -24,14 +107,11 @@
   function parseHash() {
     try {
       const h = (location.hash || "").replace(/^#/, "");
-      if (!h) return;
+      if (!h) return false;
       const o = JSON.parse(decodeURIComponent(h));
-      if (o.filters) Object.assign(state.filters, o.filters);
-      if (o.selected) state.selected = o.selected;
-      if (o.layout) state.layout = o.layout;
-      if (o.backtest) Object.assign(state.backtest, o.backtest);
-      if (o.tab) state.tab = o.tab;
-    } catch (e) { /* ignore bad hash */ }
+      applyView(o);
+      return true;
+    } catch (e) { return false; }
   }
   function writeHash() {
     const o = {
@@ -43,6 +123,7 @@
     };
     const next = "#" + encodeURIComponent(JSON.stringify(o));
     if (location.hash !== next) history.replaceState(null, "", next);
+    saveLocal();
   }
 
   function eventPass(e) {
@@ -152,6 +233,76 @@
       if (tp && tp.parentNode) tp.parentNode.insertBefore(tabs, tp.nextSibling);
       else document.body.insertBefore(tabs, document.body.firstChild);
     }
+
+    // Pass 9: Reset to default view
+    if ($("deskTabs") && !$("btnResetView")) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.id = "btnResetView";
+      btn.textContent = "Reset to default view";
+      btn.title = "Clear hash + localStorage and restore Jeremy's default Overview";
+      btn.style.cssText = "margin-left:auto;background:rgba(0,180,255,.12);border:1px solid rgba(0,180,255,.45);color:#dfe9ff;border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:600";
+      $("deskTabs").appendChild(btn);
+      btn.addEventListener("click", () => resetToDefaultView());
+    }
+
+    // Pass 9: Copy Wallets command center (Overview, under banner)
+    if (!$("copydeskPanel")) {
+      const cd = document.createElement("div");
+      cd.id = "copydeskPanel";
+      cd.className = "panel";
+      cd.style.cssText = "margin:12px 18px 0;border:1px solid rgba(0,180,255,.4);box-shadow:0 0 28px rgba(0,180,255,.08)";
+      cd.innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between">
+          <h2 style="margin:0">Copy Wallets command center <span class="badge">PAPER · 60s · 0.25 SOL</span></h2>
+          <span class="muted" id="cdeskMeta">Loading…</span>
+        </div>
+        <p class="caption">What am I looking at? Paper copy-trading the roster after a 60s delay at 0.25 SOL with costs. Verdicts are heuristics on score + simulated P&amp;L — not financial advice. LIVE stays disarmed.</p>
+        <div class="legendBox" style="margin-top:8px">
+          <span><b>COPY-WORTHY</b> = score≥0.6 and +P&amp;L @60s</span>
+          <span><b>WATCH</b> = borderline</span>
+          <span><b>AVOID</b> = weak / negative</span>
+          <span><b>not enough trades</b> = &lt;5 priced sims</span>
+          <span class="mk" style="color:#39ffb0">▲ BOUGHT</span>
+          <span class="mk" style="color:#ff5d8f">▼ SOLD</span>
+          <span>Times = America/Chicago (CT)</span>
+          <span>Equity Y = SOL cumulative paper P&amp;L</span>
+        </div>
+        <div id="cdeskGrid" class="cdeskGrid">
+          <div><h3>Leaderboard <span class="infoTip" data-tip="Score from out/scores.json. Copy P&amp;L = paper backtest at 60s delay / 0.25 SOL after costs.">i</span></h3><div id="cdeskLead" style="max-height:340px;overflow:auto"></div></div>
+          <div><h3>Live feed <span class="infoTip" data-tip="Recent real buys/sells from history. #top = how many high-score wallets also bought that mint.">i</span></h3><div id="cdeskFeed" style="max-height:340px;overflow:auto"></div></div>
+          <div style="grid-column:1/-1"><h3>If you'd copied them (top 5 + combined) <span class="infoTip" data-tip="Paper equity in SOL over time (CT). Combined = sum of top-5 wallet curves.">i</span></h3>
+            <canvas id="cdeskEquity" width="1100" height="260" style="width:100%;max-height:280px;background:rgba(4,8,18,.5);border-radius:10px"></canvas>
+            <div class="axisNote">X = time (CT) · Y = cumulative paper P&amp;L (SOL) · legend on chart</div>
+            <div id="cdeskEqLegend" class="legendBox"></div>
+          </div>
+          <div style="grid-column:1/-1"><h3>Hot tokens (multi top-wallet) <span class="infoTip" data-tip="Mints bought by 2+ high-score wallets in the last 7 days. Safety flags are rough heuristics from trade sizes.">i</span></h3><div id="cdeskHot"></div></div>
+        </div>`;
+      const tabs = $("deskTabs");
+      if (tabs && tabs.parentNode) tabs.parentNode.insertBefore(cd, tabs.nextSibling);
+      else document.body.insertBefore(cd, document.body.firstChild);
+    }
+    if (!$("pass9css")) {
+      const st = document.createElement("style");
+      st.id = "pass9css";
+      st.textContent = `
+        .cdeskGrid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px;margin-top:12px}
+        @media(max-width:1400px){.cdeskGrid{grid-template-columns:1fr}}
+        .cdeskGrid h3{margin:0 0 8px;font-size:13px;letter-spacing:.4px;color:#00B4FF}
+        .verd{font-weight:800;font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid}
+        .verd.COPY-WORTHY{color:#39ffb0;border-color:#39ffb0}
+        .verd.WATCH{color:#ffd166;border-color:#ffd166}
+        .verd.AVOID{color:#ff5d8f;border-color:#ff5d8f}
+        .verd.ne{color:#8aa0c0;border-color:#8aa0c0}
+        .feedRow{display:flex;gap:8px;align-items:center;padding:6px 4px;border-bottom:1px solid rgba(0,180,255,.1);font-size:12px}
+        .feedRow .side.buy{color:#39ffb0;font-weight:800}
+        .feedRow .side.sell{color:#ff5d8f;font-weight:800}
+        .hotChip{display:inline-block;margin:4px 6px 4px 0;padding:8px 10px;border-radius:10px;border:1px solid rgba(0,180,255,.28);background:rgba(8,14,28,.65);font-size:12px}
+        .hotChip .bad{color:#ff5d8f} .hotChip .ok{color:#39ffb0}
+      `;
+      document.head.appendChild(st);
+    }
+
     if (!$("coindeskPanel")) {
       const cd = document.createElement("div");
       cd.id = "coindeskPanel";
@@ -595,14 +746,12 @@
     document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
       b.classList.toggle("active", b.getAttribute("data-tab") === state.tab);
     });
-    const overview = [$("filterBar"), $("hero"), document.querySelector(".grid"), $("lower")];
+    const overview = [$("filterBar"), $("hero"), document.querySelector(".grid"), $("lower"), $("copydeskPanel"), $("nowStrip")];
     overview.forEach(el => { if (el) el.style.display = (state.tab === "overview") ? "" : "none"; });
     const honesty = $("honesty");
     if (honesty) honesty.style.display = (state.tab === "overview") ? "" : "none";
     const bt = $("backtestSection");
     if (bt) bt.style.display = (state.tab === "backtest" || state.tab === "overview") ? "" : "none";
-    if (bt && state.tab === "backtest") { /* keep visible */ }
-    if (bt && state.tab === "overview") { /* keep */ }
     if (bt && state.tab === "coindesk") bt.style.display = "none";
     const cd = $("coindeskPanel");
     if (cd) cd.style.display = (state.tab === "coindesk") ? "" : "none";
@@ -982,6 +1131,145 @@
     setInterval(tickHtCountdown, 1000);
   }
 
+
+  function verdClass(v) {
+    if (v === "COPY-WORTHY") return "COPY-WORTHY";
+    if (v === "WATCH") return "WATCH";
+    if (v === "AVOID") return "AVOID";
+    return "ne";
+  }
+
+  function renderCopyDesk(doc) {
+    const meta = $("cdeskMeta");
+    if (!doc) {
+      if (meta) meta.textContent = "No copydesk data yet — run scores/backtest.";
+      return;
+    }
+    if (meta) {
+      const a = doc.copy_assumptions || {};
+      meta.textContent = (doc.generated_at_ct || doc.generated_at_utc || "—")
+        + " · delay " + (a.delay_seconds || 60) + "s · size " + (a.position_sol || 0.25) + " SOL · PAPER";
+    }
+    const lead = $("cdeskLead");
+    if (lead) {
+      const rows = doc.leaderboard || [];
+      let html = `<table class="int"><thead><tr>
+        <th>Wallet</th><th>Score <span class="infoTip" data-tip="Composite score 0–1 from trenchnet scores.">i</span></th>
+        <th>Copy P&amp;L @60s (SOL)</th><th>Win rate</th><th>n</th><th>Median ret</th>
+        <th>Last trade (CT)</th><th>Verdict</th></tr></thead><tbody>`;
+      rows.forEach(r => {
+        const verd = r.verdict || "not enough trades";
+        html += `<tr data-wallet="${r.wallet||""}" title="${(r.verdict_reason||"").replace(/"/g,"&quot;")}">
+          <td>${r.label || short(r.wallet)}</td>
+          <td>${fmt(r.score, 3)}</td>
+          <td>${r.copy_pnl_60s_sol==null?"—":((r.copy_pnl_60s_sol>=0?"+":"")+fmt(r.copy_pnl_60s_sol,4))}</td>
+          <td>${r.win_rate_60s==null?"—":(Number(r.win_rate_60s)*100).toFixed(0)+"%"}</td>
+          <td>${r.n_trades_60s!=null?r.n_trades_60s:"—"}</td>
+          <td>${r.median_return_60s==null?"—":(Number(r.median_return_60s)*100).toFixed(1)+"%"}</td>
+          <td>${r.last_trade_ct || "—"}</td>
+          <td><span class="verd ${verdClass(verd)}">${verd}</span></td></tr>`;
+      });
+      html += `</tbody></table>`;
+      if (!rows.length) html = `<p class="muted">No scored wallets yet.</p>`;
+      lead.innerHTML = html;
+      lead.querySelectorAll("tr[data-wallet]").forEach(tr => {
+        tr.addEventListener("click", () => openDrawer("wallet", tr.getAttribute("data-wallet")));
+      });
+    }
+    const feed = $("cdeskFeed");
+    if (feed) {
+      const items = doc.activity_feed || [];
+      feed.innerHTML = items.length ? items.map(e => {
+        const tri = e.side === "buy" ? "▲" : "▼";
+        const cls = e.side === "buy" ? "buy" : "sell";
+        const sol = e.amount_sol==null ? "—" : fmt(e.amount_sol, 3) + " SOL";
+        const mint = short(e.token_mint);
+        return `<div class="feedRow"><span class="side ${cls}">${tri} ${e.label||cls.toUpperCase()}</span>
+          <span>${e.wallet_label||short(e.wallet)}</span>
+          <span class="muted">${mint}</span>
+          <span>${sol}</span>
+          <span class="muted">${e.time_ago||""}</span>
+          <span class="muted" title="${e.time_ct||""}">#top ${e.top_wallets_in_token||0}</span></div>`;
+      }).join("") : `<p class="muted">No recent activity.</p>`;
+    }
+    const hot = $("cdeskHot");
+    if (hot) {
+      const items = doc.hot_tokens || [];
+      hot.innerHTML = items.length ? items.map(h => {
+        const liq = (h.safety&&h.safety.liquidity) || {};
+        const flag = liq.ok ? `<span class="ok">liq ok</span>` : `<span class="bad">liq flag</span>`;
+        return `<div class="hotChip"><b>${short(h.token_mint)}</b> · ${h.n_top_wallets} top wallets
+          · med buy ${h.median_buy_sol==null?"—":fmt(h.median_buy_sol,3)} SOL · ${flag}
+          <div class="muted">${h.last_buy_ct||""}</div></div>`;
+      }).join("") : `<p class="muted">No multi-wallet hot tokens in the last 7 days.</p>`;
+    }
+    drawEquity(doc.equity_curves || {});
+  }
+
+  function drawEquity(curves) {
+    const cv = $("cdeskEquity");
+    if (!cv) return;
+    const ctx = cv.getContext("2d");
+    const W = cv.width, H = cv.height;
+    ctx.clearRect(0, 0, W, H);
+    const colors = ["#00B4FF","#B026FF","#39ffb0","#ffd166","#ff5d8f","#ffffff"];
+    const keys = Object.keys(curves).filter(k => (curves[k]||[]).length);
+    const leg = $("cdeskEqLegend");
+    if (leg) {
+      leg.innerHTML = keys.map((k,i) => `<span><i class="sw" style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${colors[i%colors.length]};margin-right:4px"></i>${k==="ALL_TOP5"?"Combined top 5":short(k)}</span>`).join("");
+    }
+    let all = [];
+    keys.forEach(k => all = all.concat(curves[k]));
+    if (!all.length) {
+      ctx.fillStyle = "#8aa0c0";
+      ctx.font = "13px sans-serif";
+      ctx.fillText("No equity points yet (need priced backtest / walk-forward).", 20, H/2);
+      return;
+    }
+    const pad = {l:56, r:16, t:18, b:36};
+    const ts = all.map(p => p.t);
+    const ys = all.map(p => p.equity_sol);
+    const t0 = Math.min(...ts), t1 = Math.max(...ts);
+    let y0 = Math.min(...ys), y1 = Math.max(...ys);
+    if (y0 === y1) { y0 -= 0.1; y1 += 0.1; }
+    const x = t => pad.l + ((t - t0) / Math.max(1, t1 - t0)) * (W - pad.l - pad.r);
+    const y = v => pad.t + (1 - (v - y0) / (y1 - y0)) * (H - pad.t - pad.b);
+    ctx.strokeStyle = "rgba(0,180,255,.25)";
+    ctx.beginPath();
+    ctx.moveTo(pad.l, y(0)); ctx.lineTo(W - pad.r, y(0)); ctx.stroke();
+    ctx.fillStyle = "#8aa0c0";
+    ctx.font = "11px sans-serif";
+    ctx.fillText("SOL", 8, pad.t + 8);
+    ctx.fillText(y1.toFixed(3), 8, pad.t + 14);
+    ctx.fillText(y0.toFixed(3), 8, H - pad.b);
+    ctx.fillText("time CT →", W/2 - 30, H - 8);
+    keys.forEach((k, i) => {
+      const pts = curves[k];
+      if (!pts || pts.length < 1) return;
+      ctx.strokeStyle = colors[i % colors.length];
+      ctx.lineWidth = k === "ALL_TOP5" ? 2.4 : 1.5;
+      ctx.beginPath();
+      pts.forEach((p, j) => {
+        const xx = x(p.t), yy = y(p.equity_sol);
+        if (j === 0) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy);
+      });
+      ctx.stroke();
+    });
+  }
+
+  async function loadCopyDesk() {
+    try {
+      const r = await fetch("/api/copydesk", { cache: "no-store" });
+      if (r.ok) {
+        const doc = await r.json();
+        window.__TN_COPYDESK = doc;
+        renderCopyDesk(doc);
+        return;
+      }
+    } catch (e) { /* fall through */ }
+    renderCopyDesk((D().copydesk) || window.__TN_COPYDESK || null);
+  }
+
   function bindPass7() {
     document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
       b.addEventListener("click", () => setTab(b.getAttribute("data-tab")));
@@ -999,10 +1287,15 @@
   }
 
   function boot() {
+    // Defaults → localStorage → hash (hash wins). Fresh load with neither = Jeremy's default view.
+    applyView(cloneDefault());
+    const ls = loadLocal();
+    if (ls) applyView(ls);
     parseHash();
     ensureChrome();
     bindFilters();
     bindBacktestSliders();
+    syncBacktestSliders();
     hookGraphClicks();
     // sync filter inputs from state
     if ($("fWallet")) $("fWallet").value = state.filters.qWallet || "";
@@ -1013,8 +1306,10 @@
     renderAll();
     startPolling();
     bindPass7();
+    loadCopyDesk();
+    setInterval(loadCopyDesk, 60000);
     // expose for template graph code
-    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass, loadTopPick, loadCoinDesk, setTab };
+    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass, loadTopPick, loadCoinDesk, setTab, resetToDefaultView, DEFAULT_VIEW, loadCopyDesk };
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

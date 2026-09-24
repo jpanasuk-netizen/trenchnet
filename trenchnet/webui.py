@@ -12,6 +12,7 @@ GET  /api/coindesk/state -> read-only Coin Desk (Base/hood.fun) live or JSONL fa
 GET  /api/picks        -> Top Pick card payload (paper; rebuild with ?rebuild=1)
 GET  /api/hottakes    -> Hot Takes feed + scoreboard (paper)
 GET  /api/hottakes/tracker -> tracker status
+GET  /api/copydesk   -> Copy Wallets command center (paper)
   GET  /health          -> kill switch + counters
   GET  /api/events      -> SSE ping stream (live status feed)
   POST /api/paper/buy|sell|close  {wallet, token_mint?, amount_token?}
@@ -339,6 +340,17 @@ def build_handler(root: Path):
                     self._json({"ok": True, "tracker": (tr.state if tr else {}), "paper_only": True})
                 except Exception as exc:
                     self._json({"ok": False, "error": type(exc).__name__}, 500)
+            elif p == "/api/copydesk":
+                try:
+                    from trenchnet.copydesk import build_copydesk, write_copydesk
+                    doc = build_copydesk(root)
+                    try:
+                        write_copydesk(root)
+                    except Exception:
+                        pass
+                    self._json(doc)
+                except Exception as exc:
+                    self._json({"error": type(exc).__name__, "paper_only": True, "leaderboard": []}, 500)
             elif p == "/health":
                 settings = load_settings()
                 cfg = paper_settings_from(settings)

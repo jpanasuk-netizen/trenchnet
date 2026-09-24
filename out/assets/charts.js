@@ -37,7 +37,7 @@
     this.yMax = Math.max.apply(null, ys);
     if (this.yMax <= this.yMin) { this.yMax = this.yMin + 1e-9; this.yMin -= 1e-9; }
   };
-  Chart.prototype._pad = function () { return { l: 48, r: 12, t: 12, b: 28 }; };
+  Chart.prototype._pad = function () { return { l: 56, r: 14, t: 28, b: 40 }; };
   Chart.prototype._map = function (p) {
     var pad = this._pad(), W = this.cv.width, H = this.cv.height;
     var x = pad.l + (p.x - this.xMin) / (this.xMax - this.xMin) * (W - pad.l - pad.r);
@@ -63,6 +63,22 @@
     ctx.font = "11px ui-monospace, Consolas, monospace";
     ctx.fillText(nice(this.yMax), 4, pad.t + 10);
     ctx.fillText(nice(this.yMin), 4, H - pad.b);
+    // axis titles (units from opts)
+    ctx.fillStyle = "rgba(0,180,255,0.85)";
+    ctx.font = "10px Segoe UI,sans-serif";
+    var yTitle = this.opts.yLabel || "value";
+    var xTitle = this.opts.xLabel || "time (CT)";
+    ctx.save();
+    ctx.translate(12, H / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText(yTitle, 0, 0);
+    ctx.restore();
+    ctx.fillText(xTitle, pad.l, H - 8);
+    if (this.opts.title) {
+      ctx.fillStyle = "#dfe9ff";
+      ctx.font = "bold 12px Segoe UI,sans-serif";
+      ctx.fillText(this.opts.title, pad.l, 16);
+    }
     if (!this.series.length) {
       ctx.fillStyle = "rgba(223,233,255,0.45)";
       ctx.fillText("no series", pad.l + 8, pad.t + 20);
@@ -85,9 +101,28 @@
       this.opts.markers.forEach(function (mk) {
         if (mk.x < this.xMin || mk.x > this.xMax) return;
         var m = this._map(mk);
-        ctx.fillStyle = mk.side === "sell" ? "#B026FF" : "#00B4FF";
-        ctx.beginPath(); ctx.arc(m.x, m.y, 4, 0, Math.PI * 2); ctx.fill();
+        var sell = (mk.side === "sell");
+        ctx.fillStyle = sell ? "#ff5d8f" : "#39ffb0";
+        ctx.beginPath();
+        if (sell) {
+          // red down-triangle = SELL
+          ctx.moveTo(m.x, m.y + 5);
+          ctx.lineTo(m.x - 5, m.y - 4);
+          ctx.lineTo(m.x + 5, m.y - 4);
+        } else {
+          // green up-triangle = BUY
+          ctx.moveTo(m.x, m.y - 5);
+          ctx.lineTo(m.x - 5, m.y + 4);
+          ctx.lineTo(m.x + 5, m.y + 4);
+        }
+        ctx.closePath(); ctx.fill();
       }.bind(this));
+    }
+    // always-visible mini legend when markers used
+    if (this.opts.markers && this.opts.markers.length) {
+      ctx.font = "10px Segoe UI,sans-serif";
+      ctx.fillStyle = "#39ffb0"; ctx.fillText("▲ BUY", pad.l, pad.t + 4);
+      ctx.fillStyle = "#ff5d8f"; ctx.fillText("▼ SELL", pad.l + 50, pad.t + 4);
     }
     // crosshair
     if (this._hover) {
