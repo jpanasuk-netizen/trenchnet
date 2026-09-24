@@ -59,6 +59,7 @@ def main(argv: list[str] | None = None) -> int:
         sub.add_parser("pool-prices", help="Pass 6: fetch Helius pool-wide swaps into data/prices/")
     sub.add_parser("backtest", help="Pass 5 copy-trade backtest + walk-forward (paper only)")
     sub.add_parser("scores", help="Pass 5 wallet composite scores (paper only)")
+    sub.add_parser("picks", help="Pass 7 Top Pick card + track record (paper only)")
 
     args = parser.parse_args(argv)
 
@@ -207,6 +208,33 @@ def main(argv: list[str] | None = None) -> int:
         summary["per_trade_count"] = len(result.get("per_trade") or [])
         summary["outputs"] = {**paths, **sp, **(reg if isinstance(reg, dict) else {})}
         print(json.dumps(summary, indent=2, default=str))
+        return 0
+    if args.cmd == "picks":
+        from trenchnet.picks import build_picks_payload
+        from trenchnet.dashboard import regenerate
+        payload = build_picks_payload(ROOT)
+        try:
+            regenerate(ROOT)
+        except Exception as exc:
+            print(f"Dashboard regen skipped: {exc}")
+        # compact stdout — never dump full wallet lists with secrets
+        compact = {
+            "headline": payload.get("headline"),
+            "headline_reason": payload.get("headline_reason"),
+            "n_buy": payload.get("n_buy"),
+            "n_watch": payload.get("n_watch"),
+            "n_candidates": payload.get("n_candidates"),
+            "walk_forward_status": payload.get("walk_forward_status"),
+            "backtested_n": payload.get("backtested_n"),
+            "backtested_track_record": payload.get("backtested_track_record"),
+            "live_logged_n": payload.get("live_logged_n"),
+            "live_logged_track_record": payload.get("live_logged_track_record"),
+            "coindesk_summary": payload.get("coindesk_summary"),
+            "top_pick_mint": (payload.get("top_pick") or {}).get("token_mint"),
+            "top_pick_call": (payload.get("top_pick") or {}).get("call"),
+            "paper_only": True,
+        }
+        print(json.dumps(compact, indent=2, default=str))
         return 0
     if args.cmd == "scores":
         from trenchnet.scores import write_scores, compute_scores

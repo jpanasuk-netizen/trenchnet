@@ -150,6 +150,7 @@ def collect_data(root: Path) -> dict[str, Any]:
         "price_coverage": (_read_json(out_dir / "backtest_summary.json") or {}).get("coverage_by") or {},
         "backtest_trades": ((_read_json(out_dir / "backtest.json") or {}).get("per_trade") or [])[:2500],
         "scores": _read_json(out_dir / "scores.json") or {},
+        "top_pick": _read_json(out_dir / "top_pick.json") or {},
         "events": all_events[:5000],
         "data_version": generated_at,
         "empty_states": {

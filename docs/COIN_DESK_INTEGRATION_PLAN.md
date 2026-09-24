@@ -1,6 +1,6 @@
 ﻿# Coin Desk → TRENCHNET Integration Plan
 
-**Status:** investigation only (2026-09-24 CT). No processes started/stopped; no code changed except this doc.  
+**Status:** Option A shipped in Pass 7 (2026-09-24 CT). Read-only /api/coindesk/state + Coin Desk tab. No processes started/stopped by TRENCHNET.  
 **Kalshi live stack:** left untouched (ports 8765/8787/8788/8790/8791 not modified).
 
 ---

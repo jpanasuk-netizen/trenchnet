@@ -8,6 +8,8 @@ Serves out/dashboard.html + assets (file:// compatible) and a small JSON API:
 GET  /api/data-version -> freshness token for UI poll (no secrets)
 GET  /api/backtest/summary -> paper backtest summary
 GET  /api/scores       -> wallet composite scores
+GET  /api/coindesk/state -> read-only Coin Desk (Base/hood.fun) live or JSONL fallback
+GET  /api/picks        -> Top Pick card payload (paper; rebuild with ?rebuild=1)
   GET  /health          -> kill switch + counters
   GET  /api/events      -> SSE ping stream (live status feed)
   POST /api/paper/buy|sell|close  {wallet, token_mint?, amount_token?}
@@ -288,6 +290,37 @@ def build_handler(root: Path):
                 pth = root / "out" / "scores.json"
                 if not pth.exists():
                     self._json({"error": "missing"}, 404)
+                else:
+                    self._json(_json.loads(pth.read_text(encoding="utf-8")))
+            elif p == "/api/coindesk/state":
+                # Read-only: never start/stop Coin Desk. Live :3010 or JSONL fallback.
+                try:
+                    from trenchnet.coindesk import get_coindesk_state
+                    self._json(get_coindesk_state())
+                except Exception as exc:
+                    self._json({
+                        "ok": False,
+                        "status": "error",
+                        "chain": "Base",
+                        "venue": "hood.fun",
+                        "label": "Base / hood.fun — PAPER watch (not Solana)",
+                        "cards": [],
+                        "note": f"coindesk_error:{type(exc).__name__}",
+                        "paper_only": True,
+                    }, 500)
+            elif p == "/api/picks":
+                import json as _json
+                from urllib.parse import urlparse, parse_qs
+                qs = parse_qs(urlparse(self.path).query)
+                rebuild = (qs.get("rebuild") or ["0"])[0] in ("1", "true", "yes")
+                pth = root / "out" / "top_pick.json"
+                if rebuild or not pth.exists():
+                    try:
+                        from trenchnet.picks import build_picks_payload
+                        payload = build_picks_payload(root)
+                        self._json(payload)
+                    except Exception as exc:
+                        self._json({"error": type(exc).__name__, "note": "picks_build_failed", "paper_only": True}, 500)
                 else:
                     self._json(_json.loads(pth.read_text(encoding="utf-8")))
             elif p == "/health":

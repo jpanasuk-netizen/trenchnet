@@ -1,0 +1,51 @@
+# Pass 7 Top Pick rules (paper / analysis only — not financial advice)
+# BUY candidate requires multiple independent confirmations + safety pass.
+
+thresholds:
+  # Composite score of a wallet to count as "top-scored"
+  min_wallet_score: 0.55
+  # How many distinct top-scored wallets must have bought the token
+  min_top_wallets: 2
+  # Max seconds between first and last of those top wallets' first buys (co-buy speed)
+  max_cobuy_span_seconds: 3600
+  # At least one of those wallets needs 60s copy mean/median not deeply negative
+  min_copy_pnl_60s_sol: -0.05
+  # Prefer wallets with coverage at 60s
+  min_wallet_coverage_60s_pct: 5.0
+  # Jev routes that count as constructive (decision-only)
+  jev_ok_routes: [send_for_analysis, keep_observing]
+  require_jev_live: false  # if true, typesafe_live required; false allows dry-run but lowers confidence
+
+safety:
+  # Token age: prefer not brand-new dust (seconds since first tracked buy)
+  min_token_age_seconds: 60
+  max_token_age_seconds: 604800  # 7d
+  # Liquidity proxy from events (median SOL) or dexscreener if present
+  min_liquidity_proxy_sol: 0.05
+  # If dexscreener liquidity USD present
+  min_liquidity_usd: 1000
+  # Skip known stables / wrapped
+  skip_mints:
+    - EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v
+    - Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB
+    - So11111111111111111111111111111111111111112
+
+confidence:
+  # Additive 0..1 style components (capped at 0.95)
+  base: 0.2
+  per_top_wallet: 0.1
+  jev_live_bonus: 0.15
+  safety_pass_bonus: 0.15
+  copy_positive_bonus: 0.1
+  oos_insufficient_penalty: 0.2
+  max: 0.95
+
+track_record:
+  horizons_seconds: [900, 3600, 14400, 86400]  # 15m, 1h, 4h, 24h
+  max_staleness_seconds: 300
+  win_threshold_return: 0.0  # net return > 0 counts as win
+
+backfill:
+  enabled: true
+  # Point-in-time: only use buys/scores observable at call time
+  min_candidates: 1

@@ -105,5 +105,7 @@ Tests (PnL, graph/co-entry, routing):
 - **Birdeye** — token price, OHLCV, wallet PnL / top traders where free tier allows. Numbers tagged irdeye.
 - Never commit .env. Agent leak-checks out/ + data/ after runs.
 
-
+### Pass 7 — Coin Desk tab + Top Pick
+- **Coin Desk tab** is observe-only: reads http://127.0.0.1:3010/api/state or %LOCALAPPDATA%\\token-desk\\data\\decisions.jsonl. Start Coin Desk.exe yourself if you want a live Base/hood.fun board; TRENCHNET will not start or stop it.
+- **Top Pick** is a paper verdict card with documented thresholds in config/picks.yaml. BUY candidate requires multiple confirmations + safety. Track record under data/picks/. Not financial advice; walk-forward may be insufficient_oos.
 

@@ -30,6 +30,7 @@
       if (o.selected) state.selected = o.selected;
       if (o.layout) state.layout = o.layout;
       if (o.backtest) Object.assign(state.backtest, o.backtest);
+      if (o.tab) state.tab = o.tab;
     } catch (e) { /* ignore bad hash */ }
   }
   function writeHash() {
@@ -37,7 +38,8 @@
       filters: state.filters,
       selected: state.selected,
       layout: state.layout,
-      backtest: state.backtest
+      backtest: state.backtest,
+      tab: state.tab || "overview"
     };
     const next = "#" + encodeURIComponent(JSON.stringify(o));
     if (location.hash !== next) history.replaceState(null, "", next);
@@ -123,6 +125,77 @@
       const lower = $("lower");
       if (lower) lower.parentNode.insertBefore(sec, lower);
       else document.body.appendChild(sec);
+    }
+
+
+    // ---- Pass 7: Top Pick card + Coin Desk tab ----
+    if (!$("topPickCard")) {
+      const card = document.createElement("div");
+      card.id = "topPickCard";
+      card.className = "panel";
+      card.style.cssText = "margin:12px 18px 0;cursor:pointer;border:1px solid rgba(0,180,255,.45);box-shadow:0 0 24px rgba(176,38,255,.12)";
+      card.innerHTML = `<div id="topPickBody"><span class="muted">Loading Top Pick…</span></div>`;
+      const hero = $("hero");
+      if (hero && hero.parentNode) hero.parentNode.insertBefore(card, hero);
+      else document.body.insertBefore(card, document.body.firstChild);
+    }
+    if (!$("deskTabs")) {
+      const tabs = document.createElement("div");
+      tabs.id = "deskTabs";
+      tabs.style.cssText = "margin:10px 18px 0;display:flex;gap:8px;flex-wrap:wrap;align-items:center";
+      tabs.innerHTML = `
+        <button type="button" class="tabBtn active" data-tab="overview">Overview</button>
+        <button type="button" class="tabBtn" data-tab="coindesk">Coin Desk <span class="badge">Base / hood.fun</span></button>
+        <button type="button" class="tabBtn" data-tab="backtest">Backtest</button>
+        <span class="muted" style="margin-left:8px">PAPER only · Coin Desk is observe-only (no start/stop)</span>`;
+      const tp = $("topPickCard");
+      if (tp && tp.parentNode) tp.parentNode.insertBefore(tabs, tp.nextSibling);
+      else document.body.insertBefore(tabs, document.body.firstChild);
+    }
+    if (!$("coindeskPanel")) {
+      const cd = document.createElement("div");
+      cd.id = "coindeskPanel";
+      cd.className = "panel";
+      cd.style.cssText = "margin:14px 18px;display:none";
+      cd.innerHTML = `
+        <h2>Coin Desk <span class="badge">PAPER · Base / hood.fun — NOT Solana</span></h2>
+        <p class="muted" id="cdStatus">Checking…</p>
+        <div id="cdCards" class="cdGrid"></div>
+        <p class="note">Read-only. Start Coin Desk.exe yourself if you want a live board on :3010. TRENCHNET will not start or stop it. No trade controls.</p>`;
+      const lower = $("lower");
+      if (lower) lower.parentNode.insertBefore(cd, lower);
+      else document.body.appendChild(cd);
+    }
+    if (!$("pass7css")) {
+      const st = document.createElement("style");
+      st.id = "pass7css";
+      st.textContent = `
+        #deskTabs .tabBtn{background:rgba(0,180,255,.1);border:1px solid rgba(0,180,255,.35);color:#dfe9ff;border-radius:999px;padding:6px 14px;cursor:pointer;font-weight:600}
+        #deskTabs .tabBtn.active{background:linear-gradient(90deg,#00B4FF,#B026FF);color:#041018;border:0}
+        #topPickCard .tpHead{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+        #topPickCard .tpCall{font-size:28px;font-weight:800;letter-spacing:.5px}
+        #topPickCard .tpCall.buy{color:#39ffb0;text-shadow:0 0 14px rgba(57,255,176,.35)}
+        #topPickCard .tpCall.watch{color:#ffd166}
+        #topPickCard .tpCall.none{color:#8aa0c0}
+        #topPickCard .tpMeta{color:#8aa0c0;font-size:12px;margin-top:6px;line-height:1.45}
+        #topPickCard .tpStats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:12px}
+        #topPickCard .tpStat{background:rgba(0,180,255,.06);border:1px solid rgba(0,180,255,.2);border-radius:10px;padding:8px 10px}
+        #topPickCard .tpStat .k{font-size:10px;text-transform:uppercase;color:#8aa0c0;letter-spacing:1px}
+        #topPickCard .tpStat .v{font-size:16px;font-weight:700;color:#00B4FF}
+        #topPickCard .caveats{margin-top:10px;font-size:11px;color:#ffd166}
+        #topPickCard .candRow{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+        #topPickCard .candChip{font-size:11px;padding:4px 8px;border-radius:8px;border:1px solid rgba(0,180,255,.3);background:rgba(8,14,28,.6)}
+        #topPickCard .candChip.buy{border-color:#39ffb0;color:#39ffb0}
+        #topPickCard .candChip.watch{border-color:#ffd166;color:#ffd166}
+        #topPickCard .candChip.avoid{border-color:#ff5d8f;color:#ff5d8f}
+        .cdGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin-top:10px}
+        .cdCard{background:rgba(10,18,38,.7);border:1px solid rgba(0,180,255,.22);border-radius:12px;padding:10px 12px}
+        .cdCard .call{font-weight:800;font-size:14px}
+        .cdCard .call.PASS{color:#39ffb0}
+        .cdCard .call.WATCH{color:#ffd166}
+        .cdCard .chainTag{font-size:10px;color:#B026FF;letter-spacing:1px;text-transform:uppercase}
+      `;
+      document.head.appendChild(st);
     }
 
     // Graph layout toggle
@@ -516,6 +589,157 @@
     });
   }
 
+
+  function setTab(name) {
+    state.tab = name || "overview";
+    document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
+      b.classList.toggle("active", b.getAttribute("data-tab") === state.tab);
+    });
+    const overview = [$("filterBar"), $("hero"), document.querySelector(".grid"), $("lower")];
+    overview.forEach(el => { if (el) el.style.display = (state.tab === "overview") ? "" : "none"; });
+    const honesty = $("honesty");
+    if (honesty) honesty.style.display = (state.tab === "overview") ? "" : "none";
+    const bt = $("backtestSection");
+    if (bt) bt.style.display = (state.tab === "backtest" || state.tab === "overview") ? "" : "none";
+    if (bt && state.tab === "backtest") { /* keep visible */ }
+    if (bt && state.tab === "overview") { /* keep */ }
+    if (bt && state.tab === "coindesk") bt.style.display = "none";
+    const cd = $("coindeskPanel");
+    if (cd) cd.style.display = (state.tab === "coindesk") ? "" : "none";
+    // Top pick always visible
+    const tp = $("topPickCard");
+    if (tp) tp.style.display = "";
+    writeHash();
+  }
+
+  function fmtPct(x) {
+    if (x == null || isNaN(x)) return "—";
+    return (Number(x) * 100).toFixed(1) + "%";
+  }
+
+  function renderTopPick(payload) {
+    const body = $("topPickBody");
+    if (!body) return;
+    const P = payload || (D().top_pick) || {};
+    const headline = P.headline || "No buy right now";
+    const reason = P.headline_reason || P.reason || "Waiting for pick engine.";
+    const callClass = headline.startsWith("BUY") ? "buy" : (headline.includes("WATCH") ? "watch" : "none");
+    const tp = P.top_pick || null;
+    const bt = P.backtested_track_record || {};
+    const live = P.live_logged_track_record || {};
+    const cd = P.coindesk_summary || {};
+    const byH = bt.by_horizon || {};
+    const hOrder = ["900", "3600", "14400", "86400"];
+    const hLabel = { "900": "+15m", "3600": "+1h", "14400": "+4h", "86400": "+24h" };
+    let stats = "";
+    stats += `<div class="tpStat"><div class="k">Backtested picks</div><div class="v">${bt.n != null ? bt.n : (P.backtested_n || 0)}</div></div>`;
+    stats += `<div class="tpStat"><div class="k">Win rate (1h)</div><div class="v">${bt.win_rate == null ? "—" : fmtPct(bt.win_rate)}</div></div>`;
+    hOrder.forEach(h => {
+      const cell = byH[h] || {};
+      stats += `<div class="tpStat"><div class="k">Med ${hLabel[h]}</div><div class="v">${fmtPct(cell.median)}</div></div>`;
+      stats += `<div class="tpStat"><div class="k">Mean ${hLabel[h]}</div><div class="v">${fmtPct(cell.mean)}</div></div>`;
+    });
+    const worst = (bt.worst || {}).token_mint;
+    stats += `<div class="tpStat"><div class="k">Worst pick</div><div class="v" style="font-size:12px">${worst ? short(worst) : "—"}</div></div>`;
+    stats += `<div class="tpStat"><div class="k">Live-logged</div><div class="v">${live.n_logged != null ? live.n_logged : (P.live_logged_n || 0)}</div></div>`;
+    stats += `<div class="tpStat"><div class="k">Coin Desk</div><div class="v" style="font-size:12px">${cd.status || "—"} · Base</div></div>`;
+
+    let chips = "";
+    (P.candidates || []).slice(0, 12).forEach(c => {
+      const cls = (c.call || "").startsWith("BUY") ? "buy" : (c.call === "WATCH" ? "watch" : "avoid");
+      chips += `<span class="candChip ${cls}" data-mint="${c.token_mint || ""}">${c.call}: ${short(c.token_mint)} · conf ${fmt(c.confidence, 2)}</span>`;
+    });
+
+    const entry = tp ? `Entry ${tp.entry_price != null ? Number(tp.entry_price).toExponential(3) : "—"} ${tp.entry_unit || ""} @ ${tp.call_time_iso || tp.call_time || "—"}` : "";
+    const caveats = (P.caveats || [
+      "PAPER only — not financial advice.",
+      "Small sample.",
+      "Walk-forward: " + (P.walk_forward_status || "unknown"),
+    ]).map(c => "• " + c).join("<br/>");
+
+    body.innerHTML = `
+      <div class="tpHead">
+        <div>
+          <div class="k" style="color:#8aa0c0;font-size:11px;letter-spacing:1px;text-transform:uppercase">Top Pick · Solana / pump.fun · PAPER</div>
+          <div class="tpCall ${callClass}">${headline}</div>
+        </div>
+        <div class="muted">WF: ${P.walk_forward_status || "—"} · click opens drawer</div>
+      </div>
+      <div class="tpMeta">${reason}${entry ? "<br/>" + entry : ""}</div>
+      <div class="tpStats">${stats}</div>
+      <div class="candRow">${chips || '<span class="muted">No candidate chips</span>'}</div>
+      <div class="caveats">${caveats}<br/>• Coin Desk PASS/WATCH is a separate Base-chain input (not merged into Solana BUY).</div>`;
+
+    body.querySelectorAll(".candChip[data-mint]").forEach(el => {
+      el.addEventListener("click", (ev) => {
+        ev.stopPropagation();
+        const m = el.getAttribute("data-mint");
+        if (m) openDrawer("token", m);
+      });
+    });
+  }
+
+  async function loadTopPick() {
+    try {
+      const r = await fetch("/api/picks");
+      if (!r.ok) throw new Error("picks " + r.status);
+      const j = await r.json();
+      window.__TN_TOP_PICK = j;
+      renderTopPick(j);
+    } catch (e) {
+      renderTopPick(D().top_pick || { headline: "No buy right now", headline_reason: "Top Pick API unavailable: " + e, caveats: ["PAPER only"] });
+    }
+  }
+
+  async function loadCoinDesk() {
+    const stEl = $("cdStatus");
+    const wrap = $("cdCards");
+    if (!stEl || !wrap) return;
+    try {
+      const r = await fetch("/api/coindesk/state");
+      const j = await r.json();
+      const status = j.status || "unknown";
+      const asof = j.as_of_utc || "";
+      stEl.textContent = status === "live"
+        ? `LIVE on :3010 · as of ${asof} · ${j.label || "Base / hood.fun"}`
+        : `${j.note || ("offline, data as of " + asof)}`;
+      const cards = j.cards || [];
+      if (!cards.length) {
+        wrap.innerHTML = `<div class="empty">No Coin Desk cards. Desk offline and no decisions.jsonl rows.</div>`;
+        return;
+      }
+      wrap.innerHTML = cards.slice(0, 40).map(c => {
+        const call = c.call || "UNKNOWN";
+        return `<div class="cdCard">
+          <div class="chainTag">Base / hood.fun · PAPER</div>
+          <div class="call ${call}">${call}</div>
+          <div><b>${c.symbol || "—"}</b> · ${c.name || ""}</div>
+          <div class="muted mono" style="font-size:11px">${c.address || ""}</div>
+          <div class="muted" style="margin-top:6px;font-size:12px">${c.reason || ""}</div>
+          <div class="muted" style="font-size:11px">age ${c.age_sec != null ? c.age_sec + "s" : "—"} · eth ${c.real_eth != null ? c.real_eth : "—"} · ${c.logged_at_iso || ""}</div>
+          <div style="margin-top:6px">${c.link_basescan ? `<a href="${c.link_basescan}" target="_blank" rel="noopener">BaseScan</a>` : ""} ${c.link_hood ? ` · <a href="${c.link_hood}" target="_blank" rel="noopener">hood.fun</a>` : ""}</div>
+        </div>`;
+      }).join("");
+    } catch (e) {
+      stEl.textContent = "Coin Desk fetch error: " + e;
+    }
+  }
+
+  function bindPass7() {
+    document.querySelectorAll("#deskTabs .tabBtn").forEach(b => {
+      b.addEventListener("click", () => setTab(b.getAttribute("data-tab")));
+    });
+    $("topPickCard")?.addEventListener("click", () => {
+      const P = window.__TN_TOP_PICK || D().top_pick || {};
+      const mint = (P.top_pick || {}).token_mint || ((P.candidates || [])[0] || {}).token_mint;
+      if (mint) openDrawer("token", mint);
+    });
+    setTab(state.tab || "overview");
+    loadTopPick();
+    loadCoinDesk();
+    setInterval(loadCoinDesk, 10000);
+  }
+
   function boot() {
     parseHash();
     ensureChrome();
@@ -530,8 +754,9 @@
     if ($("graphLayout")) $("graphLayout").value = state.layout;
     renderAll();
     startPolling();
+    bindPass7();
     // expose for template graph code
-    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass };
+    window.TrenchInteractive = { openDrawer, state, filteredEvents, eventPass, loadTopPick, loadCoinDesk, setTab };
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);

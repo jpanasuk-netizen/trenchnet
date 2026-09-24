@@ -1,0 +1,1910 @@
+{
+  "generated_at_utc": "2026-09-24T14:13:54Z",
+  "paper_only": true,
+  "not_financial_advice": true,
+  "walk_forward_status": "insufficient_data",
+  "headline": "No buy right now",
+  "headline_reason": "No token cleared BUY rules (need \u22652 top wallets, co-buy speed, copy floor, Jev, safety). Closest WATCH: 2r1QzuF3qG3X\u2026 \u2014 3 top-scored wallet(s) (min_score>=0.55); co-buy span 11s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+  "top_pick": null,
+  "candidates": [
+    {
+      "token_mint": "2r1QzuF3qG3Xq5NTNYG5XkPTsbUF3zWrdTs2JvGHpump",
+      "call": "WATCH",
+      "confidence": 0.55,
+      "reason": "3 top-scored wallet(s) (min_score>=0.55); co-buy span 11s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "3_top_wallets_bought",
+        "cobuy_span_11s",
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 3,
+      "cobuy_span_seconds": 11,
+      "first_buy_time": 1790245512,
+      "call_time": 1790245523,
+      "call_time_iso": "2026-09-24T10:25:23Z",
+      "entry_price": 9.041e-08,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": 0.028447432,
+        "liquidity_usd": null,
+        "thin_data": false
+      },
+      "token_age_seconds": 5190,
+      "wallets": [
+        {
+          "wallet": "2tgUbS9UMoQD6GkDZBiqKYCURnGrSb6ocYwRABrSJUvY",
+          "label": "cobuy_2tgUbS",
+          "score": 0.557,
+          "first_buy_time": 1790245512,
+          "copy_pnl_60s": 0.262739,
+          "coverage_60s": 50.0,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "insufficient_evidence",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        },
+        {
+          "wallet": "Aehytcj7pCRJRhisp3rPbh7h1trv7YyT99SozH8oxawW",
+          "label": "cobuy_Aehytc",
+          "score": 0.557,
+          "first_buy_time": 1790245512,
+          "copy_pnl_60s": 0.262739,
+          "coverage_60s": 50.0,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "insufficient_evidence",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        },
+        {
+          "wallet": "C3UvH3qX9x54cTgb95YNBt2gksX3t8jBF69MGD4tXGSs",
+          "label": "cobuy_C3UvH3",
+          "score": 0.6154,
+          "first_buy_time": 1790245523,
+          "copy_pnl_60s": 1.397153,
+          "coverage_60s": 68.18,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "HByG6m5BKZiyoktaRUyu2JaYzGcqK1K9VpL2eAVhpump",
+      "call": "WATCH",
+      "confidence": 0.5,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety checks passed; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live",
+        "safety_pass"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790191133,
+      "call_time": 1790191133,
+      "call_time_iso": "2026-09-23T19:18:53Z",
+      "entry_price": 3.759426206647094e-08,
+      "entry_price_source": "derived",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": true,
+      "safety_reasons": [],
+      "liquidity": {
+        "liquidity_proxy_sol": 2.5120060005,
+        "liquidity_usd": null,
+        "thin_data": false
+      },
+      "token_age_seconds": 59569,
+      "wallets": [
+        {
+          "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+          "label": "tech",
+          "score": 0.6225,
+          "first_buy_time": 1790191133,
+          "copy_pnl_60s": 0.299575,
+          "coverage_60s": 10.56,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4nV5gNwwP68zUDat26ySChREqVaQaLudfJBkSgEzpump",
+      "call": "WATCH",
+      "confidence": 0.5,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety checks passed; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live",
+        "safety_pass"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790186185,
+      "call_time": 1790186185,
+      "call_time_iso": "2026-09-23T17:56:25Z",
+      "entry_price": 1140787.0320000001,
+      "entry_price_source": "derived",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": true,
+      "safety_reasons": [],
+      "liquidity": {
+        "liquidity_proxy_sol": 1.140787032,
+        "liquidity_usd": null,
+        "thin_data": false
+      },
+      "token_age_seconds": 64517,
+      "wallets": [
+        {
+          "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+          "label": "tech",
+          "score": 0.6225,
+          "first_buy_time": 1790186185,
+          "copy_pnl_60s": 0.299575,
+          "coverage_60s": 10.56,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "3ouQYbGEm28hKQjd8KLiru33Q7GVVAaCcZRAtm7mW4Sd",
+      "call": "WATCH",
+      "confidence": 0.5,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety checks passed; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live",
+        "safety_pass"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790186185,
+      "call_time": 1790186185,
+      "call_time_iso": "2026-09-23T17:56:25Z",
+      "entry_price": 6.126645359309316e-08,
+      "entry_price_source": "derived",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": true,
+      "safety_reasons": [],
+      "liquidity": {
+        "liquidity_proxy_sol": 1.0142684205,
+        "liquidity_usd": null,
+        "thin_data": false
+      },
+      "token_age_seconds": 64517,
+      "wallets": [
+        {
+          "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+          "label": "tech",
+          "score": 0.6225,
+          "first_buy_time": 1790186185,
+          "copy_pnl_60s": 0.299575,
+          "coverage_60s": 10.56,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4GVJiepCery4Lu2xBYH3u7jvMSqZMpgevbDsg3xykEvN",
+      "call": "WATCH",
+      "confidence": 0.5,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety checks passed; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live",
+        "safety_pass"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790239693,
+      "call_time": 1790239693,
+      "call_time_iso": "2026-09-24T08:48:13Z",
+      "entry_price": 2.7056e-08,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": true,
+      "safety_reasons": [],
+      "liquidity": {
+        "liquidity_proxy_sol": 0.9626559499999999,
+        "liquidity_usd": null,
+        "thin_data": false
+      },
+      "token_age_seconds": 11009,
+      "wallets": [
+        {
+          "wallet": "DuVUs56QhKA9BkaBRzd27pkEaSwg5vuHpQt9uMLw576Q",
+          "label": "cobuy_DuVUs5",
+          "score": 0.6521,
+          "first_buy_time": 1790239693,
+          "copy_pnl_60s": 0.188401,
+          "coverage_60s": 9.38,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "AbPBaCEmqdneUmMUxuWRCx4dM1CnBewQmFAJbwKbFipr",
+      "call": "WATCH",
+      "confidence": 0.45,
+      "reason": "2 top-scored wallet(s) (min_score>=0.55); co-buy span 626s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 2 wallet(s); safety: too_old_age_2027495s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "2_top_wallets_bought",
+        "cobuy_span_626s",
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 2,
+      "cobuy_span_seconds": 626,
+      "first_buy_time": 1788223207,
+      "call_time": 1788223833,
+      "call_time_iso": "2026-09-01T00:50:33Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_2027495s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 2027495,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788223833,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        },
+        {
+          "wallet": "5d3jQcuUvsuHyZkhdp78FFqc7WogrzZpTtec1X9VNkuE",
+          "label": "tech",
+          "score": 0.6225,
+          "first_buy_time": 1788223207,
+          "copy_pnl_60s": 0.299575,
+          "coverage_60s": 10.56,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "ADLFoLzf8N8UucDA5i1Cbye6DjejbYxuJmkThPPcpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790230940,
+      "call_time": 1790230940,
+      "call_time_iso": "2026-09-24T06:22:20Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 19762,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790230940,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "6ysp4WebEYzPW5zVjkdwtoapa1Ub7buGdVduEmzccxsw",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790229992,
+      "call_time": 1790229992,
+      "call_time_iso": "2026-09-24T06:06:32Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 20710,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790229992,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "Gib31KvQczEfEsAa1tD6UEVEWu5e8j3NHzuCWNtpkMh3",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790157221,
+      "call_time": 1790157221,
+      "call_time_iso": "2026-09-23T09:53:41Z",
+      "entry_price": 9.0336e-08,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 93481,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790157221,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "2x12AgTZTWugePYBFG1LpXQK6dvuztdqavuz4z9gpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790157179,
+      "call_time": 1790157179,
+      "call_time_iso": "2026-09-23T09:52:59Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 93523,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790157179,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "AgGUn2YS6Da94gvKYp9kqCcpu1Pr6i4pm4DwmjcY9vSs",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790157002,
+      "call_time": 1790157002,
+      "call_time_iso": "2026-09-23T09:50:02Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 93700,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790157002,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "CwGLcEiTZJ2inndc8NBzKvsBBDGS1g613hWBFMxu3eiB",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790148113,
+      "call_time": 1790148113,
+      "call_time_iso": "2026-09-23T07:21:53Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 102589,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790148113,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "GW48jyzaFUY2BfrPSsE3dnqsX311vw9PJXGUr3KoHJoJ",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790145626,
+      "call_time": 1790145626,
+      "call_time_iso": "2026-09-23T06:40:26Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 105076,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790145626,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "FH7PovzbqEMBM7RH546oMYZJY9e5GebC6hvqvBDYpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790145567,
+      "call_time": 1790145567,
+      "call_time_iso": "2026-09-23T06:39:27Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 105135,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790145567,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "5ASqBTsYCW8zTgsM2981ErqtKnNUoYn1AJLeiV95pump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790145431,
+      "call_time": 1790145431,
+      "call_time_iso": "2026-09-23T06:37:11Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 105271,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790145431,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "3aM1HdwnsfQzmfkiDGboCUiS4HHUCH42zxvrEnap26jD",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790131776,
+      "call_time": 1790131776,
+      "call_time_iso": "2026-09-23T02:49:36Z",
+      "entry_price": 1.93442e-07,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 118926,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790131776,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "HCay926KRr7cuSrpwM5CJ87LmKw8h8hbrp42G8mMpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790131586,
+      "call_time": 1790131586,
+      "call_time_iso": "2026-09-23T02:46:26Z",
+      "entry_price": 2.85147e-07,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 119116,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790131586,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "CMyTc87vDt5zvdVn1scjHmFhiFWjsQZYYXVFp3s3S5Ch",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1790106107,
+      "call_time": 1790106107,
+      "call_time_iso": "2026-09-22T19:41:47Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 144595,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1790106107,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4x5DRRmznURrQFibdTgfXoqQwpchGpNDua4Nny62pump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_609759s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789640943,
+      "call_time": 1789640943,
+      "call_time_iso": "2026-09-17T10:29:03Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_609759s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 609759,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789640943,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "BvQrEJ4hvbnuNyjs6GhY1ugpRi7ih689MNWAqU3wyiMF",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_610109s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789640593,
+      "call_time": 1789640593,
+      "call_time_iso": "2026-09-17T10:23:13Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_610109s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 610109,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789640593,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4JcozmUkkGK9AtxVvDJhUkJ3BQzMt35vnmQGWUoKpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_610553s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789640149,
+      "call_time": 1789640149,
+      "call_time_iso": "2026-09-17T10:15:49Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_610553s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 610553,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789640149,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "FuP6MCwcN4DiyGRtQHFmkHTcyj1FMnV6a9vY7e15nArF",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_652289s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789598413,
+      "call_time": 1789598413,
+      "call_time_iso": "2026-09-16T22:40:13Z",
+      "entry_price": 2.45761e-07,
+      "entry_price_source": "helius_pool",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_652289s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 652289,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789598413,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "GteBdjrphEacnZPGpnj2VXzcztx8SHTFRc3CDg16pump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_686407s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789564295,
+      "call_time": 1789564295,
+      "call_time_iso": "2026-09-16T13:11:35Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_686407s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 686407,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789564295,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "2VMRRZXbdJtg1jYjfvqdn4uDrF5HuCGCfd4qztEpFjog",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_687434s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789563268,
+      "call_time": 1789563268,
+      "call_time_iso": "2026-09-16T12:54:28Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_687434s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 687434,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789563268,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "EfAnBcnqPLKWxN1A1sJZTPsCd6jRfPymy91S4g3Wpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_688003s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789562699,
+      "call_time": 1789562699,
+      "call_time_iso": "2026-09-16T12:44:59Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_688003s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 688003,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789562699,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "EZhLYrek3QmrA5pfH6rKwgvNJiszkcCUncLRaWbMpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_688364s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789562338,
+      "call_time": 1789562338,
+      "call_time_iso": "2026-09-16T12:38:58Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_688364s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 688364,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789562338,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "77cxgYf3zgsXVpkia1LRdmu5dqDkvqfU4RfGus8Rpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_959253s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789291449,
+      "call_time": 1789291449,
+      "call_time_iso": "2026-09-13T09:24:09Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_959253s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 959253,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789291449,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "31S52Kw5H8ab2xtjZdgGLYckbPHZMBKj8AwFRJmJpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_959469s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789291233,
+      "call_time": 1789291233,
+      "call_time_iso": "2026-09-13T09:20:33Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_959469s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 959469,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789291233,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4L7vYVwZ1syCD6WZfbBNaZaEmxGjA2JPPzFKfsy6pump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_959810s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789290892,
+      "call_time": 1789290892,
+      "call_time_iso": "2026-09-13T09:14:52Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_959810s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 959810,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789290892,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "7U3sUkodvHvBsN8TaSGWaz3vPzpPtwNC87cru4ndpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1117423s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789133279,
+      "call_time": 1789133279,
+      "call_time_iso": "2026-09-11T13:27:59Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1117423s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1117423,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789133279,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "5yrUrzyDBs5NrZdiGtW1BEYUjHyHBLx1L5vTAKUxvo1V",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1125863s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789124839,
+      "call_time": 1789124839,
+      "call_time_iso": "2026-09-11T11:07:19Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1125863s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1125863,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789124839,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "B5SNVUvEtVcFrExoDsrjzKoQgVh8mzn7sfLpjdzPrNWE",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1200473s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789050229,
+      "call_time": 1789050229,
+      "call_time_iso": "2026-09-10T14:23:49Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1200473s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1200473,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789050229,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "HDsQcPat4W8Ve89DfSzbMrnfQZ1HWBvcD2WqNQMLZ7X8",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1244293s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1789006409,
+      "call_time": 1789006409,
+      "call_time_iso": "2026-09-10T02:13:29Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1244293s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1244293,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1789006409,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "DAqZZvkxcWaR17cWvXoA7n3wKTuDPhUZWQEi6Chhpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1277918s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788972784,
+      "call_time": 1788972784,
+      "call_time_iso": "2026-09-09T16:53:04Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1277918s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1277918,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788972784,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "7qoFBcB3sGKrbCP5GzFyF9KXAqYfVYXebZm2UYRMpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1914756s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788335946,
+      "call_time": 1788335946,
+      "call_time_iso": "2026-09-02T07:59:06Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1914756s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1914756,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788335946,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "8UrN6CgkhF9hNSKhTwvDXBv98FQLETJbcPojRPnVhQA7",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1915336s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788335366,
+      "call_time": 1788335366,
+      "call_time_iso": "2026-09-02T07:49:26Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1915336s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1915336,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788335366,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "3TkiEdooMjN3WYmecohk3ANCsZYAQjcUeKp1jzuFpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_1916108s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788334594,
+      "call_time": 1788334594,
+      "call_time_iso": "2026-09-02T07:36:34Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_1916108s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 1916108,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788334594,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "AVRj96pDMRwaQ9Mut29gBMKyp3AccBGPjC3krKyWpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_2022823s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788227879,
+      "call_time": 1788227879,
+      "call_time_iso": "2026-09-01T01:57:59Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_2022823s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 2022823,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788227879,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "5yE2dKiUb6DScxdQE25fF7GKei42T9ZfBXfy7H47Mcrz",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_2023929s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788226773,
+      "call_time": 1788226773,
+      "call_time_iso": "2026-09-01T01:39:33Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_2023929s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 2023929,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788226773,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    },
+    {
+      "token_mint": "4J5txaggsvKurgqffxLSGFi36s3KRUmBJibaaLhqpump",
+      "call": "WATCH",
+      "confidence": 0.35,
+      "reason": "1 top-scored wallet(s) (min_score>=0.55); co-buy span 0s (max 3600s); 60s copy PnL for at least one wallet meets floor; Jev constructive on 1 wallet(s); safety: too_old_age_2024351s, liquidity_below_threshold; walk_forward=insufficient_data",
+      "confirmations": [
+        "copy_pnl_60s_not_deeply_negative",
+        "jev_routes_['send_for_analysis']",
+        "jev_typesafe_live"
+      ],
+      "n_top_wallets": 1,
+      "cobuy_span_seconds": 0,
+      "first_buy_time": 1788226351,
+      "call_time": 1788226351,
+      "call_time_iso": "2026-09-01T01:32:31Z",
+      "entry_price": null,
+      "entry_price_source": "",
+      "entry_unit": "SOL_per_token",
+      "safety_ok": false,
+      "safety_reasons": [
+        "too_old_age_2024351s",
+        "liquidity_below_threshold"
+      ],
+      "liquidity": {
+        "liquidity_proxy_sol": null,
+        "liquidity_usd": null,
+        "thin_data": null
+      },
+      "token_age_seconds": 2024351,
+      "wallets": [
+        {
+          "wallet": "4tH7jjPRZmXgFJvUTLK13YkRg1kjWQSUWJa1bqRVjJsE",
+          "label": "cobuy_4tH7jj",
+          "score": 0.6093,
+          "first_buy_time": 1788226351,
+          "copy_pnl_60s": 0.763046,
+          "coverage_60s": 11.59,
+          "oos_flag": "insufficient_oos",
+          "jev_route": "send_for_analysis",
+          "jev_mode": "typesafe_live",
+          "jev_call_ok": true
+        }
+      ],
+      "chain": "Solana",
+      "venue": "pump.fun"
+    }
+  ],
+  "n_candidates": 121,
+  "n_buy": 0,
+  "n_watch": 121,
+  "thresholds": {
+    "min_wallet_score": 0.55,
+    "min_top_wallets": 2,
+    "max_cobuy_span_seconds": 3600,
+    "min_copy_pnl_60s_sol": -0.05
+  },
+  "caveats": [
+    "PAPER only \u2014 not financial advice.",
+    "Small sample; coverage and walk-forward limits apply.",
+    "Walk-forward status: insufficient_data",
+    "Entry prices from helius_pool/derived when available; never invented."
+  ],
+  "backtested_track_record": {
+    "n": 0,
+    "win_rate": null,
+    "by_horizon": {},
+    "worst": null,
+    "note": "no picks"
+  },
+  "backtested_n": 0,
+  "live_logged_track_record": {
+    "n": 0,
+    "win_rate": null,
+    "by_horizon": {},
+    "worst": null,
+    "note": "no picks"
+  },
+  "live_logged_n": null,
+  "coindesk_summary": {
+    "status": "offline",
+    "as_of_utc": "2026-09-22T07:52:22Z",
+    "n_cards": 1,
+    "pass_n": 1,
+    "watch_n": 0,
+    "label": "Base / hood.fun (separate chain \u2014 not a Solana pick input for BUY)",
+    "note": "offline, data as of 2026-09-22T07:52:22Z \u2014 start Coin Desk.exe separately if you want a live board. TRENCHNET will not start it."
+  }
+}

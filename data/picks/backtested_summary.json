@@ -1,0 +1,20 @@
+{
+  "generated_at_utc": "2026-09-24T14:13:55Z",
+  "kind": "backtested_picks",
+  "n_picks": 0,
+  "track_record": {
+    "n": 0,
+    "win_rate": null,
+    "by_horizon": {},
+    "worst": null,
+    "note": "no picks"
+  },
+  "picks": [],
+  "horizons_seconds": [
+    900,
+    3600,
+    14400,
+    86400
+  ],
+  "disclaimer": "Backtested picks use historical buy timing with current score cards \u2014 still paper, still not advice."
+}

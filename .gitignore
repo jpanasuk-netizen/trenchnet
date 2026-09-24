@@ -78,3 +78,8 @@ out/ui_pass6.*
 out/pass6_jev_run.*
 out/pass6_pool_fetch.*
 
+# Pass 7 pick ledger (may contain operational notes); commit compact summaries only
+data/picks/live_ledger.jsonl
+data/picks/latest.json
+out/pass7_*.log
+out/ui_pass7.*
