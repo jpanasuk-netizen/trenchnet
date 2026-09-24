@@ -11,6 +11,8 @@ copy .env.example .env
 
 Generated dashboards and Pass 4 screenshots live under `out/`. Roster addresses and derived stats are public on-chain data.
 
+**Pass 5 (paper):** copy-trade backtest, walk-forward, wallet scores, interactive desk (filters, drawer, sortable tables, backtest sliders). `python -m trenchnet.cli backtest`. LIVE remains disarmed.
+
 ---
 ## Desk UI
 
@@ -100,5 +102,6 @@ Tests (PnL, graph/co-entry, routing):
 - **Helius** — primary wallet history via Enhanced Transactions API (SWAP / PUMP_FUN); RPC fallback. Numbers tagged helius.
 - **Birdeye** — token price, OHLCV, wallet PnL / top traders where free tier allows. Numbers tagged irdeye.
 - Never commit .env. Agent leak-checks out/ + data/ after runs.
+
 
 
