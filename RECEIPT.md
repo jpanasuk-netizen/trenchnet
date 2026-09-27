@@ -2,7 +2,50 @@
 
 ---
 
-## Freebuff PASS 3 — 2026-09-24 (RPC pool + parallel fetch + roster expansion + token context)
+## PASS 4 — FAIL-FAST FCC + CLI FILTERS (replay no longer hangs)
+
+### Problem
+`python -m trenchnet.cli replay` appeared to hang forever (300s+ timeout). Root cause:
+`FCCWriter.complete()` probed the FCC server at `http://127.0.0.1:8082/v1/messages`,
+got an HTTP 404 or empty-text response (model not loaded on the server), then **retried
+with a second auth header** (`x-api-key`) — wasting ~6–9s per call. With 40 wallets in
+the roster × 2 auth methods × ~9s = 360–720s, the pipeline appeared deadlocked.
+
+### Fix
+- **`trenchnet/llm_fcc.py`** — `complete()` now fails fast:
+  - 404/403/405 → `return ""` immediately (don't retry auth).
+  - 401 (Unauthorized) → still retries with alternate auth header (legitimate auth fallback).
+  - Empty text → `return ""` immediately (second auth won't fix empty responses).
+  - Network exception → `return ""` immediately (already fixed).
+  - Default timeout lowered from 90s → 30s.
+  - New `_probe_ok` attribute set by `available()`: `True` (200), `False` (404/500/exc), `None` (not probed).
+- **`trenchnet/profiles.py`** — `build_profiles()` now:
+  - Accepts `wallet_limit: int | None` to process only first N wallets.
+  - Checks `writer._probe_ok` — if `False`, skips `writer.complete()` entirely and uses
+    template fallback for all profiles. This makes 40 wallets run in <30s with `--no-fcc`.
+- **`trenchnet/pipeline.py`** — `run_replay()` now:
+  - Accepts `wallet_limit`, `wallet_filter`, `fcc_available` params.
+  - Probes FCC once at the top; if `--no-fcc` was passed (`fcc_available=False`),
+    skips the probe entirely and sets `_probe_ok=False`.
+  - Filters roster by label/address when `wallet_filter` is set.
+  - Passes `wallet_limit` to `build_profiles`.
+- **`trenchnet/cli.py`** — `replay` command gains 3 new options:
+  - `--limit N` — max wallets to process.
+  - `--wallet LABEL` — process only one wallet (label or address).
+  - `--no-fcc` — skip all FCC LLM calls; use template fallback (full 40-wallet run in <30s).
+- **`tests/test_profiles.py`** (new, 2 tests) — verifies `_probe_ok=False` skips LLM calls.
+- **`tests/test_llm_fcc.py`** — updated assertions for fail-fast behavior; added `_probe_ok` checks.
+
+### Verification
+- `pytest`: **146 passed, 2 skipped** (was 142; +4 new assertions).
+- `python -m trenchnet.cli replay --no-fcc` → full 40-wallet pipeline completes in <30s.
+- `python -m trenchnet.cli replay --no-fcc --wallet Cented` → filters to 1 wallet, completes in <5s.
+- `python -m trenchnet.cli replay --limit 2` → processes only first 2 wallets.
+- `python -m trenchnet.cli replay --limit 1` → full LLM + template pipeline completes in ~30s.
+
+---
+
+## Freebuff PASS 3 â€” 2026-09-24 (RPC pool + parallel fetch + roster expansion + token context)
 
 Rules held: watch/paper only · no keys/signing/order code written · LIVE stub untouched · **trenchnet/live/ (Jeremy's queued LIVE work) not edited by this pass** · no spend · no X API · no invented numbers · nothing signed up on Jeremy's behalf.
 
