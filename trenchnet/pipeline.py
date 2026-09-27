@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -55,7 +56,13 @@ def poll_fetch(settings: dict[str, Any] | None = None, roster: dict[str, Any] | 
     return written
 
 
-def run_replay(settings: dict[str, Any] | None = None, roster: dict[str, Any] | None = None) -> dict[str, Any]:
+def run_replay(
+    settings: dict[str, Any] | None = None,
+    roster: dict[str, Any] | None = None,
+    wallet_limit: int | None = None,
+    wallet_filter: str | None = None,
+    fcc_available: bool | None = None,
+) -> dict[str, Any]:
     settings = settings or load_settings()
     roster = roster or load_roster()
     raw_dir, out_dir = _paths(settings)
@@ -75,13 +82,29 @@ def run_replay(settings: dict[str, Any] | None = None, roster: dict[str, Any] | 
     writer = FCCWriter(
         base_url=fcc_cfg.get("base_url", "http://127.0.0.1:8082/v1"),
         model=fcc_cfg.get("model", "anthropic/cloudflare/@cf/moonshotai/kimi-k2.7-code"),
-        timeout=float(fcc_cfg.get("timeout_seconds", 90)),
+        timeout=float(fcc_cfg.get("timeout_seconds", 30)),
     )
-    # probe FCC once
-    fcc_ok = writer.available()
+    # Fail-fast: probe once; if the server is unavailable, skip all per-wallet
+    # LLM calls (each can cost 3-90s on a dead socket).
+    if fcc_available is False:
+        # Caller requested --no-fcc: skip probe entirely.
+        fcc_ok = False
+        writer._probe_ok = False
+        writer.last_error = "FCC disabled by --no-fcc"
+    else:
+        fcc_ok = writer.available()
+    if not fcc_ok:
+        print(f"  FCC unavailable ({writer.last_error or 'unknown'}); profiles will use template fallback.", file=sys.stderr)
+    print(f"  FCC available: {fcc_ok} — {'skipping' if not fcc_ok else 'using'} LLM calls", flush=True)
 
     wallets = roster.get("wallets") or []
-    profiles = build_profiles(wallets, events, writer, out_dir / "profiles")
+    if wallet_filter:
+        wallets = [w for w in wallets if w.get("label", "").lower() == wallet_filter.lower() or w.get("address", "").lower() == wallet_filter.lower()]
+        print(f"  Filtered to {len(wallets)} wallet(s) in roster", flush=True)
+    profiles = build_profiles(
+        wallets, events, writer, out_dir / "profiles",
+        wallet_limit=wallet_limit,
+    )
 
     window = int(settings.get("graph", {}).get("co_entry_window_minutes", 30))
     gsum = graph_summary_dict(events, window_minutes=window)

@@ -23,7 +23,10 @@ def main(argv: list[str] | None = None) -> int:
     )
     sub = parser.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("replay", help="Run pipeline from data/raw/*.json (offline-capable)")
+    p_repl = sub.add_parser("replay", help="Run pipeline from data/raw/*.json (offline-capable)")
+    p_repl.add_argument("--limit", type=int, default=None, help="Max wallets to process (default: all in roster)")
+    p_repl.add_argument("--wallet", type=str, default=None, help="Process only this wallet (label or address)")
+    p_repl.add_argument("--no-fcc", action="store_true", help="Skip FCC LLM calls entirely; use template fallback for all profiles")
     sub.add_parser("poll", help="Fetch latest signatures/txs into data/raw/ then stop")
     sub.add_parser("fetch-and-replay", help="Poll free RPC then run replay")
     p_fh = sub.add_parser("fetch-history", help="Resumable FULL signature history per roster wallet (free RPC)")
@@ -98,7 +101,12 @@ def main(argv: list[str] | None = None) -> int:
         print(json.dumps(summary, indent=2))
         return 0
     if args.cmd == "replay":
-        summary = run_replay()
+        no_fcc = getattr(args, "no_fcc", False)
+        summary = run_replay(
+            wallet_limit=getattr(args, "limit", None),
+            wallet_filter=getattr(args, "wallet", None),
+            fcc_available=not no_fcc,
+        )
         try:
             from trenchnet.dashboard import regenerate
             reg = regenerate(ROOT)

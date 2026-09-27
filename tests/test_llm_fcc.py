@@ -103,10 +103,38 @@ def test_messages_404_falls_back_to_template(with_key, monkeypatch):
     assert out == ""
     assert w.mode == "template_fallback"
     assert "404" in (w.last_error or "")
-    assert len(calls) == 2  # tried bearer then x-api-key
+    assert len(calls) == 1  # fail-fast: don't retry x-api-key on HTTP 404
     # labeled fallback text mentions template
     prof = template_profile({"label": "L", "wallet": "W", "cited_signatures": []})
     assert "TEMPLATE WRITER" in prof
+
+
+def test_empty_text_fails_fast_no_retry(with_key, monkeypatch):
+    """When bearer returns 200 + empty text, don't waste time retrying x-api-key."""
+    calls = []
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        calls.append(headers)
+        return FakeResponse(200, None, text="")
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+    w = FCCWriter(BASE, MODEL)
+    out = w.complete("SYS", "USER")
+    assert out == ""
+    assert w.mode == "template_fallback"
+    assert len(calls) == 1  # only bearer tried, no retry
+
+
+def test_probe_ok_false_skips_network(no_key, monkeypatch):
+    """If _probe_ok is False, complete() returns immediately without any HTTP."""
+    calls = []
+    monkeypatch.setattr(httpx, "post", lambda *a, **k: calls.append(1))
+    w = FCCWriter(BASE, MODEL)
+    w._probe_ok = False
+    out = w.complete("SYS", "USER")
+    assert out == ""
+    assert w.mode == "template_fallback"
+    assert len(calls) == 0  # no network calls at all
 
 
 def test_missing_key_short_circuits(no_key):
@@ -128,6 +156,7 @@ def test_available_models_probe(with_key, monkeypatch):
     w = FCCWriter(BASE, MODEL)
     assert w.available() is True
     assert w.last_error is None
+    assert w._probe_ok is True
 
 
 def test_available_models_500(with_key, monkeypatch):
@@ -135,6 +164,7 @@ def test_available_models_500(with_key, monkeypatch):
     w = FCCWriter(BASE, MODEL)
     assert w.available() is False
     assert "500" in (w.last_error or "")
+    assert w._probe_ok is False  # caller can check this for fail-fast
 
 
 def test_network_error_falls_back(with_key, monkeypatch):

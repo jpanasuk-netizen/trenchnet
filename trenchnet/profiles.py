@@ -24,10 +24,22 @@ def build_profiles(
     events: list[TradeEvent],
     writer: FCCWriter,
     out_dir: Path,
+    wallet_limit: int | None = None,
 ) -> list[dict[str, Any]]:
+    """Build profiles for all wallets in the roster.
+
+    If writer._probe_ok is False, LLM calls are skipped entirely — every
+    profile uses the template fallback, so this runs in milliseconds
+    regardless of roster size.
+
+    wallet_limit, when set, processes only the first N wallets (useful for
+    testing or when a full roster of 40+ wallets is too slow).
+    """
     out_dir.mkdir(parents=True, exist_ok=True)
     profiles: list[dict[str, Any]] = []
-    for w in roster_wallets:
+    wallets = roster_wallets[:wallet_limit] if wallet_limit else roster_wallets
+    fcc_mode = writer._probe_ok is not False  # don't call complete() if probe said no
+    for w in wallets:
         addr = w["address"]
         label = w.get("label") or addr[:8]
         m = compute_wallet_metrics(addr, label, events).to_dict()
@@ -37,7 +49,11 @@ def build_profiles(
             "metrics": m,
             "instructions": "Write the profile now. Cite only metrics.cited_signatures.",
         }
-        text = writer.complete(PROFILE_SYSTEM, json.dumps(user_payload, ensure_ascii=False))
+        if fcc_mode:
+            text = writer.complete(PROFILE_SYSTEM, json.dumps(user_payload, ensure_ascii=False))
+        else:
+            text = ""
+            writer.mode = "template_fallback"
         if not text.strip():
             text = template_profile(m)
             writer_mode = "template_fallback"

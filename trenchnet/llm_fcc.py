@@ -18,12 +18,16 @@ from trenchnet.secrets import get_secret
 
 
 class FCCWriter:
-    def __init__(self, base_url: str, model: str, timeout: float = 90.0):
+    def __init__(self, base_url: str, model: str, timeout: float = 30.0):
         self.base_url = base_url.rstrip("/")
         self.model = model
         self.timeout = timeout
         self.mode = "fcc"
         self.last_error: str | None = None
+        # Set by caller after available(); if False, complete() skips all
+        # network calls and returns "" immediately (template fallback),
+        # avoiding 3-90s per-call latency on a known-dead socket.
+        self._probe_ok: bool | None = None
 
     # ------------------------------------------------------------------ auth
     def _bearer_headers(self, key: str) -> dict[str, str]:
@@ -51,10 +55,13 @@ class FCCWriter:
             )
             if r.status_code >= 400:
                 self.last_error = f"FCC /models HTTP {r.status_code}"
+                self._probe_ok = False
                 return False
+            self._probe_ok = True
             return True
         except Exception as exc:
             self.last_error = f"FCC unreachable: {exc}"
+            self._probe_ok = False
             return False
 
     # -------------------------------------------------------------- response
@@ -74,6 +81,11 @@ class FCCWriter:
     # ------------------------------------------------------------ completion
     def complete(self, system: str, user: str, max_tokens: int = 1200) -> str:
         """POST {base}/messages Anthropic-style. Empty string -> use template."""
+        # Fast path: if the caller already probed and the server is unavailable,
+        # don't waste time on a guaranteed-empty request.
+        if self._probe_ok is False:
+            self.mode = "template_fallback"
+            return ""
         key = get_secret("FCC_API_KEY")
         if not key:
             self.mode = "template_fallback"
@@ -103,8 +115,9 @@ class FCCWriter:
                 if r.status_code >= 400:
                     self.mode = "template_fallback"
                     self.last_error = f"FCC /messages HTTP {r.status_code} ({label})"
-                    # 404/401/403 -> try the next auth style; otherwise stop.
-                    if r.status_code in (400, 401, 403, 404, 405):
+                    # 401 (Unauthorized) — try alternate auth header.
+                    # 403/404/405 and others — fail fast, alternate auth won't help.
+                    if r.status_code == 401:
                         continue
                     return ""
                 try:
@@ -117,6 +130,8 @@ class FCCWriter:
                 if not text.strip():
                     self.mode = "template_fallback"
                     self.last_error = f"FCC /messages empty text ({label})"
+                    # Don't retry with a second auth header — if /models returned
+                    # 200 but /messages returns empty, changing auth won't help.
                     return ""
                 self.mode = "fcc"
                 self.last_error = None
@@ -124,7 +139,8 @@ class FCCWriter:
             except Exception as exc:
                 self.mode = "template_fallback"
                 self.last_error = f"FCC /messages error ({label}): {exc}"
-                continue
+                # If the server is unreachable on bearer, x-api-key won't help either.
+                return ""
         _ = last_status
         return ""
 
