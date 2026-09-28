@@ -217,6 +217,14 @@ def _handle_live_api(root: Path, method: str, path: str, body: dict) -> dict:
             auto=bool(body.get("auto")),
             wallet_sol=body.get("wallet_sol"),
         )
+    if path == "/api/live/autobuy" and method == "GET":
+        from trenchnet.live.autobuy import public_status
+        return public_status(root)
+    if path == "/api/live/autobuy" and method == "POST":
+        action = str(body.get("action") or "").strip().lower()
+        if action in ("arm", "on", "enable"):
+            return live_state.set_auto_armed(True, phrase=body.get("phrase") or "")
+        return live_state.set_auto_armed(False)
     if path == "/api/live/disarm" and method == "POST":
         return live_state.disarm("manual_api")
     if path == "/api/live/kill" and method == "POST":
@@ -224,17 +232,11 @@ def _handle_live_api(root: Path, method: str, path: str, body: dict) -> dict:
     if path == "/api/live/sell-all" and method == "POST":
         from trenchnet.live.sellall import sell_all
         mode = body.get("mode") or "simulate"
-        return scrub_dict(sell_all(mode=mode))
-    if path == "/api/live/order" and method == "POST":
-        return scrub_dict(live_orders.execute(
-            side=body.get("side") or "buy",
-            token_mint=body.get("token_mint") or "",
-            sol_amount=float(body.get("sol_amount") or 0),
-            slippage_pct=float(body.get("slippage_pct") or 0),
-            priority_fee_lamports=int(body.get("priority_fee_lamports") or 0),
-            confirm_phrase=body.get("confirm_phrase") or "",
-            mode=body.get("mode") or "simulate",
-            wallet_sol=body.get("wallet_sol"),
+        return scrub_dict(sell_all(mode=mode, confirm_phrase=body.get("confirm_phrase") or ""))
+    if path in ("/api/live/order", "/api/live/confirm-order") and method == "POST":
+        return scrub_dict(live_orders.execute_from_request(
+            body,
+            force_send=path == "/api/live/confirm-order",
         ))
     return {"error": "unknown_live_api", "path": path}
 
@@ -271,7 +273,7 @@ def build_handler(root: Path):
                 self._file(root / "out" / "dashboard.html")
             elif p.startswith("/assets/"):
                 self._file(root / "out" / p.lstrip("/"))
-            elif p == "/live":
+            elif p in ("/live", "/live/", "/live.html"):
                 self._file(root / "out" / "live.html")
             elif p == "/paper":
                 self._file(root / "out" / "dashboard.html")  # portfolio lives in dashboard
@@ -471,7 +473,7 @@ def build_handler(root: Path):
     return Handler
 
 
-def serve(root: Path = ROOT, host: str = "127.0.0.1", port: int = 8791, open_browser: bool = True) -> None:
+def serve(root: Path = ROOT, host: str = "0.0.0.0", port: int = 8791, open_browser: bool = True) -> None:
     dashboard.regenerate(root)
     # Pass 8: start Hot Take tracker daemon (non-blocking)
     try:
@@ -480,9 +482,15 @@ def serve(root: Path = ROOT, host: str = "127.0.0.1", port: int = 8791, open_bro
         print(f"Hot Take tracker started (poll={tr.state.get('poll_interval_seconds')}s) — paper only.")
     except Exception as exc:
         print(f"Hot Take tracker not started: {type(exc).__name__}")
+    try:
+        from trenchnet.live.autobuy import ensure_loop
+        ensure_loop(root)
+        print("AUTOBUY loop started (60s) — sends only when TRADING + AUTOBUY are on and gates pass.")
+    except Exception as exc:
+        print(f"AUTOBUY loop not started: {type(exc).__name__}")
     httpd = ThreadingHTTPServer((host, port), build_handler(root))
-    url = f"http://{host}:{port}/"
-    print(f"TRENCHNET desk (WATCH-ONLY / PAPER) at {url}  — LIVE off, no implementation.")
+    url = f"http://127.0.0.1:{port}/"
+    print(f"TRENCHNET desk at {url}  LIVE at {url}live")
     if open_browser:
         threading.Timer(0.6, lambda: webbrowser.open(url)).start()
     try:

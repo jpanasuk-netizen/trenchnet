@@ -69,6 +69,30 @@ def build_order_preview(
     })
 
 
+def execute_from_request(body: dict[str, Any] | None, *, force_send: bool = False) -> dict[str, Any]:
+    """Fill size/slip/tip from armed limits, then execute. confirm-order forces send."""
+    body = body or {}
+    st = load_state()
+    lim = st.get("limits") or {}
+    mode = str(body.get("mode") or "simulate").strip().lower()
+    if force_send:
+        mode = "send"
+    sol = float(body.get("sol_amount") or 0) or float(lim.get("max_sol_per_trade") or 0)
+    slip = float(body.get("slippage_pct") or 0) or float(lim.get("max_slippage_pct") or 0)
+    prio = int(body.get("priority_fee_lamports") or 0) or int(lim.get("max_priority_fee_lamports") or 0)
+    return execute(
+        side=str(body.get("side") or "buy"),
+        token_mint=str(body.get("token_mint") or ""),
+        sol_amount=sol,
+        slippage_pct=slip,
+        priority_fee_lamports=prio,
+        confirm_phrase=str(body.get("confirm_phrase") or ""),
+        mode=mode,
+        wallet_sol=body.get("wallet_sol"),
+        allow_exit_while_killed=bool(body.get("allow_exit_while_killed")),
+    )
+
+
 def execute(
     *,
     side: str,
@@ -160,7 +184,13 @@ def execute(
         "jsonrpc": "2.0", "id": 1, "method": "sendTransaction",
         "params": [signed_b64, {"encoding": "base64", "skipPreflight": False, "preflightCommitment": "confirmed"}],
     }
-    r = httpx.post(st.get("rpc_url") or "https://api.mainnet-beta.solana.com", json=payload, timeout=60.0)
+    rpc = st.get("rpc_url") or "https://api.mainnet-beta.solana.com"
+    try:
+        from trenchnet.helius_client import rpc_url_for_solana
+        rpc = rpc_url_for_solana() or rpc
+    except Exception:
+        pass
+    r = httpx.post(rpc, json=payload, timeout=60.0)
     data = r.json()
     sig = data.get("result")
     row = {

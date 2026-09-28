@@ -29,6 +29,9 @@ def server():
     tpl = ROOT / "docs" / "dashboard_template.html"
     (root / "docs").mkdir(exist_ok=True)
     shutil.copy(tpl, root / "docs" / "dashboard_template.html")
+    live = ROOT / "out" / "live.html"
+    if live.is_file():
+        shutil.copy(live, root / "out" / "live.html")
 
     httpd = ThreadingHTTPServer(("127.0.0.1", 0), webui.build_handler(root))
     port = httpd.server_address[1]
@@ -91,6 +94,26 @@ def test_paper_endpoint_refuses_without_real_price(server):
     # refusal is logged in the ledger as PAPER
     rows = iter_records(root / "data" / "paper" / "ledger.jsonl")
     assert rows and rows[-1]["type"] == "refusal" and rows[-1]["mode"] == "PAPER"
+
+
+def test_live_desk_has_toggle_switches(server):
+    url, _ = server
+    status, body = _get(url + "/live")
+    assert status == 200
+    html = body.decode("utf-8")
+    assert 'role="switch"' in html
+    assert 'id="trBtn"' in html and 'id="abBtn"' in html
+    assert "AUTOBUY" in html and "TRADING" in html
+
+
+def test_autobuy_api_starts_off(server):
+    url, _ = server
+    status, body = _get(url + "/api/live/autobuy")
+    assert status == 200
+    doc = json.loads(body)
+    assert doc["ok"] is True
+    assert doc["armed"] is False
+    assert doc["enabled"] is False
 
 
 def test_kill_switch_endpoint_blocks_fill(server):

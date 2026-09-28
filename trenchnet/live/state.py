@@ -12,6 +12,7 @@ STATE_PATH = ROOT / "data" / "live" / "state.json"
 KILL_FILE = ROOT / "TRENCHNET_KILL"  # gitignored flag file
 HEARTBEAT_FILE = ROOT / "data" / "live" / "position_manager_heartbeat.json"
 ARM_PHRASE = "ARM TRENCHNET LIVE"
+AUTO_PHRASE = "ARM AUTOBUY"
 
 try:
     from zoneinfo import ZoneInfo
@@ -167,6 +168,38 @@ def apply_spec_caps() -> dict[str, Any]:
         "stop_loss_pct": 0.25,
         "time_stop_seconds": 3600,
     })
+
+
+def set_auto_armed(on: bool, *, phrase: str = "") -> dict[str, Any]:
+    """Latch AUTOBUY independently of TRADING. Does not start an auto-send loop."""
+    st = load_state()
+    if on:
+        if (phrase or "").strip() != AUTO_PHRASE:
+            return {"ok": False, "error": f"type exactly `{AUTO_PHRASE}`", "armed": False, "enabled": False}
+        if st.get("kill_switch") or kill_file_present():
+            return {"ok": False, "error": "kill_switch on", "armed": False, "enabled": False}
+        if not st.get("armed"):
+            return {"ok": False, "error": "TRADING must be ON first", "armed": False, "enabled": False}
+        st["auto_armed"] = True
+        save_state(st)
+        return {"ok": True, "armed": True, "enabled": True, "auto_armed": True, "note": "AUTOBUY loop will send after Jev + quote + gates"}
+    st["auto_armed"] = False
+    save_state(st)
+    return {"ok": True, "armed": False, "enabled": False, "auto_armed": False}
+
+
+def autobuy_public() -> dict[str, Any]:
+    st = load_state()
+    trading = bool(st.get("armed"))
+    auto = bool(st.get("auto_armed")) and trading and not (st.get("kill_switch") or kill_file_present())
+    return {
+        "ok": True,
+        "armed": auto,
+        "enabled": auto,
+        "auto_armed": bool(st.get("auto_armed")),
+        "trading_armed": trading,
+        "note": "AUTOBUY sends after runners/hot takes + Jev + quote + pre_trade_gate.",
+    }
 
 
 def try_arm(phrase: str, *, wallet_sol: float | None = None, auto: bool = False) -> dict[str, Any]:

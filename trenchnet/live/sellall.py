@@ -28,7 +28,7 @@ def collect_sell_targets() -> list[str]:
     return out
 
 
-def sell_one(token_mint: str | None, *, mode: str = "simulate", reason: str = "sell_all", slippage_ladder: list[float] | None = None) -> dict[str, Any]:
+def sell_one(token_mint: str | None, *, mode: str = "simulate", reason: str = "sell_all", slippage_ladder: list[float] | None = None, confirm_phrase: str = "") -> dict[str, Any]:
     if not token_mint:
         return {"ok": False, "reason": "no_mint"}
     ladder = slippage_ladder or [5.0, 10.0, 25.0, 40.0]
@@ -55,7 +55,7 @@ def sell_one(token_mint: str | None, *, mode: str = "simulate", reason: str = "s
                 sol_amount=0.01,  # placeholder; real sizing needs token balance
                 slippage_pct=slip,
                 priority_fee_lamports=50000,
-                confirm_phrase="CONFIRM LIVE ORDER",
+                confirm_phrase=confirm_phrase,
                 mode="send",
                 allow_exit_while_killed=True,
             )
@@ -73,8 +73,10 @@ def sell_one(token_mint: str | None, *, mode: str = "simulate", reason: str = "s
     return scrub_dict(row)
 
 
-def sell_all(*, mode: str = "simulate") -> dict[str, Any]:
+def sell_all(*, mode: str = "simulate", confirm_phrase: str = "") -> dict[str, Any]:
     """Sell every open position. Always ends with disarm. Tests must use mode=simulate."""
+    if mode == "send" and (confirm_phrase or "").strip() != "CONFIRM LIVE ORDER":
+        return {"ok": False, "reason": "confirm_phrase_required", "mode": mode, "sent": False}
     targets = collect_sell_targets()
     results = []
     if not targets:
@@ -89,7 +91,7 @@ def sell_all(*, mode: str = "simulate") -> dict[str, Any]:
             "sent": mode == "send",
         }
     for mint in targets:
-        results.append(sell_one(mint, mode=mode, reason="sell_all"))
+        results.append(sell_one(mint, mode=mode, reason="sell_all", confirm_phrase=confirm_phrase))
     # clear opens on successful sims for bookkeeping in sim mode only if all ok
     if mode == "simulate":
         save_open_positions([])

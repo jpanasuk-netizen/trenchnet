@@ -156,3 +156,38 @@ def test_public_state_has_no_secret(tmp_wallet, tmp_state):
     blob = json.dumps(state.public_state())
     assert "secret" not in blob
     assert "private_key" not in blob
+
+
+def test_execute_from_request_uses_limit_size_and_blocks_send(tmp_wallet, tmp_state):
+    state.set_limits({
+        "max_sol_per_trade": 0.25, "daily_loss_cap_sol": 2, "max_trades_per_day": 10,
+        "max_open_positions": 4, "max_slippage_pct": 5, "max_priority_fee_lamports": 10000,
+    })
+    st = state.load_state()
+    st["armed"] = True
+    st["kill_switch"] = False
+    state.save_state(st)
+    from trenchnet.live.orders import execute_from_request
+    blocked = execute_from_request({"token_mint": "T" * 44, "side": "buy"}, force_send=True)
+    assert blocked["ok"] is False
+    assert blocked["reason"] == "confirm_phrase_required"
+
+
+def test_autobuy_requires_trading_and_phrase(tmp_state):
+    blocked = state.set_auto_armed(True, phrase="ARM AUTOBUY")
+    assert blocked["ok"] is False
+    assert blocked["error"] == "TRADING must be ON first"
+    st = state.load_state()
+    st["armed"] = True
+    st["kill_switch"] = False
+    state.save_state(st)
+    bad = state.set_auto_armed(True, phrase="arm autobuy")
+    assert bad["ok"] is False
+    ok = state.set_auto_armed(True, phrase="ARM AUTOBUY")
+    assert ok["ok"] is True
+    pub = state.autobuy_public()
+    assert pub["armed"] is True
+    assert pub["enabled"] is True
+    off = state.set_auto_armed(False)
+    assert off["auto_armed"] is False
+    assert state.autobuy_public()["enabled"] is False

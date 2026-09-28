@@ -1,162 +1,346 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"/>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>TRENCHNET LIVE — DISARMED BY DEFAULT</title>
+<title>TRENCHNET LIVE</title>
 <style>
-:root{--bg:#05060f;--panel:rgba(10,18,38,.72);--blue:#00B4FF;--purple:#B026FF;--text:#dfe9ff;--danger:#ff3b6b;--ok:#39ffb0}
-*{box-sizing:border-box}body{margin:0;font:14px/1.45 Inter,system-ui,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%,#1a0a3a,transparent 50%),radial-gradient(1000px 500px at 90% 0%,#062a4a,transparent 45%),var(--bg)}
-a{color:var(--blue)}header{display:flex;gap:14px;align-items:center;padding:16px 24px;border-bottom:1px solid #1c2a4a;position:sticky;top:0;backdrop-filter:blur(10px);z-index:5;flex-wrap:wrap}
-.brand{font-weight:800}.brand span{color:var(--blue)}.badge{padding:4px 10px;border-radius:999px;border:1px solid #334;font-size:11px;font-weight:700}
-.badge.live{background:rgba(255,59,107,.15);border-color:var(--danger);color:#ff9db4}.badge.paper{background:rgba(0,180,255,.12);border-color:var(--blue);color:var(--blue)}
-.badge.ok{border-color:var(--ok);color:var(--ok)}.badge.bad{border-color:var(--danger);color:var(--danger)}
+:root{--bg:#05060f;--panel:rgba(10,18,38,.72);--blue:#00B4FF;--purple:#B026FF;--text:#dfe9ff;--danger:#ff3b6b;--ok:#16a34a;--mut:#8ab}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 Inter,system-ui,sans-serif;color:var(--text);background:radial-gradient(1200px 600px at 10% -10%,#1a0a3a,transparent 50%),radial-gradient(1000px 500px at 90% 0%,#062a4a,transparent 45%),var(--bg)}
+a{color:var(--blue)}
+header{display:flex;gap:12px;align-items:center;padding:16px 24px;border-bottom:1px solid #1c2a4a;position:sticky;top:0;backdrop-filter:blur(10px);z-index:5;flex-wrap:wrap;background:rgba(5,6,15,.72)}
+.brand{font-weight:800}.brand span{color:var(--blue)}
+.badge{padding:4px 10px;border-radius:999px;border:1px solid #334;font-size:11px;font-weight:700}
+.badge.live{background:rgba(22,163,74,.18);border-color:var(--ok);color:#6ee7b7}
+.badge.off{background:rgba(148,163,184,.12);color:#94a3b8}
+.badge.bad{border-color:var(--danger);color:#ff9db4}
+.dot{width:10px;height:10px;border-radius:50%;background:#334155;display:inline-block}
+.dot.on{background:var(--ok)}
 main{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:16px;padding:20px 24px 100px;max-width:1800px;margin:0 auto}
 @media(max-width:1100px){main{grid-template-columns:1fr}}
-.card{background:var(--panel);border:1px solid #1c2a4a;border-radius:16px;padding:16px}h2{margin:0 0 10px;font-size:15px}
-.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}input,select,button{font:inherit;border-radius:10px;border:1px solid #2a3a5a;background:#0a1226;color:var(--text);padding:8px 12px}
-input,select{flex:1;min-width:120px}button{cursor:pointer;font-weight:700}button.primary{background:linear-gradient(90deg,var(--blue),var(--purple));border:0;color:#041018}
-button.danger{background:var(--danger);border:0;color:#fff;font-size:16px;padding:12px 18px}button.warn{background:#ffd166;border:0;color:#041018;font-weight:800}
+.card{background:var(--panel);border:1px solid #1c2a4a;border-radius:16px;padding:16px}
+.wide{grid-column:1/-1}
+h2{margin:0 0 10px;font-size:13px;letter-spacing:.4px;text-transform:uppercase;color:var(--mut)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:8px 0}
+input,select,button{font:inherit;border-radius:10px;border:1px solid #2a3a5a;background:#0a1226;color:var(--text);padding:8px 12px}
+input,select{flex:1;min-width:120px}
+button{cursor:pointer;font-weight:700;color:#fff;border:0}
+button.primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#041018}
+button.danger{background:var(--danger)}
+button.warn{background:#ffd166;color:#041018}
+button.buy{background:var(--ok);padding:14px 26px}
+button.sell{background:var(--danger);padding:14px 26px}
+button.buy:active,button.sell:active,button.primary:active,button.danger:active{transform:scale(.96);opacity:.75}
+button.toggle{
+  display:inline-flex;align-items:center;gap:10px;padding:8px 12px 8px 14px;
+  border-radius:999px;background:#1a2438;color:var(--text);border:1px solid #2a3a5a;
+  min-width:214px;justify-content:space-between
+}
+button.toggle .toggle-label{letter-spacing:.4px;font-size:13px}
+button.toggle .toggle-state{font-size:11px;color:var(--mut);min-width:28px;text-align:right}
+button.toggle .toggle-track{width:44px;height:24px;border-radius:999px;background:#334155;position:relative;flex:0 0 44px;transition:background .18s ease}
+button.toggle .toggle-knob{position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#e8f1ff;transition:transform .18s ease}
+button.toggle[aria-pressed="true"]{background:rgba(22,163,74,.16);border-color:var(--ok);color:#6ee7b7}
+button.toggle[aria-pressed="true"] .toggle-track{background:var(--ok)}
+button.toggle[aria-pressed="true"] .toggle-knob{transform:translateX(20px)}
+button.toggle[aria-pressed="true"] .toggle-state{color:#6ee7b7}
+button.toggle:focus-visible{outline:2px solid var(--ok);outline-offset:2px}
+.msg{min-height:18px;font:600 13px system-ui;margin-top:8px}
+.msg.ok{color:#6ee7b7}.msg.err{color:#ff9db4}
 .mono{font-family:ui-monospace,Consolas,monospace;font-size:12px;word-break:break-all;white-space:pre-wrap}
 .warnbox{border:1px solid var(--danger);background:rgba(255,59,107,.08);padding:12px;border-radius:12px;margin:8px 0}
-.okbox{border:1px solid #1c4;background:rgba(61,255,181,.06);padding:10px;border-radius:12px;white-space:pre-wrap;max-height:320px;overflow:auto}
-.small{opacity:.75;font-size:12px}#killbar{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;flex-direction:column;gap:8px}
+.okbox{border:1px solid #1c4;background:rgba(61,255,181,.06);padding:10px;border-radius:12px;white-space:pre-wrap;max-height:280px;overflow:auto}
+.small{opacity:.75;font-size:12px}
+#killbar{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;flex-direction:column;gap:8px}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:40}
 .modal.open{display:flex}.modal .box{background:#0b1428;border:1px solid var(--purple);border-radius:16px;padding:20px;max-width:560px;width:92%}
-table{width:100%;border-collapse:collapse;font-size:12px}td,th{padding:6px;border-bottom:1px solid #1c2a4a;text-align:left}
-</style></head><body>
+</style>
+</head>
+<body>
 <header>
   <div class="brand">TRENCH<span>NET</span> · LIVE</div>
-  <span class="badge live" id="armBadge">DISARMED</span>
-  <span class="badge paper">No measured edge yet (simulated only)</span>
-  <span class="badge" id="pmBadge">position manager: —</span>
+  <span class="dot" id="stDot"></span>
+  <span class="badge off" id="trBadge">TRADING OFF</span>
+  <span class="badge off" id="abBadge">AUTOBUY OFF</span>
+  <span class="small" id="walletBal">—</span>
   <a href="/" style="margin-left:auto">← Watch / Paper desk</a>
 </header>
 <main>
-<section class="card"><h2>1) Burner wallet</h2>
-<div class="warnbox">MetaMask cannot export Solana keys. Click <b>Create burner wallet</b> to generate a fresh Solana keypair locally into <code>.env</code> as <code>TRENCHNET_WALLET_KEY</code> (refuses overwrite). Or paste base58 / JSON yourself. Secret is never shown. See <code>trenchnet/LIVE-RUNBOOK.md</code>.</div>
-<div class="row"><button class="primary" onclick="createBurner()">Create burner wallet</button>
-<button onclick="refresh()">Refresh</button><button onclick="applyCaps()">Apply spec caps</button></div>
-<p class="small">Will trade from (masked) · full address shown once after create for funding</p>
-<div class="mono" id="pubkey">—</div>
-<div class="mono" id="pubkeyFull" style="display:none"></div>
-<div class="row"><canvas id="qr" width="160" height="160" style="background:#fff;border-radius:8px"></canvas>
-<div>SOL balance: <b id="solBal">?</b><div class="small" id="walletSource">source: —</div></div></div>
-</section>
-<section class="card"><h2>2) Hard caps</h2>
-<div class="small">Enforced in code before every order. Defaults start at 0 (disarmed).</div>
-<div class="row"><label>max SOL/trade <input id="lim_sol" type="number" step="0.001" value="0"/></label>
-<label>daily loss SOL <input id="lim_loss" type="number" step="0.01" value="0"/></label></div>
-<div class="row"><label>total kill SOL <input id="lim_tot" type="number" step="0.01" value="0"/></label>
-<label>max open <input id="lim_open" type="number" value="0"/></label></div>
-<div class="row"><label>max slip % <input id="lim_slip" type="number" step="0.1" value="0"/></label>
-<label>max tip lamports <input id="lim_prio" type="number" value="0"/></label></div>
-<div class="row"><label>TP % <input id="lim_tp" type="number" step="0.05" value="0.5"/></label>
-<label>SL % <input id="lim_sl" type="number" step="0.05" value="0.25"/></label>
-<label>time stop s <input id="lim_tstop" type="number" value="3600"/></label></div>
-<button onclick="saveLimits()">Save limits</button>
-</section>
-<section class="card"><h2>3) Arm / Kill / Panic</h2>
-<div class="warnbox">Default <b>DISARMED</b>. Type exactly <b>ARM TRENCHNET LIVE</b>. Arm refuses if on-chain SOL &lt; 0.30 (0.25+0.05). Agents never arm.</div>
-<div class="row"><input id="armPhrase" placeholder="ARM TRENCHNET LIVE"/><button class="primary" onclick="arm()">Arm LIVE</button></div>
-<div class="row"><button onclick="disarm()">Disarm</button></div>
-<div id="armStatus" class="okbox">…</div>
-</section>
-<section class="card" style="grid-column:1/-1"><h2>4) DRY RUN (no sign / no send)</h2>
-<p class="small">Quotes + unsigned tx build for <code>MY_WALLET_ADDRESS</code> + <code>simulateTransaction</code> (sigVerify=false). Failure is OK if wallet has no SOL.</p>
-<div class="row"><input id="dryMint" placeholder="token mint (or leave blank for top candidates)"/><button class="primary" onclick="runDry()">Run dry-run</button></div>
-<div id="dryBox" class="okbox">No dry-run yet.</div>
-</section>
-<section class="card" style="grid-column:1/3"><h2>LIVE ledger / open positions</h2><div id="ledger" class="small">No live fills yet (expected).</div></section>
-<section class="card"><h2>Position manager</h2>
-<div id="pmBox" class="okbox">…</div>
-<p class="small">Hidden Windows scheduled task “TRENCHNET Position Manager” — exits only (SL/TP/time). Never buys.</p>
-</section>
+  <section class="card wide">
+    <h2>Control</h2>
+    <div class="row">
+      <button type="button" id="trBtn" class="toggle" role="switch" aria-pressed="false" aria-label="Trading" onclick="toggleTrading()">
+        <span class="toggle-label">TRADING</span>
+        <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+        <span class="toggle-state">OFF</span>
+      </button>
+      <button type="button" id="abBtn" class="toggle" role="switch" aria-pressed="false" aria-label="Autobuy" onclick="toggleAutobuy()">
+        <span class="toggle-label">AUTOBUY</span>
+        <span class="toggle-track" aria-hidden="true"><span class="toggle-knob"></span></span>
+        <span class="toggle-state">OFF</span>
+      </button>
+      <button type="button" class="buy" onclick="doSide('buy')">BUY</button>
+      <button type="button" class="sell" onclick="doSide('sell')">SELL</button>
+    </div>
+    <div class="row">
+      <input id="orderMint" placeholder="token mint for BUY / SELL"/>
+      <input id="orderSol" type="number" step="0.001" min="0" placeholder="SOL size (blank = max/trade cap)"/>
+    </div>
+    <div class="msg" id="ctlMsg">ready — BUY/SELL send live when TRADING is ON and you type CONFIRM LIVE ORDER.</div>
+    <p class="small">Live send uses Jupiter lite, then signs with <code>TRENCHNET_WALLET_KEY</code>. Gates still apply (armed, caps, kill, fee reserve). AUTOBUY scans runners + hot takes, then Jev + quote + pre_trade_gate, then sends a fixed-ticket buy.</p>
+    <div id="abPanel" class="okbox" style="margin-top:10px">AUTOBUY idle</div>
+  </section>
+
+  <section class="card">
+    <h2>1) Burner wallet</h2>
+    <div class="warnbox">Create burner writes <code>TRENCHNET_WALLET_KEY</code> to local <code>.env</code> (refuses overwrite). Secret is never shown.</div>
+    <div class="row">
+      <button type="button" class="primary" onclick="createBurner()">Create burner wallet</button>
+      <button type="button" onclick="refresh()">Refresh</button>
+      <button type="button" onclick="applyCaps()">Apply spec caps</button>
+    </div>
+    <div class="mono" id="pubkey">—</div>
+    <div class="mono" id="pubkeyFull" style="display:none"></div>
+    <div class="row">
+      <canvas id="qr" width="160" height="160" style="background:#fff;border-radius:8px"></canvas>
+      <div>SOL: <b id="solBal">?</b><div class="small" id="walletSource">source: —</div></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2) Hard caps</h2>
+    <div class="small">Defaults start at 0 (disarmed). Apply spec caps, then turn TRADING on.</div>
+    <div class="row"><label>max SOL/trade <input id="lim_sol" type="number" step="0.001" value="0"/></label>
+    <label>daily loss SOL <input id="lim_loss" type="number" step="0.01" value="0"/></label></div>
+    <div class="row"><label>total kill SOL <input id="lim_tot" type="number" step="0.01" value="0"/></label>
+    <label>max open <input id="lim_open" type="number" value="0"/></label></div>
+    <div class="row"><label>max slip % <input id="lim_slip" type="number" step="0.1" value="0"/></label>
+    <label>max tip lamports <input id="lim_prio" type="number" value="0"/></label></div>
+    <div class="row"><label>TP % <input id="lim_tp" type="number" step="0.05" value="0.5"/></label>
+    <label>SL % <input id="lim_sl" type="number" step="0.05" value="0.25"/></label>
+    <label>time stop s <input id="lim_tstop" type="number" value="3600"/></label></div>
+    <button type="button" onclick="saveLimits()">Save limits</button>
+  </section>
+
+  <section class="card">
+    <h2>3) Position manager</h2>
+    <span class="badge off" id="pmBadge">—</span>
+    <div id="pmBox" class="okbox" style="margin-top:8px">…</div>
+    <p class="small">Exits only (SL/TP/time). Never buys.</p>
+  </section>
+
+  <section class="card wide">
+    <h2>4) Dry run (no sign / no send)</h2>
+    <div class="row"><input id="dryMint" placeholder="token mint (blank = top candidates)"/><button type="button" class="primary" onclick="runDry()">Run dry-run</button></div>
+    <div id="dryBox" class="okbox">No dry-run yet.</div>
+  </section>
+
+  <section class="card" style="grid-column:1/3">
+    <h2>LIVE ledger / open positions</h2>
+    <div id="ledger" class="small">No live fills yet.</div>
+  </section>
+  <section class="card">
+    <h2>Arm status</h2>
+    <div id="armStatus" class="okbox">…</div>
+  </section>
 </main>
 <div id="killbar">
-  <button class="warn" onclick="sellAll()">SELL ALL NOW</button>
-  <button class="danger" onclick="kill()">KILL LIVE</button>
+  <button type="button" class="warn" onclick="sellAll()">SELL ALL — SIMULATE</button>
+  <button type="button" class="danger" onclick="kill()">KILL LIVE</button>
 </div>
 <div class="modal" id="modalSell"><div class="box">
-<h2>Confirm SELL ALL</h2>
-<p>Market-sell every open TRENCHNET position (escalating slippage), then disarm. In current safety mode this UI calls <b>simulate</b> unless you later enable send yourself.</p>
-<div class="row"><button class="danger" onclick="confirmSellAll()">Yes, sell all (sim)</button><button onclick="closeSell()">Cancel</button></div>
+  <h2>SELL ALL</h2>
+  <p>Simulate quotes exits. Live send signs and broadcasts each open position, then disarms. Type the confirm phrase only if you want live sends.</p>
+  <div class="row">
+    <button type="button" class="warn" onclick="confirmSellAll('simulate')">Simulate exits</button>
+    <button type="button" class="danger" onclick="confirmSellAll('send')">SELL ALL LIVE</button>
+    <button type="button" onclick="closeSell()">Cancel</button>
+  </div>
 </div></div>
 <script>
-let S=null;
+function $(id){ return document.getElementById(id); }
+function msg(s, ok){
+  var el=$("ctlMsg"); if(!el) return;
+  el.textContent=s;
+  el.className="msg"+(ok===true?" ok":(ok===false?" err":""));
+}
+function setToggle(id, on, label){
+  var b=$(id); if(!b) return;
+  b.setAttribute("aria-pressed", on ? "true" : "false");
+  var st=b.querySelector(".toggle-state");
+  if(st) st.textContent = on ? "ON" : "OFF";
+  var badge=$(id==="trBtn"?"trBadge":"abBadge");
+  if(badge){ badge.textContent = label+" "+(on?"ON":"OFF"); badge.className = "badge "+(on?"live":"off"); }
+}
+function setDot(on){ var d=$("stDot"); if(d) d.className="dot"+(on?" on":""); }
 async function j(url, opts){ const r=await fetch(url, opts); return r.json(); }
+async function jpost(url, body){
+  return j(url, {method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(body||{})});
+}
 function drawQR(text){
-  const c=document.getElementById('qr'); if(!c) return;
-  const ctx=c.getContext('2d'); ctx.fillStyle='#fff'; ctx.fillRect(0,0,160,160); ctx.fillStyle='#000';
-  if(!text){ctx.fillText('no wallet',20,80);return;}
+  const c=$("qr"); if(!c) return;
+  const ctx=c.getContext("2d"); ctx.fillStyle="#fff"; ctx.fillRect(0,0,160,160); ctx.fillStyle="#000";
+  if(!text){ ctx.fillText("no wallet",20,80); return; }
   let h=0; for(const ch of text) h=(h*31+ch.charCodeAt(0))>>>0;
   for(let y=0;y<16;y++) for(let x=0;x<16;x++) if((h^(x*7+y*13))&1) ctx.fillRect(x*10,y*10,10,10);
-  ctx.fillStyle='#00B'; ctx.font='10px monospace'; ctx.fillText('fund QR',8,152);
 }
-async function createBurner(){
-  if(!confirm('Create a NEW burner wallet and write TRENCHNET_WALLET_KEY to .env? Refuses if key already set.')) return;
-  const res=await j('/api/live/wallet/create-burner',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'});
-  if(!res.ok){ alert(res.error||JSON.stringify(res)); return; }
-  const full=res.pubkey||'';
-  const el=document.getElementById('pubkeyFull');
-  if(el){ el.style.display='block'; el.textContent='FULL (fund this): '+full; }
-  drawQR(full);
-  alert('Burner ready.\nPublic: '+full+'\nBackup: '+(res.backup_path||'')+'\nSecret saved to .env (not shown).');
-  refresh();
-}
+
 async function refresh(){
-  S = await j('/api/live/state');
+  let S=null, bal=null;
+  try { S = await j("/api/live/state"); } catch(e){ setDot(false); msg("state failed", false); return; }
   const w=S.wallet||{};
-  document.getElementById('pubkey').textContent = (w.pubkey_masked || '— none —');
-  const ws=document.getElementById('walletSource'); if(ws) ws.textContent='source: '+(w.source||'—')+' · trades from masked address above';
+  $("pubkey").textContent = (w.pubkey_masked || "— none —");
+  $("walletSource").textContent = "source: "+(w.source||"—");
   if(w.pubkey) drawQR(w.pubkey);
-  document.getElementById('armBadge').textContent = S.armed ? 'ARMED' : 'DISARMED';
+  const trading = !!(S.armed) && !S.kill_switch;
+  setToggle("trBtn", trading, "TRADING");
+  setDot(trading);
+  if(S.kill_switch) msg("KILL SWITCH ON", false);
   const pm=S.position_manager||{};
-  const pmEl=document.getElementById('pmBadge');
-  pmEl.textContent = 'position manager: ' + (pm.alive?'alive':'idle/stale') + (pm.last_beat_ct?(' · '+pm.last_beat_ct):'');
-  pmEl.className = 'badge '+(pm.alive?'ok':'bad');
-  document.getElementById('pmBox').textContent = JSON.stringify(pm,null,2);
-  document.getElementById('armStatus').textContent = JSON.stringify({armed:S.armed,kill:S.kill_switch,kill_file:S.kill_file,reason:S.disarm_reason,masked:S.armed_pubkey_masked,limits:S.limits,day_pnl:S.day_realized_pnl_sol,total_pnl:S.total_realized_pnl_sol,disclaimer:S.no_edge_disclaimer},null,2);
+  const pmEl=$("pmBadge");
+  pmEl.textContent = "position manager: "+(pm.alive?"alive":"idle/stale")+(pm.last_beat_ct?(" · "+pm.last_beat_ct):"");
+  pmEl.className = "badge "+(pm.alive?"live":"off");
+  $("pmBox").textContent = JSON.stringify(pm,null,2);
+  $("armStatus").textContent = JSON.stringify({
+    armed:S.armed, auto_armed:S.auto_armed, kill:S.kill_switch, reason:S.disarm_reason,
+    masked:S.armed_pubkey_masked, limits:S.limits, day_pnl:S.day_realized_pnl_sol
+  },null,2);
   const L=S.limits||{};
   lim_sol.value=L.max_sol_per_trade||0; lim_loss.value=L.daily_loss_cap_sol||0; lim_tot.value=L.total_loss_kill_sol||0;
   lim_open.value=L.max_open_positions||0; lim_slip.value=L.max_slippage_pct||0; lim_prio.value=L.max_priority_fee_lamports||0;
   lim_tp.value=L.take_profit_pct||0.5; lim_sl.value=L.stop_loss_pct||0.25; lim_tstop.value=L.time_stop_seconds||3600;
-  try{
-    const bal=await j('/api/live/balances');
-    document.getElementById('solBal').textContent = (bal.sol_balance!=null)? Number(bal.sol_balance).toFixed(6) : '?';
-  }catch(e){ document.getElementById('solBal').textContent='?'; }
-  try{
-    const led=await j('/api/live/ledger');
-    document.getElementById('ledger').textContent = JSON.stringify(led,null,2).slice(0,4000);
-  }catch(e){}
+  try {
+    bal = await j("/api/live/balances");
+    $("solBal").textContent = (bal.sol_balance!=null) ? Number(bal.sol_balance).toFixed(6) : "?";
+    $("walletBal").textContent = (bal.sol_balance!=null) ? (Number(bal.sol_balance).toFixed(6)+" SOL") : "—";
+  } catch(e){ $("solBal").textContent="?"; }
+  try {
+    const ab = await j("/api/live/autobuy");
+    setToggle("abBtn", !!(ab && ab.armed && ab.enabled), "AUTOBUY");
+    const panel=$("abPanel");
+    if(panel){
+      const cands=ab.candidates||[];
+      const last=ab.last||{};
+      const jev=last.jev||{};
+      const lines=[
+        "buys="+((ab.buys!=null)?ab.buys:0)+"  skips="+((ab.skips!=null)?ab.skips:0)+"  last_run="+(ab.last_run_iso||"—"),
+        "candidates: "+(cands.length?cands.map(function(c){return (c.kind||"?")+":"+(c.token_mint||"").slice(0,6)+" n="+(c.n_top||"—");}).join(" | "):"(none)"),
+        "last Jev: "+(jev.word||"—")+" p="+(jev.probability!=null?jev.probability:"—")+" thr="+(jev.threshold!=null?jev.threshold:"—")+" route="+(jev.route||"—"),
+        "last skip/result: "+(last.skip||last.gate||((last.result&&last.result.ok)?"bought":"—"))+"  mint="+(last.mint||"—")
+      ];
+      panel.textContent=lines.join("\n");
+    }
+  } catch(e){}
+  try {
+    const led = await j("/api/live/ledger");
+    $("ledger").textContent = JSON.stringify(led,null,2).slice(0,4000);
+  } catch(e){}
+}
+
+async function toggleTrading(){
+  var turningOn = $("trBtn").getAttribute("aria-pressed") !== "true";
+  if(turningOn){
+    if(!confirm("Turn TRADING on? This sends ARM TRENCHNET LIVE after a live balance check.")) return;
+  }
+  setToggle("trBtn", turningOn, "TRADING");
+  try {
+    if(turningOn){
+      const bal = await j("/api/live/balances");
+      const res = await jpost("/api/live/arm", {phrase:"ARM TRENCHNET LIVE", wallet_sol: bal.sol_balance});
+      msg(res && res.ok ? "TRADING ON" : ("BLOCKED: "+((res&&res.error)||"?")), !!(res&&res.ok));
+    } else {
+      await jpost("/api/live/disarm", {});
+      msg("TRADING OFF");
+    }
+  } catch(e){ msg("ERR "+e.message, false); }
+  refresh();
+}
+
+async function toggleAutobuy(){
+  var turningOn = $("abBtn").getAttribute("aria-pressed") !== "true";
+  if(turningOn && !confirm("Turn AUTOBUY on? The loop will send live buys after runners/hot takes + Jev + quote + gates. Type ARM AUTOBUY is sent automatically from this toggle.")) return;
+  setToggle("abBtn", turningOn, "AUTOBUY");
+  try {
+    const res = turningOn
+      ? await jpost("/api/live/autobuy", {action:"arm", phrase:"ARM AUTOBUY"})
+      : await jpost("/api/live/autobuy", {action:"disarm"});
+    msg(res && res.ok ? (turningOn?"AUTOBUY ON":"AUTOBUY OFF") : ("BLOCKED: "+((res&&(res.error||res.reason))||"?")), !!(res&&res.ok));
+  } catch(e){ msg("ERR "+e.message, false); }
+  refresh();
+}
+
+async function doSide(side){
+  const mint = ($("orderMint").value||"").trim();
+  if(!mint){ msg("enter a token mint first", false); return; }
+  if($("trBtn").getAttribute("aria-pressed") !== "true"){
+    msg("TRADING must be ON before a live order", false); return;
+  }
+  const phrase = prompt("LIVE "+side.toUpperCase()+" will sign and send.\nType exactly:\nCONFIRM LIVE ORDER");
+  if((phrase||"").trim() !== "CONFIRM LIVE ORDER"){ msg("live order cancelled", false); return; }
+  try {
+    const bal = await j("/api/live/balances");
+    const solRaw = ($("orderSol").value||"").trim();
+    const body = {
+      token_mint: mint,
+      side: side,
+      mode: "send",
+      confirm_phrase: phrase.trim(),
+      wallet_sol: bal.sol_balance
+    };
+    if(solRaw) body.sol_amount = Number(solRaw);
+    const res = await jpost("/api/live/confirm-order", body);
+    const ok = !!(res && res.ok);
+    const detail = ok ? (res.signature || "sent") : ((res && (res.reason||res.error)) || "?");
+    msg(ok ? (side.toUpperCase()+" live: "+detail) : ("BLOCKED: "+detail), ok);
+    refresh();
+  } catch(e){ msg("ERR "+e.message, false); }
+}
+
+async function createBurner(){
+  if(!confirm("Create a NEW burner wallet and write TRENCHNET_WALLET_KEY to .env? Refuses if key already set.")) return;
+  const res = await jpost("/api/live/wallet/create-burner", {});
+  if(!res.ok){ alert(res.error||JSON.stringify(res)); return; }
+  const full=res.pubkey||"";
+  $("pubkeyFull").style.display="block";
+  $("pubkeyFull").textContent="FULL (fund this): "+full;
+  drawQR(full);
+  refresh();
 }
 async function saveLimits(){
-  await j('/api/live/limits',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
+  await jpost("/api/live/limits", {
     max_sol_per_trade:+lim_sol.value, daily_loss_cap_sol:+lim_loss.value, total_loss_kill_sol:+lim_tot.value,
     max_open_positions:+lim_open.value, max_slippage_pct:+lim_slip.value, max_priority_fee_lamports:+lim_prio.value,
     take_profit_pct:+lim_tp.value, stop_loss_pct:+lim_sl.value, time_stop_seconds:+lim_tstop.value,
     fee_reserve_sol:0.05, max_buys_per_token:1, max_trades_per_day:40
-  })}); refresh();
+  });
+  refresh();
 }
-async function applyCaps(){ await j('/api/live/limits',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({apply_spec:true})}); refresh(); }
-async function arm(){
-  const phrase=armPhrase.value;
-  const bal=await j('/api/live/balances');
-  const res=await j('/api/live/arm',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({phrase, wallet_sol: bal.sol_balance})});
-  alert(JSON.stringify(res)); refresh();
-}
-async function disarm(){ await j('/api/live/disarm',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'}); refresh(); }
-async function kill(){ if(!confirm('KILL LIVE? Disarms and sets kill flag.'))return; await j('/api/live/kill',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({on:true})}); refresh(); }
-function sellAll(){ document.getElementById('modalSell').classList.add('open'); }
-function closeSell(){ document.getElementById('modalSell').classList.remove('open'); }
-async function confirmSellAll(){
-  const res=await j('/api/live/sell-all',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:'simulate'})});
-  closeSell(); alert(JSON.stringify(res)); refresh();
+async function applyCaps(){ await jpost("/api/live/limits", {apply_spec:true}); refresh(); }
+async function kill(){ if(!confirm("KILL LIVE? Disarms and sets kill flag.")) return; await jpost("/api/live/kill", {on:true}); refresh(); }
+function sellAll(){ $("modalSell").classList.add("open"); }
+function closeSell(){ $("modalSell").classList.remove("open"); }
+async function confirmSellAll(mode){
+  mode = mode || "simulate";
+  const body = {mode: mode};
+  if(mode === "send"){
+    const phrase = prompt("SELL ALL LIVE will sign and send.\nType exactly:\nCONFIRM LIVE ORDER");
+    if((phrase||"").trim() !== "CONFIRM LIVE ORDER"){ msg("sell-all cancelled", false); return; }
+    body.confirm_phrase = phrase.trim();
+  }
+  const res=await jpost("/api/live/sell-all", body);
+  closeSell();
+  msg(res && res.ok ? ("sell-all "+mode) : ("BLOCKED: "+((res&&(res.error||res.reason))||"?")), !!(res&&res.ok));
+  refresh();
 }
 async function runDry(){
-  const mint=dryMint.value.trim();
-  const url = mint ? ('/api/live/dry-run?mint='+encodeURIComponent(mint)) : '/api/live/dry-run';
-  const res=await j(url);
-  document.getElementById('dryBox').textContent = JSON.stringify(res,null,2);
+  const mint=$("dryMint").value.trim();
+  const url = mint ? ("/api/live/dry-run?mint="+encodeURIComponent(mint)) : "/api/live/dry-run";
+  $("dryBox").textContent = JSON.stringify(await j(url), null, 2);
 }
-refresh(); setInterval(refresh, 15000);
+
+refresh();
+setInterval(refresh, 15000);
 </script>
-</body></html>
+</body>
+</html>
